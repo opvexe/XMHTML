@@ -20,7 +20,6 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor yellowColor];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(chocieSubject:) image:@"room_btn_more" highImage:@"room_btn_more"];
     
 }
 

@@ -94,7 +94,7 @@ static const CGFloat FullDistanceScale = 0.7;
             CGFloat mainViewX = self.MenueController.view.frame.origin.x + self.MenueController.view.frame.size.width;
             self.mainView = [[UIView alloc]initWithFrame:CGRectMake(mainViewX, 0, X_ScreenWidth, X_ScreenHeight)];
             self.mainView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
-            [self.view addSubview:self.mainView];
+            [self.view insertSubview:self.mainView belowSubview:self.MenueController.view];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showHome)];
             [self.mainView addGestureRecognizer:tap];
@@ -132,9 +132,14 @@ static const CGFloat FullDistanceScale = 0.7;
         CGFloat menueShowWidth = X_ScreenWidth +self.MenueController.view.frame.origin.x;
         if (menueShowWidth>(X_ScreenWidth*FullDistanceScale/2.0)) {
             [UIView animateWithDuration:0.3 animations:^{
+                
                 CGRect rec = self.MenueController.view.frame;
                 rec.origin.x = -X_ScreenWidth +self.view.frame.size.width*FullDistanceScale;
                 self.MenueController.view.frame = rec;
+                
+                CGRect frm = self.mainView.frame;
+                frm.origin.x = self.MenueController.view.frame.origin.x + self.MenueController.view.frame.size.width;
+                self.mainView.frame = frm;
             }];
         }else{
             [self showHome];
