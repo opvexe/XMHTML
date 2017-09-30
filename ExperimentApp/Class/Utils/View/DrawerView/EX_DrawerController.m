@@ -23,6 +23,7 @@ static const CGFloat FullDistanceScale = 0.7;
 @implementation EX_DrawerController
 {
     CGFloat startX ;
+    CGFloat startMx;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,7 +86,7 @@ static const CGFloat FullDistanceScale = 0.7;
 
 
 -(void)leftAnimate:(NSString *)animate{
-    [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.3 delay:0. options:UIViewAnimationOptionCurveEaseOut animations:^{
         if ([animate isEqualToString:@"left"]) {
             CGRect rect = self.MenueController.view.frame;
             rect.origin.x = -X_ScreenWidth + self.view.frame.size.width*FullDistanceScale;
@@ -113,12 +114,19 @@ static const CGFloat FullDistanceScale = 0.7;
     
     if (pan.state == UIGestureRecognizerStateBegan) {
         startX = self.MenueController.view.frame.origin.x;
-        
+        startMx = self.mainView.frame.origin.x;
     }
     CGFloat offsetX = [pan translationInView:self.view].x;
     CGRect fram = self.MenueController.view.frame;
     fram.origin.x = startX + offsetX;
     self.MenueController.view.frame = fram;
+    
+     NSLog(@"%lf",offsetX);
+    ///MARK: 右侧偏移量
+    CGRect mainFram = self.mainView.frame;
+    mainFram.origin.x = startMx + offsetX;
+    self.mainView.frame = mainFram;
+
     
     if (pan.state == UIGestureRecognizerStateEnded) {
         CGFloat menueShowWidth = X_ScreenWidth +self.MenueController.view.frame.origin.x;
