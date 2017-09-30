@@ -121,16 +121,15 @@ static const CGFloat FullDistanceScale = 0.7;
     fram.origin.x = startX + offsetX;
     self.MenueController.view.frame = fram;
     
-     NSLog(@"%lf",offsetX);
+     NSLog(@"侧滑:%lf",offsetX);
     ///MARK: 右侧偏移量
     CGRect mainFram = self.mainView.frame;
     mainFram.origin.x = startMx + offsetX;
     self.mainView.frame = mainFram;
 
-    
     if (pan.state == UIGestureRecognizerStateEnded) {
         CGFloat menueShowWidth = X_ScreenWidth +self.MenueController.view.frame.origin.x;
-        if (menueShowWidth>(X_ScreenWidth*FullDistanceScale/2.0)) {
+        if (menueShowWidth>(X_ScreenWidth*(FullDistanceScale/2.0))) {
             [UIView animateWithDuration:0.3 animations:^{
                 
                 CGRect rec = self.MenueController.view.frame;

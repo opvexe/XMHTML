@@ -17,7 +17,6 @@
  */
 -(void)initRootViewController{
     UIWindow *window                            = [[UIApplication sharedApplication].delegate window];
-//    EX_TabBarController *tabbarController       = [[EX_TabBarController alloc]init];
     EX_DrawerController *tabbarController = [[EX_DrawerController alloc]init];
     window.rootViewController                   = tabbarController;
     [window makeKeyAndVisible];
