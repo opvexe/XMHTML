@@ -15,7 +15,7 @@ static const CGFloat FullDistanceScale = 0.7;
 
 @property(nonatomic, strong)UIView *mainView;
 @property(nonatomic, strong)EX_TabBarController *rootViewController;
-@property(nonatomic, strong)EX_LeftController *MenueController;
+@property(nonatomic, strong)EX_LeftController *leftController;
 @property(nonatomic, strong)UIPanGestureRecognizer *panGesture;
 @property(nonatomic, strong)UIView *middleView;
 @end
@@ -41,12 +41,12 @@ static const CGFloat FullDistanceScale = 0.7;
     self.rootViewController = [[EX_TabBarController alloc]init];
     [self.middleView addSubview:self.rootViewController.view];
     
-    self.MenueController = [[EX_LeftController alloc]init];
-    CGRect rec = self.MenueController.view.frame;
+    self.leftController = [[EX_LeftController alloc]init];
+    CGRect rec = self.leftController.view.frame;
     rec.origin.x = -X_ScreenWidth;
-    self.MenueController.view.frame = rec;
+    self.leftController.view.frame = rec;
     
-    [self.view addSubview:self.MenueController.view];
+    [self.view addSubview:self.leftController.view];
 }
 
 
@@ -58,9 +58,9 @@ static const CGFloat FullDistanceScale = 0.7;
     
     CGFloat offsetX = [recongnizer translationInView:self.view].x;
     if (offsetX>=0) {
-        CGRect rec = self.MenueController.view.frame;
+        CGRect rec = self.leftController.view.frame;
         rec.origin.x = -X_ScreenWidth +offsetX;
-        self.MenueController.view.frame = rec;
+        self.leftController.view.frame = rec;
     }
     if (recongnizer.state == UIGestureRecognizerStateEnded) {
         if (offsetX>X_ScreenWidth*(FullDistanceScale/2.0)) {
@@ -76,9 +76,9 @@ static const CGFloat FullDistanceScale = 0.7;
 
 -(void)showHome{
     [UIView animateWithDuration:0.3 animations:^{
-        CGRect rect = self.MenueController.view.frame;
+        CGRect rect = self.leftController.view.frame;
         rect.origin.x = -X_ScreenWidth;
-        self.MenueController.view.frame = rect;
+        self.leftController.view.frame = rect;
         [self.mainView removeFromSuperview];
         [self leftAnimate:@"home"];
     }];
@@ -88,13 +88,13 @@ static const CGFloat FullDistanceScale = 0.7;
 -(void)leftAnimate:(NSString *)animate{
     [UIView animateWithDuration:0.3 delay:0. options:UIViewAnimationOptionCurveEaseOut animations:^{
         if ([animate isEqualToString:@"left"]) {
-            CGRect rect = self.MenueController.view.frame;
+            CGRect rect = self.leftController.view.frame;
             rect.origin.x = -X_ScreenWidth + self.view.frame.size.width*FullDistanceScale;
-            self.MenueController.view.frame = rect;
-            CGFloat mainViewX = self.MenueController.view.frame.origin.x + self.MenueController.view.frame.size.width;
+            self.leftController.view.frame = rect;
+            CGFloat mainViewX = self.leftController.view.frame.origin.x + self.leftController.view.frame.size.width;
             self.mainView = [[UIView alloc]initWithFrame:CGRectMake(mainViewX, 0, X_ScreenWidth, X_ScreenHeight)];
             self.mainView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
-            [self.view insertSubview:self.mainView belowSubview:self.MenueController.view];
+            [self.view insertSubview:self.mainView belowSubview:self.leftController.view];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showHome)];
             [self.mainView addGestureRecognizer:tap];
@@ -113,13 +113,13 @@ static const CGFloat FullDistanceScale = 0.7;
 -(void)recoverPanGes:(UIPanGestureRecognizer *)pan{
     
     if (pan.state == UIGestureRecognizerStateBegan) {
-        startX = self.MenueController.view.frame.origin.x;
+        startX = self.leftController.view.frame.origin.x;
         startMx = self.mainView.frame.origin.x;
     }
     CGFloat offsetX = [pan translationInView:self.view].x;
-    CGRect fram = self.MenueController.view.frame;
-    fram.origin.x = startX + offsetX;
-    self.MenueController.view.frame = fram;
+    CGRect offsetRect = self.leftController.view.frame;
+    offsetRect.origin.x = startX + offsetX;
+    self.leftController.view.frame = offsetRect;
     
      NSLog(@"侧滑:%lf",offsetX);
     ///MARK: 右侧偏移量
@@ -128,22 +128,23 @@ static const CGFloat FullDistanceScale = 0.7;
     self.mainView.frame = mainFram;
 
     if (pan.state == UIGestureRecognizerStateEnded) {
-        CGFloat menueShowWidth = X_ScreenWidth +self.MenueController.view.frame.origin.x;
+        CGFloat menueShowWidth = X_ScreenWidth +self.leftController.view.frame.origin.x;
         if (menueShowWidth>(X_ScreenWidth*(FullDistanceScale/2.0))) {
             [UIView animateWithDuration:0.3 animations:^{
                 
-                CGRect rec = self.MenueController.view.frame;
-                rec.origin.x = -X_ScreenWidth +self.view.frame.size.width*FullDistanceScale;
-                self.MenueController.view.frame = rec;
+                CGRect rect = self.leftController.view.frame;
+                rect.origin.x = -X_ScreenWidth +self.view.frame.size.width*FullDistanceScale;
+                self.leftController.view.frame = rect;
                 
-                CGRect frm = self.mainView.frame;
-                frm.origin.x = self.MenueController.view.frame.origin.x + self.MenueController.view.frame.size.width;
-                self.mainView.frame = frm;
+                CGRect leftRect = self.mainView.frame;
+                leftRect.origin.x = self.leftController.view.frame.origin.x + self.leftController.view.frame.size.width;
+                self.mainView.frame = leftRect;
             }];
         }else{
             [self showHome];
         }
     }
 }
+
 
 @end

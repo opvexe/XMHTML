@@ -23,7 +23,8 @@
 }
 
 -(void)leftOpen:(id)sender{
-    [(EX_DrawerController *)KEY_WINDOW.rootViewController showLeft];
+    UIWindow * _Nullable extractedExpr = KEY_WINDOW;
+    [(EX_DrawerController *)extractedExpr.rootViewController showLeft];
 }
 
 

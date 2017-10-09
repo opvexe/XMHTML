@@ -687,6 +687,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Class/Utils/Definition/MyKit.h";
 				INFOPLIST_FILE = ExperimentApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ExperimentApp.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -699,6 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Class/Utils/Definition/MyKit.h";
 				INFOPLIST_FILE = ExperimentApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ExperimentApp.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -770,6 +772,7 @@
 				A6D4F1991F7F2F6B007BC8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6D4F19A1F7F2F6B007BC8F0 /* Build configuration list for PBXNativeTarget "ExperimentAppTests" */ = {
 			isa = XCConfigurationList;
@@ -778,6 +781,7 @@
 				A6D4F19C1F7F2F6B007BC8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6D4F19D1F7F2F6B007BC8F0 /* Build configuration list for PBXNativeTarget "ExperimentAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -786,6 +790,7 @@
 				A6D4F19F1F7F2F6B007BC8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
