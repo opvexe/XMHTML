@@ -44,5 +44,17 @@
     return label;
 }
 
++ (instancetype)SinglelabelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment {
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = title;
+    label.textColor = color;
+    label.font = font;
+    label.numberOfLines = 1;
+    label.textAlignment = alignment;
+    [label sizeToFit];
+    return label;
+}
+
 
 @end

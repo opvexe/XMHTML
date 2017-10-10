@@ -31,12 +31,10 @@
     [(EX_DrawerController *)KEY_WINDOW.rootViewController showLeft];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return  2;
-}
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 5;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -46,24 +44,21 @@
     return cell;
 }
 
-
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIView *footView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, 30)];
-    footView.backgroundColor = [UIColor redColor];
-    return footView;
+    NSLog(@"%@",indexPath);
 }
-
 
 -(UITableView *)practiceTableView{
     if (!_practiceTableView) {
         _practiceTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, X_ScreenHeight - X_StatusBarAndNavigationBarHeight - X_TabbarHeight) style:UITableViewStylePlain];
         _practiceTableView.showsVerticalScrollIndicator              =YES;
         _practiceTableView.showsHorizontalScrollIndicator            =NO;
-        _practiceTableView.backgroundColor                           = [UIColor whiteColor];
+        _practiceTableView.backgroundColor                           =[UIColor colorWithRed:237/255.0 green: 237/255.0 blue:237/255.0 alpha:0.5];
         _practiceTableView.dataSource                                =self;
         _practiceTableView.delegate                                  =self;
         _practiceTableView.tableHeaderView                           =self.headView;
+        _practiceTableView.rowHeight                                 = 80.0;
         _practiceTableView.separatorStyle                            =UITableViewCellSeparatorStyleNone;
         _practiceTableView.tableFooterView                           =[UIView new];
     }

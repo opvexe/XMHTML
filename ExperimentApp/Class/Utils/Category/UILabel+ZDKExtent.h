@@ -59,4 +59,15 @@
  */
 + (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment;
 
+/**
+ *  创建 单行UILabel
+ *
+ *  @param title     标题
+ *  @param color     标题颜色
+ *  @param font      字体
+ *  @param alignment 对齐方式
+ *
+ *  @return UILabel
+ */
++ (instancetype)SinglelabelWithTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font alignment:(NSTextAlignment)alignment;
 @end

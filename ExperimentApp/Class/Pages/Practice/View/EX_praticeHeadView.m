@@ -13,6 +13,7 @@
 @property(nonatomic, strong)UILabel *masterLabel;   ///掌握度
 @property(nonatomic, strong)UILabel *percentLabel;  ///所占百分比
 @property(nonatomic, strong)UILabel *symbolLabel;   ///符号
+@property(nonatomic, strong)UILabel *practiceLabel; ///章节练习
 @end
 @implementation EX_praticeHeadView
 
@@ -108,8 +109,7 @@
             make.width.mas_equalTo(.5);
         }];
         
-        [self addBottomBorderWithColor:[UIColor lightGrayColor] andWidth:0.2];
-        
+//        [self addBottomBorderWithColor:[UIColor lightGrayColor] andWidth:0.2];
     }
     return self;
 }
