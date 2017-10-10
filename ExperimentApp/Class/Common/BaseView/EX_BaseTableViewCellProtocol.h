@@ -23,4 +23,12 @@
  初始化数据
  */
 -(void)InitDataViewModel:(EX_BaseModel*)model;
+/**
+ 配置重用CellTableView
+ */
++ (id)CellWithTableView:(UITableView *)tableview;
+/**
+ 配置Cell高度
+ */
++(CGFloat)getCellHeight:(EX_BaseModel *)model;
 @end

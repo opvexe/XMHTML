@@ -9,6 +9,7 @@
 #import "EX_DrawerController.h"
 #import "EX_TabBarController.h"
 #import "EX_LeftController.h"
+#import "EX_NavigationController.h"
 
 static const CGFloat FullDistanceScale = 0.7;
 @interface EX_DrawerController ()
@@ -42,7 +43,8 @@ static const CGFloat FullDistanceScale = 0.7;
     [self.middleView addSubview:self.rootViewController.view];
     
     self.leftController = [[EX_LeftController alloc]init];
-    CGRect rec = self.leftController.view.frame;
+    EX_NavigationController *nav = [[EX_NavigationController alloc]initWithRootViewController:self.leftController];
+    CGRect rec = nav.view.frame;
     rec.origin.x = -X_ScreenWidth;
     self.leftController.view.frame = rec;
     
