@@ -7,9 +7,10 @@
 //
 
 #import "EX_NewsController.h"
+#import "EX_NewsCell.h"
 
-@interface EX_NewsController ()
-
+@interface EX_NewsController ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic, strong)UITableView *newsTableView;
 @end
 
 @implementation EX_NewsController
@@ -18,21 +19,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
      self.navigationItem.title = @"行业资讯";
+    
+    [self.view addSubview:self.newsTableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+-(UITableView *)newsTableView{
+    if (!_newsTableView) {
+        _newsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, X_ScreenHeight - X_StatusBarAndNavigationBarHeight - X_TabbarHeight) style:UITableViewStylePlain];
+        _newsTableView.showsVerticalScrollIndicator              =YES;
+        _newsTableView.showsHorizontalScrollIndicator            =NO;
+        _newsTableView.backgroundColor                           =[UIColor whiteColor];
+        _newsTableView.dataSource                                =self;
+        _newsTableView.delegate                                  =self;
+        _newsTableView.estimatedRowHeight = 100.f;
+        
+        if(@available(iOS 11.0, *)) {
+            _newsTableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
+            _newsTableView.estimatedSectionHeaderHeight=0;
+            _newsTableView.estimatedSectionFooterHeight=0;
+        }
+        _newsTableView.separatorStyle                            =UITableViewCellSeparatorStyleNone;
+        _newsTableView.tableFooterView                           =[UIView new];
+    }
+    return _newsTableView;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{       ///1个cell 上20个 
+    return 1;
 }
-*/
 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  EX_NewsCell    *cell = [EX_NewsCell CellWithTableView:tableView];
+    
+    return cell;
+}
 @end

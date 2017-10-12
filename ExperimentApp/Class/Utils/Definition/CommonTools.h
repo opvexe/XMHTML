@@ -39,6 +39,7 @@
 #define KEY_WINDOW [UIApplication sharedApplication].keyWindow
 #define LAPPLICATION [UIApplication sharedApplication]
 #define LAPPDELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
+#define LWLRandomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] //随机色
 
 
 #endif /* CommonTools_h */

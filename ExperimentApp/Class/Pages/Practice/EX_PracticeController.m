@@ -59,6 +59,13 @@
         _practiceTableView.delegate                                  =self;
         _practiceTableView.tableHeaderView                           =self.headView;
         _practiceTableView.rowHeight                                 = 80.0;
+        
+        if(@available(iOS 11.0, *)) {
+            _practiceTableView.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
+            _practiceTableView.estimatedRowHeight=0;
+            _practiceTableView.estimatedSectionHeaderHeight=0;
+            _practiceTableView.estimatedSectionFooterHeight=0;
+        }
         _practiceTableView.separatorStyle                            =UITableViewCellSeparatorStyleNone;
         _practiceTableView.tableFooterView                           =[UIView new];
     }

@@ -47,9 +47,9 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
     
 }
-
 
 -(UITableView *)choiceTableView{
     if (!_choiceTableView) {

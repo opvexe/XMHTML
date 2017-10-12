@@ -27,9 +27,9 @@
         [_cutButton setImage:[UIImage imageNamed:@"my_icon_enter_n"] forState:UIControlStateNormal];
         
         CGFloat imageWidth = 20;
-        CGFloat imageHeight = 20;
+//        CGFloat imageHeight = 20;
         CGFloat labelWidth = [_cutButton.titleLabel.text sizeWithFont:_cutButton.titleLabel.font].width;
-        CGFloat labelHeight = [_cutButton.titleLabel.text sizeWithFont:_cutButton.titleLabel.font].height;
+//        CGFloat labelHeight = [_cutButton.titleLabel.text sizeWithFont:_cutButton.titleLabel.font].height;
         
         _cutButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth, 0, -(labelWidth));
         _cutButton.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);

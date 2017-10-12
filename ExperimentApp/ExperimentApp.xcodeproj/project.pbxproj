@@ -36,6 +36,8 @@
 		A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1DB1F7F426A007BC8F0 /* NSString+FriendExtenison.m */; };
 		A6D4F1EC1F7F5D5D007BC8F0 /* EX_DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */; };
 		A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */; };
+		A6FC69CC1F8E16B0005733AC /* EX_NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FC69CB1F8E16B0005733AC /* EX_NewsCell.m */; };
+		A6FC69D01F8E1883005733AC /* EX_NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FC69CF1F8E1883005733AC /* EX_NewsCollectionViewCell.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,10 @@
 		A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_DrawerController.m; sourceTree = "<group>"; };
 		A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_LeftController.h; sourceTree = "<group>"; };
 		A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_LeftController.m; sourceTree = "<group>"; };
+		A6FC69CA1F8E16B0005733AC /* EX_NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_NewsCell.h; sourceTree = "<group>"; };
+		A6FC69CB1F8E16B0005733AC /* EX_NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_NewsCell.m; sourceTree = "<group>"; };
+		A6FC69CE1F8E1883005733AC /* EX_NewsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_NewsCollectionViewCell.h; sourceTree = "<group>"; };
+		A6FC69CF1F8E1883005733AC /* EX_NewsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_NewsCollectionViewCell.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
 		C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExperimentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29A4B6FF5A9CA9F32B85039 /* Pods-ExperimentAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentAppUITests/Pods-ExperimentAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -413,6 +419,7 @@
 		A6D4F1B51F7F31AA007BC8F0 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A6FC69CD1F8E181B005733AC /* View */,
 				A6D4F1C41F7F3422007BC8F0 /* EX_NewsController.h */,
 				A6D4F1C51F7F3422007BC8F0 /* EX_NewsController.m */,
 			);
@@ -459,6 +466,17 @@
 				A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */,
 			);
 			path = DrawerView;
+			sourceTree = "<group>";
+		};
+		A6FC69CD1F8E181B005733AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6FC69CA1F8E16B0005733AC /* EX_NewsCell.h */,
+				A6FC69CB1F8E16B0005733AC /* EX_NewsCell.m */,
+				A6FC69CE1F8E1883005733AC /* EX_NewsCollectionViewCell.h */,
+				A6FC69CF1F8E1883005733AC /* EX_NewsCollectionViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -756,8 +774,10 @@
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
+				A6FC69D01F8E1883005733AC /* EX_NewsCollectionViewCell.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */,
+				A6FC69CC1F8E16B0005733AC /* EX_NewsCell.m in Sources */,
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A6D4F1C31F7F3417007BC8F0 /* EX_ProfileController.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
