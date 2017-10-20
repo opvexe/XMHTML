@@ -33,6 +33,7 @@
 #import "ColorDefines.h"
 
 //工具
+#import "EXSeviceRequestManger.h"
 #import "EX_Tools.h"
 
 //第三方

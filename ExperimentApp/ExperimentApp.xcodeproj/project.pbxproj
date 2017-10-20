@@ -12,7 +12,25 @@
 		A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69C1F998D2D00229AFE /* EX_BaseView.m */; };
 		A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69F1F99906800229AFE /* EX_BaseViewController.m */; };
 		A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A41F99941E00229AFE /* EX_Tools.m */; };
-		A60AE6B41F999DD200229AFE /* EX_VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B31F999DD200229AFE /* EX_VideoCell.m */; };
+		A60AE6B41F999DD200229AFE /* EXVideoPoorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B31F999DD200229AFE /* EXVideoPoorTableViewCell.m */; };
+		A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */; };
+		A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */; };
+		A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6AC1F99976A00229AFE /* WYNetworkCache.h */; };
+		A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A71F99976A00229AFE /* WYNetworkCache.m */; };
+		A60AE6BF1F99A4DC00229AFE /* WYNetworkHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6AD1F99976A00229AFE /* WYNetworkHelper.h */; };
+		A60AE6C01F99A4DC00229AFE /* WYNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A61F99976A00229AFE /* WYNetworkHelper.m */; };
+		A60AE6C11F99A4DC00229AFE /* WYSessionManger.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A91F99976A00229AFE /* WYSessionManger.h */; };
+		A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6AB1F99976A00229AFE /* WYSessionManger.m */; };
+		A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6921F998B7B00229AFE /* YYCache.h */; };
+		A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6931F998B7B00229AFE /* YYCache.m */; };
+		A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6941F998B7B00229AFE /* YYDiskCache.h */; };
+		A60AE6C61F99AEA300229AFE /* YYDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6951F998B7B00229AFE /* YYDiskCache.m */; };
+		A60AE6C71F99AEA300229AFE /* YYKVStorage.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6961F998B7B00229AFE /* YYKVStorage.h */; };
+		A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6971F998B7B00229AFE /* YYKVStorage.m */; };
+		A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6981F998B7B00229AFE /* YYMemoryCache.h */; };
+		A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6991F998B7B00229AFE /* YYMemoryCache.m */; };
+		A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */; };
+		A60AE6D01F99CDB500229AFE /* EXVideoShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CF1F99CDB500229AFE /* EXVideoShowTableViewCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -91,8 +109,16 @@
 		A60AE6AD1F99976A00229AFE /* WYNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYNetworkHelper.h; sourceTree = "<group>"; };
 		A60AE6AF1F9999A000229AFE /* VerRunView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerRunView.h; sourceTree = "<group>"; };
 		A60AE6B01F9999A000229AFE /* VerRunView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerRunView.m; sourceTree = "<group>"; };
-		A60AE6B21F999DD200229AFE /* EX_VideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_VideoCell.h; sourceTree = "<group>"; };
-		A60AE6B31F999DD200229AFE /* EX_VideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_VideoCell.m; sourceTree = "<group>"; };
+		A60AE6B21F999DD200229AFE /* EXVideoPoorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXVideoPoorTableViewCell.h; sourceTree = "<group>"; };
+		A60AE6B31F999DD200229AFE /* EXVideoPoorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXVideoPoorTableViewCell.m; sourceTree = "<group>"; };
+		A60AE6B61F99A00B00229AFE /* EX_ChannelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_ChannelModel.h; sourceTree = "<group>"; };
+		A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_ChannelModel.m; sourceTree = "<group>"; };
+		A60AE6BA1F99A1FB00229AFE /* EXSeviceRequestManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSeviceRequestManger.h; sourceTree = "<group>"; };
+		A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSeviceRequestManger.m; sourceTree = "<group>"; };
+		A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopBannerTableViewCell.h; sourceTree = "<group>"; };
+		A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopBannerTableViewCell.m; sourceTree = "<group>"; };
+		A60AE6CE1F99CDB500229AFE /* EXVideoShowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXVideoShowTableViewCell.h; sourceTree = "<group>"; };
+		A60AE6CF1F99CDB500229AFE /* EXVideoShowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXVideoShowTableViewCell.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -217,6 +243,8 @@
 				A60AE6A61F99976A00229AFE /* WYNetworkHelper.m */,
 				A60AE6A91F99976A00229AFE /* WYSessionManger.h */,
 				A60AE6AB1F99976A00229AFE /* WYSessionManger.m */,
+				A60AE6BA1F99A1FB00229AFE /* EXSeviceRequestManger.h */,
+				A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -265,10 +293,23 @@
 		A60AE6B11F999D8A00229AFE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A60AE6B21F999DD200229AFE /* EX_VideoCell.h */,
-				A60AE6B31F999DD200229AFE /* EX_VideoCell.m */,
+				A60AE6B21F999DD200229AFE /* EXVideoPoorTableViewCell.h */,
+				A60AE6B31F999DD200229AFE /* EXVideoPoorTableViewCell.m */,
+				A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */,
+				A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */,
+				A60AE6CE1F99CDB500229AFE /* EXVideoShowTableViewCell.h */,
+				A60AE6CF1F99CDB500229AFE /* EXVideoShowTableViewCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A60AE6B51F999FE100229AFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A60AE6B61F99A00B00229AFE /* EX_ChannelModel.h */,
+				A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A6D4F1611F7F2F6B007BC8F0 = {
@@ -475,6 +516,7 @@
 		A6D4F1B51F7F31AA007BC8F0 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE6B51F999FE100229AFE /* Model */,
 				A60AE6B11F999D8A00229AFE /* Cell */,
 				A6FC69CD1F8E181B005733AC /* View */,
 				A6D4F1C41F7F3422007BC8F0 /* EX_VideoViewController.h */,
@@ -806,8 +848,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
+				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
+				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
+				A60AE6C61F99AEA300229AFE /* YYDiskCache.m in Sources */,
+				A60AE6C71F99AEA300229AFE /* YYKVStorage.h in Sources */,
+				A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */,
+				A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */,
+				A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */,
+				A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */,
+				A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */,
+				A60AE6BF1F99A4DC00229AFE /* WYNetworkHelper.h in Sources */,
+				A60AE6C01F99A4DC00229AFE /* WYNetworkHelper.m in Sources */,
+				A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */,
+				A60AE6C11F99A4DC00229AFE /* WYSessionManger.h in Sources */,
+				A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
+				A60AE6D01F99CDB500229AFE /* EXVideoShowTableViewCell.m in Sources */,
+				A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */,
 				A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */,
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
@@ -822,13 +881,14 @@
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
+				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
 				A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */,
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A6D4F1C31F7F3417007BC8F0 /* EX_ProfileController.m in Sources */,
 				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
-				A60AE6B41F999DD200229AFE /* EX_VideoCell.m in Sources */,
+				A60AE6B41F999DD200229AFE /* EXVideoPoorTableViewCell.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
 				A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */,

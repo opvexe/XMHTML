@@ -10,15 +10,21 @@
 
 @implementation EXVideoShowTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
++ (id)CellWithTableView:(UITableView *)tableView{
+    
+    EXVideoShowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXVideoShowTableViewCell class])];
+    if (!cell) {
+        cell = [[EXVideoShowTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXVideoShowTableViewCell class])];
+    }
+    return cell;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+        
+    }
+    return self;
 }
 
 @end

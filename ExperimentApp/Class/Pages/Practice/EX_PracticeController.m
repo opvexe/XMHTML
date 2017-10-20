@@ -24,6 +24,7 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(leftOpen:) image:@"room_btn_more" highImage:@"room_btn_more"];
     self.navigationItem.title = @"公共基础";
     
+
     
     [self.view addSubview:self.practiceTableView];
 }

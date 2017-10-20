@@ -10,15 +10,22 @@
 
 @implementation EXShopBannerTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
++ (id)CellWithTableView:(UITableView *)tableView{
+    
+    EXShopBannerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXShopBannerTableViewCell class])];
+    if (!cell) {
+        cell = [[EXShopBannerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXShopBannerTableViewCell class])];
+    }
+    return cell;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+        
+    }
+    return self;
 }
+
 
 @end

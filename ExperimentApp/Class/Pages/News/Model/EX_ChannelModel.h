@@ -8,6 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EX_ChannelModel : NSObject
+typedef NS_ENUM(NSUInteger, TemplateCellType) {
+    
+    //轮播Cell
+    TemplateCellTypeShopingBanderTableViewCell =  0,
+    
+    //视频展示Cell
+    TemplateCellTypeVideoShowTableViewCell = 1 << 0,
+    
+    //分类Cell
+    TemplateCellTypeClassifiedTableViewCell = 1 << 1,
+ 
+    //必买Cell
+    TemplateCellTypeDailyWillBuyTableViewCell = 1 << 2,
+    
+    //推荐Cell
+    TemplateCellTypeRecommendTableViewCell = 1 << 3,
+ 
+    //单品Cell
+    TemplateCellTypeThePoorTableViewCell = 1 << 4,
+};
 
+@interface EX_ChannelModel : EX_BaseModel
+
+/**
+ * 模板类型
+ */
+@property(nonatomic, assign) TemplateCellType *template_type;
 @end

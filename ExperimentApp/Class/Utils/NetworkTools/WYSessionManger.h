@@ -8,6 +8,7 @@
 
 #import "AFHTTPSessionManager.h"
 
+
 @interface WYSessionManger : AFHTTPSessionManager
 
 @end

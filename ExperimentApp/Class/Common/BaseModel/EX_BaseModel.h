@@ -24,6 +24,8 @@ typedef NS_ENUM(NSUInteger, AnswerType) {
 
 @property(nonatomic,copy)NSString *navigationTitle;
 
+@property(nonatomic,strong)NSMutableArray *sections;
+
 @property(nonatomic,assign)TableViewCellType CellType;
 
 @property(nonatomic,assign)AnswerType answerType;

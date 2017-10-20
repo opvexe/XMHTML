@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 单品Cell
+ */
 @interface EXVideoPoorTableViewCell : EX_BaseTbaleViewCell
 
 @end

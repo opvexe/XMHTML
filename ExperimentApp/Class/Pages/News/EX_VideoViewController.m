@@ -7,7 +7,9 @@
 //
 
 #import "EX_VideoViewController.h"
-#import "EX_VideoCell.h"
+#import "EXVideoPoorTableViewCell.h"
+
+static NSInteger pages;
 
 @interface EX_VideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *newsTableView;
@@ -19,10 +21,71 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"超级巨星";
-    
     [self.view addSubview:self.newsTableView];
+    
+    pages = 1 ;
+    [self loadDataSocre];
 }
 
+-(void)loadDataSocre{
+    
+    WS(weakSelf)
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
+    [EXSeviceRequestManger GetWithVideoH5AlertCompleteSuccessfull:^(id responseObject) {
+        dispatch_group_leave(group);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_enter(group);
+    [EXSeviceRequestManger GetWithVideoBannnerCompleteSuccessfull:^(id responseObject) {
+        dispatch_group_leave(group);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_enter(group);
+    [EXSeviceRequestManger GetWithVideoRunNoticeCompleteSuccessfull:^(id responseObject) {
+        dispatch_group_leave(group);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_enter(group);
+    [EXSeviceRequestManger GetWithVideoShowCompleteSuccessfull:^(id responseObject) {
+        dispatch_group_leave(group);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_enter(group);
+    [EXSeviceRequestManger GetWithVideoRecommendList:pages CompleteSuccessfull:^(id responseObject) {
+        dispatch_group_leave(group);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+        dispatch_group_leave(group);
+    }];
+    
+    //回调Block
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        
+        [_newsTableView reloadData];
+    });
+}
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    EXVideoPoorTableViewCell   *cell = [EXVideoPoorTableViewCell CellWithTableView:tableView];
+    
+    return cell;
+}
 
 
 -(UITableView *)newsTableView{
@@ -33,26 +96,16 @@
         _newsTableView.backgroundColor                           =[UIColor whiteColor];
         _newsTableView.dataSource                                =self;
         _newsTableView.delegate                                  =self;
-        _newsTableView.estimatedRowHeight = 100.f;
-        //iOS 11
-        _newsTableView.estimatedSectionHeaderHeight=0;
-        _newsTableView.estimatedSectionFooterHeight=0;
+        if (@available(iOS 11.0, *)){
+            _newsTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            _newsTableView.estimatedRowHeight = 0.f;
+            _newsTableView.estimatedSectionHeaderHeight=0.f;
+            _newsTableView.estimatedSectionFooterHeight=0.f;
+        }
         _newsTableView.separatorStyle                            =UITableViewCellSeparatorStyleNone;
         _newsTableView.tableFooterView                           =[UIView new];
     }
     return _newsTableView;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{       ///1个cell 上20个
-    return 1;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-     EX_VideoCell   *cell = [EX_VideoCell CellWithTableView:tableView];
-    
-    return cell;
 }
 @end
 

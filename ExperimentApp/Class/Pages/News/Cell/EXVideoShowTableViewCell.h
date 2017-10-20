@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EXVideoShowTableViewCell : UITableViewCell
+
+/**
+ 视频Cell
+ */
+@interface EXVideoShowTableViewCell : EX_BaseTbaleViewCell
 
 @end

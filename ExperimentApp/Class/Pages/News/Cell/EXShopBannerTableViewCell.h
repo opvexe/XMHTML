@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EXShopBannerTableViewCell : UITableViewCell
+
+/**
+ 轮播Cell
+ */
+@interface EXShopBannerTableViewCell : EX_BaseTbaleViewCell
 
 @end
