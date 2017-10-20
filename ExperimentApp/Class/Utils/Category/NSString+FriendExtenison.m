@@ -81,8 +81,8 @@ BOOL checkPathAndCreate(NSString *filePath){
 + (NSString *)emojiWithStringCode:(NSString *)stringCode
 {
     char *charCode = (char *)stringCode.UTF8String;
-    int intCode = strtol(charCode, NULL, 16);
-    return [self emojiWithIntCode:intCode];
+    long intCode = strtol(charCode, NULL, 16);
+    return [self emojiWithIntCode:(int)intCode];
 }
 
 // 判断是否是 emoji表情

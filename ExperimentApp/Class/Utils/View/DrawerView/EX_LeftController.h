@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EX_LeftController : UIViewController
+@interface EX_LeftController : EX_BaseViewController
 
 @end

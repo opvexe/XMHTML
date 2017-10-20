@@ -7,8 +7,8 @@
 //
 
 #import "EX_LeftController.h"
-#import "EX_LeftTableViewCell.h"
 #import "EX_leftHeadView.h"
+#import "EX_LeftTableViewCell.h"
 #import "EX_PracticeController.h"
 
 @interface EX_LeftController ()<UITableViewDelegate,UITableViewDataSource>

@@ -84,6 +84,14 @@
 		A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseViewControllerProtocal.h; sourceTree = "<group>"; };
 		A60AE6A31F99941E00229AFE /* EX_Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_Tools.h; sourceTree = "<group>"; };
 		A60AE6A41F99941E00229AFE /* EX_Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_Tools.m; sourceTree = "<group>"; };
+		A60AE6A61F99976A00229AFE /* WYNetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYNetworkHelper.m; sourceTree = "<group>"; };
+		A60AE6A71F99976A00229AFE /* WYNetworkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYNetworkCache.m; sourceTree = "<group>"; };
+		A60AE6A91F99976A00229AFE /* WYSessionManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYSessionManger.h; sourceTree = "<group>"; };
+		A60AE6AB1F99976A00229AFE /* WYSessionManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYSessionManger.m; sourceTree = "<group>"; };
+		A60AE6AC1F99976A00229AFE /* WYNetworkCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYNetworkCache.h; sourceTree = "<group>"; };
+		A60AE6AD1F99976A00229AFE /* WYNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYNetworkHelper.h; sourceTree = "<group>"; };
+		A60AE6AF1F9999A000229AFE /* VerRunView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerRunView.h; sourceTree = "<group>"; };
+		A60AE6B01F9999A000229AFE /* VerRunView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerRunView.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -206,6 +214,12 @@
 		A60AE68F1F998AB200229AFE /* NetworkTools */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE6AC1F99976A00229AFE /* WYNetworkCache.h */,
+				A60AE6A71F99976A00229AFE /* WYNetworkCache.m */,
+				A60AE6AD1F99976A00229AFE /* WYNetworkHelper.h */,
+				A60AE6A61F99976A00229AFE /* WYNetworkHelper.m */,
+				A60AE6A91F99976A00229AFE /* WYSessionManger.h */,
+				A60AE6AB1F99976A00229AFE /* WYSessionManger.m */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -240,6 +254,15 @@
 				A60AE6A41F99941E00229AFE /* EX_Tools.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		A60AE6AE1F99998700229AFE /* RunView */ = {
+			isa = PBXGroup;
+			children = (
+				A60AE6AF1F9999A000229AFE /* VerRunView.h */,
+				A60AE6B01F9999A000229AFE /* VerRunView.m */,
+			);
+			path = RunView;
 			sourceTree = "<group>";
 		};
 		A6D4F1611F7F2F6B007BC8F0 = {
@@ -427,6 +450,7 @@
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE6AE1F99998700229AFE /* RunView */,
 				A6D4F1E91F7F5D44007BC8F0 /* DrawerView */,
 			);
 			path = View;
@@ -570,7 +594,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EX_;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = com.GDBank.Company;
 				TargetAttributes = {
 					A6D4F1691F7F2F6B007BC8F0 = {
@@ -870,7 +894,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -878,7 +904,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -919,7 +949,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -927,7 +959,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

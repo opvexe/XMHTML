@@ -10,5 +10,5 @@
 
 @interface EX_leftHeadView : UIView
 
-@property(nonatomic, copy)void(^cutChoiceBlock)();
+@property(nonatomic, copy)void(^cutChoiceBlock)(void);
 @end

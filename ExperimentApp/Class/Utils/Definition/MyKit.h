@@ -22,11 +22,11 @@
 #import "EX_BaseView.h"
 
 ///MARK: 扩展
+#import "UIView+WY_Extenison.h"
 #import "UIImage+Category.h"
 #import "UIBarButtonItem+Category.h"
 #import "NSString+FriendExtenison.h"
 #import "UILabel+ZDKExtent.h"
-#import "UIView+WY_Extenison.h"
 
 ///MARK: 宏定义
 #import "CommonTools.h"
@@ -38,7 +38,6 @@
 //第三方
 #import <Masonry.h>
 #import <MJExtension/MJExtension.h>
-#import <AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #endif /* MyKit_h */

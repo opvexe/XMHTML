@@ -60,7 +60,6 @@ typedef NS_ENUM(NSInteger,UILayoutCornerRadiusType) {
 
 - (void)addTopBorderWithColor: (UIColor *) color andWidth:(CGFloat) borderWidth andViewWidth:(CGFloat) viewWidth;
 /**
- *  @author
  *
  *  设置不同边的圆角
  *
