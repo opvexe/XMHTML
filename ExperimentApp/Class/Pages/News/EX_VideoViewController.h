@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EX_NewsController : UIViewController
+@interface EX_VideoViewController : UIViewController
 
 @end

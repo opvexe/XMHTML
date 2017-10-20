@@ -12,6 +12,7 @@
 		A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69C1F998D2D00229AFE /* EX_BaseView.m */; };
 		A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69F1F99906800229AFE /* EX_BaseViewController.m */; };
 		A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A41F99941E00229AFE /* EX_Tools.m */; };
+		A60AE6B41F999DD200229AFE /* EX_VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B31F999DD200229AFE /* EX_VideoCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -30,7 +31,7 @@
 		A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1BC1F7F334E007BC8F0 /* EX_NavigationController.m */; };
 		A6D4F1C01F7F3376007BC8F0 /* EX_TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1BF1F7F3376007BC8F0 /* EX_TabBarController.m */; };
 		A6D4F1C31F7F3417007BC8F0 /* EX_ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1C21F7F3417007BC8F0 /* EX_ProfileController.m */; };
-		A6D4F1C61F7F3422007BC8F0 /* EX_NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1C51F7F3422007BC8F0 /* EX_NewsController.m */; };
+		A6D4F1C61F7F3422007BC8F0 /* EX_VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1C51F7F3422007BC8F0 /* EX_VideoViewController.m */; };
 		A6D4F1C91F7F3430007BC8F0 /* EX_PracticeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1C81F7F3430007BC8F0 /* EX_PracticeController.m */; };
 		A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1CE1F7F399D007BC8F0 /* UIImage+Category.m */; };
 		A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1D11F7F3DC5007BC8F0 /* EX_BaseModel.m */; };
@@ -39,8 +40,6 @@
 		A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1DB1F7F426A007BC8F0 /* NSString+FriendExtenison.m */; };
 		A6D4F1EC1F7F5D5D007BC8F0 /* EX_DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */; };
 		A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */; };
-		A6FC69CC1F8E16B0005733AC /* EX_NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FC69CB1F8E16B0005733AC /* EX_NewsCell.m */; };
-		A6FC69D01F8E1883005733AC /* EX_NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FC69CF1F8E1883005733AC /* EX_NewsCollectionViewCell.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +91,8 @@
 		A60AE6AD1F99976A00229AFE /* WYNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYNetworkHelper.h; sourceTree = "<group>"; };
 		A60AE6AF1F9999A000229AFE /* VerRunView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerRunView.h; sourceTree = "<group>"; };
 		A60AE6B01F9999A000229AFE /* VerRunView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerRunView.m; sourceTree = "<group>"; };
+		A60AE6B21F999DD200229AFE /* EX_VideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_VideoCell.h; sourceTree = "<group>"; };
+		A60AE6B31F999DD200229AFE /* EX_VideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_VideoCell.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -129,8 +130,8 @@
 		A6D4F1BF1F7F3376007BC8F0 /* EX_TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_TabBarController.m; sourceTree = "<group>"; };
 		A6D4F1C11F7F3417007BC8F0 /* EX_ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_ProfileController.h; sourceTree = "<group>"; };
 		A6D4F1C21F7F3417007BC8F0 /* EX_ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_ProfileController.m; sourceTree = "<group>"; };
-		A6D4F1C41F7F3422007BC8F0 /* EX_NewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_NewsController.h; sourceTree = "<group>"; };
-		A6D4F1C51F7F3422007BC8F0 /* EX_NewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_NewsController.m; sourceTree = "<group>"; };
+		A6D4F1C41F7F3422007BC8F0 /* EX_VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_VideoViewController.h; sourceTree = "<group>"; };
+		A6D4F1C51F7F3422007BC8F0 /* EX_VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_VideoViewController.m; sourceTree = "<group>"; };
 		A6D4F1C71F7F3430007BC8F0 /* EX_PracticeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_PracticeController.h; sourceTree = "<group>"; };
 		A6D4F1C81F7F3430007BC8F0 /* EX_PracticeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_PracticeController.m; sourceTree = "<group>"; };
 		A6D4F1CA1F7F358C007BC8F0 /* MyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyKit.h; sourceTree = "<group>"; };
@@ -151,10 +152,6 @@
 		A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_DrawerController.m; sourceTree = "<group>"; };
 		A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_LeftController.h; sourceTree = "<group>"; };
 		A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_LeftController.m; sourceTree = "<group>"; };
-		A6FC69CA1F8E16B0005733AC /* EX_NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_NewsCell.h; sourceTree = "<group>"; };
-		A6FC69CB1F8E16B0005733AC /* EX_NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_NewsCell.m; sourceTree = "<group>"; };
-		A6FC69CE1F8E1883005733AC /* EX_NewsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_NewsCollectionViewCell.h; sourceTree = "<group>"; };
-		A6FC69CF1F8E1883005733AC /* EX_NewsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_NewsCollectionViewCell.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
 		C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExperimentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29A4B6FF5A9CA9F32B85039 /* Pods-ExperimentAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentAppUITests/Pods-ExperimentAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +260,15 @@
 				A60AE6B01F9999A000229AFE /* VerRunView.m */,
 			);
 			path = RunView;
+			sourceTree = "<group>";
+		};
+		A60AE6B11F999D8A00229AFE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A60AE6B21F999DD200229AFE /* EX_VideoCell.h */,
+				A60AE6B31F999DD200229AFE /* EX_VideoCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A6D4F1611F7F2F6B007BC8F0 = {
@@ -469,9 +475,10 @@
 		A6D4F1B51F7F31AA007BC8F0 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE6B11F999D8A00229AFE /* Cell */,
 				A6FC69CD1F8E181B005733AC /* View */,
-				A6D4F1C41F7F3422007BC8F0 /* EX_NewsController.h */,
-				A6D4F1C51F7F3422007BC8F0 /* EX_NewsController.m */,
+				A6D4F1C41F7F3422007BC8F0 /* EX_VideoViewController.h */,
+				A6D4F1C51F7F3422007BC8F0 /* EX_VideoViewController.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -514,10 +521,6 @@
 		A6FC69CD1F8E181B005733AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A6FC69CA1F8E16B0005733AC /* EX_NewsCell.h */,
-				A6FC69CB1F8E16B0005733AC /* EX_NewsCell.m */,
-				A6FC69CE1F8E1883005733AC /* EX_NewsCollectionViewCell.h */,
-				A6FC69CF1F8E1883005733AC /* EX_NewsCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -811,22 +814,21 @@
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
 				A6D4F1EC1F7F5D5D007BC8F0 /* EX_DrawerController.m in Sources */,
 				A6D4F1C01F7F3376007BC8F0 /* EX_TabBarController.m in Sources */,
-				A6D4F1C61F7F3422007BC8F0 /* EX_NewsController.m in Sources */,
+				A6D4F1C61F7F3422007BC8F0 /* EX_VideoViewController.m in Sources */,
 				A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */,
 				A6D4F1BA1F7F3248007BC8F0 /* AppDelegate+Category.m in Sources */,
 				A6D4F1C91F7F3430007BC8F0 /* EX_PracticeController.m in Sources */,
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
-				A6FC69D01F8E1883005733AC /* EX_NewsCollectionViewCell.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */,
-				A6FC69CC1F8E16B0005733AC /* EX_NewsCell.m in Sources */,
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A6D4F1C31F7F3417007BC8F0 /* EX_ProfileController.m in Sources */,
 				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
+				A60AE6B41F999DD200229AFE /* EX_VideoCell.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
 				A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */,
