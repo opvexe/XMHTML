@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EX_PracticeController : UIViewController
+@interface EX_PracticeController : EX_BaseViewController
 
 @end

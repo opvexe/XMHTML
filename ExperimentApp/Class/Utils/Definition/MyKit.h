@@ -38,5 +38,7 @@
 //第三方
 #import <Masonry.h>
 #import <MJExtension/MJExtension.h>
+#import <AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif /* MyKit_h */

@@ -10,6 +10,7 @@
 #import "EX_DrawerController.h"
 #import "EX_praticeHeadView.h"
 #import "EX_PracticeCell.h"
+
 @interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *practiceTableView;
 @property(nonatomic, strong)EX_praticeHeadView *headView;
