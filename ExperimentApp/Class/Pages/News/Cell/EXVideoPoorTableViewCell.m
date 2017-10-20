@@ -6,15 +6,15 @@
 //  Copyright © 2017年 com.GDBank.Company. All rights reserved.
 //
 
-#import "EX_VideoCell.h"
+#import "EXVideoPoorTableViewCell.h"
 
-@implementation EX_VideoCell
+@implementation EXVideoPoorTableViewCell
 
 + (id)CellWithTableView:(UITableView *)tableView{
     
-    EX_VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EX_VideoCell class])];
+    EXVideoPoorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXVideoPoorTableViewCell class])];
     if (!cell) {
-        cell = [[EX_VideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EX_VideoCell class])];
+        cell = [[EXVideoPoorTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXVideoPoorTableViewCell class])];
     }
     return cell;
 }

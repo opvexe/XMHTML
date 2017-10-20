@@ -1,13 +1,13 @@
 //
-//  EX_VideoCell.h
+//  EX_ChannelModel.h
 //  ExperimentApp
 //
 //  Created by GDBank on 2017/10/20.
 //  Copyright © 2017年 com.GDBank.Company. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface EX_VideoCell : EX_BaseTbaleViewCell
+@interface EX_ChannelModel : NSObject
 
 @end
