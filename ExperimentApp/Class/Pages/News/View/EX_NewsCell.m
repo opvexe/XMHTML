@@ -52,14 +52,14 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     EX_NewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EX_NewsCollectionViewCell class]) forIndexPath:indexPath];
-    cell.backgroundColor =  LWLRandomColor;
+    cell.backgroundColor =  ColorRandom;
     return cell;
 }
 
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout.alloc init];
-        layout.itemSize = CGSizeMake(X_ScreenWidth/2 - 40, 100);
+        layout.itemSize = CGSizeMake(SCREEN_WIDTH/2 - 40, 100);
         layout.minimumLineSpacing = 10;
         layout.minimumInteritemSpacing = 10;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;

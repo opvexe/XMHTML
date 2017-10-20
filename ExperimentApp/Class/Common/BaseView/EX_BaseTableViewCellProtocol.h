@@ -19,6 +19,11 @@
  *  配置数据
  */
 - (void)EX_SetupViewModel;
+
+/**
+ 配置信号数据
+ */
+-(void)EX_ConfigSignalDataSoucre;
 /**
  初始化数据
  */
@@ -32,3 +37,4 @@
  */
 +(CGFloat)getCellHeight:(EX_BaseModel *)model;
 @end
+

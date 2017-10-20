@@ -9,37 +9,94 @@
 #ifndef CommonTools_h
 #define CommonTools_h
 
-///MARK: 屏幕宽高
-#define  X_ScreenWidth   [UIScreen mainScreen].bounds.size.width
-#define  X_ScreenHeight  [UIScreen mainScreen].bounds.size.height
+// 格式化字符串
+#define FormatString(string, args...)       [NSString stringWithFormat:string, args]
 
-///MARK: iphone X
-#define  X_iPhoneX (X_ScreenWidth == 375.f && X_ScreenHeight == 812.f ? YES : NO)
+#define URLFromString(str)                      [NSURL URLWithString:str]
 
-///MARK: 状态栏高度
-#define  X_StatusBarHeight      (X_iPhoneX ? 44.f : 20.f)
-///MARK: 导航栏高度
-#define  X_NavigationBarHeight  44.f
+#define UTF8Data(str) [str dataUsingEncoding:NSUTF8StringEncoding]
 
-///MARK: 底部abbar 高度
-#define  X_TabbarHeight         (X_iPhoneX ? (49.f+34.f) : 49.f)
+//防止循环引用
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
-///MARK: tabbar底部安全区域
-#define  X_TabbarSafeBottomMargin         (X_iPhoneX ? 34.f : 0.f)
+#define WYSTRONG(strongSelf) __strong typeof(weakSelf) strongSelf = weakSelf;
 
-///MARK: 状态栏高度+导航栏高度
-#define  X_StatusBarAndNavigationBarHeight  (X_iPhoneX ? 88.f : 64.f)
+// iphone x 适配
 
-///MARK: 视图的安全区
-#define X_ViewSafeAreInsets(view) ({UIEdgeInsets insets; if(@available(iOS 11.0, *)) {insets = view.safeAreaInsets;} else {insets = UIEdgeInsetsZero;} insets;})
+#define iOS7                                ((floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)? NO:YES)
+
+#define HSYSCALWIDTH (HSYSCREEN_WIDTH/375.0)
+
+#define HSYSCALHEIGHT (HSYSCREEN_HEIGHT/667.0)
+
+#define StatusBar_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+
+#define HSYSCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
+
+#define HSYSCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+
+#define  HS_iPhoneX (HSYSCREEN_WIDTH == 375.f && HSYSCREEN_HEIGHT == 812.f ? YES : NO)
+
+#define  HS_TabbarHeight         (HS_iPhoneX ? (49.f+34.f) : 49.f)
+
+#define  HS_TabbarSafeBottomMargin         (HS_iPhoneX ? 34.f : 0.f)
+
+#define NavBarHeight                        (iOS7 ? (HS_iPhoneX ? 88.f : 64.f) : 44.0)
+
+#define HS_iPhoneXStatusBarHeight                      (HS_iPhoneX ? 44.f : 0)
+
+#define StatusBarHeight                     (iOS7 ? (HS_iPhoneX ? 44.f : 20.f) : 0.0)
+
+#define Number(num)                      (num*HSYSCALWIDTH)
+
+#define NumberHeight(num)                      (num*HSYSCALHEIGHT)
+
+#define AutomaticallyAdjustsScrollViewInsetsNO(view) if (@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;}else{self.automaticallyAdjustsScrollViewInsets = NO;}
+
+#define HS_ViewSafeAreInsets(view) ({UIEdgeInsets insets; if(@available(iOS 11.0, *)) {insets = view.safeAreaInsets;} else {insets = UIEdgeInsetsZero;} insets;})
+
+// 工具
+#define  HSYFont(font)  [UIFont systemFontOfSize:font]
+
+#define  HSYImage(imageName)  [UIImage imageNamed:imageName]
+
+#define  HSYMainBoundle ([NSBundle mainBundle])
+
+#define  HSYCOLOR(color) [UIColor colorWithHexString:color]
+
+//iphone 类型
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+
+#define IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+
+#define IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+
+#define IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 
 
-///MARK: APPDelegate Window
+//APPDelegate
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+
 #define KEY_WINDOW [UIApplication sharedApplication].keyWindow
+
 #define LAPPLICATION [UIApplication sharedApplication]
+
 #define LAPPDELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
-#define LWLRandomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] //随机色
+
 
 
 #endif /* CommonTools_h */

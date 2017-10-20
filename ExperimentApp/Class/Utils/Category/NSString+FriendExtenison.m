@@ -460,12 +460,12 @@ NSString *URLDecodeString(NSString*encodedString)
                                                                                                                      CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
     return decodedString;
 }
+
 /**
- *  <#Description#>
- *
- *  @param encoding <#encoding description#>
- *
- *  @return <#return value description#>
+ <#Description#>
+
+ @param url <#url description#>
+ @return <#return value description#>
  */
 NSString *URLEncodeUsingWithString(NSString *url){
     NSString *encodedString = (NSString *)

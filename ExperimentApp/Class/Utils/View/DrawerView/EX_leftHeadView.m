@@ -47,7 +47,7 @@
         }];
         
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(self.mas_centerX).mas_offset(X_ScreenWidth*0.15);
+            make.centerX.mas_equalTo(self.mas_centerX).mas_offset(SCREEN_WIDTH*0.15);
             make.centerY.mas_equalTo(self.mas_centerY).mas_offset(30.0);
         }];
         

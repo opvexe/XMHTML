@@ -18,7 +18,7 @@
     if (self) {
         
         [self EX_initConfingViews];
-        
+        [self EX_SetupViewModel];
     }
     return  self ;
 }
@@ -31,18 +31,36 @@
     [self EX_initConfingViews];
  
 }
+
+/**
+ 初始视图
+ */
 -(void)EX_initConfingViews{
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
+
+
+/**
+ 配置数据
+ */
 -(void)EX_SetupViewModel{
     
 }
 
-
--(void)InitDataViewModel:(EX_BaseModel *)model{
+/**
+ *  配置信号数据
+ */
+-(void)EX_ConfigSignalDataSoucre{
     
+}
+
+
+/**
+  数据模型赋值
+ */
+-(void)InitDataViewModel:(EX_BaseModel *)model{
     
 }
 
@@ -51,12 +69,14 @@
     return nil;
 };
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-}
 +(CGFloat)getCellHeight:(EX_BaseModel *)model{
     
     return 0;
+}
+
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
 }
 @end

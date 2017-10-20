@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-     self.navigationItem.title = @"行业资讯";
+     self.navigationItem.title = @"超级巨星";
     
     [self.view addSubview:self.newsTableView];
 }
@@ -27,7 +27,7 @@
 
 -(UITableView *)newsTableView{
     if (!_newsTableView) {
-        _newsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, X_ScreenHeight - X_StatusBarAndNavigationBarHeight - X_TabbarHeight) style:UITableViewStylePlain];
+        _newsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NavBarHeight - HS_TabbarHeight) style:UITableViewStylePlain];
         _newsTableView.showsVerticalScrollIndicator              =YES;
         _newsTableView.showsHorizontalScrollIndicator            =NO;
         _newsTableView.backgroundColor                           =[UIColor whiteColor];

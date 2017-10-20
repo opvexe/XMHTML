@@ -9,46 +9,47 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface NSString (FriendExtenison)
+
 /**
- *
- *
- *  @param font
- *  @param maxW
- *  @return
+ <#Description#>
+
+ @param font <#font description#>
+ @param maxW <#maxW description#>
+ @return <#return value description#>
  */
 - (CGSize)sizeWithFont:(UIFont *)font maxW:(CGFloat)maxW;
+
 /**
- *
- *
- *  @param font
- *
- *  @return
+ <#Description#>
+
+ @param font <#font description#>
+ @return <#return value description#>
  */
 - (CGSize)sizeWithFont:(UIFont *)font;
 
+
 /**
- *
- *
- *  @param object
- *
- *  @return  转化字符串
+ <#Description#>
+
+ @param object <#object description#>
+ @return <#return value description#>
  */
 NSString *convertToString(id object);
 
+
 /**
- *   获取文件路径
- *
- *  @param fileName
- *
- *  @return
+ <#Description#>
+
+ @param fileName <#fileName description#>
+ @return <#return value description#>
  */
 NSString* getDocumentsFilePath(const NSString* fileName);
+
 /**
- *  判断文件是否存储
- *
- *  @param filePath
- *
- *  @return
+ <#Description#>
+
+ @param filePath <#filePath description#>
+ @return <#return value description#>
  */
 BOOL checkPathAndCreate(NSString *filePath);
 /**
@@ -71,21 +72,20 @@ BOOL checkPathAndCreate(NSString *filePath);
  *  是否为emoji字符
  */
 - (BOOL)isEmoji;
+
 /**
- *
- *
- *  @param object
- *
- *  @return 判断是否为NULL
+ <#Description#>
+
+ @param object <#object description#>
+ @return <#return value description#>
  */
 BOOL is_null(id object);
 
 /**
- *  判断@""
- *
- *  @param str
- *
- *  @return
+ <#Description#>
+
+ @param str <#str description#>
+ @return <#return value description#>
  */
 BOOL isEmpty(NSString* str);
 /**
@@ -104,12 +104,12 @@ NSString* md5(NSString* input);
  *  @return <#return value description#>
  */
 NSString *urlEncodedString(NSString *url);
+
 /**
- *  去掉尾部空格
- *
- *  @param input 要去掉的空格
- *
- *  @return
+ <#Description#>
+
+ @param input <#input description#>
+ @return <#return value description#>
  */
 NSString* trimString (NSString* input);
 
@@ -132,12 +132,12 @@ NSString * dateTransformString(NSString* fromate,NSDate*date);
  */
 NSString * longdateTransformString(NSString* fromate,long long longdate);
 
+
 /**
- *  字符串转日期
- *
- *  @param stringDate
- *
- *  @return
+ <#Description#>
+
+ @param stringDate <#stringDate description#>
+ @return <#return value description#>
  */
 NSDate * stringFormateDate(NSString * stringDate);
 
@@ -198,12 +198,12 @@ BOOL validatePassword(NSString *password);
  */
 BOOL validateEcode(NSString* code);
 
+
 /**
- *  解析听写json格式的数据 语音听写JSON解析
- *
- *  @param params 
- *
- *  @return <#return value description#>
+ <#Description#>
+
+ @param params <#params description#>
+ @return <#return value description#>
  */
 NSString *stringFromJson(NSString* params);
 /**
@@ -238,18 +238,30 @@ NSString *http_URLEncode(NSString *url);
  *  @return <#return value description#>
  */
 NSString *URLDecodeString(NSString*encodedString);
-/**
- *  URLEncodeUsingEncoding
- *
- *  @param encoding encoding description
- *
- *  @return <#return value description#>
- */
 
+
+/**
+ <#Description#>
+
+ @param content <#content description#>
+ @return <#return value description#>
+ */
 NSString *base64EncodeWith(NSString * content);
 
+/**
+ <#Description#>
+
+ @param content <#content description#>
+ @return <#return value description#>
+ */
 NSString *base64DecodeWith(NSString * content);
 
+/**
+ <#Description#>
+
+ @param time <#time description#>
+ @return <#return value description#>
+ */
 + (NSString *)stringWithTime:(NSTimeInterval)time;
 
 

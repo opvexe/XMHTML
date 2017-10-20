@@ -18,6 +18,8 @@
 //BaseView
 #import "EX_BaseTbaleViewCell.h"
 #import "EX_BaseModel.h"
+#import "EX_BaseViewController.h"
+#import "EX_BaseView.h"
 
 ///MARK: 扩展
 #import "UIImage+Category.h"
@@ -29,6 +31,9 @@
 ///MARK: 宏定义
 #import "CommonTools.h"
 #import "ColorDefines.h"
+
+//工具
+#import "EX_Tools.h"
 
 //第三方
 #import <Masonry.h>

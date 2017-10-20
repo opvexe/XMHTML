@@ -36,7 +36,7 @@
     EX_NavigationController *practiceNavigation = [self setChildVC:practiceContrller title:@"练习" imageName:@"tabbar_home" withSelectedName:@"tabbar_home_selected"];
     
     EX_NewsController *newsContrller = [[EX_NewsController alloc]init];
-    EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"资讯" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
+    EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"视频" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
   
     EX_ProfileController *profileContrller = [[EX_ProfileController alloc]init];
     EX_NavigationController *profileNavigation = [self setChildVC:profileContrller title:@"我的" imageName:@"tabbar_profile" withSelectedName:@"tabbar_profile_selected"];

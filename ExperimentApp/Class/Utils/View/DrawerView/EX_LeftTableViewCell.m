@@ -28,7 +28,7 @@
         [self.contentView addSubview:self.contentLabel];
         
         [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.contentView).mas_offset(X_ScreenWidth*0.3+50.0);
+            make.left.mas_equalTo(self.contentView).mas_offset(SCREEN_WIDTH*0.3+50.0);
             make.centerY.mas_equalTo(self.contentView.mas_centerY);
         }];
         
@@ -37,7 +37,7 @@
 }
 
 -(void)InitDataViewModel:(EX_BaseModel *)model{
-    _contentLabel.text = convertToString(model.title);
+   
 }
 
 

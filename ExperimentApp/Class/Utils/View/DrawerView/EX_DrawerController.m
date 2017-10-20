@@ -45,7 +45,7 @@ static const CGFloat FullDistanceScale = 0.7;
     self.leftController = [[EX_LeftController alloc]init];
     EX_NavigationController *nav = [[EX_NavigationController alloc]initWithRootViewController:self.leftController];
     CGRect rec = nav.view.frame;
-    rec.origin.x = -X_ScreenWidth;
+    rec.origin.x = -SCREEN_WIDTH;
     self.leftController.view.frame = rec;
     
     [self.view addSubview:self.leftController.view];
@@ -61,11 +61,11 @@ static const CGFloat FullDistanceScale = 0.7;
     CGFloat offsetX = [recongnizer translationInView:self.view].x;
     if (offsetX>=0) {
         CGRect rec = self.leftController.view.frame;
-        rec.origin.x = -X_ScreenWidth +offsetX;
+        rec.origin.x = -SCREEN_WIDTH +offsetX;
         self.leftController.view.frame = rec;
     }
     if (recongnizer.state == UIGestureRecognizerStateEnded) {
-        if (offsetX>X_ScreenWidth*(FullDistanceScale/2.0)) {
+        if (offsetX>SCREEN_WIDTH*(FullDistanceScale/2.0)) {
             [self showLeft];
         }else{
             [self showHome];
@@ -79,7 +79,7 @@ static const CGFloat FullDistanceScale = 0.7;
 -(void)showHome{
     [UIView animateWithDuration:0.3 animations:^{
         CGRect rect = self.leftController.view.frame;
-        rect.origin.x = -X_ScreenWidth;
+        rect.origin.x = -SCREEN_WIDTH;
         self.leftController.view.frame = rect;
         [self.mainView removeFromSuperview];
         [self leftAnimate:@"home"];
@@ -91,10 +91,10 @@ static const CGFloat FullDistanceScale = 0.7;
     [UIView animateWithDuration:0.3 delay:0. options:UIViewAnimationOptionCurveEaseOut animations:^{
         if ([animate isEqualToString:@"left"]) {
             CGRect rect = self.leftController.view.frame;
-            rect.origin.x = -X_ScreenWidth + self.view.frame.size.width*FullDistanceScale;
+            rect.origin.x = -SCREEN_WIDTH + self.view.frame.size.width*FullDistanceScale;
             self.leftController.view.frame = rect;
             CGFloat mainViewX = self.leftController.view.frame.origin.x + self.leftController.view.frame.size.width;
-            self.mainView = [[UIView alloc]initWithFrame:CGRectMake(mainViewX, 0, X_ScreenWidth, X_ScreenHeight)];
+            self.mainView = [[UIView alloc]initWithFrame:CGRectMake(mainViewX, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
             self.mainView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
             [self.view insertSubview:self.mainView belowSubview:self.leftController.view];
             
@@ -130,12 +130,12 @@ static const CGFloat FullDistanceScale = 0.7;
     self.mainView.frame = mainFram;
 
     if (pan.state == UIGestureRecognizerStateEnded) {
-        CGFloat menueShowWidth = X_ScreenWidth +self.leftController.view.frame.origin.x;
-        if (menueShowWidth>(X_ScreenWidth*(FullDistanceScale/2.0))) {
+        CGFloat menueShowWidth = SCREEN_WIDTH +self.leftController.view.frame.origin.x;
+        if (menueShowWidth>(SCREEN_WIDTH*(FullDistanceScale/2.0))) {
             [UIView animateWithDuration:0.3 animations:^{
                 
                 CGRect rect = self.leftController.view.frame;
-                rect.origin.x = -X_ScreenWidth +self.view.frame.size.width*FullDistanceScale;
+                rect.origin.x = -SCREEN_WIDTH +self.view.frame.size.width*FullDistanceScale;
                 self.leftController.view.frame = rect;
                 
                 CGRect leftRect = self.mainView.frame;

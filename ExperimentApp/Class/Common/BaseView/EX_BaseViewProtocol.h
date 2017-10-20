@@ -12,6 +12,15 @@
 @protocol EX_BaseViewProtocol <NSObject>
 
 /**
+ 获取数据源
+ */
+-(void)EX_GetDataSoucre;
+
+/**
+ 添加视图
+ */
+-(void)EX_AddSubviews;
+/**
  *  初始视图
  */
 - (void)EX_initConfingViews;

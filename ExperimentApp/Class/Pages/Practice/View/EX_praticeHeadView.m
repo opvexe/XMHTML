@@ -24,7 +24,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         
-        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, 140.0)];
+        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 140.0)];
         bgView.backgroundColor = [UIColor brownColor];
         
         _masterLabel = [UILabel labelWithTitle:@"掌握度" color:[UIColor whiteColor] font:[UIFont systemFontOfSize:14.0] alignment:NSTextAlignmentCenter];
@@ -54,7 +54,7 @@
         
         __block CGFloat W ;
         NSArray *temp = @[@"0\n错题",@"0\n收藏",@"0\n笔记"];
-        W = X_ScreenWidth/temp.count;
+        W = SCREEN_WIDTH/temp.count;
         for (int i = 0; i < temp.count; i ++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setTitle:temp[i] forState:UIControlStateNormal];

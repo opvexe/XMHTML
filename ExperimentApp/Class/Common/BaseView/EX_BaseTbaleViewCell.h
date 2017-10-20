@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "EX_BaseTableViewCellProtocol.h"
-
 @interface EX_BaseTbaleViewCell : UITableViewCell<EX_BaseTableViewCellProtocol>
 
-@property (nonatomic ,weak)id <EX_BaseTableViewCellProtocol>delegate;
 @end

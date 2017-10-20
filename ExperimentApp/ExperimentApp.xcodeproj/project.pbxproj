@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		60473EBE58677D6FE2824EF1 /* libPods-ExperimentAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 756234E80D909441D7AAD4D8 /* libPods-ExperimentAppUITests.a */; };
 		9593870948A22A78A88AE0E2 /* libPods-ExperimentAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AE342FBCA927205EF9154C /* libPods-ExperimentAppTests.a */; };
+		A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69C1F998D2D00229AFE /* EX_BaseView.m */; };
+		A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69F1F99906800229AFE /* EX_BaseViewController.m */; };
+		A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A41F99941E00229AFE /* EX_Tools.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -65,6 +68,22 @@
 		5F67374644098767BBDE0066 /* Pods-ExperimentAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentAppUITests/Pods-ExperimentAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68AE342FBCA927205EF9154C /* libPods-ExperimentAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExperimentAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		756234E80D909441D7AAD4D8 /* libPods-ExperimentAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExperimentAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60AE6921F998B7B00229AFE /* YYCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
+		A60AE6931F998B7B00229AFE /* YYCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYCache.m; sourceTree = "<group>"; };
+		A60AE6941F998B7B00229AFE /* YYDiskCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYDiskCache.h; sourceTree = "<group>"; };
+		A60AE6951F998B7B00229AFE /* YYDiskCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYDiskCache.m; sourceTree = "<group>"; };
+		A60AE6961F998B7B00229AFE /* YYKVStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYKVStorage.h; sourceTree = "<group>"; };
+		A60AE6971F998B7B00229AFE /* YYKVStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYKVStorage.m; sourceTree = "<group>"; };
+		A60AE6981F998B7B00229AFE /* YYMemoryCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYMemoryCache.h; sourceTree = "<group>"; };
+		A60AE6991F998B7B00229AFE /* YYMemoryCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYMemoryCache.m; sourceTree = "<group>"; };
+		A60AE69A1F998CE700229AFE /* EX_BaseModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseModelProtocol.h; sourceTree = "<group>"; };
+		A60AE69B1F998D2D00229AFE /* EX_BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseView.h; sourceTree = "<group>"; };
+		A60AE69C1F998D2D00229AFE /* EX_BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_BaseView.m; sourceTree = "<group>"; };
+		A60AE69E1F99906800229AFE /* EX_BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseViewController.h; sourceTree = "<group>"; };
+		A60AE69F1F99906800229AFE /* EX_BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_BaseViewController.m; sourceTree = "<group>"; };
+		A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseViewControllerProtocal.h; sourceTree = "<group>"; };
+		A60AE6A31F99941E00229AFE /* EX_Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_Tools.h; sourceTree = "<group>"; };
+		A60AE6A41F99941E00229AFE /* EX_Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_Tools.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -184,6 +203,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A60AE68F1F998AB200229AFE /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		A60AE6901F998B6000229AFE /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				A60AE6911F998B7B00229AFE /* YYCache */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		A60AE6911F998B7B00229AFE /* YYCache */ = {
+			isa = PBXGroup;
+			children = (
+				A60AE6921F998B7B00229AFE /* YYCache.h */,
+				A60AE6931F998B7B00229AFE /* YYCache.m */,
+				A60AE6941F998B7B00229AFE /* YYDiskCache.h */,
+				A60AE6951F998B7B00229AFE /* YYDiskCache.m */,
+				A60AE6961F998B7B00229AFE /* YYKVStorage.h */,
+				A60AE6971F998B7B00229AFE /* YYKVStorage.m */,
+				A60AE6981F998B7B00229AFE /* YYMemoryCache.h */,
+				A60AE6991F998B7B00229AFE /* YYMemoryCache.m */,
+			);
+			path = YYCache;
+			sourceTree = "<group>";
+		};
+		A60AE6A21F99940B00229AFE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A60AE6A31F99941E00229AFE /* EX_Tools.h */,
+				A60AE6A41F99941E00229AFE /* EX_Tools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		A6D4F1611F7F2F6B007BC8F0 = {
 			isa = PBXGroup;
 			children = (
@@ -252,9 +310,9 @@
 		A6D4F1A41F7F308B007BC8F0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE6901F998B6000229AFE /* Vendor */,
 				A6D4F1A81F7F30B9007BC8F0 /* Common */,
 				A6D4F1A71F7F30AD007BC8F0 /* Pages */,
-				A6D4F1A61F7F30A4007BC8F0 /* Vendor */,
 				A6D4F1A51F7F3096007BC8F0 /* Utils */,
 			);
 			path = Class;
@@ -263,22 +321,13 @@
 		A6D4F1A51F7F3096007BC8F0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE6A21F99940B00229AFE /* Tools */,
+				A60AE68F1F998AB200229AFE /* NetworkTools */,
 				A6D4F1B31F7F3178007BC8F0 /* View */,
-				A6D4F1B21F7F3169007BC8F0 /* Cache */,
-				A6D4F1B11F7F315E007BC8F0 /* NetworkTools */,
 				A6D4F1B01F7F314D007BC8F0 /* Category */,
 				A6D4F1AF1F7F313E007BC8F0 /* Definition */,
-				A6D4F1AE1F7F3130007BC8F0 /* Tools */,
-				A6D4F1AD1F7F3126007BC8F0 /* Resources */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		A6D4F1A61F7F30A4007BC8F0 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendor;
 			sourceTree = "<group>";
 		};
 		A6D4F1A71F7F30AD007BC8F0 /* Pages */ = {
@@ -327,6 +376,7 @@
 			children = (
 				A6D4F1D01F7F3DC5007BC8F0 /* EX_BaseModel.h */,
 				A6D4F1D11F7F3DC5007BC8F0 /* EX_BaseModel.m */,
+				A60AE69A1F998CE700229AFE /* EX_BaseModelProtocol.h */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -334,26 +384,17 @@
 		A6D4F1AC1F7F30EE007BC8F0 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				A60AE69B1F998D2D00229AFE /* EX_BaseView.h */,
+				A60AE69C1F998D2D00229AFE /* EX_BaseView.m */,
 				A6D4F1D31F7F3E7F007BC8F0 /* EX_BaseViewProtocol.h */,
 				A6D4F1D41F7F3F1D007BC8F0 /* EX_BaseTableViewCellProtocol.h */,
 				A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */,
 				A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */,
+				A60AE69E1F99906800229AFE /* EX_BaseViewController.h */,
+				A60AE69F1F99906800229AFE /* EX_BaseViewController.m */,
+				A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */,
 			);
 			path = BaseView;
-			sourceTree = "<group>";
-		};
-		A6D4F1AD1F7F3126007BC8F0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		A6D4F1AE1F7F3130007BC8F0 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		A6D4F1AF1F7F313E007BC8F0 /* Definition */ = {
@@ -383,20 +424,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		A6D4F1B11F7F315E007BC8F0 /* NetworkTools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkTools;
-			sourceTree = "<group>";
-		};
-		A6D4F1B21F7F3169007BC8F0 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,7 +435,6 @@
 		A6D4F1B41F7F319F007BC8F0 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				A6D4F1E51F7F4BA0007BC8F0 /* Model */,
 				A6D4F1E41F7F4B95007BC8F0 /* View */,
 				A6D4F1C71F7F3430007BC8F0 /* EX_PracticeController.h */,
 				A6D4F1C81F7F3430007BC8F0 /* EX_PracticeController.m */,
@@ -444,13 +470,6 @@
 				A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A6D4F1E51F7F4BA0007BC8F0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A6D4F1E91F7F5D44007BC8F0 /* DrawerView */ = {
@@ -762,6 +781,7 @@
 			files = (
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
+				A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */,
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
@@ -780,6 +800,8 @@
 				A6FC69CC1F8E16B0005733AC /* EX_NewsCell.m in Sources */,
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A6D4F1C31F7F3417007BC8F0 /* EX_ProfileController.m in Sources */,
+				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
+				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,

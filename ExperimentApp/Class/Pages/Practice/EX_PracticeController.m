@@ -51,7 +51,7 @@
 
 -(UITableView *)practiceTableView{
     if (!_practiceTableView) {
-        _practiceTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, X_ScreenHeight - X_StatusBarAndNavigationBarHeight - X_TabbarHeight) style:UITableViewStylePlain];
+        _practiceTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT - NavBarHeight - HS_TabbarHeight) style:UITableViewStylePlain];
         _practiceTableView.showsVerticalScrollIndicator              =YES;
         _practiceTableView.showsHorizontalScrollIndicator            =NO;
         _practiceTableView.backgroundColor                           =[UIColor colorWithRed:237/255.0 green: 237/255.0 blue:237/255.0 alpha:0.5];
@@ -75,7 +75,7 @@
 
 -(EX_praticeHeadView *)headView{
     if (!_headView) {
-        _headView = [[EX_praticeHeadView alloc]initWithFrame:CGRectMake(0, 0, X_ScreenWidth, 200.0)];
+        _headView = [[EX_praticeHeadView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200.0)];
         _headView.practiceBlock = ^(NSInteger tag) {
             NSLog(@"%ld",tag);
         };
