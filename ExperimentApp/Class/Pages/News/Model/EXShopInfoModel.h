@@ -20,7 +20,7 @@
 @property(nonatomic, copy)NSString *icon_url;
 @property(nonatomic, copy)NSString *picUrl;
 @property(nonatomic, copy)NSString *destination;
-@property(nonatomic,assign)CJXBaseTableViewCellTouchType TouchType ;
+@property(nonatomic,assign)EXXBaseTableViewCellTouchType TouchType ;
 
 
 @end

@@ -71,9 +71,5 @@ typedef NS_ENUM(NSUInteger, TemplateCellType) {
  */
 @property(nonatomic, assign) TemplateCellType template_type;
 
-/**
- * Cell高度
- */
-@property(nonatomic, assign) CGFloat CellHeight;
 
 @end

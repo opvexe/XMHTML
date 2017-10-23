@@ -13,20 +13,20 @@
 -(NSUInteger)TouchType{
     NSUInteger type = 0;
     if ([self.MIME  isEqualToString:@"APPLICATION/GOOD"]) {
-        type = CJXBaseTableViewCellTouchTypeGOOD;
+        type = EXBaseTableViewCellTouchTypeGOOD;
     }else if ([self.MIME  isEqualToString:@"APPLICATION/VIDEO"]){
-        type = CJXBaseTableViewCellTouchTypeVIDEO;
+        type = EXBaseTableViewCellTouchTypeVIDEO;
     }else if ([self.MIME  isEqualToString:@"APPLICATION/ACTIVITY"]){
-        type = CJXBaseTableViewCellTouchTypeACTIVITY;
+        type = EXBaseTableViewCellTouchTypeACTIVITY;
     }else if ([self.MIME  isEqualToString:@"APPLICATION/REPRESENT"]){
-        type = TCJXBaseTableViewCellTouchTypeREPRESENT;
+        type = EXBaseTableViewCellTouchTypeREPRESENT;
     }else if ([self.MIME  isEqualToString:@"APPLICATION/ARTIS"]){
-        type = TCJXBaseTableViewCellTouchTypeARTIS;
+        type = EXBaseTableViewCellTouchTypeARTIS;
     }else if ([self.MIME  isEqualToString:@"APPLICATION/BANNER"]){
         
         if ([self.destination isEqualToString:@"0"]) {
             
-            type = TCJXBaseTableViewCellTouchTypeBANNER;
+            type = EXBaseTableViewCellTouchTypeBANNER;
         }else if ([self.destination isEqualToString:@"0"]){
             
             
@@ -34,21 +34,21 @@
             
             
         }else if ([self.destination isEqualToString:@"5"]){
-            type = CJXBaseTableViewCellTouchTypeVIDEO;
+            type = EXBaseTableViewCellTouchTypeVIDEO;
             
         }else if ([self.destination isEqualToString:@"6"]){
-            type = CJXBaseTableViewCellTouchTypeGOOD;
+            type = EXBaseTableViewCellTouchTypeGOOD;
             
         }else if ([self.destination isEqualToString:@"7"]){
-            type = TCJXBaseTableViewCellTouchTypeARTIS;
+            type = EXBaseTableViewCellTouchTypeARTIS;
             
         }else if ([self.destination isEqualToString:@"8"]){
-            type = CJXBaseTableViewCellTouchTypeACTIVITY;
+            type = EXBaseTableViewCellTouchTypeACTIVITY;
         }
     }else if ([self.MIME  isEqualToString:@"APPLICATION/CHANNEL"]){
-        type = TCJXBaseTableViewCellTouchTypeCHANNEL;
+        type = EXBaseTableViewCellTouchTypeCHANNEL;
     }else if([self.MIME isEqualToString:@"APPLICATION/EVENMORE"]){
-        type =TCJXBaseTableViewCellTouchTypeEVENMORE;
+        type =EXBaseTableViewCellTouchTypeEVENMORE;
     }
     return type;
 }

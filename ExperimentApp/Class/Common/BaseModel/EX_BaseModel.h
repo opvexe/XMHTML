@@ -16,7 +16,6 @@ typedef NS_ENUM(NSUInteger, AnswerType) {
 
 @interface EX_BaseModel : NSObject
 
-
 /**
  * 类的名称
  */
@@ -26,7 +25,10 @@ typedef NS_ENUM(NSUInteger, AnswerType) {
  *  区
  */
 @property(nonatomic,strong)NSArray *sections;
-
+/**
+ * Cell高度
+ */
+@property(nonatomic, assign) CGFloat CellHeight;
 
 /**
  * 答题类型

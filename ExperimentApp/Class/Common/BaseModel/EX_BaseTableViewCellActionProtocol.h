@@ -17,5 +17,5 @@
  @param model model description
  @param atSectionModel atSectionModel description
  */
--(void)didSelectItemAtType:(CJXBaseTableViewCellTouchType)type model:(EX_BaseModel *)model atSectionModel:(EX_BaseModel*) atSectionModel;
+-(void)didSelectItemAtType:(EXXBaseTableViewCellTouchType)type model:(EX_BaseModel *)model atSectionModel:(EX_BaseModel*) atSectionModel;
 @end
