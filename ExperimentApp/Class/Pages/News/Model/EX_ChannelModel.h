@@ -14,22 +14,19 @@
 typedef NS_ENUM(NSUInteger, TemplateCellType) {
     
     //轮播Cell
-    TemplateCellTypeShopingBanderTableViewCell =  0,
-    
-    //视频展示Cell
-    TemplateCellTypeVideoShowTableViewCell = 1 << 0,
+    TemplateCellTypeShopingBanderTableViewCell = 1,
     
     //分类Cell
-    TemplateCellTypeClassifiedTableViewCell = 1 << 1,
+    TemplateCellTypeClassifiedTableViewCell ,
  
     //必买Cell
-    TemplateCellTypeDailyWillBuyTableViewCell = 1 << 2,
+    TemplateCellTypeDailyWillBuyTableViewCell ,
     
     //推荐Cell
-    TemplateCellTypeRecommendTableViewCell = 1 << 3,
+    TemplateCellTypeRecommendTableViewCell = 15,
  
     //单品Cell
-    TemplateCellTypeThePoorTableViewCell = 1 << 4,
+    TemplateCellTypeThePoorTableViewCell = 4,
 };
 
 

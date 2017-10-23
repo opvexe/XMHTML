@@ -7,6 +7,7 @@
 //
 
 #import "EXShopMallsPoorTableViewCell.h"
+#import "EXShopInfoModel.h"
 
 @implementation EXShopMallsPoorTableViewCell
 
@@ -27,4 +28,9 @@
     return self;
 }
 
+
++(CGFloat)getCellHeight:(EXShopModel *)model{
+    
+    return Number(120.0);
+}
 @end

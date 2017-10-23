@@ -16,6 +16,7 @@
 @end
 
 
+
 @implementation LogoModel
 
 +(NSDictionary *)mj_replacedKeyFromPropertyName{
@@ -34,6 +35,7 @@
 @end
 
 
+
 @implementation EXShopModel
 
 +(NSDictionary *)mj_replacedKeyFromPropertyName{
@@ -41,7 +43,7 @@
     return @{@"ID":@"id"};
 }
 +(NSDictionary *)mj_objectClassInArray{
-    return @{@"datas":@"HSYShopModel",@"records":@"HSYShopModel"};
+    return @{@"datas":@"EXShopModel",@"records":@"EXShopModel"};
     
 }
 -(NSUInteger)TouchType{

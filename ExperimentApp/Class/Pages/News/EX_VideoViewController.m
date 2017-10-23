@@ -12,7 +12,6 @@
 #import "EXClassifiedTableViewCell.h"
 #import "EXRecommendTableViewCell.h"
 #import "EXDailyWillBuyTableViewCell.h"
-
 #import "EXShopInfoModel.h"
 
 static NSInteger pages;
@@ -30,7 +29,7 @@ static NSInteger pages;
     self.navigationItem.title = @"超级巨星";
     [self.view addSubview:self.shoppingMallTableView];
     [self.shoppingMallTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(HS_ViewSafeAreInsets(self.view));
+        make.edges.mas_equalTo(self.view);
     }];
     
     WS(weakSelf)
@@ -50,6 +49,7 @@ static NSInteger pages;
  */
 -(void)tableViewDidTriggerFooterRefresh{
     pages++;
+   [self loadDataSoucre];
 }
 
 /**
@@ -100,6 +100,7 @@ static NSInteger pages;
                     }
                     case TemplateCellTypeClassifiedTableViewCell:{
                         model.ClassName  = @"EXClassifiedTableViewCell";
+                        model.CellHeight = Number(80.0);
                         NSMutableArray *datas = [NSMutableArray arrayWithObject:model];
                         model.sections = datas;
                         break;
@@ -113,7 +114,7 @@ static NSInteger pages;
                     }
                     case TemplateCellTypeThePoorTableViewCell:{
                         model.CellHeight = Number(260.0);
-                        model.ClassName  = @"EXVideoPoorTableViewCell";
+                        model.ClassName  = @"EXShopMallsPoorTableViewCell";
                         if (model.datas.count) {
                             model.sections = [self ToConvertAnArrayType:model.datas  type:model.interfaceType];
                         }else{
@@ -278,18 +279,50 @@ static NSInteger pages;
 }
 
 
-#pragma mark  row numbers
+
+/**
+ Description
+
+ @param tableView tableView description
+ @param section section description
+ @return return value description
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     EXShopInfoModel *model = self.shoppingMalls[section];
     return model.sections.count;
 }
 
 
+/**
+ Description
+
+ @param tableView tableView description
+ @return return value description
+ */
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.shoppingMalls.count;
+}
+
+/**
+ heightForRowAtIndexPath
+
+ @param tableView tableView description
+ @param indexPath indexPath description
+ @return return value description
+ */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     EXShopInfoModel *model = self.shoppingMalls[indexPath.section];
     return [NSClassFromString(model.ClassName) getCellHeight:model.sections[indexPath.row]];
 }
 
+
+/**
+ cellForRowAtIndexPath
+
+ @param tableView tableView description
+ @param indexPath indexPath description
+ @return return value description
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EXShopModel*model = self.shoppingMalls[indexPath.section];
@@ -410,7 +443,6 @@ static NSInteger pages;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 #pragma mark  footer&&header
@@ -423,6 +455,13 @@ static NSInteger pages;
 }
 
 
+/**
+ heightForHeaderInSection
+
+ @param tableView tableView description
+ @param section section description
+ @return return value description
+ */
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     EXShopModel*model = self.shoppingMalls[section];
     if (model.template_type == TemplateCellTypeShopingBanderTableViewCell ||model.template_type ==TemplateCellTypeClassifiedTableViewCell){
@@ -481,9 +520,6 @@ static NSInteger pages;
     titleLabel.text = model.content_name;
     return headBackView;
 }
-
-
-
 
 
 

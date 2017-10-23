@@ -80,8 +80,8 @@
     }
 }
 
-+(CGFloat)getCellHeight:(EXShopInfoModel *)model{
++(CGFloat)getCellHeight:(EXShopModel *)model{
    
-    return model.CellHeight;
+    return Number(110.0);
 }
 @end

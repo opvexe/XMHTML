@@ -7,6 +7,7 @@
 //
 
 #import "EXDailyWillBuyTableViewCell.h"
+#import "EXShopInfoModel.h"
 
 @implementation EXDailyWillBuyTableViewCell
 
@@ -27,4 +28,9 @@
     return self;
 }
 
+
++(CGFloat)getCellHeight:(EXShopModel *)model{
+    
+    return Number(120.0);
+}
 @end

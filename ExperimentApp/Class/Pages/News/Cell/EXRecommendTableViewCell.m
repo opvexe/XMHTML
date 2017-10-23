@@ -7,6 +7,7 @@
 //
 
 #import "EXRecommendTableViewCell.h"
+#import "EXShopInfoModel.h"
 
 @implementation EXRecommendTableViewCell
 
@@ -25,6 +26,12 @@
         
     }
     return self;
+}
+
+
++(CGFloat)getCellHeight:(EXShopModel *)model{
+    
+    return Number(120.0);
 }
 
 @end

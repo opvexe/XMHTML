@@ -29,6 +29,7 @@
     [super awakeFromNib];
     
     [self EX_initConfingViews];
+    [self EX_SetupViewModel];
  
 }
 

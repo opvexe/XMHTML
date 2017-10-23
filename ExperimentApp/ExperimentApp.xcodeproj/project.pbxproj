@@ -29,6 +29,7 @@
 		A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6981F998B7B00229AFE /* YYMemoryCache.h */; };
 		A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6991F998B7B00229AFE /* YYMemoryCache.m */; };
 		A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */; };
+		A60C72B31F9DF0690070C586 /* EX_BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -121,6 +122,9 @@
 		A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSeviceRequestManger.m; sourceTree = "<group>"; };
 		A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopBannerTableViewCell.h; sourceTree = "<group>"; };
 		A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopBannerTableViewCell.m; sourceTree = "<group>"; };
+		A60C72B11F9DF0690070C586 /* EX_BaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseCollectionViewCell.h; sourceTree = "<group>"; };
+		A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_BaseCollectionViewCell.m; sourceTree = "<group>"; };
+		A60C72B41F9DF0C40070C586 /* EX_BaseCollectionViewCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseCollectionViewCellProtocol.h; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -500,6 +504,9 @@
 				A60AE69E1F99906800229AFE /* EX_BaseViewController.h */,
 				A60AE69F1F99906800229AFE /* EX_BaseViewController.m */,
 				A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */,
+				A60C72B11F9DF0690070C586 /* EX_BaseCollectionViewCell.h */,
+				A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */,
+				A60C72B41F9DF0C40070C586 /* EX_BaseCollectionViewCellProtocol.h */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -896,6 +903,7 @@
 				A60AE6C71F99AEA300229AFE /* YYKVStorage.h in Sources */,
 				A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */,
 				A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */,
+				A60C72B31F9DF0690070C586 /* EX_BaseCollectionViewCell.m in Sources */,
 				A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */,
 				A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */,
 				A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */,
