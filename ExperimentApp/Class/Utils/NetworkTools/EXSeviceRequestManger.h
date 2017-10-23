@@ -57,5 +57,15 @@
 +(void)GetWithVideoRecommendList:(NSInteger )pages  CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
 
 
-#pragma mark  shop requst 
+#pragma mark  shop requst
+
+
+/**
+ 商城页面数据列表
+
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetShopInterfaceCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
+
 @end

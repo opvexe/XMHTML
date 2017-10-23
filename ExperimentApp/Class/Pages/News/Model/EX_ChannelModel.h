@@ -32,7 +32,48 @@ typedef NS_ENUM(NSUInteger, TemplateCellType) {
 @interface EX_ChannelModel : EX_BaseModel
 
 /**
+ * 频道ID
+ */
+@property(nonatomic,copy)NSString *channel_id;
+/**
+ * 内容ID
+ */
+@property(nonatomic,copy)NSString *content_id;
+
+/**
+ * 内容类型
+ */
+@property(nonatomic,copy)NSString *content_type;
+/**
+ * 内容名称
+ */
+@property(nonatomic,copy)NSString *content_name;
+
+/**
+ * 内容数据URL
+ */
+@property(nonatomic,copy)NSString *content_data_url;
+/**
+ * 内容版本
+ */
+@property (nonatomic,copy) NSString *ver;
+/**
+ 子频道据源
+ */
+@property(nonatomic,strong)NSArray *datas;
+/**
+ 频道描述
+ */
+@property(nonatomic,copy)NSString *channel_dec;
+
+/**
  * 模板类型
  */
-@property(nonatomic, assign) TemplateCellType *template_type;
+@property(nonatomic, assign) TemplateCellType template_type;
+
+/**
+ * Cell高度
+ */
+@property(nonatomic, assign) CGFloat CellHeight;
+
 @end

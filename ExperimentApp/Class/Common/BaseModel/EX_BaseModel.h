@@ -8,26 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, TableViewCellType) {
-    TableViewCellTypeNone   = 1 << 0, // 是把1 按2进制 左移0位，结果还是 1 ,2进制 0000 0001
-    TableViewCellTypeImages = 1 << 1,
-};
 
 typedef NS_ENUM(NSUInteger, AnswerType) {
-    AnswerChoiceSingleType  = 1 << 0, //单选
+    AnswerChoiceSingleType  = 1 << 0, //单选 // 是把1 按2进制 左移0位，结果还是 1 ,2进制 0000 0001
     AnswerChoiceMultipletype= 1 << 1,//多选
 };
 
 @interface EX_BaseModel : NSObject
 
+
+/**
+ * 类的名称
+ */
 @property(nonatomic,copy)NSString *ClassName;
 
-@property(nonatomic,copy)NSString *navigationTitle;
+/**
+ *  区
+ */
+@property(nonatomic,strong)NSArray *sections;
 
-@property(nonatomic,strong)NSMutableArray *sections;
 
-@property(nonatomic,assign)TableViewCellType CellType;
-
+/**
+ * 答题类型
+ */
 @property(nonatomic,assign)AnswerType answerType;
 
 @end

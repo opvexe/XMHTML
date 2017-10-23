@@ -13,6 +13,9 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
+// PlaceholderImageName
+#define PlaceholderImageName  @"pppshipin_de"
+
 // 格式化字符串
 #define FormatString(string, args...)       [NSString stringWithFormat:string, args]
 

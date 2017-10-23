@@ -13,6 +13,7 @@
 #import "UIImage+GIF.h"
 #import "NSData+ImageContentType.h"
 #import "NSImage+WebCache.h"
+#import "SDImageCacheConfig.h"
 
 // See https://github.com/rs/SDWebImage/pull/1141 for discussion
 @interface AutoPurgeCache : NSCache
@@ -217,15 +218,14 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     
     if (toDisk) {
         dispatch_async(self.ioQueue, ^{
-            @autoreleasepool {
-                NSData *data = imageData;
-                if (!data && image) {
-                    SDImageFormat imageFormatFromData = [NSData sd_imageFormatForImageData:data];
-                    data = [image sd_imageDataAsFormat:imageFormatFromData];
-                }                
-                [self storeImageDataToDisk:data forKey:key];
+            NSData *data = imageData;
+            
+            if (!data && image) {
+                SDImageFormat imageFormatFromData = [NSData sd_imageFormatForImageData:data];
+                data = [image sd_imageDataAsFormat:imageFormatFromData];
             }
             
+            [self storeImageDataToDisk:data forKey:key];
             if (completionBlock) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completionBlock();
@@ -347,17 +347,12 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     if (data) {
         UIImage *image = [UIImage sd_imageWithData:data];
         image = [self scaledImageForKey:key image:image];
-#ifdef SD_WEBP
-        SDImageFormat imageFormat = [NSData sd_imageFormatForImageData:data];
-        if (imageFormat == SDImageFormatWebP) {
-            return image;
-        }
-#endif
         if (self.config.shouldDecompressImages) {
             image = [UIImage decodedImageWithImage:image];
         }
         return image;
-    } else {
+    }
+    else {
         return nil;
     }
 }

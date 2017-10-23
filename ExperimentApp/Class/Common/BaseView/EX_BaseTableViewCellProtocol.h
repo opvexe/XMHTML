@@ -7,6 +7,41 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef NS_ENUM(NSUInteger, CJXBaseTableViewCellTouchType) {
+    /**
+     商品
+     */
+    CJXBaseTableViewCellTouchTypeGOOD = 100,
+    /**
+     视频
+     */
+    CJXBaseTableViewCellTouchTypeVIDEO,
+    /**
+     代言活动
+     */
+    CJXBaseTableViewCellTouchTypeACTIVITY,
+    /**
+     
+     */
+    TCJXBaseTableViewCellTouchTypeREPRESENT,
+    /**
+     
+     */
+    TCJXBaseTableViewCellTouchTypeARTIS,
+    /**
+     
+     */
+    TCJXBaseTableViewCellTouchTypeBANNER,
+    /**
+     频道
+     */
+    TCJXBaseTableViewCellTouchTypeCHANNEL,
+    /**
+     更多
+     */
+    TCJXBaseTableViewCellTouchTypeEVENMORE,
+    
+};
 
 @class EX_BaseModel;
 @protocol EX_BaseTableViewCellProtocol <NSObject>

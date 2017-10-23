@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EX_VideoViewController : UIViewController
+@interface EX_VideoViewController : EX_BaseViewController
 
 @end

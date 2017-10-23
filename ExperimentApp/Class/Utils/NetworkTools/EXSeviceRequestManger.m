@@ -19,20 +19,16 @@
 +(void)GetWithVideoBannnerCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
     [WYNetworkHelper GET:@"http://superstar.heysound.com/scene/endorseMain/banner/3"  parameters:nil success:^(id responseObject) {
-        if (responseObject) {
-            NSString *codeStr   = responseObject[@"status"];
-            NSDictionary  *data = responseObject[@"data"];
-            if ([codeStr isEqualToString:@"ok"]) {
-                successfull?successfull(@{@"code":@2000,@"data":data}):nil;
-            }else{
-                successfull?successfull(@{@"code":convertToString(data[@"code"])}):nil;
-            }
+
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
         }
     } failure:^(NSError *error) {
-       failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
     }];
 }
-
 
 
 /**
@@ -44,14 +40,10 @@
 +(void)GetWithVideoRunNoticeCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
     [WYNetworkHelper GET:@"http://superstar.heysound.com/scene/endorseMain/notice/3"  parameters:nil success:^(id responseObject) {
-        if (responseObject) {
-            NSString *codeStr   = responseObject[@"status"];
-            NSDictionary  *data = responseObject[@"data"];
-            if ([codeStr isEqualToString:@"ok"]) {
-                successfull?successfull(@{@"code":@2000,@"data":data}):nil;
-            }else{
-                successfull?successfull(@{@"code":convertToString(data[@"code"])}):nil;
-            }
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
         }
     } failure:^(NSError *error) {
         failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
@@ -67,14 +59,10 @@
 +(void)GetWithVideoShowCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
     [WYNetworkHelper GET:@"http://superstar.heysound.com/scene/endorseMain/show/1"  parameters:nil success:^(id responseObject) {
-        if (responseObject) {
-            NSString *codeStr   = responseObject[@"status"];
-            NSDictionary  *data = responseObject[@"data"];
-            if ([codeStr isEqualToString:@"ok"]) {
-                successfull?successfull(@{@"code":@2000,@"data":data}):nil;
-            }else{
-                successfull?successfull(@{@"code":convertToString(data[@"code"])}):nil;
-            }
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
         }
     } failure:^(NSError *error) {
         failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
@@ -90,14 +78,10 @@
 +(void)GetWithVideoH5AlertCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
     [WYNetworkHelper GET:@"http://superstar.heysound.com/scene/endorseMain/ios/alert/1"  parameters:nil success:^(id responseObject) {
-        if (responseObject) {
-            NSString *codeStr   = responseObject[@"status"];
-            NSDictionary  *data = responseObject[@"data"];
-            if ([codeStr isEqualToString:@"ok"]) {
-                successfull?successfull(@{@"code":@2000,@"data":data}):nil;
-            }else{
-                successfull?successfull(@{@"code":convertToString(data[@"code"])}):nil;
-            }
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
         }
     } failure:^(NSError *error) {
         failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
@@ -116,18 +100,41 @@
     NSMutableDictionary *parameter = [NSMutableDictionary dictionaryWithCapacity:0];
     [parameter setValue:@(pages) forKey:@"pageNum"];
     
-    [WYNetworkHelper GET:@"http://superstar.heysound.com/video/recommendList"  parameters:parameter success:^(id responseObject) {
-        if (responseObject) {
-            NSString *codeStr   = responseObject[@"status"];
-            NSDictionary  *data = responseObject[@"data"];
-            if ([codeStr isEqualToString:@"ok"]) {
-                successfull?successfull(@{@"code":@2000,@"data":data}):nil;
-            }else{
-                successfull?successfull(@{@"code":convertToString(data[@"code"])}):nil;
-            }
+    [WYNetworkHelper GET:@"http://ceng.heysound.com:4000/api/result"  parameters:parameter success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
         }
     } failure:^(NSError *error) {
         failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
     }];
 }
+
+#pragma mark shop
+
+/**
+ 商城页面数据列表
+ 
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetShopInterfaceCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+    
+    [WYNetworkHelper GET:@"http://ceng.heysound.com:4000/api/result"  parameters:nil success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
+            successfull?successfull(responseObject[@"datas"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+        
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+    
+}
+
+
+
 @end
+

@@ -8,11 +8,16 @@
 
 #import "EX_VideoViewController.h"
 #import "EXVideoPoorTableViewCell.h"
+#import "EXShopBannerTableViewCell.h"
+#import "EXVideoShowTableViewCell.h"
+
+#import "EXShopInfoModel.h"
 
 static NSInteger pages;
 
 @interface EX_VideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *newsTableView;
+@property(nonatomic, strong)NSMutableArray *videoDatesouce;
 @end
 
 @implementation EX_VideoViewController
@@ -21,71 +26,60 @@ static NSInteger pages;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"超级巨星";
-    [self.view addSubview:self.newsTableView];
     
     pages = 1 ;
     [self loadDataSocre];
+//    [self.view addSubview:self.newsTableView];
 }
 
 -(void)loadDataSocre{
     
-    WS(weakSelf)
-    dispatch_group_t group = dispatch_group_create();
-    
-    dispatch_group_enter(group);
-    [EXSeviceRequestManger GetWithVideoH5AlertCompleteSuccessfull:^(id responseObject) {
-        dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-        dispatch_group_leave(group);
-    }];
-    
-    dispatch_group_enter(group);
-    [EXSeviceRequestManger GetWithVideoBannnerCompleteSuccessfull:^(id responseObject) {
-        dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-        dispatch_group_leave(group);
-    }];
-    
-    dispatch_group_enter(group);
-    [EXSeviceRequestManger GetWithVideoRunNoticeCompleteSuccessfull:^(id responseObject) {
-        dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-        dispatch_group_leave(group);
-    }];
-    
-    dispatch_group_enter(group);
-    [EXSeviceRequestManger GetWithVideoShowCompleteSuccessfull:^(id responseObject) {
-        dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-        dispatch_group_leave(group);
-    }];
-    
-    dispatch_group_enter(group);
-    [EXSeviceRequestManger GetWithVideoRecommendList:pages CompleteSuccessfull:^(id responseObject) {
-        dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-        dispatch_group_leave(group);
-    }];
-    
-    //回调Block
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    [EXSeviceRequestManger GetShopInterfaceCompleteSuccessfull:^(id responseObject) {
         
-        [_newsTableView reloadData];
-    });
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+        
+    }];
 }
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    EXShopInfoModel *model = self.videoDatesouce[section];
+    return model.sections.count;
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    EXShopInfoModel *model = self.videoDatesouce[indexPath.section];
+    return [NSClassFromString(model.ClassName) getCellHeight:model];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    EXVideoPoorTableViewCell   *cell = [EXVideoPoorTableViewCell CellWithTableView:tableView];
     
+    EXShopInfoModel *model = self.videoDatesouce[indexPath.section];
+    EX_BaseTbaleViewCell  *cell ;
+    switch (model.template_type) {
+        case   TemplateCellTypeShopingBanderTableViewCell:{
+            cell = [EXShopBannerTableViewCell CellWithTableView:tableView];
+            break;
+        }
+        case TemplateCellTypeRecommendTableViewCell:{
+            cell = [EXVideoShowTableViewCell CellWithTableView:tableView];
+            break;
+        }
+        default:
+            cell = [EXVideoPoorTableViewCell CellWithTableView:tableView];
+            break;
+    }
+    
+    [cell InitDataViewModel:model];
     return cell;
 }
+
+
+
+
 
 
 -(UITableView *)newsTableView{
@@ -107,5 +101,117 @@ static NSInteger pages;
     }
     return _newsTableView;
 }
+
+-(NSMutableArray *)videoDatesouce{
+    if (!_videoDatesouce) {
+        _videoDatesouce = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _videoDatesouce;
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark   video 
+/*
+ -(void)loadDataSocre{
+ 
+ WS(weakSelf)
+ dispatch_group_t group = dispatch_group_create();
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoH5AlertCompleteSuccessfull:^(id responseObject) {
+ 
+ NSArray *tempH5Alert = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ if (tempH5Alert.count>0) {NSLog(@"弹出H5 Alert");}
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoBannnerCompleteSuccessfull:^(id responseObject) {
+ NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ EXVideoModel *model = [[EXVideoModel alloc]init];
+ model.ClassName = @"EXShopBannerTableViewCell";
+ model.MIME      = @"APPLICATION/BANNER";
+ model.CellHeight = Number(110);
+ model.template_type = TemplateCellTypeShopingBanderTableViewCell;
+ model.sections = tempVideo;
+ [weakSelf.videoDatesouce addObject:model];
+ 
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ //    dispatch_group_enter(group);
+ //    [EXSeviceRequestManger GetWithVideoRunNoticeCompleteSuccessfull:^(id responseObject) {
+ //
+ //        NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ //        EXVideoModel *model = [[EXVideoModel alloc]init];
+ //        model.MIME      = @"APPLICATION/RUNNOTICE";
+ //        model.sections = tempVideo;
+ //        [weakSelf.videoDatesouce addObject:model];
+ //
+ //        dispatch_group_leave(group);
+ //    } failure:^(NSError *error, NSDictionary *errorInfor) {
+ //        dispatch_group_leave(group);
+ //    }];
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoShowCompleteSuccessfull:^(id responseObject) {
+ 
+ NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ EXVideoModel *model = [[EXVideoModel alloc]init];
+ model.ClassName = @"EXVideoShowTableViewCell";
+ model.MIME      = @"APPLICATION/SHOW";
+ model.CellHeight = Number(120);
+ model.template_type = TemplateCellTypeRecommendTableViewCell;
+ model.sections = tempVideo;
+ [weakSelf.videoDatesouce addObject:model];
+ 
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoRecommendList:pages CompleteSuccessfull:^(id responseObject) {
+ 
+ NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ EXVideoModel *model = [[EXVideoModel alloc]init];
+ model.ClassName = @"EXVideoPoorTableViewCell";
+ model.MIME      = @"APPLICATION/GOOD";
+ model.CellHeight = Number(69.0);
+ model.template_type = TemplateCellTypeVideoShowTableViewCell;
+ model.sections = tempVideo;
+ [weakSelf.videoDatesouce addObject:model];
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ //回调Block
+ dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+ [self.view addSubview:self.newsTableView];
+ [_newsTableView reloadData];
+ });
+ }
+
+ */
+
+
+
 

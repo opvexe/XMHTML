@@ -15,7 +15,7 @@
 
 // Apple's defines from TargetConditionals.h are a bit weird.
 // Seems like TARGET_OS_MAC is always defined (on all platforms).
-// To determine if we are running on OSX, we can only rely on TARGET_OS_IPHONE=0 and all the other platforms
+// To determine if we are running on OSX, we can only relly on TARGET_OS_IPHONE=0 and all the other platforms
 #if !TARGET_OS_IPHONE && !TARGET_OS_IOS && !TARGET_OS_TV && !TARGET_OS_WATCH
     #define SD_MAC 1
 #else
@@ -93,11 +93,11 @@
     #define SDDispatchQueueSetterSementics assign
 #endif
 
-FOUNDATION_EXPORT UIImage *SDScaledImageForKey(NSString *key, UIImage *image);
+extern UIImage *SDScaledImageForKey(NSString *key, UIImage *image);
 
-typedef void(^SDWebImageNoParamsBlock)(void);
+typedef void(^SDWebImageNoParamsBlock)();
 
-FOUNDATION_EXPORT NSString *const SDWebImageErrorDomain;
+extern NSString *const SDWebImageErrorDomain;
 
 #ifndef dispatch_main_async_safe
 #define dispatch_main_async_safe(block)\
@@ -107,3 +107,5 @@ FOUNDATION_EXPORT NSString *const SDWebImageErrorDomain;
         dispatch_async(dispatch_get_main_queue(), block);\
     }
 #endif
+
+static int64_t kAsyncTestTimeout = 5;
