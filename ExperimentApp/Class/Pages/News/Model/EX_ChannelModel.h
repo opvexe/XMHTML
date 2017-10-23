@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *
+ */
 typedef NS_ENUM(NSUInteger, TemplateCellType) {
     
     //轮播Cell
@@ -29,8 +32,26 @@ typedef NS_ENUM(NSUInteger, TemplateCellType) {
     TemplateCellTypeThePoorTableViewCell = 1 << 4,
 };
 
+
+/**
+ Description
+
+ - InterfaceTypeNew: InterfaceTypeNew description
+ - InterfaceTypeOld: InterfaceTypeOld description
+ */
+typedef NS_ENUM(NSUInteger, InterfaceType) {
+    
+    InterfaceTypeNew,
+    
+    InterfaceTypeOld,
+};
+
 @interface EX_ChannelModel : EX_BaseModel
 
+/**
+ 模板类型
+ */
+@property(nonatomic, assign) TemplateCellType template_type;
 /**
  * 频道ID
  */
@@ -69,7 +90,8 @@ typedef NS_ENUM(NSUInteger, TemplateCellType) {
 /**
  * 模板类型
  */
-@property(nonatomic, assign) TemplateCellType template_type;
+@property(nonatomic,copy)NSString *interface_type;
 
+@property(nonatomic,assign)InterfaceType interfaceType;
 
 @end

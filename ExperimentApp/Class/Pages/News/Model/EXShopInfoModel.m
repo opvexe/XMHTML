@@ -9,7 +9,41 @@
 #import "EXShopInfoModel.h"
 
 @implementation EXShopInfoModel
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    
+    return @{@"ID":@"id"};
+}
+@end
 
+
+@implementation LogoModel
+
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    
+    return @{@"ID":@"id"};
+}
+@end
+
+
+@implementation EXVideoModel
+
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    
+    return @{@"ID":@"id"};
+}
+@end
+
+
+@implementation EXShopModel
+
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    
+    return @{@"ID":@"id"};
+}
++(NSDictionary *)mj_objectClassInArray{
+    return @{@"datas":@"HSYShopModel",@"records":@"HSYShopModel"};
+    
+}
 -(NSUInteger)TouchType{
     NSUInteger type = 0;
     if ([self.MIME  isEqualToString:@"APPLICATION/GOOD"]) {

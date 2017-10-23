@@ -119,7 +119,7 @@
  @param successfull successfull description
  @param failure failure description
  */
-+(void)GetShopInterfaceCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
++(void)GetWithShopInterfaceCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
     [WYNetworkHelper GET:@"http://ceng.heysound.com:4000/api/result"  parameters:nil success:^(id responseObject) {
         if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
@@ -135,6 +135,46 @@
 }
 
 
+/**
+ 商城分页数据处理
+ 
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)POSTWithShopPagesURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+    
+    [WYNetworkHelper POST:url  parameters:pamDic success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
+            successfull?successfull(responseObject[@"datas"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+}
 
+/**
+ 商城瀑布流分页数据
+ 
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetWithShopPoorPamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+    
+    [WYNetworkHelper GET:@"http://ss-www.oss-cn-hangzhou.aliyuncs.com/api/popular.json"  parameters:nil success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
+            successfull?successfull(responseObject[@"datas"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+        
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+}
 @end
 

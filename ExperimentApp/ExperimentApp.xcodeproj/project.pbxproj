@@ -12,7 +12,6 @@
 		A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69C1F998D2D00229AFE /* EX_BaseView.m */; };
 		A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69F1F99906800229AFE /* EX_BaseViewController.m */; };
 		A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A41F99941E00229AFE /* EX_Tools.m */; };
-		A60AE6B41F999DD200229AFE /* EXVideoPoorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B31F999DD200229AFE /* EXVideoPoorTableViewCell.m */; };
 		A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */; };
 		A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */; };
 		A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6AC1F99976A00229AFE /* WYNetworkCache.h */; };
@@ -30,7 +29,6 @@
 		A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6981F998B7B00229AFE /* YYMemoryCache.h */; };
 		A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6991F998B7B00229AFE /* YYMemoryCache.m */; };
 		A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */; };
-		A60AE6D01F99CDB500229AFE /* EXVideoShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CF1F99CDB500229AFE /* EXVideoShowTableViewCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -58,6 +56,13 @@
 		A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1DB1F7F426A007BC8F0 /* NSString+FriendExtenison.m */; };
 		A6D4F1EC1F7F5D5D007BC8F0 /* EX_DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */; };
 		A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */; };
+		A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */; };
+		A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */; };
+		A6DE56E41F9DC82B0082F256 /* EXClassifiedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E31F9DC82B0082F256 /* EXClassifiedTableViewCell.m */; };
+		A6DE56E71F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E61F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m */; };
+		A6DE56EB1F9DC8840082F256 /* EXRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56EA1F9DC8840082F256 /* EXRecommendTableViewCell.m */; };
+		A6DE56EE1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56ED1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m */; };
+		A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */; };
 		A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
 /* End PBXBuildFile section */
@@ -110,16 +115,12 @@
 		A60AE6AD1F99976A00229AFE /* WYNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYNetworkHelper.h; sourceTree = "<group>"; };
 		A60AE6AF1F9999A000229AFE /* VerRunView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerRunView.h; sourceTree = "<group>"; };
 		A60AE6B01F9999A000229AFE /* VerRunView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerRunView.m; sourceTree = "<group>"; };
-		A60AE6B21F999DD200229AFE /* EXVideoPoorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXVideoPoorTableViewCell.h; sourceTree = "<group>"; };
-		A60AE6B31F999DD200229AFE /* EXVideoPoorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXVideoPoorTableViewCell.m; sourceTree = "<group>"; };
 		A60AE6B61F99A00B00229AFE /* EX_ChannelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_ChannelModel.h; sourceTree = "<group>"; };
 		A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_ChannelModel.m; sourceTree = "<group>"; };
 		A60AE6BA1F99A1FB00229AFE /* EXSeviceRequestManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSeviceRequestManger.h; sourceTree = "<group>"; };
 		A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSeviceRequestManger.m; sourceTree = "<group>"; };
 		A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopBannerTableViewCell.h; sourceTree = "<group>"; };
 		A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopBannerTableViewCell.m; sourceTree = "<group>"; };
-		A60AE6CE1F99CDB500229AFE /* EXVideoShowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXVideoShowTableViewCell.h; sourceTree = "<group>"; };
-		A60AE6CF1F99CDB500229AFE /* EXVideoShowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXVideoShowTableViewCell.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -180,6 +181,20 @@
 		A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_DrawerController.m; sourceTree = "<group>"; };
 		A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_LeftController.h; sourceTree = "<group>"; };
 		A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_LeftController.m; sourceTree = "<group>"; };
+		A6DE56DC1F9DBEEF0082F256 /* EX_SubChannelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_SubChannelModel.h; sourceTree = "<group>"; };
+		A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_SubChannelModel.m; sourceTree = "<group>"; };
+		A6DE56DF1F9DBF1C0082F256 /* EX_ContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_ContentModel.h; sourceTree = "<group>"; };
+		A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_ContentModel.m; sourceTree = "<group>"; };
+		A6DE56E21F9DC82B0082F256 /* EXClassifiedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXClassifiedTableViewCell.h; sourceTree = "<group>"; };
+		A6DE56E31F9DC82B0082F256 /* EXClassifiedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXClassifiedTableViewCell.m; sourceTree = "<group>"; };
+		A6DE56E51F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDailyWillBuyTableViewCell.h; sourceTree = "<group>"; };
+		A6DE56E61F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDailyWillBuyTableViewCell.m; sourceTree = "<group>"; };
+		A6DE56E91F9DC8840082F256 /* EXRecommendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRecommendTableViewCell.h; sourceTree = "<group>"; };
+		A6DE56EA1F9DC8840082F256 /* EXRecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRecommendTableViewCell.m; sourceTree = "<group>"; };
+		A6DE56EC1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopMallsPoorTableViewCell.h; sourceTree = "<group>"; };
+		A6DE56ED1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopMallsPoorTableViewCell.m; sourceTree = "<group>"; };
+		A6DE56EF1F9DCAF20082F256 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
+		A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		A6FE1E871F99EBFB00948D74 /* EXShopInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopInfoModel.h; sourceTree = "<group>"; };
 		A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopInfoModel.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,12 +312,16 @@
 		A60AE6B11F999D8A00229AFE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A60AE6B21F999DD200229AFE /* EXVideoPoorTableViewCell.h */,
-				A60AE6B31F999DD200229AFE /* EXVideoPoorTableViewCell.m */,
+				A6DE56EC1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.h */,
+				A6DE56ED1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m */,
 				A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */,
 				A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */,
-				A60AE6CE1F99CDB500229AFE /* EXVideoShowTableViewCell.h */,
-				A60AE6CF1F99CDB500229AFE /* EXVideoShowTableViewCell.m */,
+				A6DE56E21F9DC82B0082F256 /* EXClassifiedTableViewCell.h */,
+				A6DE56E31F9DC82B0082F256 /* EXClassifiedTableViewCell.m */,
+				A6DE56E51F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.h */,
+				A6DE56E61F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m */,
+				A6DE56E91F9DC8840082F256 /* EXRecommendTableViewCell.h */,
+				A6DE56EA1F9DC8840082F256 /* EXRecommendTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -312,6 +331,10 @@
 			children = (
 				A60AE6B61F99A00B00229AFE /* EX_ChannelModel.h */,
 				A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */,
+				A6DE56DC1F9DBEEF0082F256 /* EX_SubChannelModel.h */,
+				A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */,
+				A6DE56DF1F9DBF1C0082F256 /* EX_ContentModel.h */,
+				A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */,
 				A6FE1E871F99EBFB00948D74 /* EXShopInfoModel.h */,
 				A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */,
 			);
@@ -504,6 +527,8 @@
 				A6D4F1CE1F7F399D007BC8F0 /* UIImage+Category.m */,
 				A6D4F1D71F7F40F3007BC8F0 /* UIBarButtonItem+Category.h */,
 				A6D4F1D81F7F40F3007BC8F0 /* UIBarButtonItem+Category.m */,
+				A6DE56EF1F9DCAF20082F256 /* UIColor+Category.h */,
+				A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -866,6 +891,7 @@
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
+				A6DE56E71F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m in Sources */,
 				A60AE6C61F99AEA300229AFE /* YYDiskCache.m in Sources */,
 				A60AE6C71F99AEA300229AFE /* YYKVStorage.h in Sources */,
 				A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */,
@@ -875,14 +901,17 @@
 				A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */,
 				A60AE6BF1F99A4DC00229AFE /* WYNetworkHelper.h in Sources */,
 				A60AE6C01F99A4DC00229AFE /* WYNetworkHelper.m in Sources */,
+				A6DE56E41F9DC82B0082F256 /* EXClassifiedTableViewCell.m in Sources */,
 				A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */,
 				A60AE6C11F99A4DC00229AFE /* WYSessionManger.h in Sources */,
 				A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */,
+				A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
+				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
-				A60AE6D01F99CDB500229AFE /* EXVideoShowTableViewCell.m in Sources */,
 				A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */,
 				A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */,
+				A6DE56EB1F9DC8840082F256 /* EXRecommendTableViewCell.m in Sources */,
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
@@ -892,8 +921,10 @@
 				A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */,
 				A6D4F1BA1F7F3248007BC8F0 /* AppDelegate+Category.m in Sources */,
 				A6D4F1C91F7F3430007BC8F0 /* EX_PracticeController.m in Sources */,
+				A6DE56EE1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m in Sources */,
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
+				A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
@@ -903,7 +934,6 @@
 				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
-				A60AE6B41F999DD200229AFE /* EXVideoPoorTableViewCell.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
 				A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */,

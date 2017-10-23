@@ -10,4 +10,11 @@
 
 @implementation EX_ChannelModel
 
+-(InterfaceType)interfaceType{
+    if ([self.interface_type  isEqualToString:@"oldShop"]) {
+        return InterfaceTypeOld;
+    }else{
+        return InterfaceTypeNew;
+    }
+}
 @end

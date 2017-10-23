@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, EXXBaseTableViewCellTouchType) {
      */
     EXBaseTableViewCellTouchTypeACTIVITY,
     /**
-     
+     展示
      */
     EXBaseTableViewCellTouchTypeREPRESENT,
     /**
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, EXXBaseTableViewCellTouchType) {
      */
     EXBaseTableViewCellTouchTypeARTIS,
     /**
-     
+     轮播
      */
     EXBaseTableViewCellTouchTypeBANNER,
     /**

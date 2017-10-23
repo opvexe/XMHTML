@@ -12,7 +12,7 @@
 
 @interface EXShopBannerTableViewCell ()<SDCycleScrollViewDelegate>
 @property(nonatomic,strong)SDCycleScrollView *cycleSrollView;
-@property(nonatomic,strong)EXShopInfoModel *model;
+@property(nonatomic,strong)EXShopModel *model;
 @end
 @implementation EXShopBannerTableViewCell
 
@@ -41,25 +41,25 @@
     return self;
 }
 
--(void)InitDataViewModel:(EXShopInfoModel *)model{
+-(void)InitDataViewModel:(EXShopModel *)model{
     
     self.model = model;
     NSMutableArray *urls = [NSMutableArray arrayWithCapacity:0];
-    for (EXShopInfoModel *tempModel in model.sections) {
+    for (EXShopModel *tempModel in model.datas) {
         NSString *url =@"";
-        if ([model.MIME  isEqualToString:@"APPLICATION/GOOD"]) {
+        if ([tempModel.MIME  isEqualToString:@"APPLICATION/GOOD"]) {
             url = convertToString(tempModel.url);
-        }else if ([model.MIME  isEqualToString:@"APPLICATION/VIDEO"]){
+        }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/VIDEO"]){
             url = convertToString(tempModel.picurl);
-        }else if ([model.MIME  isEqualToString:@"APPLICATION/ACTIVITY"]){
+        }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/ACTIVITY"]){
             url = convertToString(tempModel.brandLogo);
-        }else if ([model.MIME  isEqualToString:@"APPLICATION/REPRESENT"]){
+        }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/REPRESENT"]){
             url = convertToString(tempModel.actimg);
-        }else if ([model.MIME  isEqualToString:@"APPLICATION/ARTIS"]){
+        }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/ARTIS"]){
             url = convertToString(tempModel.picUrl);
-        }else if ([model.MIME  isEqualToString:@"APPLICATION/BANNER"]){
+        }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/BANNER"]){
             url = convertToString(tempModel.pic);
-        }else if ([model.MIME  isEqualToString:@"APPLICATION/CHANNEL"]){
+        }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/CHANNEL"]){
             url =convertToString(tempModel.icon_url);
         }
         [urls addObject:url];
@@ -73,9 +73,9 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
  
     if (self.model.sections.count>=index) {
-        EXShopInfoModel *model = self.model.sections[index];
+        EXShopModel *model = self.model.sections[index];
         if (self.delegate &&[self.delegate respondsToSelector:@selector(didSelectItemAtType:model:atSectionModel:)]) {
-            [self.delegate  didSelectItemAtType:model.TouchType model:model atSectionModel:self.model];
+              [self.delegate  didSelectItemAtType:model.TouchType model:model atSectionModel:self.model];
         }
     }
 }
