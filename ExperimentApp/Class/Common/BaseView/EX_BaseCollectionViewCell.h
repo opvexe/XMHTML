@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "EX_BaseCollectionViewCellProtocol.h"
 
-@interface EX_BaseCollectionViewCell : UICollectionViewCell
+@interface EX_BaseCollectionViewCell : UICollectionViewCell<EX_BaseCollectionViewCellProtocol>
 
 @end

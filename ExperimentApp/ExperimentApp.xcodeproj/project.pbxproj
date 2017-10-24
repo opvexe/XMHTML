@@ -37,6 +37,7 @@
 		A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE951F8B616F00201C47 /* UIView+WY_Extenison.m */; };
 		A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE981F8B697300201C47 /* EX_praticeHeadView.m */; };
 		A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */; };
+		A69BB3C91F9F09F9000C6C03 /* EX_VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BB3C81F9F09F9000C6C03 /* EX_VideoViewController.m */; };
 		A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F16E1F7F2F6B007BC8F0 /* main.m */; };
 		A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1711F7F2F6B007BC8F0 /* AppDelegate.m */; };
 		A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1741F7F2F6B007BC8F0 /* ViewController.m */; };
@@ -139,6 +140,8 @@
 		A692EE981F8B697300201C47 /* EX_praticeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_praticeHeadView.m; sourceTree = "<group>"; };
 		A692EE9A1F8B698A00201C47 /* EX_PracticeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_PracticeCell.h; sourceTree = "<group>"; };
 		A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_PracticeCell.m; sourceTree = "<group>"; };
+		A69BB3C71F9F09F9000C6C03 /* EX_VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_VideoViewController.h; sourceTree = "<group>"; };
+		A69BB3C81F9F09F9000C6C03 /* EX_VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_VideoViewController.m; sourceTree = "<group>"; };
 		A6A921201F9D798E000FF6B3 /* EX_BaseTableViewCellActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		A6D4F16A1F7F2F6B007BC8F0 /* ExperimentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExperimentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D4F16E1F7F2F6B007BC8F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -352,6 +355,15 @@
 			path = BannerView;
 			sourceTree = "<group>";
 		};
+		A69BB3C61F9F092E000C6C03 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A69BB3C71F9F09F9000C6C03 /* EX_VideoViewController.h */,
+				A69BB3C81F9F09F9000C6C03 /* EX_VideoViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		A6D4F1611F7F2F6B007BC8F0 = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +455,7 @@
 		A6D4F1A71F7F30AD007BC8F0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A69BB3C61F9F092E000C6C03 /* Video */,
 				A6D4F1B61F7F31B9007BC8F0 /* Profile */,
 				A6D4F1B51F7F31AA007BC8F0 /* News */,
 				A6D4F1B41F7F319F007BC8F0 /* Practice */,
@@ -685,7 +698,7 @@
 		A6D4F1621F7F2F6B007BC8F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = EX_;
+				CLASSPREFIX = EX;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = com.GDBank.Company;
 				TargetAttributes = {
@@ -896,6 +909,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
+				A69BB3C91F9F09F9000C6C03 /* EX_VideoViewController.m in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
 				A6DE56E71F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m in Sources */,

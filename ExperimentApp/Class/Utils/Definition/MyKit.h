@@ -42,5 +42,6 @@
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <FLAnimatedImage.h>
 
 #endif /* MyKit_h */

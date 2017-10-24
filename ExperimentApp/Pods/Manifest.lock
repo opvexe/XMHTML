@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FLAnimatedImage (1.0.12)
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.14.1)
@@ -22,6 +23,9 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SDWebImage/GIF (4.0.0):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -30,15 +34,17 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.14.1)
   - SDCycleScrollView (~> 1.73)
   - SDWebImage (~> 4.0.0)
+  - SDWebImage/GIF
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
   SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: a6e29051b4ade55e65044994c0a8303e105bff87
+PODFILE CHECKSUM: de76c87a0961e11be18d59d4edec13a40c22f1bc
 
 COCOAPODS: 1.2.1

@@ -6,8 +6,33 @@
 //  Copyright © 2017年 com.GDBank.Company. All rights reserved.
 //
 
+
 #import "EXClassifiedTableViewCell.h"
+#import "EX_BaseCollectionViewCell.h"
 #import "EXShopInfoModel.h"
+
+
+#pragma mark  EXClassifiedCollectionViewCell
+
+@interface EXClassifiedCollectionViewCell : EX_BaseCollectionViewCell
+@property(nonatomic, strong)FLAnimatedImage *headPortraitImageView;
+@property(nonatomic, strong)UILabel  *titleLabel;
+@end
+
+@implementation EXClassifiedCollectionViewCell
+
+- (void)EX_initConfingViews{
+    
+    
+}
+
+-(void)InitDataViewModel:(EXShopModel*)model{
+    
+    
+}
+@end
+
+#pragma mark  EXClassifiedTableViewCell
 
 @interface EXClassifiedTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong)UICollectionView *headPortraitListView;
@@ -35,7 +60,6 @@
  
     [self.contentView addSubview:self.headPortraitListView];
     
-    
 }
 
 -(void)layoutSubviews{
@@ -43,7 +67,6 @@
     [self.headPortraitListView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView);
     }];
-    
 }
 
 
@@ -52,7 +75,43 @@
     return Number(120.0);
 }
 
+#pragma mark    UICollectionViewDelegate
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    EXClassifiedCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EXClassifiedCollectionViewCell class]) forIndexPath:indexPath];
+    [cell InitDataViewModel:self.headPortartis[indexPath.row]];
+    return cell;
+}
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.headPortartis.count;
+    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return  CGSizeMake(self.width/5,Number(85));
+}
+// 设置最小行间距，也就是前一行与后一行的中间最小间隔
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return Number(0);
+}
+// 设置最小列间距，也就是左行与右一行的中间最小间隔
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return Number(0);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    EXShopModel *model =self.headPortartis[indexPath.item];
+    if (self.delegate &&[self.delegate respondsToSelector:@selector(didSelectItemAtType:model:atSectionModel:)]) {
+        [self.delegate  didSelectItemAtType:model.TouchType model:self.headPortartis[indexPath.item] atSectionModel:self.model];
+    }
+}
 
 
 - (UICollectionView *)headPortraitListView{
@@ -74,15 +133,18 @@
     return _headPortraitListView;
 }
 
+-(NSMutableArray *)headPortartis{
+    if (!_headPortartis) {
+        _headPortartis = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _headPortartis;
+}
 
 @end
 
 
-@implementation EXClassifiedCollectionViewCell : UICollectionViewCell
 
 
-
-@end
 
 
 

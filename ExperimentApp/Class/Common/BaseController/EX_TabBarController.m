@@ -11,7 +11,6 @@
 #import "EX_ProfileController.h"
 #import "EX_PracticeController.h"
 #import "EX_VideoViewController.h"
-
 @interface EX_TabBarController ()
 
 @end
