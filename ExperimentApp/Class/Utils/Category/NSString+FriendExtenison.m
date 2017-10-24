@@ -502,5 +502,33 @@ NSString *base64DecodeWith(NSString * content){
     
 }
 
++(NSMutableAttributedString *)lineStyleSingleString:(NSString *)string Color:(UIColor *)myColor font:(UIFont *)font  withString:(NSString *)originalString newString:(NSString *)newString{
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:originalString];
+    if (string.length) {
+        NSRange range = [originalString rangeOfString:string];
+        if ([string isEqualToString:newString]) {
+            range = NSMakeRange(originalString.length-string.length, string.length);
+        }
+        [str addAttribute:NSForegroundColorAttributeName value:myColor range:range];
+        [str addAttribute:NSFontAttributeName value:font range:range];
+        [str addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:range];
+        return str;
+    }
+    return str;
+}
+
++(NSMutableAttributedString *)getOtherColorString:(NSString *)string  font:(UIFont *)font Color:(UIColor *)myColor withString:(NSString *)originalString{
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:originalString];
+    if (string.length) {
+        NSRange range = [originalString rangeOfString:string];
+        [str addAttribute:NSForegroundColorAttributeName value:myColor range:range];
+        [str addAttribute:NSFontAttributeName value:font range:range];
+        return str;
+    }
+    return str;
+    
+}
 
 @end

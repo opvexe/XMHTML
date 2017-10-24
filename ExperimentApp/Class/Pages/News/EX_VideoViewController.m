@@ -146,9 +146,9 @@ static NSInteger pages;
             }else{
                 [weakSelf removePlaceholderView];
             }
+            [weakSelf.shoppingMallTableView.mj_footer endRefreshing];
+            [weakSelf.shoppingMallTableView.mj_header endRefreshing];
         }];
-        [weakSelf.shoppingMallTableView.mj_footer endRefreshing];
-        [weakSelf.shoppingMallTableView.mj_header endRefreshing];
         
     }else{              ///数据分页处理
         
@@ -523,6 +523,11 @@ static NSInteger pages;
 
 
 
+/**
+ shoppingMallTableView
+
+ @return return value description
+ */
 -(UITableView *)shoppingMallTableView{
     if (!_shoppingMallTableView) {
         _shoppingMallTableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -550,3 +555,93 @@ static NSInteger pages;
     return _shoppingMalls;
 }
 @end
+
+
+#pragma mark   video  delloc
+/*
+ -(void)loadDataSocre{
+ 
+ WS(weakSelf)
+ dispatch_group_t group = dispatch_group_create();
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoH5AlertCompleteSuccessfull:^(id responseObject) {
+ 
+ NSArray *tempH5Alert = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ if (tempH5Alert.count>0) {NSLog(@"弹出H5 Alert");}
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoBannnerCompleteSuccessfull:^(id responseObject) {
+ NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ EXVideoModel *model = [[EXVideoModel alloc]init];
+ model.ClassName = @"EXShopBannerTableViewCell";
+ model.MIME      = @"APPLICATION/BANNER";
+ model.CellHeight = Number(110);
+ model.template_type = TemplateCellTypeShopingBanderTableViewCell;
+ model.sections = tempVideo;
+ [weakSelf.videoDatesouce addObject:model];
+ 
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ //    dispatch_group_enter(group);
+ //    [EXSeviceRequestManger GetWithVideoRunNoticeCompleteSuccessfull:^(id responseObject) {
+ //
+ //        NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ //        EXVideoModel *model = [[EXVideoModel alloc]init];
+ //        model.MIME      = @"APPLICATION/RUNNOTICE";
+ //        model.sections = tempVideo;
+ //        [weakSelf.videoDatesouce addObject:model];
+ //
+ //        dispatch_group_leave(group);
+ //    } failure:^(NSError *error, NSDictionary *errorInfor) {
+ //        dispatch_group_leave(group);
+ //    }];
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoShowCompleteSuccessfull:^(id responseObject) {
+ 
+ NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ EXVideoModel *model = [[EXVideoModel alloc]init];
+ model.ClassName = @"EXVideoShowTableViewCell";
+ model.MIME      = @"APPLICATION/SHOW";
+ model.CellHeight = Number(120);
+ model.template_type = TemplateCellTypeRecommendTableViewCell;
+ model.sections = tempVideo;
+ [weakSelf.videoDatesouce addObject:model];
+ 
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithVideoRecommendList:pages CompleteSuccessfull:^(id responseObject) {
+ 
+ NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
+ EXVideoModel *model = [[EXVideoModel alloc]init];
+ model.ClassName = @"EXVideoPoorTableViewCell";
+ model.MIME      = @"APPLICATION/GOOD";
+ model.CellHeight = Number(69.0);
+ model.template_type = TemplateCellTypeVideoShowTableViewCell;
+ model.sections = tempVideo;
+ [weakSelf.videoDatesouce addObject:model];
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ //回调Block
+ dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+ [self.view addSubview:self.newsTableView];
+ [_newsTableView reloadData];
+ });
+ }
+ 
+ */
