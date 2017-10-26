@@ -7,9 +7,10 @@
 //
 
 #import "EX_PracticeController.h"
-#import "EX_DrawerController.h"
 #import "EX_praticeHeadView.h"
 #import "EX_PracticeCell.h"
+#import "UIViewController+CWLateralSlide.h"
+#import "EX_LeftController.h"
 
 @interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *practiceTableView;
@@ -23,14 +24,13 @@
     // Do any additional setup after loading the view.
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(leftOpen:) image:@"room_btn_more" highImage:@"room_btn_more"];
     self.navigationItem.title = @"公共基础";
-    
-
-    
     [self.view addSubview:self.practiceTableView];
+
 }
 
 -(void)leftOpen:(id)sender{
-    [(EX_DrawerController *)KEY_WINDOW.rootViewController showLeft];
+    EX_LeftController *vc = [[EX_LeftController alloc]init];
+    [self cw_showDrawerViewController:vc animationType:CWDrawerAnimationTypeMask configuration:nil];
 }
 
 

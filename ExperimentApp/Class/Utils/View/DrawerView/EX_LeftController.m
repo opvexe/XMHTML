@@ -41,7 +41,6 @@
     
     EX_LeftTableViewCell    *cell = [EX_LeftTableViewCell CellWithTableView:tableView];
     [cell InitDataViewModel:self.dateSouceArray[indexPath.row]];
-    //    [cell addBottomBorderWithColor:[UIColor lightGrayColor] andWidth:0.5];
     return cell;
 }
 
@@ -53,7 +52,7 @@
 
 -(UITableView *)choiceTableView{
     if (!_choiceTableView) {
-        _choiceTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _choiceTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,  SCREEN_WIDTH * 0.75,SCREEN_HEIGHT - 180) style:UITableViewStylePlain];
         _choiceTableView.showsVerticalScrollIndicator              =NO;
         _choiceTableView.showsHorizontalScrollIndicator            =NO;
         _choiceTableView.scrollEnabled                             =NO;
@@ -70,7 +69,7 @@
 
 -(EX_leftHeadView *)leftHeadView{
     if (!_leftHeadView) {
-        _leftHeadView= [[EX_leftHeadView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 180.0)];
+        _leftHeadView= [[EX_leftHeadView alloc]initWithFrame:CGRectMake(0, 0,  SCREEN_WIDTH * 0.75, 180.0)];
         _leftHeadView.cutChoiceBlock = ^{
             NSLog(@"选择科目");
         };

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Class/Pages/News/EX_VideoViewController.m"
-            timestampString = "530519958.377149"
+            filePath = "Class/Utils/View/LateralSlide/UIViewController+CWLateralSlide.m"
+            timestampString = "530703490.424809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-loadDataSoucre"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "-cw_showDrawerViewController:animationType:configuration:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Class/Pages/News/EX_VideoViewController.m"
-            timestampString = "530519958.377584"
+            filePath = "Class/Utils/View/LateralSlide/UIViewController+CWLateralSlide.m"
+            timestampString = "530703490.425235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-loadDataSoucre"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-cw_showDrawerViewController:animationType:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Class/Utils/View/LateralSlide/UIViewController+CWLateralSlide.m"
+            timestampString = "530703490.425526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-cw_showDrawerViewController:animationType:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Class/Utils/View/LateralSlide/UIViewController+CWLateralSlide.m"
+            timestampString = "530703490.669097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-cw_showDrawerViewController:animationType:configuration:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

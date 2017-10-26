@@ -30,6 +30,17 @@
 		A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6991F998B7B00229AFE /* YYMemoryCache.m */; };
 		A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */; };
 		A60C72B31F9DF0690070C586 /* EX_BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */; };
+		A60EB1191FA1E4F8003A1157 /* CWDrawerTransition.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB10F1FA1D47C003A1157 /* CWDrawerTransition.h */; };
+		A60EB11A1FA1E4F8003A1157 /* CWDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB10E1FA1D47C003A1157 /* CWDrawerTransition.m */; };
+		A60EB11B1FA1E4F8003A1157 /* CWInteractiveTransition.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1121FA1D47C003A1157 /* CWInteractiveTransition.h */; };
+		A60EB11C1FA1E4F8003A1157 /* CWInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1101FA1D47C003A1157 /* CWInteractiveTransition.m */; };
+		A60EB11D1FA1E4F8003A1157 /* CWLateralSlideAnimator.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB10D1FA1D47C003A1157 /* CWLateralSlideAnimator.h */; };
+		A60EB11E1FA1E4F8003A1157 /* CWLateralSlideAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1111FA1D47C003A1157 /* CWLateralSlideAnimator.m */; };
+		A60EB11F1FA1E4F8003A1157 /* CWLateralSlideConfiguration.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB10C1FA1D47B003A1157 /* CWLateralSlideConfiguration.h */; };
+		A60EB1201FA1E4F8003A1157 /* CWLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1131FA1D47C003A1157 /* CWLateralSlideConfiguration.m */; };
+		A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1151FA1D47C003A1157 /* UIViewController+CWLateralSlide.h */; };
+		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
+		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -37,6 +48,7 @@
 		A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE951F8B616F00201C47 /* UIView+WY_Extenison.m */; };
 		A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE981F8B697300201C47 /* EX_praticeHeadView.m */; };
 		A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */; };
+		A69BB3CD1F9F183A000C6C03 /* EXShopMallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */; };
 		A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F16E1F7F2F6B007BC8F0 /* main.m */; };
 		A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1711F7F2F6B007BC8F0 /* AppDelegate.m */; };
 		A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1741F7F2F6B007BC8F0 /* ViewController.m */; };
@@ -55,7 +67,6 @@
 		A6D4F1D61F7F3FBE007BC8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D4F1D51F7F3FBE007BC8F0 /* Assets.xcassets */; };
 		A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1D81F7F40F3007BC8F0 /* UIBarButtonItem+Category.m */; };
 		A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1DB1F7F426A007BC8F0 /* NSString+FriendExtenison.m */; };
-		A6D4F1EC1F7F5D5D007BC8F0 /* EX_DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */; };
 		A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */; };
 		A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */; };
 		A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */; };
@@ -125,6 +136,18 @@
 		A60C72B11F9DF0690070C586 /* EX_BaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		A60C72B41F9DF0C40070C586 /* EX_BaseCollectionViewCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseCollectionViewCellProtocol.h; sourceTree = "<group>"; };
+		A60EB10C1FA1D47B003A1157 /* CWLateralSlideConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWLateralSlideConfiguration.h; sourceTree = "<group>"; };
+		A60EB10D1FA1D47C003A1157 /* CWLateralSlideAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWLateralSlideAnimator.h; sourceTree = "<group>"; };
+		A60EB10E1FA1D47C003A1157 /* CWDrawerTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWDrawerTransition.m; sourceTree = "<group>"; };
+		A60EB10F1FA1D47C003A1157 /* CWDrawerTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWDrawerTransition.h; sourceTree = "<group>"; };
+		A60EB1101FA1D47C003A1157 /* CWInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWInteractiveTransition.m; sourceTree = "<group>"; };
+		A60EB1111FA1D47C003A1157 /* CWLateralSlideAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideAnimator.m; sourceTree = "<group>"; };
+		A60EB1121FA1D47C003A1157 /* CWInteractiveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWInteractiveTransition.h; sourceTree = "<group>"; };
+		A60EB1131FA1D47C003A1157 /* CWLateralSlideConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideConfiguration.m; sourceTree = "<group>"; };
+		A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWLateralSlide.m"; sourceTree = "<group>"; };
+		A60EB1151FA1D47C003A1157 /* UIViewController+CWLateralSlide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWLateralSlide.h"; sourceTree = "<group>"; };
+		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
+		A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsInfoTableViewCell.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -139,6 +162,8 @@
 		A692EE981F8B697300201C47 /* EX_praticeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_praticeHeadView.m; sourceTree = "<group>"; };
 		A692EE9A1F8B698A00201C47 /* EX_PracticeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_PracticeCell.h; sourceTree = "<group>"; };
 		A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_PracticeCell.m; sourceTree = "<group>"; };
+		A69BB3CB1F9F183A000C6C03 /* EXShopMallsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopMallsViewController.h; sourceTree = "<group>"; };
+		A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopMallsViewController.m; sourceTree = "<group>"; };
 		A6A921201F9D798E000FF6B3 /* EX_BaseTableViewCellActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTableViewCellActionProtocol.h; sourceTree = "<group>"; };
 		A6D4F16A1F7F2F6B007BC8F0 /* ExperimentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExperimentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D4F16E1F7F2F6B007BC8F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -181,8 +206,6 @@
 		A6D4F1D81F7F40F3007BC8F0 /* UIBarButtonItem+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Category.m"; sourceTree = "<group>"; };
 		A6D4F1DA1F7F426A007BC8F0 /* NSString+FriendExtenison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FriendExtenison.h"; sourceTree = "<group>"; };
 		A6D4F1DB1F7F426A007BC8F0 /* NSString+FriendExtenison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FriendExtenison.m"; sourceTree = "<group>"; };
-		A6D4F1EA1F7F5D5D007BC8F0 /* EX_DrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_DrawerController.h; sourceTree = "<group>"; };
-		A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_DrawerController.m; sourceTree = "<group>"; };
 		A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EX_LeftController.h; sourceTree = "<group>"; };
 		A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EX_LeftController.m; sourceTree = "<group>"; };
 		A6DE56DC1F9DBEEF0082F256 /* EX_SubChannelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_SubChannelModel.h; sourceTree = "<group>"; };
@@ -352,11 +375,46 @@
 			path = BannerView;
 			sourceTree = "<group>";
 		};
-		A69BB3C61F9F092E000C6C03 /* Video */ = {
+		A60EB0FC1FA1CE86003A1157 /* LateralSlide */ = {
+			isa = PBXGroup;
+			children = (
+				A60EB10F1FA1D47C003A1157 /* CWDrawerTransition.h */,
+				A60EB10E1FA1D47C003A1157 /* CWDrawerTransition.m */,
+				A60EB1121FA1D47C003A1157 /* CWInteractiveTransition.h */,
+				A60EB1101FA1D47C003A1157 /* CWInteractiveTransition.m */,
+				A60EB10D1FA1D47C003A1157 /* CWLateralSlideAnimator.h */,
+				A60EB1111FA1D47C003A1157 /* CWLateralSlideAnimator.m */,
+				A60EB10C1FA1D47B003A1157 /* CWLateralSlideConfiguration.h */,
+				A60EB1131FA1D47C003A1157 /* CWLateralSlideConfiguration.m */,
+				A60EB1151FA1D47C003A1157 /* UIViewController+CWLateralSlide.h */,
+				A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */,
+			);
+			path = LateralSlide;
+			sourceTree = "<group>";
+		};
+		A66F98491FA061AE00D33340 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */,
+				A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A66F984A1FA061B800D33340 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Video;
+			path = View;
+			sourceTree = "<group>";
+		};
+		A69BB3CA1F9F1820000C6C03 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				A69BB3CB1F9F183A000C6C03 /* EXShopMallsViewController.h */,
+				A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		A6D4F1611F7F2F6B007BC8F0 = {
@@ -450,7 +508,9 @@
 		A6D4F1A71F7F30AD007BC8F0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				A69BB3C61F9F092E000C6C03 /* Video */,
+				A66F984A1FA061B800D33340 /* View */,
+				A66F98491FA061AE00D33340 /* Cell */,
+				A69BB3CA1F9F1820000C6C03 /* Shop */,
 				A6D4F1B61F7F31B9007BC8F0 /* Profile */,
 				A6D4F1B51F7F31AA007BC8F0 /* News */,
 				A6D4F1B41F7F319F007BC8F0 /* Practice */,
@@ -551,6 +611,7 @@
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A60EB0FC1FA1CE86003A1157 /* LateralSlide */,
 				A60AE6D11F99D36300229AFE /* BannerView */,
 				A60AE6AE1F99998700229AFE /* RunView */,
 				A6D4F1E91F7F5D44007BC8F0 /* DrawerView */,
@@ -603,8 +664,6 @@
 		A6D4F1E91F7F5D44007BC8F0 /* DrawerView */ = {
 			isa = PBXGroup;
 			children = (
-				A6D4F1EA1F7F5D5D007BC8F0 /* EX_DrawerController.h */,
-				A6D4F1EB1F7F5D5D007BC8F0 /* EX_DrawerController.m */,
 				A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */,
 				A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */,
 				A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */,
@@ -903,6 +962,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60EB1191FA1E4F8003A1157 /* CWDrawerTransition.h in Sources */,
+				A60EB11A1FA1E4F8003A1157 /* CWDrawerTransition.m in Sources */,
+				A60EB11B1FA1E4F8003A1157 /* CWInteractiveTransition.h in Sources */,
+				A60EB11C1FA1E4F8003A1157 /* CWInteractiveTransition.m in Sources */,
+				A60EB11D1FA1E4F8003A1157 /* CWLateralSlideAnimator.h in Sources */,
+				A60EB11E1FA1E4F8003A1157 /* CWLateralSlideAnimator.m in Sources */,
+				A60EB11F1FA1E4F8003A1157 /* CWLateralSlideConfiguration.h in Sources */,
+				A60EB1201FA1E4F8003A1157 /* CWLateralSlideConfiguration.m in Sources */,
+				A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */,
+				A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */,
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
@@ -912,6 +981,7 @@
 				A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */,
 				A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */,
 				A60C72B31F9DF0690070C586 /* EX_BaseCollectionViewCell.m in Sources */,
+				A69BB3CD1F9F183A000C6C03 /* EXShopMallsViewController.m in Sources */,
 				A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */,
 				A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */,
 				A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */,
@@ -921,6 +991,7 @@
 				A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */,
 				A60AE6C11F99A4DC00229AFE /* WYSessionManger.h in Sources */,
 				A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */,
+				A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */,
 				A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
@@ -931,7 +1002,6 @@
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
-				A6D4F1EC1F7F5D5D007BC8F0 /* EX_DrawerController.m in Sources */,
 				A6D4F1C01F7F3376007BC8F0 /* EX_TabBarController.m in Sources */,
 				A6D4F1C61F7F3422007BC8F0 /* EX_VideoViewController.m in Sources */,
 				A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */,

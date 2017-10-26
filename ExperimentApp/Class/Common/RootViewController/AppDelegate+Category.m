@@ -8,7 +8,6 @@
 
 #import "AppDelegate+Category.h"
 #import "EX_TabBarController.h"
-#import "EX_DrawerController.h"
 
 @implementation AppDelegate (Category)
 
@@ -17,7 +16,7 @@
  */
 -(void)initRootViewController{
     UIWindow *window                            = [[UIApplication sharedApplication].delegate window];
-    EX_DrawerController *tabbarController = [[EX_DrawerController alloc]init];
+    EX_TabBarController *tabbarController = [[EX_TabBarController alloc]init];
     window.rootViewController                   = tabbarController;
     [window makeKeyAndVisible];
 }

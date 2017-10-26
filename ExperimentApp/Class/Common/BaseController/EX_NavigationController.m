@@ -7,7 +7,6 @@
 //
 
 #import "EX_NavigationController.h"
-#import "EX_DrawerController.h"
 @interface EX_NavigationController ()
 
 @end
@@ -30,9 +29,6 @@
     if (self.viewControllers.count > 0)
     {
         viewController.hidesBottomBarWhenPushed = YES;
-        if ([KEY_WINDOW.rootViewController isKindOfClass:[EX_DrawerController class]]) {
-            [(EX_DrawerController*)KEY_WINDOW.rootViewController removePanGesture];
-        }
     }
     [super pushViewController:viewController animated:animated];
 }

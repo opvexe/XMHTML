@@ -70,7 +70,6 @@ static NSInteger pages;
     [self loadDataSoucre];
 }
 
-
 /**
  * 数据加载
  */
@@ -80,11 +79,12 @@ static NSInteger pages;
     if (pages == 1) {
         [EXSeviceRequestManger GetWithShopInterfaceCompleteSuccessfull:^(id responseObject) {
             NSArray *tempShopMalls = [EXShopModel mj_objectArrayWithKeyValuesArray:responseObject];
+            NSLog(@"responseObject:%@",responseObject);
+            
             for (EXShopModel *model in tempShopMalls) {
                 switch (model.template_type) {
                     case TemplateCellTypeShopingBanderTableViewCell:{
                         model.ClassName  = @"EXShopBannerTableViewCell";
-                        model.CellHeight = Number(120.0);
                         NSMutableArray *datas = [NSMutableArray arrayWithObject:model];
                         model.sections = datas;
                         break;
@@ -92,28 +92,23 @@ static NSInteger pages;
                     case TemplateCellTypeRecommendTableViewCell:
                     {
                         model.ClassName  = @"EXRecommendTableViewCell";
-                        model.CellHeight = Number(110.0);
                         NSMutableArray *datas = [NSMutableArray arrayWithArray:model.datas];
                         model.sections = datas;
-                        
                         break;
                     }
                     case TemplateCellTypeClassifiedTableViewCell:{
                         model.ClassName  = @"EXClassifiedTableViewCell";
-                        model.CellHeight = Number(80.0);
                         NSMutableArray *datas = [NSMutableArray arrayWithObject:model];
                         model.sections = datas;
                         break;
                     }
                     case TemplateCellTypeDailyWillBuyTableViewCell:{
                         model.ClassName  = @"EXDailyWillBuyTableViewCell";
-                        model.CellHeight =  Number(129);
                         NSMutableArray *datas = [NSMutableArray arrayWithObject:model];
                         model.sections = datas;
                         break;
                     }
                     case TemplateCellTypeThePoorTableViewCell:{
-                        model.CellHeight = Number(260.0);
                         model.ClassName  = @"EXShopMallsPoorTableViewCell";
                         if (model.datas.count) {
                             model.sections = [self ToConvertAnArrayType:model.datas  type:model.interfaceType];
@@ -556,92 +551,3 @@ static NSInteger pages;
 }
 @end
 
-
-#pragma mark   video  delloc
-/*
- -(void)loadDataSocre{
- 
- WS(weakSelf)
- dispatch_group_t group = dispatch_group_create();
- 
- dispatch_group_enter(group);
- [EXSeviceRequestManger GetWithVideoH5AlertCompleteSuccessfull:^(id responseObject) {
- 
- NSArray *tempH5Alert = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
- if (tempH5Alert.count>0) {NSLog(@"弹出H5 Alert");}
- dispatch_group_leave(group);
- } failure:^(NSError *error, NSDictionary *errorInfor) {
- dispatch_group_leave(group);
- }];
- 
- dispatch_group_enter(group);
- [EXSeviceRequestManger GetWithVideoBannnerCompleteSuccessfull:^(id responseObject) {
- NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
- EXVideoModel *model = [[EXVideoModel alloc]init];
- model.ClassName = @"EXShopBannerTableViewCell";
- model.MIME      = @"APPLICATION/BANNER";
- model.CellHeight = Number(110);
- model.template_type = TemplateCellTypeShopingBanderTableViewCell;
- model.sections = tempVideo;
- [weakSelf.videoDatesouce addObject:model];
- 
- dispatch_group_leave(group);
- } failure:^(NSError *error, NSDictionary *errorInfor) {
- dispatch_group_leave(group);
- }];
- 
- //    dispatch_group_enter(group);
- //    [EXSeviceRequestManger GetWithVideoRunNoticeCompleteSuccessfull:^(id responseObject) {
- //
- //        NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
- //        EXVideoModel *model = [[EXVideoModel alloc]init];
- //        model.MIME      = @"APPLICATION/RUNNOTICE";
- //        model.sections = tempVideo;
- //        [weakSelf.videoDatesouce addObject:model];
- //
- //        dispatch_group_leave(group);
- //    } failure:^(NSError *error, NSDictionary *errorInfor) {
- //        dispatch_group_leave(group);
- //    }];
- 
- dispatch_group_enter(group);
- [EXSeviceRequestManger GetWithVideoShowCompleteSuccessfull:^(id responseObject) {
- 
- NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
- EXVideoModel *model = [[EXVideoModel alloc]init];
- model.ClassName = @"EXVideoShowTableViewCell";
- model.MIME      = @"APPLICATION/SHOW";
- model.CellHeight = Number(120);
- model.template_type = TemplateCellTypeRecommendTableViewCell;
- model.sections = tempVideo;
- [weakSelf.videoDatesouce addObject:model];
- 
- dispatch_group_leave(group);
- } failure:^(NSError *error, NSDictionary *errorInfor) {
- dispatch_group_leave(group);
- }];
- 
- dispatch_group_enter(group);
- [EXSeviceRequestManger GetWithVideoRecommendList:pages CompleteSuccessfull:^(id responseObject) {
- 
- NSArray *tempVideo = [EXVideoModel mj_objectArrayWithKeyValuesArray:responseObject];
- EXVideoModel *model = [[EXVideoModel alloc]init];
- model.ClassName = @"EXVideoPoorTableViewCell";
- model.MIME      = @"APPLICATION/GOOD";
- model.CellHeight = Number(69.0);
- model.template_type = TemplateCellTypeVideoShowTableViewCell;
- model.sections = tempVideo;
- [weakSelf.videoDatesouce addObject:model];
- dispatch_group_leave(group);
- } failure:^(NSError *error, NSDictionary *errorInfor) {
- dispatch_group_leave(group);
- }];
- 
- //回调Block
- dispatch_group_notify(group, dispatch_get_main_queue(), ^{
- [self.view addSubview:self.newsTableView];
- [_newsTableView reloadData];
- });
- }
- 
- */

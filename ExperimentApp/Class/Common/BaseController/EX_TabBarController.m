@@ -11,6 +11,8 @@
 #import "EX_ProfileController.h"
 #import "EX_PracticeController.h"
 #import "EX_VideoViewController.h"
+#import "EXShopMallsViewController.h"
+
 @interface EX_TabBarController ()
 
 @end
@@ -34,13 +36,16 @@
     EX_PracticeController *practiceContrller = [[EX_PracticeController alloc]init];
     EX_NavigationController *practiceNavigation = [self setChildVC:practiceContrller title:@"练习" imageName:@"tabbar_home" withSelectedName:@"tabbar_home_selected"];
     
+    EXShopMallsViewController *shopMallsContrller = [[EXShopMallsViewController alloc]init];
+      EX_NavigationController *shopMallsNavigation = [self setChildVC:shopMallsContrller title:@"商城" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
+    
     EX_VideoViewController *newsContrller = [[EX_VideoViewController alloc]init];
     EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"视频" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
   
     EX_ProfileController *profileContrller = [[EX_ProfileController alloc]init];
     EX_NavigationController *profileNavigation = [self setChildVC:profileContrller title:@"我的" imageName:@"tabbar_profile" withSelectedName:@"tabbar_profile_selected"];
     
-    self.viewControllers = @[practiceNavigation,newsNavigation,profileNavigation];
+    self.viewControllers = @[practiceNavigation,shopMallsNavigation,newsNavigation,profileNavigation];
     
 }
 - (EX_NavigationController *)setChildVC:(UIViewController *)vc title:(NSString *)title imageName:(NSString *)imgName withSelectedName:(NSString *)selectedName{
