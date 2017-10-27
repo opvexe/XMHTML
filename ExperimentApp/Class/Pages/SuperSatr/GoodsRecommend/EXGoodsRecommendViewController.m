@@ -79,7 +79,7 @@ static CGFloat BannerHeight = 300.f;
     
 
     dispatch_group_enter(group);
-   
+   //数据无法解析 
     NSDictionary *pargram = [self pargram];
     [EXSeviceRequestManger POSTWithGoodsURL:@"https://test.heysound.com/goods/get.do" pamDic:pargram CompleteSuccessfull:^(id responseObject) {
 

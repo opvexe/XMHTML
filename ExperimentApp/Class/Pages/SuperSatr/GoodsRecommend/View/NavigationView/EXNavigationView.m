@@ -20,41 +20,41 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateNormal];
-        [_backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateHighlighted];
-        [_backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateSelected];
-        [_backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateDisabled];
-        [_backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateNormal];
-        [_backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateHighlighted];
-        [_backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateSelected];
-        [_backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateDisabled];
-        _backButton.tag = 100;
-        [_backButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
+        self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateNormal];
+        [self.backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateHighlighted];
+        [self.backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateSelected];
+        [self.backButton setBackgroundImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateDisabled];
+        [self.backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateNormal];
+        [self.backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateHighlighted];
+        [self.backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateSelected];
+        [self.backButton setImage:[UIImage imageNamed:@"shop_left"] forState:UIControlStateDisabled];
+        self.backButton.tag = 100;
+        [self.backButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.backButton];
         
-        _shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateNormal];
-        [_shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateHighlighted];
-        [_shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateSelected];
-        [_shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateDisabled];
-        [_shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateNormal];
-        [_shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateHighlighted];
-        [_shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateSelected];
-        [_shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateDisabled];
-        _shareButton.tag = 101;
-        [_shareButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
+        self.shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateNormal];
+        [self.shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateHighlighted];
+        [self.shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateSelected];
+        [self.shareButton setBackgroundImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateDisabled];
+        [self.shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateNormal];
+        [self.shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateHighlighted];
+        [self.shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateSelected];
+        [self.shareButton setImage:[UIImage imageNamed:@"shop_share"] forState:UIControlStateDisabled];
+        self.shareButton.tag = 101;
+        [self.shareButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.shareButton];
         
         _titleLabel = [UILabel labelWithTitle:@"商品详情" color:HSYColor323232 font:[UIFont systemFontOfSize:18] alignment:NSTextAlignmentCenter];
         [self addSubview:self.titleLabel];
         
-        [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(self.mas_centerY);
             make.left.mas_equalTo(Number(10));
         }];
         
-        [_shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-Number(10.0));
             make.centerY.mas_equalTo(self.mas_centerY);
         }];
