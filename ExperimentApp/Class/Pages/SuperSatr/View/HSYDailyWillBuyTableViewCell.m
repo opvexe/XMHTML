@@ -7,8 +7,7 @@
 //
 
 #import "HSYDailyWillBuyTableViewCell.h"
-#import "EX_BaseCollectionViewCell.h"
-#import "EXShopInfoModel.h"
+
 
 @interface HSYDailyWillBuyCollectionViewCell : EX_BaseCollectionViewCell
 @property(nonatomic,strong)FLAnimatedImageView *headPortraitImageView;

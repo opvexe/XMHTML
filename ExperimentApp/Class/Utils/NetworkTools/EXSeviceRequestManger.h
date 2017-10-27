@@ -126,4 +126,28 @@ typedef void(^EXRequstFailedBlock)(NSError *error);
  @param failure failure description
  */
 +(void)GETWithURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
+
+
+#pragma mark goods requst
+
+
+/**
+ 商家信息
+
+ @param url url description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetWithShopGoodsURL:(NSString *)url CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
+
+
+/**
+ 商品详情
+
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)POSTWithGoodsURL:(NSString *)url pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
 @end

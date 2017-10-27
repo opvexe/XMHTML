@@ -8,7 +8,7 @@
 
 #import "EX_TabBarController.h"
 #import "EX_NavigationController.h"
-#import "EX_ProfileController.h"
+#import "EXHotNewsViewController.h"
 #import "EX_PracticeController.h"
 #import "EX_VideoViewController.h"
 #import "EXShopMallsViewController.h"
@@ -26,7 +26,7 @@
     [self initMainController];
     
     ///MARK: 去除掉底部线
-    self.tabBar.backgroundImage = [UIImage new];
+//    self.tabBar.backgroundImage = [UIImage new];
     self.tabBar.shadowImage = [UIImage new];
     self.tabBar.tintColor = [UIColor brownColor];
 }
@@ -42,7 +42,7 @@
     EX_VideoViewController *newsContrller = [[EX_VideoViewController alloc]init];
     EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"超级巨星" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
   
-    EX_ProfileController *profileContrller = [[EX_ProfileController alloc]init];
+    EXHotNewsViewController *profileContrller = [[EXHotNewsViewController alloc]init];
     EX_NavigationController *profileNavigation = [self setChildVC:profileContrller title:@"爆新闻" imageName:@"tabbar_profile" withSelectedName:@"tabbar_profile_selected"];
     
     self.viewControllers = @[practiceNavigation,shopMallsNavigation,newsNavigation,profileNavigation];

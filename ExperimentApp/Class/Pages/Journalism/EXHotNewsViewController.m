@@ -1,23 +1,23 @@
 //
-//  EX_ProfileController.m
+//  EXHotNewsViewController.m
 //  ExperimentApp
 //
-//  Created by GDBank on 2017/9/30.
+//  Created by GDBank on 2017/10/27.
 //  Copyright © 2017年 com.GDBank.Company. All rights reserved.
 //
 
-#import "EX_ProfileController.h"
+#import "EXHotNewsViewController.h"
 
-@interface EX_ProfileController ()
+@interface EXHotNewsViewController ()
 
 @end
 
-@implementation EX_ProfileController
+@implementation EXHotNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"爆新闻";
+    self.navigationItem.title = @"热新闻";
 }
 
 - (void)didReceiveMemoryWarning {

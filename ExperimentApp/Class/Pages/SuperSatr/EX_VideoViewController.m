@@ -12,7 +12,8 @@
 #import "HSYDailyWillBuyTableViewCell.h"
 #import "HSYThePoorTableViewCell.h"
 #import "HSYRecommendTableViewCell.h"
-#import "EXShopInfoModel.h"
+#import "EXHotNewsViewController.h"
+#import "EXGoodsRecommendViewController.h"
 
 static  NSInteger  currentPage ;
 
@@ -150,7 +151,7 @@ static  NSInteger  currentPage ;
         NSMutableDictionary *paraDic = [NSMutableDictionary  dictionaryWithCapacity:0];
         EXShopModel *model = self.shoppingMalls.lastObject;
         [paraDic setValue:@{@"no":@(currentPage)} forKey:@"page"];
-      [EXSeviceRequestManger GetWithShopPagesURL:model.content_data_url  pamDic:paraDic CompleteSuccessfull:^(id responseObject) {
+      [EXSeviceRequestManger POSTWithShopPagesURL:convertToString(model.content_data_url) pamDic:paraDic CompleteSuccessfull:^(id responseObject) {
             EXShopModel *result =[EXShopModel mj_objectWithKeyValues:responseObject];
             NSArray *originalDatas =result.records;
             NSMutableArray *sections = [NSMutableArray arrayWithArray:model.sections];
@@ -220,7 +221,15 @@ static  NSInteger  currentPage ;
 -(void)didSelectItemAtType:(EXXBaseTableViewCellTouchType)type model:(EXShopModel *)model atSectionModel:(EXShopModel*) atSectionModel{
     switch (type) {
         case EXBaseTableViewCellTouchTypeGOOD:{
-         
+            EXGoodsRecommendViewController *vc = [[EXGoodsRecommendViewController alloc] init];
+            if ([model.MIME isEqualToString:@"APPLICATION/BANNER"]) {
+                vc.relatedId = model.related_id.integerValue;
+                vc.agentUser =model.agent_user;
+            }else{
+                vc.relatedId = model.ID.integerValue;
+                vc.agentUser =model.shop.userId;
+            }
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case EXBaseTableViewCellTouchTypeACTIVITY:{
@@ -262,8 +271,10 @@ static  NSInteger  currentPage ;
     NSMutableDictionary *paraDic = [NSMutableDictionary  dictionaryWithCapacity:0];
     switch (model.interfaceType) {
         case InterfaceTypeOld:{
+            
             [paraDic setValue:@{@"no":@1} forKey:@"page"];
             [EXSeviceRequestManger POSTWithShopPagesURL:model.content_data_url  pamDic:paraDic CompleteSuccessfull:^(id responseObject) {
+            
                 [self.shoppingMalls enumerateObjectsUsingBlock:^(EXShopModel  * obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     if ([obj  isEqual:model]) {
                         EXShopModel *result =[EXShopModel mj_objectWithKeyValues:responseObject];
@@ -272,7 +283,6 @@ static  NSInteger  currentPage ;
                     }
                 }];
                 [self.shoppingMallListView reloadData];
-                
             } failure:^(NSError *error, NSDictionary *errorInfor) { }];
             break;
         }

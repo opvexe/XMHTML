@@ -17,9 +17,12 @@
 
 //BaseView
 #import "EX_BaseTbaleViewCell.h"
-#import "EX_BaseModel.h"
+#import "EX_BaseCollectionViewCell.h"
 #import "EX_BaseViewController.h"
 #import "EX_BaseView.h"
+#import "EX_BaseView.h"
+#import "EX_BaseModel.h"
+#import "EXShopInfoModel.h"
 
 ///MARK: 扩展
 #import "UIView+WY_Extenison.h"

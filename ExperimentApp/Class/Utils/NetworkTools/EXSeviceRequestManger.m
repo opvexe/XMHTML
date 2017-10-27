@@ -18,6 +18,7 @@
  */
 +(void)GetWithVideoBannnerCompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
+    
     [WYNetworkHelper GET:@"http://superstar.heysound.com/scene/endorseMain/banner/3"  parameters:nil success:^(id responseObject) {
 
         if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
@@ -146,10 +147,13 @@
 +(void)POSTWithShopPagesURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
     
     [WYNetworkHelper POST:url  parameters:pamDic success:^(id responseObject) {
-        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
-            successfull?successfull(responseObject[@"datas"]):nil;
+        
+        if ([responseObject[@"success"]boolValue]) {
+            if (successfull) {
+                successfull(responseObject[@"result"]);
+            }
         }else{
-            successfull?successfull(responseObject[@"status"]):nil;
+            failure(nil,@{@"code":@(3001),@"message":responseObject[@"msg"]});
         }
     } failure:^(NSError *error) {
         failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
@@ -212,6 +216,52 @@
     [WYNetworkHelper GET:url  parameters:pamDic success:^(id responseObject) {
         if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
             successfull?successfull(responseObject[@"datas"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+}
+
+
+#pragma mark goods requst
+
+
+/**
+ 商家信息
+ 
+ @param url url description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetWithShopGoodsURL:(NSString *)url CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+    
+    [WYNetworkHelper GET:url  parameters:nil success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+}
+
+
+/**
+ 商品详情
+ 
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
+-(void)POSTWithGoodsURL:(NSString *)url pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+
+    [WYNetworkHelper POST:url  parameters:pamDic success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {
+            successfull?successfull(responseObject[@"data"]):nil;
         }else{
             successfull?successfull(responseObject[@"status"]):nil;
         }

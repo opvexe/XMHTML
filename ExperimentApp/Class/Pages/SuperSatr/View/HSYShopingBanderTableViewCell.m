@@ -8,7 +8,6 @@
 
 #import "HSYShopingBanderTableViewCell.h"
 #import "SDCycleScrollView.h"
-#import "EXShopInfoModel.h"
 
 @interface HSYShopingBanderTableViewCell()<SDCycleScrollViewDelegate>
 @property(nonatomic,strong)SDCycleScrollView *cycleSrollView;

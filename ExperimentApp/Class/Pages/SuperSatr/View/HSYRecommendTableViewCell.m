@@ -7,8 +7,6 @@
 //
 
 #import "HSYRecommendTableViewCell.h"
-#import "EX_BaseCollectionViewCell.h"
-#import "EXShopInfoModel.h"
 
 @interface HSYRecommendCollectionViewCell : EX_BaseCollectionViewCell
 @property(nonatomic,strong)FLAnimatedImageView *headPortraitImageView;

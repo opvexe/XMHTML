@@ -7,7 +7,7 @@
 //
 
 #import "EX_BaseView.h"
-#import "EXShopInfoModel.h"
+
 @interface HSYCommodityView : EX_BaseView
 
 @end

@@ -10,7 +10,7 @@
 
 
 /**
- * 商品短简介
+ * 商品短简介 如 新品韩版时尚流行
  */
 @interface EXGoodsInfoTableViewCell : EX_BaseTbaleViewCell
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *
+ * 商城
  */
 typedef NS_ENUM(NSUInteger, TemplateCellType) {
     
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, TemplateCellType) {
     //推荐Cell
     TemplateCellTypeRecommendTableViewCell = 15,
  
-    //单品Cell
+    //新寓故事Cell
     TemplateCellTypeThePoorTableViewCell = 4,
 };
 
