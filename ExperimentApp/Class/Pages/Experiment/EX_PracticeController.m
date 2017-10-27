@@ -19,6 +19,15 @@
 
 @implementation EX_PracticeController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -35,6 +44,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ Description
+
+ @param tableView tableView description
+ @param section section description
+ @return return value description
+ */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
 }
@@ -51,6 +79,27 @@
     NSLog(@"%@",indexPath);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ Description
+
+ @return return value description
+ */
 -(UITableView *)practiceTableView{
     if (!_practiceTableView) {
         _practiceTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT - NavBarHeight - HS_TabbarHeight) style:UITableViewStylePlain];

@@ -532,7 +532,6 @@ static NSInteger pages;
         _shoppingMallTableView.dataSource                                =self;
         _shoppingMallTableView.delegate                                  =self;
         if (@available(iOS 11.0, *)){
-            _shoppingMallTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             _shoppingMallTableView.estimatedRowHeight = 0.f;
             _shoppingMallTableView.estimatedSectionHeaderHeight=0.f;
             _shoppingMallTableView.estimatedSectionFooterHeight=0.f;

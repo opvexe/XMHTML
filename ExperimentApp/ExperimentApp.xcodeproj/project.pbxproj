@@ -40,6 +40,8 @@
 		A60EB1201FA1E4F8003A1157 /* CWLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1131FA1D47C003A1157 /* CWLateralSlideConfiguration.m */; };
 		A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1151FA1D47C003A1157 /* UIViewController+CWLateralSlide.h */; };
 		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
+		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
+		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
 		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
@@ -146,6 +148,10 @@
 		A60EB1131FA1D47C003A1157 /* CWLateralSlideConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideConfiguration.m; sourceTree = "<group>"; };
 		A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWLateralSlide.m"; sourceTree = "<group>"; };
 		A60EB1151FA1D47C003A1157 /* UIViewController+CWLateralSlide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWLateralSlide.h"; sourceTree = "<group>"; };
+		A60EB1251FA2AF1C003A1157 /* EXLeftModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXLeftModel.h; sourceTree = "<group>"; };
+		A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftModel.m; sourceTree = "<group>"; };
+		A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSubjectViewController.h; sourceTree = "<group>"; };
+		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
 		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
 		A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsInfoTableViewCell.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
@@ -392,6 +398,38 @@
 			path = LateralSlide;
 			sourceTree = "<group>";
 		};
+		A60EB1231FA2AE84003A1157 /* LeftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A60EB1241FA2AF00003A1157 /* Model */,
+				A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */,
+				A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */,
+				A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */,
+				A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */,
+				A692EE8D1F8B556A00201C47 /* EX_leftHeadView.h */,
+				A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */,
+			);
+			path = LeftViewController;
+			sourceTree = "<group>";
+		};
+		A60EB1241FA2AF00003A1157 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A60EB1251FA2AF1C003A1157 /* EXLeftModel.h */,
+				A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A60EB1281FA2B110003A1157 /* SubjectController */ = {
+			isa = PBXGroup;
+			children = (
+				A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */,
+				A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */,
+			);
+			path = SubjectController;
+			sourceTree = "<group>";
+		};
 		A66F98491FA061AE00D33340 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,16 +439,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A66F984A1FA061B800D33340 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A69BB3CA1F9F1820000C6C03 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				A66F98491FA061AE00D33340 /* Cell */,
 				A69BB3CB1F9F183A000C6C03 /* EXShopMallsViewController.h */,
 				A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */,
 			);
@@ -508,12 +540,10 @@
 		A6D4F1A71F7F30AD007BC8F0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				A66F984A1FA061B800D33340 /* View */,
-				A66F98491FA061AE00D33340 /* Cell */,
 				A69BB3CA1F9F1820000C6C03 /* Shop */,
-				A6D4F1B61F7F31B9007BC8F0 /* Profile */,
-				A6D4F1B51F7F31AA007BC8F0 /* News */,
-				A6D4F1B41F7F319F007BC8F0 /* Practice */,
+				A6D4F1B61F7F31B9007BC8F0 /* Journalism */,
+				A6D4F1B51F7F31AA007BC8F0 /* SuperSatr */,
+				A6D4F1B41F7F319F007BC8F0 /* Experiment */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -614,22 +644,23 @@
 				A60EB0FC1FA1CE86003A1157 /* LateralSlide */,
 				A60AE6D11F99D36300229AFE /* BannerView */,
 				A60AE6AE1F99998700229AFE /* RunView */,
-				A6D4F1E91F7F5D44007BC8F0 /* DrawerView */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A6D4F1B41F7F319F007BC8F0 /* Practice */ = {
+		A6D4F1B41F7F319F007BC8F0 /* Experiment */ = {
 			isa = PBXGroup;
 			children = (
+				A60EB1281FA2B110003A1157 /* SubjectController */,
+				A60EB1231FA2AE84003A1157 /* LeftViewController */,
 				A6D4F1E41F7F4B95007BC8F0 /* View */,
 				A6D4F1C71F7F3430007BC8F0 /* EX_PracticeController.h */,
 				A6D4F1C81F7F3430007BC8F0 /* EX_PracticeController.m */,
 			);
-			path = Practice;
+			path = Experiment;
 			sourceTree = "<group>";
 		};
-		A6D4F1B51F7F31AA007BC8F0 /* News */ = {
+		A6D4F1B51F7F31AA007BC8F0 /* SuperSatr */ = {
 			isa = PBXGroup;
 			children = (
 				A60AE6B51F999FE100229AFE /* Model */,
@@ -638,16 +669,16 @@
 				A6D4F1C41F7F3422007BC8F0 /* EX_VideoViewController.h */,
 				A6D4F1C51F7F3422007BC8F0 /* EX_VideoViewController.m */,
 			);
-			path = News;
+			path = SuperSatr;
 			sourceTree = "<group>";
 		};
-		A6D4F1B61F7F31B9007BC8F0 /* Profile */ = {
+		A6D4F1B61F7F31B9007BC8F0 /* Journalism */ = {
 			isa = PBXGroup;
 			children = (
 				A6D4F1C11F7F3417007BC8F0 /* EX_ProfileController.h */,
 				A6D4F1C21F7F3417007BC8F0 /* EX_ProfileController.m */,
 			);
-			path = Profile;
+			path = Journalism;
 			sourceTree = "<group>";
 		};
 		A6D4F1E41F7F4B95007BC8F0 /* View */ = {
@@ -659,19 +690,6 @@
 				A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A6D4F1E91F7F5D44007BC8F0 /* DrawerView */ = {
-			isa = PBXGroup;
-			children = (
-				A6D4F1ED1F7F5DED007BC8F0 /* EX_LeftController.h */,
-				A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */,
-				A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */,
-				A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */,
-				A692EE8D1F8B556A00201C47 /* EX_leftHeadView.h */,
-				A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */,
-			);
-			path = DrawerView;
 			sourceTree = "<group>";
 		};
 		A6FC69CD1F8E181B005733AC /* View */ = {
@@ -973,6 +991,7 @@
 				A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */,
 				A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */,
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
+				A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
 				A6DE56E71F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m in Sources */,
@@ -993,6 +1012,7 @@
 				A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */,
 				A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */,
 				A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */,
+				A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,

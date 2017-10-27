@@ -10,7 +10,9 @@
 #import "EX_leftHeadView.h"
 #import "EX_LeftTableViewCell.h"
 #import "EX_PracticeController.h"
-
+#import "EXSubjectViewController.h"
+#import "UIViewController+CWLateralSlide.h"
+#import "EXLeftModel.h"
 @interface EX_LeftController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong)UITableView *choiceTableView;
@@ -29,10 +31,24 @@
                            @{@"title":@"公共基础"},
                            @{@"title":@"桥梁隧道工程"},
                            @{@"title":@"交通工程"}];
-    _dateSouceArray = [EX_BaseModel mj_objectArrayWithKeyValuesArray:dictArray];
+    _dateSouceArray = [EXLeftModel mj_objectArrayWithKeyValuesArray:dictArray];
     [self.view addSubview:self.choiceTableView];
 }
 
+
+
+
+
+
+
+
+/**
+ Description
+
+ @param tableView tableView description
+ @param section section description
+ @return return value description
+ */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dateSouceArray.count;
 }
@@ -47,9 +63,27 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    
-    
+    EXSubjectViewController *vc = [[EXSubjectViewController alloc]init];
+    [self cw_pushViewController:vc];
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ Description
+
+ @return return value description
+ */
 -(UITableView *)choiceTableView{
     if (!_choiceTableView) {
         _choiceTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,  SCREEN_WIDTH * 0.75,SCREEN_HEIGHT - 180) style:UITableViewStylePlain];

@@ -7,6 +7,7 @@
 //
 
 #import "EX_LeftTableViewCell.h"
+#import "EXLeftModel.h"
 @interface EX_LeftTableViewCell ()
 @property(nonatomic, strong)UILabel *contentLabel;
 @end
@@ -36,8 +37,8 @@
     return self;
 }
 
--(void)InitDataViewModel:(EX_BaseModel *)model{
-   
+-(void)InitDataViewModel:(EXLeftModel*)model{
+    _contentLabel.text = convertToString(model.title);
 }
 
 

@@ -9,6 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "WYNetworkHelper.h"
 
+
+/**
+ *  监听请求成功的Block
+ *
+ *  @param responseObject 返回下载成功jason数据
+ */
+typedef void(^EXRequstSuccessBlock)(id responseObject);
+
+/**
+ *  监听请求失败的Block
+ *
+ *  @param error 返回下载成功jason数据
+ */
+typedef void(^EXRequstFailedBlock)(NSError *error);
+
+
 @interface EXSeviceRequestManger : NSObject
 
 #pragma mark  video  request

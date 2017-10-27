@@ -34,16 +34,16 @@
 -(void)initMainController{
     
     EX_PracticeController *practiceContrller = [[EX_PracticeController alloc]init];
-    EX_NavigationController *practiceNavigation = [self setChildVC:practiceContrller title:@"练习" imageName:@"tabbar_home" withSelectedName:@"tabbar_home_selected"];
+    EX_NavigationController *practiceNavigation = [self setChildVC:practiceContrller title:@"微试验" imageName:@"tabbar_home" withSelectedName:@"tabbar_home_selected"];
     
     EXShopMallsViewController *shopMallsContrller = [[EXShopMallsViewController alloc]init];
       EX_NavigationController *shopMallsNavigation = [self setChildVC:shopMallsContrller title:@"商城" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
     
     EX_VideoViewController *newsContrller = [[EX_VideoViewController alloc]init];
-    EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"视频" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
+    EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"超级巨星" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
   
     EX_ProfileController *profileContrller = [[EX_ProfileController alloc]init];
-    EX_NavigationController *profileNavigation = [self setChildVC:profileContrller title:@"我的" imageName:@"tabbar_profile" withSelectedName:@"tabbar_profile_selected"];
+    EX_NavigationController *profileNavigation = [self setChildVC:profileContrller title:@"爆新闻" imageName:@"tabbar_profile" withSelectedName:@"tabbar_profile_selected"];
     
     self.viewControllers = @[practiceNavigation,shopMallsNavigation,newsNavigation,profileNavigation];
     
