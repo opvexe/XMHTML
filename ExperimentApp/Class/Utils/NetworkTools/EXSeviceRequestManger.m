@@ -257,7 +257,7 @@
  @param successfull successfull description
  @param failure failure description
  */
--(void)POSTWithGoodsURL:(NSString *)url pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
++(void)POSTWithGoodsURL:(NSString *)url pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
 
     [WYNetworkHelper POST:url  parameters:pamDic success:^(id responseObject) {
         if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"data"]) ) {

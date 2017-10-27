@@ -59,8 +59,8 @@ static CGFloat BannerHeight = 300.f;
 
 -(NSMutableDictionary *)pargram{
     NSMutableDictionary *pargram = [NSMutableDictionary dictionary];
-//    [pargram setValue:@{@"id":@(self.relatedId)} forKey:@"goods"];
-//    [pargram setValue:@{@"userId":@"88",@"agent":convertToString(self.agentUser)} forKey:@"user"];
+    [pargram setValue:@{@"id":@(self.relatedId)} forKey:@"goods"];
+    [pargram setValue:@{@"userId":@"88",@"agent":convertToString(self.agentUser)} forKey:@"user"];
     return pargram;
 }
 
@@ -78,16 +78,17 @@ static CGFloat BannerHeight = 300.f;
     }];
     
 
-//    dispatch_group_enter(group);
-//    NSMutableDictionary *pargram = [self pargram];
-//    [EXSeviceRequestManger POSTWithGoodsURL:@"https://test.heysound.com/goods/get.do" pamDic:pargram CompleteSuccessfull:^(id responseObject) {
-//
-//        NSLog(@"%@",responseObject);
-//         dispatch_group_leave(group);
-//    } failure:^(NSError *error, NSDictionary *errorInfor) {
-//
-//         dispatch_group_leave(group);
-//    }];
+    dispatch_group_enter(group);
+   
+    NSDictionary *pargram = [self pargram];
+    [EXSeviceRequestManger POSTWithGoodsURL:@"https://test.heysound.com/goods/get.do" pamDic:pargram CompleteSuccessfull:^(id responseObject) {
+
+        NSLog(@"%@",responseObject);
+         dispatch_group_leave(group);
+    } failure:^(NSError *error, NSDictionary *errorInfor) {
+
+         dispatch_group_leave(group);
+    }];
 
 
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
@@ -98,7 +99,8 @@ static CGFloat BannerHeight = 300.f;
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    
+    return self.goods.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -108,17 +110,32 @@ static CGFloat BannerHeight = 300.f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    EXShopModel*model = self.shoppingMalls[indexPath.section];
+    EXGoodsModel *model = self.goods[indexPath.section];
     EX_BaseTbaleViewCell  *cell ;
-//    switch (model.template_type) {
-//        case   TemplateCellTypeShopingBanderTableViewCell:{
+    switch (model.goodsCellType) {
+        case   TemplateCellTypeGoodsBanderTableViewCell:{
          cell = [HSYShopingBanderTableViewCell CellWithTableView:tableView];
-//            break;
-//        }
-//        default:
-//            break;
-//    }
-    
+        }
+                       break;
+            case TemplateCellTypeGoodsIntroduceTableViewCell:
+        {
+            cell = [EXGoodsInfoTableViewCell CellWithTableView:tableView];
+        }
+            break;
+            case TemplateCellTypeGoodsShopkeeperTableViewCell:
+        {
+            cell = [EXGoodsShopperTableViewCell CellWithTableView:tableView];
+        }
+            break;
+            case TemplateCellTypeGoodsChoiceTableViewCell:
+        {
+            cell = [EXGoodsShopChoiceTableViewCell CellWithTableView:tableView];
+        }
+            break;
+        default:
+            break;
+    }
+
     return cell;
 }
 

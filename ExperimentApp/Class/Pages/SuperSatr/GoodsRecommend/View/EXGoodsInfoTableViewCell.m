@@ -130,20 +130,20 @@
 /**
  * 进店逛逛 店主
  */
-@interface EXGoodsShopUserTableViewCell: EX_BaseTbaleViewCell
+@interface EXGoodsShopperTableViewCell()
 @property(nonatomic,strong)FLAnimatedImageView *shopUserImageView;
 @property(nonatomic,strong)UILabel *shopUserNameLabel;
 @property(nonatomic,strong)UIButton *enterShopButton;
 @end
 
-@implementation EXGoodsShopUserTableViewCell
+@implementation EXGoodsShopperTableViewCell
 
 
 + (id)CellWithTableView:(UITableView *)tableView{
     
-    EXGoodsShopUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXGoodsShopUserTableViewCell class])];
+    EXGoodsShopperTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXGoodsShopperTableViewCell class])];
     if (!cell) {
-        cell = [[EXGoodsShopUserTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXGoodsShopUserTableViewCell class])];
+        cell = [[EXGoodsShopperTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXGoodsShopperTableViewCell class])];
     }
     return cell;
 }
@@ -206,7 +206,7 @@
 /**
  * 商品选择数量
  */
-@interface EXGoodsShopChoiceTableViewCell: EX_BaseTbaleViewCell
+@interface EXGoodsShopChoiceTableViewCell()
 @property(nonatomic,strong)UILabel *shopChoiceLabel;
 @property(nonatomic,strong)UIButton *enterButton;
 @end

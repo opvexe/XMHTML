@@ -15,3 +15,17 @@
 @interface EXGoodsInfoTableViewCell : EX_BaseTbaleViewCell
 
 @end
+
+
+/**
+ * 店主
+ */
+@interface EXGoodsShopperTableViewCell: EX_BaseTbaleViewCell
+@end
+
+
+/**
+ 选择
+ */
+@interface EXGoodsShopChoiceTableViewCell: EX_BaseTbaleViewCell
+@end
