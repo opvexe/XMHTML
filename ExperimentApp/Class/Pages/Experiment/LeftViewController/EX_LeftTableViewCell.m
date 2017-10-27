@@ -37,7 +37,7 @@
     return self;
 }
 
--(void)InitDataViewModel:(EXLeftModel*)model{
+-(void)InitDataWithModel:(EXLeftModel*)model{
     _contentLabel.text = convertToString(model.title);
 }
 

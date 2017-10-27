@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "EX_BaseViewProtocol.h"
+#import "EXBaseViewActionProtocol.h"
 
-@interface EX_BaseView : UIView<EX_BaseViewProtocol>
-
+@interface EX_BaseView : UIView<EX_BaseViewProtocol,EXBaseViewActionProtocol>
+@property(nonatomic,weak)id<EXBaseViewActionProtocol>delegate;
 @end

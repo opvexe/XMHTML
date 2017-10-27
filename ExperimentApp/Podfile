@@ -17,12 +17,12 @@ target 'ExperimentApp' do
     # Pods for testing
   end
 
-pod 'Masonry', '~> 1.1.0'
-pod 'MJExtension', '~> 3.0.13'
-pod 'AFNetworking', '~> 3.1.0'
-pod 'SDWebImage', '~> 4.0.0'
-pod 'SDWebImage/GIF'
-pod 'SDCycleScrollView', '~> 1.73'
-pod 'MJRefresh', '~> 3.1.14.1'
+pod 'Masonry'
+pod 'MJExtension'
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'SDWebImage/GIF’
+pod 'SDCycleScrollView'
+pod 'MJRefresh'
 
 end

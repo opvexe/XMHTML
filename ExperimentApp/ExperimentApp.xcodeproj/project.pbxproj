@@ -28,7 +28,6 @@
 		A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6971F998B7B00229AFE /* YYKVStorage.m */; };
 		A60AE6C91F99AEA300229AFE /* YYMemoryCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6981F998B7B00229AFE /* YYMemoryCache.h */; };
 		A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6991F998B7B00229AFE /* YYMemoryCache.m */; };
-		A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */; };
 		A60C72B31F9DF0690070C586 /* EX_BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */; };
 		A60EB1191FA1E4F8003A1157 /* CWDrawerTransition.h in Sources */ = {isa = PBXBuildFile; fileRef = A60EB10F1FA1D47C003A1157 /* CWDrawerTransition.h */; };
 		A60EB11A1FA1E4F8003A1157 /* CWDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB10E1FA1D47C003A1157 /* CWDrawerTransition.m */; };
@@ -43,6 +42,18 @@
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
 		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
+		A67CBA0B1FA2C38600F40F0F /* HSYClassifiedTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */; };
+		A67CBA0C1FA2C38600F40F0F /* HSYClassifiedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA001FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.m */; };
+		A67CBA0D1FA2C38600F40F0F /* HSYCommodityView.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA011FA2BC7D00F40F0F /* HSYCommodityView.h */; };
+		A67CBA0E1FA2C38600F40F0F /* HSYCommodityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA061FA2BC7E00F40F0F /* HSYCommodityView.m */; };
+		A67CBA0F1FA2C38600F40F0F /* HSYDailyWillBuyTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA071FA2BC7E00F40F0F /* HSYDailyWillBuyTableViewCell.h */; };
+		A67CBA101FA2C38600F40F0F /* HSYDailyWillBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA0A1FA2BC7E00F40F0F /* HSYDailyWillBuyTableViewCell.m */; };
+		A67CBA111FA2C38600F40F0F /* HSYRecommendTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA081FA2BC7E00F40F0F /* HSYRecommendTableViewCell.h */; };
+		A67CBA121FA2C38600F40F0F /* HSYRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA031FA2BC7D00F40F0F /* HSYRecommendTableViewCell.m */; };
+		A67CBA131FA2C38600F40F0F /* HSYShopingBanderTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA091FA2BC7E00F40F0F /* HSYShopingBanderTableViewCell.h */; };
+		A67CBA141FA2C38600F40F0F /* HSYShopingBanderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA021FA2BC7D00F40F0F /* HSYShopingBanderTableViewCell.m */; };
+		A67CBA151FA2C38600F40F0F /* HSYThePoorTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA041FA2BC7E00F40F0F /* HSYThePoorTableViewCell.h */; };
+		A67CBA161FA2C38600F40F0F /* HSYThePoorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA051FA2BC7E00F40F0F /* HSYThePoorTableViewCell.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -72,10 +83,6 @@
 		A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1EE1F7F5DED007BC8F0 /* EX_LeftController.m */; };
 		A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */; };
 		A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */; };
-		A6DE56E41F9DC82B0082F256 /* EXClassifiedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E31F9DC82B0082F256 /* EXClassifiedTableViewCell.m */; };
-		A6DE56E71F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E61F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m */; };
-		A6DE56EB1F9DC8840082F256 /* EXRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56EA1F9DC8840082F256 /* EXRecommendTableViewCell.m */; };
-		A6DE56EE1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56ED1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m */; };
 		A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */; };
 		A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
@@ -133,8 +140,6 @@
 		A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_ChannelModel.m; sourceTree = "<group>"; };
 		A60AE6BA1F99A1FB00229AFE /* EXSeviceRequestManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSeviceRequestManger.h; sourceTree = "<group>"; };
 		A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSeviceRequestManger.m; sourceTree = "<group>"; };
-		A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopBannerTableViewCell.h; sourceTree = "<group>"; };
-		A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopBannerTableViewCell.m; sourceTree = "<group>"; };
 		A60C72B11F9DF0690070C586 /* EX_BaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		A60C72B21F9DF0690070C586 /* EX_BaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		A60C72B41F9DF0C40070C586 /* EX_BaseCollectionViewCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseCollectionViewCellProtocol.h; sourceTree = "<group>"; };
@@ -154,6 +159,19 @@
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
 		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
 		A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsInfoTableViewCell.m; sourceTree = "<group>"; };
+		A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYClassifiedTableViewCell.h; sourceTree = "<group>"; };
+		A67CBA001FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYClassifiedTableViewCell.m; sourceTree = "<group>"; };
+		A67CBA011FA2BC7D00F40F0F /* HSYCommodityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYCommodityView.h; sourceTree = "<group>"; };
+		A67CBA021FA2BC7D00F40F0F /* HSYShopingBanderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYShopingBanderTableViewCell.m; sourceTree = "<group>"; };
+		A67CBA031FA2BC7D00F40F0F /* HSYRecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYRecommendTableViewCell.m; sourceTree = "<group>"; };
+		A67CBA041FA2BC7E00F40F0F /* HSYThePoorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYThePoorTableViewCell.h; sourceTree = "<group>"; };
+		A67CBA051FA2BC7E00F40F0F /* HSYThePoorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYThePoorTableViewCell.m; sourceTree = "<group>"; };
+		A67CBA061FA2BC7E00F40F0F /* HSYCommodityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYCommodityView.m; sourceTree = "<group>"; };
+		A67CBA071FA2BC7E00F40F0F /* HSYDailyWillBuyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYDailyWillBuyTableViewCell.h; sourceTree = "<group>"; };
+		A67CBA081FA2BC7E00F40F0F /* HSYRecommendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYRecommendTableViewCell.h; sourceTree = "<group>"; };
+		A67CBA091FA2BC7E00F40F0F /* HSYShopingBanderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYShopingBanderTableViewCell.h; sourceTree = "<group>"; };
+		A67CBA0A1FA2BC7E00F40F0F /* HSYDailyWillBuyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYDailyWillBuyTableViewCell.m; sourceTree = "<group>"; };
+		A67CBA171FA2C49100F40F0F /* EXBaseViewActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBaseViewActionProtocol.h; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -218,14 +236,6 @@
 		A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_SubChannelModel.m; sourceTree = "<group>"; };
 		A6DE56DF1F9DBF1C0082F256 /* EX_ContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_ContentModel.h; sourceTree = "<group>"; };
 		A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_ContentModel.m; sourceTree = "<group>"; };
-		A6DE56E21F9DC82B0082F256 /* EXClassifiedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXClassifiedTableViewCell.h; sourceTree = "<group>"; };
-		A6DE56E31F9DC82B0082F256 /* EXClassifiedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXClassifiedTableViewCell.m; sourceTree = "<group>"; };
-		A6DE56E51F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDailyWillBuyTableViewCell.h; sourceTree = "<group>"; };
-		A6DE56E61F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDailyWillBuyTableViewCell.m; sourceTree = "<group>"; };
-		A6DE56E91F9DC8840082F256 /* EXRecommendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRecommendTableViewCell.h; sourceTree = "<group>"; };
-		A6DE56EA1F9DC8840082F256 /* EXRecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRecommendTableViewCell.m; sourceTree = "<group>"; };
-		A6DE56EC1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopMallsPoorTableViewCell.h; sourceTree = "<group>"; };
-		A6DE56ED1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopMallsPoorTableViewCell.m; sourceTree = "<group>"; };
 		A6DE56EF1F9DCAF20082F256 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
 		A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		A6FE1E871F99EBFB00948D74 /* EXShopInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopInfoModel.h; sourceTree = "<group>"; };
@@ -342,23 +352,6 @@
 			path = RunView;
 			sourceTree = "<group>";
 		};
-		A60AE6B11F999D8A00229AFE /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				A6DE56EC1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.h */,
-				A6DE56ED1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m */,
-				A60AE6CB1F99CD4600229AFE /* EXShopBannerTableViewCell.h */,
-				A60AE6CC1F99CD4600229AFE /* EXShopBannerTableViewCell.m */,
-				A6DE56E21F9DC82B0082F256 /* EXClassifiedTableViewCell.h */,
-				A6DE56E31F9DC82B0082F256 /* EXClassifiedTableViewCell.m */,
-				A6DE56E51F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.h */,
-				A6DE56E61F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m */,
-				A6DE56E91F9DC8840082F256 /* EXRecommendTableViewCell.h */,
-				A6DE56EA1F9DC8840082F256 /* EXRecommendTableViewCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		A60AE6B51F999FE100229AFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,13 +432,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A69BB3CA1F9F1820000C6C03 /* Shop */ = {
+		A69BB3CA1F9F1820000C6C03 /* ShopMalls */ = {
 			isa = PBXGroup;
 			children = (
 				A66F98491FA061AE00D33340 /* Cell */,
 				A69BB3CB1F9F183A000C6C03 /* EXShopMallsViewController.h */,
 				A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */,
 			);
+			name = ShopMalls;
 			path = Shop;
 			sourceTree = "<group>";
 		};
@@ -540,7 +534,7 @@
 		A6D4F1A71F7F30AD007BC8F0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				A69BB3CA1F9F1820000C6C03 /* Shop */,
+				A69BB3CA1F9F1820000C6C03 /* ShopMalls */,
 				A6D4F1B61F7F31B9007BC8F0 /* Journalism */,
 				A6D4F1B51F7F31AA007BC8F0 /* SuperSatr */,
 				A6D4F1B41F7F319F007BC8F0 /* Experiment */,
@@ -596,9 +590,10 @@
 				A60AE69B1F998D2D00229AFE /* EX_BaseView.h */,
 				A60AE69C1F998D2D00229AFE /* EX_BaseView.m */,
 				A6D4F1D31F7F3E7F007BC8F0 /* EX_BaseViewProtocol.h */,
-				A6D4F1D41F7F3F1D007BC8F0 /* EX_BaseTableViewCellProtocol.h */,
+				A67CBA171FA2C49100F40F0F /* EXBaseViewActionProtocol.h */,
 				A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */,
 				A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */,
+				A6D4F1D41F7F3F1D007BC8F0 /* EX_BaseTableViewCellProtocol.h */,
 				A60AE69E1F99906800229AFE /* EX_BaseViewController.h */,
 				A60AE69F1F99906800229AFE /* EX_BaseViewController.m */,
 				A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */,
@@ -664,7 +659,6 @@
 			isa = PBXGroup;
 			children = (
 				A60AE6B51F999FE100229AFE /* Model */,
-				A60AE6B11F999D8A00229AFE /* Cell */,
 				A6FC69CD1F8E181B005733AC /* View */,
 				A6D4F1C41F7F3422007BC8F0 /* EX_VideoViewController.h */,
 				A6D4F1C51F7F3422007BC8F0 /* EX_VideoViewController.m */,
@@ -695,6 +689,18 @@
 		A6FC69CD1F8E181B005733AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */,
+				A67CBA001FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.m */,
+				A67CBA011FA2BC7D00F40F0F /* HSYCommodityView.h */,
+				A67CBA061FA2BC7E00F40F0F /* HSYCommodityView.m */,
+				A67CBA071FA2BC7E00F40F0F /* HSYDailyWillBuyTableViewCell.h */,
+				A67CBA0A1FA2BC7E00F40F0F /* HSYDailyWillBuyTableViewCell.m */,
+				A67CBA081FA2BC7E00F40F0F /* HSYRecommendTableViewCell.h */,
+				A67CBA031FA2BC7D00F40F0F /* HSYRecommendTableViewCell.m */,
+				A67CBA091FA2BC7E00F40F0F /* HSYShopingBanderTableViewCell.h */,
+				A67CBA021FA2BC7D00F40F0F /* HSYShopingBanderTableViewCell.m */,
+				A67CBA041FA2BC7E00F40F0F /* HSYThePoorTableViewCell.h */,
+				A67CBA051FA2BC7E00F40F0F /* HSYThePoorTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -980,6 +986,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67CBA0B1FA2C38600F40F0F /* HSYClassifiedTableViewCell.h in Sources */,
+				A67CBA0C1FA2C38600F40F0F /* HSYClassifiedTableViewCell.m in Sources */,
+				A67CBA0D1FA2C38600F40F0F /* HSYCommodityView.h in Sources */,
+				A67CBA0E1FA2C38600F40F0F /* HSYCommodityView.m in Sources */,
+				A67CBA0F1FA2C38600F40F0F /* HSYDailyWillBuyTableViewCell.h in Sources */,
+				A67CBA101FA2C38600F40F0F /* HSYDailyWillBuyTableViewCell.m in Sources */,
+				A67CBA111FA2C38600F40F0F /* HSYRecommendTableViewCell.h in Sources */,
+				A67CBA121FA2C38600F40F0F /* HSYRecommendTableViewCell.m in Sources */,
+				A67CBA131FA2C38600F40F0F /* HSYShopingBanderTableViewCell.h in Sources */,
+				A67CBA141FA2C38600F40F0F /* HSYShopingBanderTableViewCell.m in Sources */,
+				A67CBA151FA2C38600F40F0F /* HSYThePoorTableViewCell.h in Sources */,
+				A67CBA161FA2C38600F40F0F /* HSYThePoorTableViewCell.m in Sources */,
 				A60EB1191FA1E4F8003A1157 /* CWDrawerTransition.h in Sources */,
 				A60EB11A1FA1E4F8003A1157 /* CWDrawerTransition.m in Sources */,
 				A60EB11B1FA1E4F8003A1157 /* CWInteractiveTransition.h in Sources */,
@@ -994,7 +1012,6 @@
 				A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
-				A6DE56E71F9DC85F0082F256 /* EXDailyWillBuyTableViewCell.m in Sources */,
 				A60AE6C61F99AEA300229AFE /* YYDiskCache.m in Sources */,
 				A60AE6C71F99AEA300229AFE /* YYKVStorage.h in Sources */,
 				A60AE6C81F99AEA300229AFE /* YYKVStorage.m in Sources */,
@@ -1006,8 +1023,6 @@
 				A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */,
 				A60AE6BF1F99A4DC00229AFE /* WYNetworkHelper.h in Sources */,
 				A60AE6C01F99A4DC00229AFE /* WYNetworkHelper.m in Sources */,
-				A6DE56E41F9DC82B0082F256 /* EXClassifiedTableViewCell.m in Sources */,
-				A60AE6CD1F99CD4600229AFE /* EXShopBannerTableViewCell.m in Sources */,
 				A60AE6C11F99A4DC00229AFE /* WYSessionManger.h in Sources */,
 				A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */,
 				A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */,
@@ -1018,7 +1033,6 @@
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
 				A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */,
 				A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */,
-				A6DE56EB1F9DC8840082F256 /* EXRecommendTableViewCell.m in Sources */,
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
@@ -1027,7 +1041,6 @@
 				A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */,
 				A6D4F1BA1F7F3248007BC8F0 /* AppDelegate+Category.m in Sources */,
 				A6D4F1C91F7F3430007BC8F0 /* EX_PracticeController.m in Sources */,
-				A6DE56EE1F9DC9310082F256 /* EXShopMallsPoorTableViewCell.m in Sources */,
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
 				A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */,

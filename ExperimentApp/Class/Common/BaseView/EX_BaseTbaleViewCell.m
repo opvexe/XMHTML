@@ -61,7 +61,7 @@
 /**
   数据模型赋值
  */
--(void)InitDataViewModel:(EX_BaseModel *)model{
+-(void)InitDataWithModel:(EX_BaseModel *)model{
     
 }
 

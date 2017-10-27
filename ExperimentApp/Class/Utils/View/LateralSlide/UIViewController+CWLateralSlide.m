@@ -64,7 +64,7 @@
 }
 
 
-- (void)cw_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture direction:(CWDrawerTransitionDirection)direction transitionBlock:(void(^)())transitionBlock {
+- (void)cw_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture direction:(CWDrawerTransitionDirection)direction transitionBlock:(void(^)(void))transitionBlock {
     
     CWLateralSlideAnimator *animator = [CWLateralSlideAnimator lateralSlideAnimatorWithConfiguration:nil];
     

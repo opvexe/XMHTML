@@ -56,7 +56,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EX_LeftTableViewCell    *cell = [EX_LeftTableViewCell CellWithTableView:tableView];
-    [cell InitDataViewModel:self.dateSouceArray[indexPath.row]];
+    [cell InitDataWithModel:self.dateSouceArray[indexPath.row]];
     return cell;
 }
 

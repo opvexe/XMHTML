@@ -1,23 +1,25 @@
 //
-//  EXRecommendTableViewCell.m
-//  ExperimentApp
+//  HSYRecommendTableViewCell.m
+//  SuperstarUser
 //
-//  Created by GDBank on 2017/10/23.
-//  Copyright © 2017年 com.GDBank.Company. All rights reserved.
+//  Created by snowlu on 2017/10/10.
+//  Copyright © 2017年 HSY. All rights reserved.
 //
 
-#import "EXRecommendTableViewCell.h"
+#import "HSYRecommendTableViewCell.h"
 #import "EX_BaseCollectionViewCell.h"
 #import "EXShopInfoModel.h"
 
-@interface EXRecommendCollectionViewCell :EX_BaseCollectionViewCell
+@interface HSYRecommendCollectionViewCell : EX_BaseCollectionViewCell
 @property(nonatomic,strong)FLAnimatedImageView *headPortraitImageView;
 @property(nonatomic,strong)UILabel *priceLabel;
 @property(nonatomic,strong)UILabel *moreLabel;
 @end
-
-@implementation EXRecommendCollectionViewCell
-
+@implementation HSYRecommendCollectionViewCell
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
 -(void)EX_initConfingViews{
     self.headPortraitImageView = [FLAnimatedImageView new];
     [self.contentView addSubview:self.headPortraitImageView];
@@ -107,11 +109,8 @@
         self.moreLabel.text =model.name;
     }
 }
-
 @end
-
-
-@interface EXRecommendTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface HSYRecommendTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UILabel *titleLabel;
 @property(nonatomic,strong)FLAnimatedImageView *headlineFigureImageView;
 @property(nonatomic,strong)UICollectionView *recommendListView;
@@ -120,25 +119,21 @@
 @property(nonatomic,strong)UILabel *decsLabel;
 @property(nonatomic,strong)EXShopModel *model;
 @end
-@implementation EXRecommendTableViewCell
 
-+ (id)CellWithTableView:(UITableView *)tableView{
-    
-    EXRecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXRecommendTableViewCell class])];
+@implementation HSYRecommendTableViewCell
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
++(instancetype)CellWithTableView:(UITableView *)tableview{
+    static NSString *ID = @"HSYRecommendTableViewCell";
+    HSYRecommendTableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        cell = [[EXRecommendTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXRecommendTableViewCell class])];
+        
+        cell = [[HSYRecommendTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     return cell;
 }
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
-        
-    }
-    return self;
-}
-
 -(void)InitDataWithModel:(EXShopModel *)model{
     EXShopModel *tempModel =model.datas.firstObject;
     self.model = tempModel;
@@ -147,19 +142,23 @@
     NSString *price =@"";
     if ([tempModel.MIME  isEqualToString:@"APPLICATION/GOOD"]) {
         url = convertToString(tempModel.url);
-                channel_name =convertToString(tempModel.name);
-                NSString *oldPrize = tempModel.oldPrice.length?FormatString(@"¥%@",convertToString(tempModel.oldPrice)):@"";
-                NSString *price = tempModel.price.length?FormatString(@"¥%@ ¥%@",convertToString(tempModel.price),convertToString(tempModel.oldPrice)):@"";
-                self.decsLabel.attributedText =[NSString lineStyleSingleString:oldPrize Color:SubheadTitleColor font:FontHelFont(9) withString:price newString:tempModel.price.length?FormatString(@"¥%@",convertToString(tempModel.price)):@""];
-                if (!tempModel.price.length) {
-                    self.decsLabel.hidden =YES;
-                }else{
-                    self.decsLabel.hidden =NO;
-                }
+//        channel_name =convertToString(tempModel.name);
+//        NSString *oldPrize = tempModel.oldPrice.length?FormatString(@"¥%@",convertToString(tempModel.oldPrice)):@"";
+//        NSString *price = tempModel.price.length?FormatString(@"¥%@ ¥%@",convertToString(tempModel.price),convertToString(tempModel.oldPrice)):@"";
+//        self.decsLabel.attributedText =[NSString lineStyleSingleString:oldPrize Color:SubheadTitleColor font:FontHelFont(9) withString:price newString:tempModel.price.length?FormatString(@"¥%@",convertToString(tempModel.price)):@""];
+//        if (!tempModel.price.length) {
+//            self.decsLabel.hidden =YES;
+//        }else{
+//            self.decsLabel.hidden =NO;
+//        }
     }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/VIDEO"]){
         url = convertToString(tempModel.picurl);
+//        channel_name =convertToString(tempModel.title);
+//        price =convertToString(FormatString(@"%@次播放",tempModel.playcount));
     }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/ACTIVITY"]){
         url = convertToString(tempModel.brandLogo);
+//        channel_name =convertToString(tempModel.brandName);
+//        price =convertToString(FormatString(@"%@代言费",tempModel.representFee));
     }else if ([tempModel.MIME  isEqualToString:@"APPLICATION/REPRESENT"]){
         url = convertToString(tempModel.actimg);
         channel_name =convertToString(tempModel.name);
@@ -175,21 +174,35 @@
         channel_name =convertToString(tempModel.channel_name);
         price =convertToString(tempModel.channel_dec);
     }
+//    if (![tempModel.MIME  isEqualToString:@"APPLICATION/GOOD"]) {
+//        self.decsLabel.hidden =YES;
+//        if (!price.length) {
+//            self.decsLabel.hidden =YES;
+//        }else{
+//            self.decsLabel.hidden =NO;
+//        }
+//        self.decsLabel.text = price;
+//    }
     [self.headlineFigureImageView sd_setImageWithURL:URLFromString(url) placeholderImage:[UIImage imageNamed:PlaceholderImageName]];
     
     if (model.datas.count>1) {
         if (model.datas.count>11) {
-            self.recommends = [NSMutableArray arrayWithArray:[model.datas subarrayWithRange:NSMakeRange(1, 9)]];
+         self.recommends = [NSMutableArray arrayWithArray:[model.datas subarrayWithRange:NSMakeRange(1, 9)]];
             EXShopModel *tempModel =[EXShopModel new];
             tempModel.MIME =@"APPLICATION/EVENMORE";
             tempModel.name =@"查看更多";
             tempModel.icon_url =@"moreRecommend";
             [self.recommends insertObject:tempModel atIndex:self.recommends.count];
         }else{
-            self.recommends = [NSMutableArray arrayWithArray:[model.datas subarrayWithRange:NSMakeRange(1, model.datas.count-1)]];
+       self.recommends = [NSMutableArray arrayWithArray:[model.datas subarrayWithRange:NSMakeRange(1, model.datas.count-1)]];
         }
     }
     [self.recommendListView reloadData];
+//
+//    NSDictionary *dic = @{NSFontAttributeName:self.nameLabel.font, NSKernAttributeName:@10.0f
+//                          };
+//    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:channel_name attributes:dic];
+//    self.nameLabel.attributedText =attributeStr;
 }
 
 +(CGFloat)getCellHeight:(EXShopModel *)model{
@@ -209,8 +222,8 @@
     self.headlineFigureImageView.userInteractionEnabled =YES;
     self.headlineFigureImageView.layer.masksToBounds =YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click:)];
-    
-    [self.headlineFigureImageView addGestureRecognizer:tap];
+                                   
+   [self.headlineFigureImageView addGestureRecognizer:tap];
     
     
     
@@ -245,12 +258,12 @@
         make.left.and.right.mas_equalTo(0);
         make.top.mas_equalTo(self.headlineFigureImageView.mas_bottom).offset(Number(5));
     }];
-    [self.recommendListView registerClass:[EXRecommendCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([EXRecommendCollectionViewCell class])];
+    [self.recommendListView registerClass:[HSYRecommendCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([HSYRecommendCollectionViewCell class])];
 }
 #pragma mark UICollectionViewCellDelegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    EXRecommendCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EXRecommendCollectionViewCell class]) forIndexPath:indexPath];
+    HSYRecommendCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HSYRecommendCollectionViewCell class]) forIndexPath:indexPath];
     [cell InitDataWithModel:self.recommends[indexPath.row]];
     return cell;
 }
@@ -295,7 +308,7 @@
         layout.headerReferenceSize = CGSizeMake(0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _recommendListView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 0,0)
-                                               collectionViewLayout:layout];
+                                             collectionViewLayout:layout];
         _recommendListView.backgroundColor = [UIColor clearColor];
         _recommendListView.showsHorizontalScrollIndicator = NO;
         _recommendListView.showsVerticalScrollIndicator =NO;

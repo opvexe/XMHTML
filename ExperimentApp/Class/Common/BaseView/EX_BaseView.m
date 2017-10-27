@@ -47,7 +47,7 @@
 -(void)EX_GetDataSoucre{
     
 }
--(void)InitDataViewModel:(EX_BaseModel*)model{
+-(void)InitDataWithModel:(EX_BaseModel*)model{
     
 }
 -(void)dealloc{

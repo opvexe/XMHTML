@@ -136,7 +136,7 @@
 
 
 /**
- 商城分页数据处理
+ 商城POST分页数据处理
  
  @param url url description
  @param pamDic pamDic description
@@ -176,5 +176,49 @@
         failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
     }];
 }
+
+/**
+ 商城GET分页数据处理
+ 
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetWithShopPagesURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+    
+    [WYNetworkHelper GET:url  parameters:pamDic success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
+            successfull?successfull(responseObject[@"datas"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+}
+
+
+/**
+ Description
+ 
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GETWithURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure{
+    
+    [WYNetworkHelper GET:url  parameters:pamDic success:^(id responseObject) {
+        if ([responseObject[@"status"] isEqualToString:@"ok"]&&!is_null(responseObject[@"datas"]) ) {
+            successfull?successfull(responseObject[@"datas"]):nil;
+        }else{
+            successfull?successfull(responseObject[@"status"]):nil;
+        }
+    } failure:^(NSError *error) {
+        failure?failure(error,@{@"code":@(3001),@"message":@"网络错误",@"error":error}):nil;
+    }];
+}
 @end
+
 

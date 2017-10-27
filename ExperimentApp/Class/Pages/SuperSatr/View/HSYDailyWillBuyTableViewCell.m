@@ -1,24 +1,27 @@
 //
-//  EXDailyWillBuyTableViewCell.m
-//  ExperimentApp
+//  HSYDailyWillBuyTableViewCell.m
+//  SuperstarUser
 //
-//  Created by GDBank on 2017/10/23.
-//  Copyright © 2017年 com.GDBank.Company. All rights reserved.
+//  Created by snowlu on 2017/10/10.
+//  Copyright © 2017年 HSY. All rights reserved.
 //
 
-#import "EXDailyWillBuyTableViewCell.h"
+#import "HSYDailyWillBuyTableViewCell.h"
 #import "EX_BaseCollectionViewCell.h"
 #import "EXShopInfoModel.h"
 
-@interface EXDailyWillBuyCollectionViewCell: EX_BaseCollectionViewCell
+@interface HSYDailyWillBuyCollectionViewCell : EX_BaseCollectionViewCell
 @property(nonatomic,strong)FLAnimatedImageView *headPortraitImageView;
 @property(nonatomic,strong)UILabel *priceLabel;
 @property(nonatomic,strong)UILabel *titleLabel;
 @end
 
-@implementation EXDailyWillBuyCollectionViewCell
-
-- (void)EX_initConfingViews{
+@implementation HSYDailyWillBuyCollectionViewCell
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+-(void)EX_initConfingViews{
     self.headPortraitImageView = [FLAnimatedImageView new];
     self.headPortraitImageView.contentMode =UIViewContentModeScaleAspectFill;
     [self.contentView addSubview:self.headPortraitImageView];
@@ -51,7 +54,6 @@
         make.top.mas_equalTo(0);
     }];
 }
-
 -(void)InitDataWithModel:(EXShopModel *)model{
     NSString *url =@"";
     NSString *channel_name= @"";
@@ -62,7 +64,7 @@
     }else if ([model.MIME  isEqualToString:@"APPLICATION/VIDEO"]){
         url = convertToString(model.picurl);
         channel_name =convertToString(model.title);
-        
+    
         
     }else if ([model.MIME  isEqualToString:@"APPLICATION/ACTIVITY"]){
         url = convertToString(model.brandLogo);
@@ -77,7 +79,7 @@
     }else if ([model.MIME  isEqualToString:@"APPLICATION/BANNER"]){
         url = convertToString( model.pic);
         channel_name =convertToString(model.name);
-        price =convertToString(model.brandDesc);
+          price =convertToString(model.brandDesc);
     }else if ([model.MIME  isEqualToString:@"APPLICATION/CHANNEL"]){
         url =convertToString( model.icon_url);
         channel_name =convertToString(model.channel_name);
@@ -101,7 +103,7 @@
     }else if ([model.MIME  isEqualToString:@"APPLICATION/VIDEO"]){
         NSString *oldPrize = @"次播放";
         NSString *price = model.playcount.length?convertToString(FormatString(@"%@次播放",model.playcount)):@"";
-        self.priceLabel.attributedText =[NSString getOtherColorString:oldPrize font:FontPingFangLG(9) Color:SubheadTitleColor  withString:price];
+          self.priceLabel.attributedText =[NSString getOtherColorString:oldPrize font:FontPingFangLG(9) Color:SubheadTitleColor  withString:price];
         if (!model.playcount.length) {
             self.priceLabel.hidden =YES;
         }else{
@@ -120,89 +122,84 @@
 }
 @end
 
-
-@interface EXDailyWillBuyTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface HSYDailyWillBuyTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UILabel *titleLabel;
 @property(nonatomic,strong)UICollectionView *WillBuyListView;
 @property(nonatomic,strong)NSMutableArray *buys;
 @property(nonatomic,strong)EXShopModel *model;
 @end
-@implementation EXDailyWillBuyTableViewCell
 
-+ (id)CellWithTableView:(UITableView *)tableView{
-    
-    EXDailyWillBuyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EXDailyWillBuyTableViewCell class])];
+@implementation HSYDailyWillBuyTableViewCell
+
++(instancetype)CellWithTableView:(UITableView *)tableview{
+    static NSString *ID = @"HSYDailyWillBuyTableViewCell";
+    HSYDailyWillBuyTableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        cell = [[EXDailyWillBuyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([EXDailyWillBuyTableViewCell class])];
+        cell = [[HSYDailyWillBuyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     return cell;
 }
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
-        
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
 }
-
 -(void)HYSinitConfingViews{
-    [self.contentView addSubview:self.WillBuyListView];
+  [self.contentView addSubview:self.WillBuyListView];
     [self.WillBuyListView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView);
     }];
-    [self.WillBuyListView registerClass:[EXDailyWillBuyCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([EXDailyWillBuyCollectionViewCell class])];
+    [self.WillBuyListView registerClass:[HSYDailyWillBuyCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([HSYDailyWillBuyCollectionViewCell class])];
 }
 -(void)InitDataWithModel:(EXShopModel *)model{
     self.model =model;
     self.buys = [NSMutableArray arrayWithArray:model.datas];
     [self.WillBuyListView reloadData];
 }
-
 +(CGFloat)getCellHeight:(EXShopModel *)model{
     return Number(129);
 }
-
-
-#pragma mark UICollectionViewDelegate
+#pragma mark UICollectionViewCellDelegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    EXDailyWillBuyCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EXDailyWillBuyCollectionViewCell class]) forIndexPath:indexPath];
-    [cell InitDataViewModel:self.buys[indexPath.row]];
+    HSYDailyWillBuyCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HSYDailyWillBuyCollectionViewCell class]) forIndexPath:indexPath];
+    [cell InitDataWithModel:self.buys[indexPath.row]];
     return cell;
 }
-
+//设置分区
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView
 {
     return 1;
 }
-
+//每个分区上的元素个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.buys.count;
     
 }
-
+//每个cell的大小，因为有indexPath，所以可以判断哪一组，或者哪一个item，可一个给特定的大小，等同于layout的itemSize属性
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return  CGSizeMake(self.width/4,self.height);
 }
-
+//// 设置最小行间距，也就是前一行与后一行的中间最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return Number(0);
 }
-
+//// 设置最小列间距，也就是左行与右一行的中间最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return Number(0);
 }
+//定义每个UICollectionView 的边距
 
+//- ( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section {
+//
+//    return UIEdgeInsetsMake ( 0    , Number(10) , 0  , Number(10) );
+//
+//}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    EXShopModel *model =self.buys[indexPath.item];
-    if (self.delegate &&[self.delegate respondsToSelector:@selector(didSelectItemAtType:model:atSectionModel:)]) {
+        EXShopModel *model =self.buys[indexPath.item];
+    if (self.delegate &&[self.delegate respondsToSelector:@selector(didSelectItemAtType:model: atSectionModel:)]) {
         [self.delegate  didSelectItemAtType:model.TouchType model:self.buys[indexPath.item] atSectionModel:self.model];
     }
 }
-
 - (UICollectionView *)WillBuyListView{
     if(!_WillBuyListView){
         
@@ -212,7 +209,7 @@
         layout.headerReferenceSize = CGSizeMake(0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _WillBuyListView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 0,0)
-                                             collectionViewLayout:layout];
+                                                  collectionViewLayout:layout];
         _WillBuyListView.backgroundColor = [UIColor clearColor];
         _WillBuyListView.showsHorizontalScrollIndicator = NO;
         _WillBuyListView.scrollsToTop = NO;
@@ -222,5 +219,4 @@
     }
     return _WillBuyListView;
 }
-
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "EXShopMallsViewController.h"
-#import "EXShopBannerTableViewCell.h"
+#import "HSYShopingBanderTableViewCell.h"
 
 @interface EXShopMallsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic, strong)UITableView *goodsDetailTableView;
@@ -30,7 +30,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-   EXShopBannerTableViewCell  *cell = [EXShopBannerTableViewCell CellWithTableView:tableView];
+   HSYShopingBanderTableViewCell  *cell = [HSYShopingBanderTableViewCell CellWithTableView:tableView];
     return cell;
 }
 

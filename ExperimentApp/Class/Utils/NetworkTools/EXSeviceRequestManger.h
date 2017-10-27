@@ -86,7 +86,7 @@ typedef void(^EXRequstFailedBlock)(NSError *error);
 
 
 /**
- 商城分页数据处理
+ 商城POST分页数据处理
 
  @param url url description
  @param pamDic pamDic description
@@ -106,4 +106,24 @@ typedef void(^EXRequstFailedBlock)(NSError *error);
 +(void)GetWithShopPoorPamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
 
 
+/**
+ 商城GET数据处理
+ 
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GetWithShopPagesURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
+
+
+/**
+ Description
+
+ @param url url description
+ @param pamDic pamDic description
+ @param successfull successfull description
+ @param failure failure description
+ */
++(void)GETWithURL:(NSString *)url  pamDic:(NSDictionary *)pamDic CompleteSuccessfull:(void (^)(id responseObject))successfull  failure:(void (^)(NSError *error , NSDictionary *errorInfor))failure;
 @end

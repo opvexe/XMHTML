@@ -27,7 +27,7 @@
 /**
  初始化数据
  */
--(void)InitDataViewModel:(EX_BaseModel*)model;
+-(void)InitDataWithModel:(EX_BaseModel*)model;
 /**
  配置重用CellTableView
  */
