@@ -213,7 +213,7 @@
         [self.delegate  didSelectItemAtType:self.model.TouchType model:self.model atSectionModel:self.model];
     }
 }
--(void)HYSinitConfingViews{
+-(void)EX_initConfingViews{
     
     [self.contentView addSubview:self.recommendListView];
     self.headlineFigureImageView = [FLAnimatedImageView new];
@@ -307,7 +307,7 @@
         layout.minimumLineSpacing = 0.f;
         layout.headerReferenceSize = CGSizeMake(0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _recommendListView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 0,0)
+        _recommendListView =[[UICollectionView alloc] initWithFrame:CGRectZero
                                              collectionViewLayout:layout];
         _recommendListView.backgroundColor = [UIColor clearColor];
         _recommendListView.showsHorizontalScrollIndicator = NO;

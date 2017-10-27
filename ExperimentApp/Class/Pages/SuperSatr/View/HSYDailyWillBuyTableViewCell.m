@@ -143,7 +143,7 @@
     [super awakeFromNib];
     // Initialization code
 }
--(void)HYSinitConfingViews{
+-(void)EX_initConfingViews{
   [self.contentView addSubview:self.WillBuyListView];
     [self.WillBuyListView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView);
@@ -208,7 +208,7 @@
         layout.minimumLineSpacing = 0.f;
         layout.headerReferenceSize = CGSizeMake(0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _WillBuyListView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 0,0)
+        _WillBuyListView =[[UICollectionView alloc] initWithFrame:CGRectZero
                                                   collectionViewLayout:layout];
         _WillBuyListView.backgroundColor = [UIColor clearColor];
         _WillBuyListView.showsHorizontalScrollIndicator = NO;

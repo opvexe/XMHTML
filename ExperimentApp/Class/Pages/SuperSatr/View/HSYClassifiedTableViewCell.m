@@ -125,7 +125,7 @@
     [self.headPortraitListView reloadData];
 }
 #pragma mark privet function
--(void)HYSinitConfingViews{
+-(void)EX_initConfingViews{
     [self.contentView addSubview:self.headPortraitListView];
     [self.headPortraitListView registerClass:[HSYClassifiedCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([HSYClassifiedCollectionViewCell class])];
 }
@@ -166,13 +166,7 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return Number(0);
 }
-//定义每个UICollectionView 的边距
 
-//- ( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section {
-//
-//    return UIEdgeInsetsMake ( 0    , Number(10) , 0  , Number(10) );
-//
-//}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     EXShopModel *model =self.headPortartis[indexPath.item];
@@ -188,7 +182,7 @@
         layout.minimumLineSpacing = 0.f;
         layout.headerReferenceSize = CGSizeMake(0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _headPortraitListView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 0,0)
+        _headPortraitListView =[[UICollectionView alloc] initWithFrame:CGRectZero
                                          collectionViewLayout:layout];
         _headPortraitListView.backgroundColor = [UIColor clearColor];
         _headPortraitListView.showsHorizontalScrollIndicator = NO;

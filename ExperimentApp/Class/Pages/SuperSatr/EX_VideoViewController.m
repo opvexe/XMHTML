@@ -49,17 +49,31 @@ static  NSInteger  currentPage ;
         make.edges.mas_equalTo(self.view);
     }];
 }
+
+/**
+ 下拉刷新
+ */
 - (void)tableViewDidTriggerHeaderRefresh
 {
     currentPage = 1;
     [self.shoppingMalls removeAllObjects];
     [self loadDataSoucre];
 }
+
+
+/**
+ 上拉加载
+ */
 - (void)tableViewDidTriggerFooterRefresh
 {
     currentPage++;
     [self loadDataSoucre];
 }
+
+
+/**
+ 无网络数据点击加载
+ */
 -(void)reloadDataSoucre{
     self.shoppingMallListView.mj_header.hidden  =NO;
     self.shoppingMallListView.mj_footer.hidden  =NO;
@@ -136,7 +150,7 @@ static  NSInteger  currentPage ;
         NSMutableDictionary *paraDic = [NSMutableDictionary  dictionaryWithCapacity:0];
         EXShopModel *model = self.shoppingMalls.lastObject;
         [paraDic setValue:@{@"no":@(currentPage)} forKey:@"page"];
-      [EXSeviceRequestManger POSTWithShopPagesURL:model.content_data_url  pamDic:paraDic CompleteSuccessfull:^(id responseObject) {
+      [EXSeviceRequestManger GetWithShopPagesURL:model.content_data_url  pamDic:paraDic CompleteSuccessfull:^(id responseObject) {
             EXShopModel *result =[EXShopModel mj_objectWithKeyValues:responseObject];
             NSArray *originalDatas =result.records;
             NSMutableArray *sections = [NSMutableArray arrayWithArray:model.sections];

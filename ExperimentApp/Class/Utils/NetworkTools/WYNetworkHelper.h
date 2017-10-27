@@ -26,34 +26,39 @@ typedef NS_ENUM(NSUInteger, CPNetworkStatus) {
     
     CPNetworkStatusReachableViaReachableViaWWAN,
 };
+
 /**
- *  请求成功
- *
- *  @param responseObject
+ Description
+
+ @param responseObject responseObject description
  */
 typedef void(^CPNetworkRequestSuccess)(id responseObject);
+
 /**
- *  请求失败
- *
- *  @param error
+ Description
+
+ @param error error description
  */
 typedef void(^CPNetworkRequestFailed)(NSError *error);
+
 /**
- *  缓存数据
- *
- *  @param responseCache
+ Description
+
+ @param responseCache responseCache description
  */
 typedef void(^CPNetworkRequestCache)(id responseCache);
+
 /**
- *  进度
- *
- *  @param progress <#progress description#>
+ Description
+
+ @param progress progress description
  */
 typedef void(^CPNetworkProgress)(NSProgress *progress);
+
 /**
- *  网络状态
- *
- *  @param status
+ Description
+
+ @param status status description
  */
 typedef void(^NetworkReachabilityStatus)(CPNetworkStatus status);
 /**
@@ -63,11 +68,11 @@ typedef NS_ENUM(NSUInteger, CPNetworkResponseType) {
 
     CPNetworkResponseTypeJSON = 1,
     /**
-     *  <#Description#>
+     *  Description
      */
     CPNetworkResponseTypeXML  = 2,
     /**
-     *  <#Description#>
+     *  Description
      *
      XML / 特殊情况下，一转换服务器就无法识别的，默认会尝试转换成JSON，若失败则需要自己去转换*/
     CPNetworkResponseTypeData = 3
@@ -91,10 +96,11 @@ typedef NS_ENUM(NSUInteger, CPNetworkRequestType) {
  *  监听网络
  */
 + (void)startListeningNetwork;
+
 /**
- *  获取网络状态
- *
- *  @param status
+ Description
+
+ @param status status description
  */
 + (void)checkNetworkStatusWithBlock:(NetworkReachabilityStatus)status;
 /**
@@ -290,7 +296,6 @@ typedef NS_ENUM(NSUInteger, CPNetworkRequestType) {
 /**
  *    上传视频
  *
- *  @param parameters
  *  @param videoPath  <#videoPath description#>
  *  @param URL        <#URL description#>
  *  @param success    <#success description#>
