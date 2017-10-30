@@ -46,6 +46,7 @@
 		A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5381FA6D3060091533A /* EXEditorTextView.m */; };
 		A61DC5401FA7000E0091533A /* EXSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */; };
 		A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */; };
+		A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */; };
 		A659BD301FA31BFF008F60F8 /* EXGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */; };
 		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
 		A67CBA0B1FA2C38600F40F0F /* HSYClassifiedTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */; };
@@ -176,6 +177,8 @@
 		A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSegmentedControl.m; sourceTree = "<group>"; };
 		A61DC5441FA72AC70091533A /* EXKeyboardPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXKeyboardPhotoViewController.h; sourceTree = "<group>"; };
 		A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXKeyboardPhotoViewController.m; sourceTree = "<group>"; };
+		A61DC5471FA72BEF0091533A /* EXPhotoPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPhotoPreviewViewController.h; sourceTree = "<group>"; };
+		A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPhotoPreviewViewController.m; sourceTree = "<group>"; };
 		A659BD2E1FA31BFF008F60F8 /* EXGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsModel.h; sourceTree = "<group>"; };
 		A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsModel.m; sourceTree = "<group>"; };
 		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -485,6 +488,8 @@
 			children = (
 				A61DC5441FA72AC70091533A /* EXKeyboardPhotoViewController.h */,
 				A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */,
+				A61DC5471FA72BEF0091533A /* EXPhotoPreviewViewController.h */,
+				A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */,
 			);
 			path = keyBoardPhoto;
 			sourceTree = "<group>";
@@ -1177,6 +1182,7 @@
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
+				A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
