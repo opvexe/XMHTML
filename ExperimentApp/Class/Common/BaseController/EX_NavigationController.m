@@ -25,14 +25,25 @@
     
 }
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    // 如果滑动移除控制器的功能失效，清空代理(让导航控制器重新设置这个功能)
+    self.interactivePopGestureRecognizer.delegate = nil;
+   // 禁止使用系统自带的滑动手势,防止从滑动，返回存在未知bug。
+    self.interactivePopGestureRecognizer.enabled = NO;
+}
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count > 0)
     {
+         viewController.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithTarget:self action:@selector(goback) image:@"shop_left" highImage:@"shop_left"];
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [super pushViewController:viewController animated:animated];
 }
 
+-(void)goback{
+    [self popViewControllerAnimated:YES];
+}
 /*
 #pragma mark - Navigation
 

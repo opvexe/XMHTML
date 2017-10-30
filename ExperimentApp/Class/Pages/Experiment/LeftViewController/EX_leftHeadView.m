@@ -27,10 +27,7 @@
         [_cutButton setImage:[UIImage imageNamed:@"my_icon_enter_n"] forState:UIControlStateNormal];
         
         CGFloat imageWidth = 20;
-//        CGFloat imageHeight = 20;
         CGFloat labelWidth = [_cutButton.titleLabel.text sizeWithFont:_cutButton.titleLabel.font].width;
-//        CGFloat labelHeight = [_cutButton.titleLabel.text sizeWithFont:_cutButton.titleLabel.font].height;
-        
         _cutButton.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth, 0, -(labelWidth));
         _cutButton.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);
        //top, left, bottom, right 如果同时有image和label，那这时候image的上左下是相对于button，右边是相对于label的；title的上右下是相对于button，左边是相对于image的。

@@ -34,7 +34,7 @@
  @param transitionBlock 手势过程中执行的操作。传整个点击present的事件即可（看demo的使用）
  */
 - (void)cw_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture
-                                       direction:(CWDrawerTransitionDirection)direction transitionBlock:(void(^)())transitionBlock;
+                                       direction:(CWDrawerTransitionDirection)direction transitionBlock:(void(^)(void))transitionBlock;
 
 
 /**

@@ -37,7 +37,7 @@
     EX_NavigationController *practiceNavigation = [self setChildVC:practiceContrller title:@"微试验" imageName:@"tabbar_home" withSelectedName:@"tabbar_home_selected"];
     
     EXShopMallsViewController *shopMallsContrller = [[EXShopMallsViewController alloc]init];
-      EX_NavigationController *shopMallsNavigation = [self setChildVC:shopMallsContrller title:@"商城" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
+      EX_NavigationController *shopMallsNavigation = [self setChildVC:shopMallsContrller title:@"记者编辑" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];
     
     EX_VideoViewController *newsContrller = [[EX_VideoViewController alloc]init];
     EX_NavigationController *newsNavigation = [self setChildVC:newsContrller title:@"超级巨星" imageName:@"tabbar_discover" withSelectedName:@"tabbar_discover_selected"];

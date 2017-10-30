@@ -41,6 +41,11 @@
 		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
+		A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */; };
+		A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */; };
+		A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5381FA6D3060091533A /* EXEditorTextView.m */; };
+		A61DC5401FA7000E0091533A /* EXSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */; };
+		A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */; };
 		A659BD301FA31BFF008F60F8 /* EXGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */; };
 		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
 		A67CBA0B1FA2C38600F40F0F /* HSYClassifiedTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */; };
@@ -161,6 +166,16 @@
 		A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftModel.m; sourceTree = "<group>"; };
 		A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSubjectViewController.h; sourceTree = "<group>"; };
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
+		A61DC52F1FA6B7B60091533A /* EXMoveShootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXMoveShootViewController.h; sourceTree = "<group>"; };
+		A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXMoveShootViewController.m; sourceTree = "<group>"; };
+		A61DC5321FA6B7CA0091533A /* EXCopyEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCopyEditorViewController.h; sourceTree = "<group>"; };
+		A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCopyEditorViewController.m; sourceTree = "<group>"; };
+		A61DC5371FA6D3060091533A /* EXEditorTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXEditorTextView.h; sourceTree = "<group>"; };
+		A61DC5381FA6D3060091533A /* EXEditorTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXEditorTextView.m; sourceTree = "<group>"; };
+		A61DC53E1FA7000E0091533A /* EXSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSegmentedControl.h; sourceTree = "<group>"; };
+		A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSegmentedControl.m; sourceTree = "<group>"; };
+		A61DC5441FA72AC70091533A /* EXKeyboardPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXKeyboardPhotoViewController.h; sourceTree = "<group>"; };
+		A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXKeyboardPhotoViewController.m; sourceTree = "<group>"; };
 		A659BD2E1FA31BFF008F60F8 /* EXGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsModel.h; sourceTree = "<group>"; };
 		A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsModel.m; sourceTree = "<group>"; };
 		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -379,13 +394,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A60AE6D11F99D36300229AFE /* BannerView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BannerView;
-			sourceTree = "<group>";
-		};
 		A60EB0FC1FA1CE86003A1157 /* LateralSlide */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +441,52 @@
 				A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */,
 			);
 			path = SubjectController;
+			sourceTree = "<group>";
+		};
+		A61DC52D1FA6B7850091533A /* MoveShoot */ = {
+			isa = PBXGroup;
+			children = (
+				A61DC52F1FA6B7B60091533A /* EXMoveShootViewController.h */,
+				A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */,
+			);
+			path = MoveShoot;
+			sourceTree = "<group>";
+		};
+		A61DC52E1FA6B79E0091533A /* CopyEditor */ = {
+			isa = PBXGroup;
+			children = (
+				A61DC5361FA6D2F10091533A /* View */,
+				A61DC5321FA6B7CA0091533A /* EXCopyEditorViewController.h */,
+				A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */,
+			);
+			path = CopyEditor;
+			sourceTree = "<group>";
+		};
+		A61DC5361FA6D2F10091533A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A61DC5371FA6D3060091533A /* EXEditorTextView.h */,
+				A61DC5381FA6D3060091533A /* EXEditorTextView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A61DC53D1FA6FFF80091533A /* EXSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				A61DC53E1FA7000E0091533A /* EXSegmentedControl.h */,
+				A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */,
+			);
+			path = EXSegmentedControl;
+			sourceTree = "<group>";
+		};
+		A61DC5431FA72A0F0091533A /* keyBoardPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				A61DC5441FA72AC70091533A /* EXKeyboardPhotoViewController.h */,
+				A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */,
+			);
+			path = keyBoardPhoto;
 			sourceTree = "<group>";
 		};
 		A659BD2D1FA31BE4008F60F8 /* Model */ = {
@@ -695,8 +749,9 @@
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A61DC5431FA72A0F0091533A /* keyBoardPhoto */,
+				A61DC53D1FA6FFF80091533A /* EXSegmentedControl */,
 				A60EB0FC1FA1CE86003A1157 /* LateralSlide */,
-				A60AE6D11F99D36300229AFE /* BannerView */,
 				A60AE6AE1F99998700229AFE /* RunView */,
 			);
 			path = View;
@@ -729,6 +784,8 @@
 		A6D4F1B61F7F31B9007BC8F0 /* Journalism */ = {
 			isa = PBXGroup;
 			children = (
+				A61DC52E1FA6B79E0091533A /* CopyEditor */,
+				A61DC52D1FA6B7850091533A /* MoveShoot */,
 				A67CBA1C1FA2DE8600F40F0F /* EXHotNewsViewController.h */,
 				A67CBA1D1FA2DE8600F40F0F /* EXHotNewsViewController.m */,
 			);
@@ -1061,7 +1118,9 @@
 				A67CBA161FA2C38600F40F0F /* HSYThePoorTableViewCell.m in Sources */,
 				A60EB1191FA1E4F8003A1157 /* CWDrawerTransition.h in Sources */,
 				A60EB11A1FA1E4F8003A1157 /* CWDrawerTransition.m in Sources */,
+				A61DC5401FA7000E0091533A /* EXSegmentedControl.m in Sources */,
 				A60EB11B1FA1E4F8003A1157 /* CWInteractiveTransition.h in Sources */,
+				A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */,
 				A60EB11C1FA1E4F8003A1157 /* CWInteractiveTransition.m in Sources */,
 				A60EB11D1FA1E4F8003A1157 /* CWLateralSlideAnimator.h in Sources */,
 				A60EB11E1FA1E4F8003A1157 /* CWLateralSlideAnimator.m in Sources */,
@@ -1091,6 +1150,7 @@
 				A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */,
 				A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */,
 				A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */,
+				A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
@@ -1098,8 +1158,10 @@
 				A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */,
 				A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */,
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
+				A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
+				A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */,
 				A6D4F1C01F7F3376007BC8F0 /* EX_TabBarController.m in Sources */,
 				A6D4F1C61F7F3422007BC8F0 /* EX_VideoViewController.m in Sources */,
 				A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */,
