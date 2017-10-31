@@ -8,6 +8,36 @@
 
 #import <UIKit/UIKit.h>
 
+@class EXKeyboardPhotoViewController;
+
+@protocol EXKeyboardPhotoControllerDelegate <NSObject>
+/**
+ * 发送预览图片
+
+ @param viewController controller description
+ @param image image description
+ */
+-(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController initWithSendImage:(UIImage *)image;
+/**
+ * 预览图片，调转到预览vc
+
+ @param viewController controller description
+ @param previewController previewController description
+ */
+-(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController popPreviewController:(UIViewController *)previewController;
+/**
+ * 选择相册 代理回调
+
+ @param viewController viewController description
+ @param picker picker description
+ */
+- (void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController initWithImagePickerController:(UIViewController *)picker;
+@end
 @interface EXKeyboardPhotoViewController : UIViewController
 
+@property (nonatomic,weak) id <EXKeyboardPhotoControllerDelegate> delegate;
+/**
+ * 刷新界面
+ */
+-(void)reload;
 @end

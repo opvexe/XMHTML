@@ -49,6 +49,8 @@
 		A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */; };
 		A659BD301FA31BFF008F60F8 /* EXGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */; };
 		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
+		A67466C31FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67466C21FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m */; };
+		A67466CE1FA8780D0097E77C /* RewriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A67466CD1FA8780D0097E77C /* RewriteButton.m */; };
 		A67CBA0B1FA2C38600F40F0F /* HSYClassifiedTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */; };
 		A67CBA0C1FA2C38600F40F0F /* HSYClassifiedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA001FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.m */; };
 		A67CBA0D1FA2C38600F40F0F /* HSYCommodityView.h in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA011FA2BC7D00F40F0F /* HSYCommodityView.h */; };
@@ -183,6 +185,10 @@
 		A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsModel.m; sourceTree = "<group>"; };
 		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
 		A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsInfoTableViewCell.m; sourceTree = "<group>"; };
+		A67466C11FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXKeyboardPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		A67466C21FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXKeyboardPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		A67466CC1FA8780D0097E77C /* RewriteButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewriteButton.h; sourceTree = "<group>"; };
+		A67466CD1FA8780D0097E77C /* RewriteButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewriteButton.m; sourceTree = "<group>"; };
 		A67CB9FF1FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYClassifiedTableViewCell.h; sourceTree = "<group>"; };
 		A67CBA001FA2BC7D00F40F0F /* HSYClassifiedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYClassifiedTableViewCell.m; sourceTree = "<group>"; };
 		A67CBA011FA2BC7D00F40F0F /* HSYCommodityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYCommodityView.h; sourceTree = "<group>"; };
@@ -488,6 +494,8 @@
 			children = (
 				A61DC5441FA72AC70091533A /* EXKeyboardPhotoViewController.h */,
 				A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */,
+				A67466C11FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.h */,
+				A67466C21FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m */,
 				A61DC5471FA72BEF0091533A /* EXPhotoPreviewViewController.h */,
 				A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */,
 			);
@@ -747,6 +755,8 @@
 				A6D4F1D81F7F40F3007BC8F0 /* UIBarButtonItem+Category.m */,
 				A6DE56EF1F9DCAF20082F256 /* UIColor+Category.h */,
 				A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */,
+				A67466CC1FA8780D0097E77C /* RewriteButton.h */,
+				A67466CD1FA8780D0097E77C /* RewriteButton.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1129,6 +1139,7 @@
 				A60EB11C1FA1E4F8003A1157 /* CWInteractiveTransition.m in Sources */,
 				A60EB11D1FA1E4F8003A1157 /* CWLateralSlideAnimator.h in Sources */,
 				A60EB11E1FA1E4F8003A1157 /* CWLateralSlideAnimator.m in Sources */,
+				A67466C31FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m in Sources */,
 				A60EB11F1FA1E4F8003A1157 /* CWLateralSlideConfiguration.h in Sources */,
 				A60EB1201FA1E4F8003A1157 /* CWLateralSlideConfiguration.m in Sources */,
 				A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */,
@@ -1182,6 +1193,7 @@
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
+				A67466CE1FA8780D0097E77C /* RewriteButton.m in Sources */,
 				A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,

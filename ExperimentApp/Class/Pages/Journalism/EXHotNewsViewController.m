@@ -9,6 +9,8 @@
 #import "EXHotNewsViewController.h"
 #import "EXMoveShootViewController.h"
 #import "EXCopyEditorViewController.h"
+#import "EXKeyboardPhotoViewController.h"
+#import "EXPhotoPreviewViewController.h"
 @interface EXHotNewsViewController ()
 @property(nonatomic,strong)UIButton *shootButton;
 @property(nonatomic,strong)UIButton *manuscriptButton;
@@ -70,7 +72,7 @@
             break;
             case 1:
         {
-            EXCopyEditorViewController *vc = [[EXCopyEditorViewController alloc]init];
+            EXKeyboardPhotoViewController *vc = [[EXKeyboardPhotoViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
