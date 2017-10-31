@@ -16,8 +16,8 @@
 @property(nonatomic,strong)EXPhotoPreviewViewController *previewController; //预览
 @property(nonatomic, strong) PHFetchResult *photosResult;
 @property(nonatomic, strong) NSMutableDictionary *photos;
-@property (nonatomic,strong) UIButton *takePhotoPreview;///拍照/预览
-@property (nonatomic,strong) UIButton *photoSend;   //相册/发送
+@property (nonatomic,strong) RewriteButton *takePhotoPreview;///拍照/预览
+@property (nonatomic,strong) RewriteButton *photoSend;   //相册/发送
 @property (nonatomic,strong) NSIndexPath *selectedIndexPath;
 @property (nonatomic,strong) UIView  *bottomView;   ///底部视图
 @end
@@ -26,7 +26,7 @@
     BOOL _selecting;
 }
 
-static CGFloat const Height = 40.f;
+static CGFloat const Height = 60.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -199,12 +199,12 @@ static CGFloat const Height = 40.f;
 -(void)initWithBottomView{
     self.bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - HS_TabbarSafeBottomMargin - NavBarHeight - Height*2, SCREEN_WIDTH, Height*2)];
     [self.view addSubview:self.bottomView];
-    self.takePhotoPreview = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.takePhotoPreview = [RewriteButton buttonWithType:UIButtonTypeCustom];
     [self initWithButton:self.takePhotoPreview withTitle:@"拍照" withImageName:@"photo_take_icon"];
     [self.view addSubview:self.takePhotoPreview];
     self.takePhotoPreview.tag = 100;
     [self.takePhotoPreview addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
-    self.photoSend = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.photoSend = [RewriteButton buttonWithType:UIButtonTypeCustom];
     [self initWithButton:self.photoSend withTitle:@"相册" withImageName:@"photo_gallery_icon"];
     [self.view addSubview:self.photoSend];
     self.photoSend.tag = 101;
@@ -218,6 +218,24 @@ static CGFloat const Height = 40.f;
         make.top.mas_equalTo(self.takePhotoPreview.mas_bottom);
         make.height.mas_equalTo(Height);
     }];
+    
+    UIView *separatedLineTop = [[UIView alloc]init];
+    separatedLineTop.backgroundColor = [UIColor colorWithWhite:0.9 alpha:.5];
+    [self.view addSubview:separatedLineTop];
+    UIView *separatedLineMid = [[UIView alloc]init];
+    separatedLineMid.backgroundColor = [UIColor colorWithWhite:0.9 alpha:.5];
+    [self.view addSubview:separatedLineMid];
+    [separatedLineTop mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(1.0f);
+        make.top.mas_equalTo(self.takePhotoPreview.mas_top).mas_equalTo(-1.0f);
+    }];
+    [separatedLineMid mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(1.0f);
+        make.top.mas_equalTo(self.takePhotoPreview.mas_bottom).mas_equalTo(-1.0f);
+    }];
+    
 }
 
 -(void)dothings:(UIButton *)sender{
@@ -289,14 +307,15 @@ static CGFloat const Height = 40.f;
  */
 -(void)initWithButton:(UIButton *)btn withTitle:(NSString *)title withImageName:(NSString *)image{
     [btn.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    btn.titleLabel.font = FontPingFangSC(Number(14));
     btn.contentMode = UIViewContentModeScaleAspectFill;
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitle:title forState:UIControlStateHighlighted];
     [btn setTitle:title forState:UIControlStateSelected];
-    [btn setTitleColor:BaseTitleColor forState:UIControlStateNormal];
-    [btn setTitleColor:BaseTitleColor forState:UIControlStateSelected];
-    [btn setTitleColor:BaseTitleColor forState:UIControlStateHighlighted];
-    [btn setTitleColor:BaseTitleColor forState:UIControlStateDisabled];
+    [btn setTitleColor:TitleColor forState:UIControlStateNormal];
+    [btn setTitleColor:TitleColor forState:UIControlStateSelected];
+    [btn setTitleColor:TitleColor forState:UIControlStateHighlighted];
+    [btn setTitleColor:TitleColor forState:UIControlStateDisabled];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateHighlighted];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateSelected];

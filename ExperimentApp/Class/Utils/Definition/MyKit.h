@@ -31,6 +31,7 @@
 #import "NSString+FriendExtenison.h"
 #import "UILabel+ZDKExtent.h"
 #import "UIColor+Category.h"
+#import "RewriteButton.h"
 
 ///MARK: 宏定义
 #import "CommonTools.h"

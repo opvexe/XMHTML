@@ -15,8 +15,8 @@
  - EXDirectionTypeTitleLeft: EXDirectionTypeTitleLeft description
  */
 typedef NS_ENUM(NSUInteger,EXDirectionType) {
-    EXDirectionTypeTitleRight  = 1,             ///MARK: 图片在左文字在右边
-    EXDirectionTypeTitleLeft   = 2,             ///Mark: 文字在右图片在左边
+    ButtonDisplayTypeImageLeftTileRight  = 1,          
+    ButtonDisplayTypeImageUpTileDown   = 2,
 };
 @interface RewriteButton : UIButton
 
