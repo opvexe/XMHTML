@@ -39,6 +39,7 @@ static CGFloat const kLMWCommonSpacing = 16.f;
     ///MARK: 文稿标题
     self.titleTextField = [[UITextField alloc] init];
     self.titleTextField.font = [UIFont boldSystemFontOfSize:16.f];
+    self.titleTextField.textAlignment = NSTextAlignmentCenter;
     self.titleTextField.placeholder = @"文稿标题";
     ///Mark： 分割线
     _separatorLine = [[UIView alloc] init];

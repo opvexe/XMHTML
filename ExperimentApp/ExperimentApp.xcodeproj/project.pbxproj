@@ -41,7 +41,10 @@
 		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
+		A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A61569491FA9793600849F57 /* EXFontStyleModel.m */; };
 		A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */; };
+		A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739E31FA9750100E6C91D /* EXKeyBoardFontViewController.m */; };
+		A61739EE1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739ED1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m */; };
 		A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */; };
 		A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */; };
 		A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5381FA6D3060091533A /* EXEditorTextView.m */; };
@@ -97,6 +100,8 @@
 		A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56DD1F9DBEEF0082F256 /* EX_SubChannelModel.m */; };
 		A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */; };
 		A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */; };
+		A6E01DBD1FA9B61700D3529D /* EXPopupFontSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DBC1FA9B61700D3529D /* EXPopupFontSettingView.m */; };
+		A6E01DC01FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DBF1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m */; };
 		A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
 /* End PBXBuildFile section */
@@ -170,8 +175,14 @@
 		A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftModel.m; sourceTree = "<group>"; };
 		A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSubjectViewController.h; sourceTree = "<group>"; };
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
+		A61569481FA9793600849F57 /* EXFontStyleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontStyleModel.h; sourceTree = "<group>"; };
+		A61569491FA9793600849F57 /* EXFontStyleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontStyleModel.m; sourceTree = "<group>"; };
 		A61739DE1FA9689C00E6C91D /* EXPhotoLibraryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPhotoLibraryManager.h; sourceTree = "<group>"; };
 		A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPhotoLibraryManager.m; sourceTree = "<group>"; };
+		A61739E21FA9750100E6C91D /* EXKeyBoardFontViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXKeyBoardFontViewController.h; sourceTree = "<group>"; };
+		A61739E31FA9750100E6C91D /* EXKeyBoardFontViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXKeyBoardFontViewController.m; sourceTree = "<group>"; };
+		A61739EC1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXLeftTitleRightImageStyleTableViewCell.h; sourceTree = "<group>"; };
+		A61739ED1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftTitleRightImageStyleTableViewCell.m; sourceTree = "<group>"; };
 		A61DC52F1FA6B7B60091533A /* EXMoveShootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXMoveShootViewController.h; sourceTree = "<group>"; };
 		A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXMoveShootViewController.m; sourceTree = "<group>"; };
 		A61DC5321FA6B7CA0091533A /* EXCopyEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCopyEditorViewController.h; sourceTree = "<group>"; };
@@ -277,6 +288,10 @@
 		A6DE56E01F9DBF1C0082F256 /* EX_ContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_ContentModel.m; sourceTree = "<group>"; };
 		A6DE56EF1F9DCAF20082F256 /* UIColor+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
 		A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
+		A6E01DBB1FA9B61700D3529D /* EXPopupFontSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPopupFontSettingView.h; sourceTree = "<group>"; };
+		A6E01DBC1FA9B61700D3529D /* EXPopupFontSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPopupFontSettingView.m; sourceTree = "<group>"; };
+		A6E01DBE1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontSpecialityTableViewCell.h; sourceTree = "<group>"; };
+		A6E01DBF1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontSpecialityTableViewCell.m; sourceTree = "<group>"; };
 		A6FE1E871F99EBFB00948D74 /* EXShopInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopInfoModel.h; sourceTree = "<group>"; };
 		A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopInfoModel.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -455,6 +470,37 @@
 				A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */,
 			);
 			path = SubjectController;
+			sourceTree = "<group>";
+		};
+		A61569471FA9791700849F57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A61569481FA9793600849F57 /* EXFontStyleModel.h */,
+				A61569491FA9793600849F57 /* EXFontStyleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A61739E11FA974CD00E6C91D /* keyBoardFont */ = {
+			isa = PBXGroup;
+			children = (
+				A61569471FA9791700849F57 /* Model */,
+				A61739E51FA9765600E6C91D /* View */,
+				A61739E21FA9750100E6C91D /* EXKeyBoardFontViewController.h */,
+				A61739E31FA9750100E6C91D /* EXKeyBoardFontViewController.m */,
+			);
+			path = keyBoardFont;
+			sourceTree = "<group>";
+		};
+		A61739E51FA9765600E6C91D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6E01DBE1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.h */,
+				A6E01DBF1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m */,
+				A61739EC1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.h */,
+				A61739ED1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A61DC52D1FA6B7850091533A /* MoveShoot */ = {
@@ -769,6 +815,8 @@
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A6E01DBA1FA9B60800D3529D /* popupView */,
+				A61739E11FA974CD00E6C91D /* keyBoardFont */,
 				A61DC5431FA72A0F0091533A /* keyBoardPhoto */,
 				A61DC53D1FA6FFF80091533A /* EXSegmentedControl */,
 				A60EB0FC1FA1CE86003A1157 /* LateralSlide */,
@@ -821,6 +869,15 @@
 				A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A6E01DBA1FA9B60800D3529D /* popupView */ = {
+			isa = PBXGroup;
+			children = (
+				A6E01DBB1FA9B61700D3529D /* EXPopupFontSettingView.h */,
+				A6E01DBC1FA9B61700D3529D /* EXPopupFontSettingView.m */,
+			);
+			path = popupView;
 			sourceTree = "<group>";
 		};
 		A6FC69CD1F8E181B005733AC /* View */ = {
@@ -1148,10 +1205,12 @@
 				A67466C31FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m in Sources */,
 				A60EB11F1FA1E4F8003A1157 /* CWLateralSlideConfiguration.h in Sources */,
 				A60EB1201FA1E4F8003A1157 /* CWLateralSlideConfiguration.m in Sources */,
+				A6E01DC01FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m in Sources */,
 				A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */,
 				A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */,
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
 				A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */,
+				A61739EE1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
 				A60AE6C61F99AEA300229AFE /* YYDiskCache.m in Sources */,
@@ -1174,6 +1233,7 @@
 				A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */,
 				A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
+				A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */,
 				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
 				A67CBA231FA2F9EB00F40F0F /* EXNavigationView.m in Sources */,
@@ -1192,6 +1252,7 @@
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
 				A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */,
+				A6E01DBD1FA9B61700D3529D /* EXPopupFontSettingView.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
@@ -1204,6 +1265,7 @@
 				A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
+				A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
 				A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */,
 				A67CBA271FA3081B00F40F0F /* EXGoodsFootView.m in Sources */,

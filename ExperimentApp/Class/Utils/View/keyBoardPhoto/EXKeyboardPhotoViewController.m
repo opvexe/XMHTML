@@ -29,8 +29,8 @@ static CGFloat const Height = 60.f;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self initWithBottomView];
     [self initWithCollectionView];
+    [self initWithBottomView];
     [self initWithPHPhotoLibrary];
     self.selecting = NO;
 }
@@ -42,7 +42,7 @@ static CGFloat const Height = 60.f;
     [self.view addSubview:self.photoCollectionView];
     [self.photoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.bottomView.mas_top);
+        make.bottom.mas_equalTo(self.view).mas_offset(-Height*2);
     }];
     [self.photoCollectionView registerClass:[EXKeyboardPhotoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([EXKeyboardPhotoCollectionViewCell class])];
 }
@@ -103,7 +103,7 @@ static CGFloat const Height = 60.f;
 
 - ( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section {
     //top, left, bottom, right
-    return UIEdgeInsetsMake ( Number(5), Number(5) ,Number(5), Number(5));
+    return UIEdgeInsetsMake ( Number(10), Number(5) ,Number(10), Number(5));
     
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -188,7 +188,8 @@ static CGFloat const Height = 60.f;
  * 初始化Bottom底部视图
  */
 -(void)initWithBottomView{
-    self.bottomView = [[UIView alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(self.view.frame) - Height*2, SCREEN_WIDTH, Height*2)];
+    self.bottomView = [[UIView alloc]init];
+    self.bottomView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.bottomView];
     self.takePhotoPreview = [RewriteButton buttonWithType:UIButtonTypeCustom];
     [self initWithButton:self.takePhotoPreview withTitle:@"拍照" withImageName:@"photo_take_icon"];
@@ -200,6 +201,10 @@ static CGFloat const Height = 60.f;
     [self.view addSubview:self.photoSend];
     self.photoSend.tag = 101;
     [self.photoSend addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.photoCollectionView.mas_bottom);
+    }];
     [self.takePhotoPreview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(self.bottomView);
         make.height.mas_equalTo(Height);

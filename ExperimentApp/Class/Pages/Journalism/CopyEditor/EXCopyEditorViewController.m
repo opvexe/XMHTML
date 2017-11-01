@@ -8,6 +8,7 @@
 
 #import "EXCopyEditorViewController.h"
 #import "EXKeyboardPhotoViewController.h"
+#import "EXKeyBoardFontViewController.h"
 #import "EXPhotoLibraryManager.h"
 #import "EXSegmentedControl.h"
 #import "EXEditorTextView.h"
@@ -16,6 +17,7 @@
 @property(nonatomic,assign)CGFloat keyboardSpacingHeight;
 @property(nonatomic,strong)EXSegmentedControl *keyboardInputView;
 @property (nonatomic,strong) EXKeyboardPhotoViewController *keyBoardViewController;
+@property (nonatomic,strong) EXKeyBoardFontViewController *keyBoardFontViewController;
 @end
 
 @implementation EXCopyEditorViewController
@@ -51,10 +53,10 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
             NSLog(@"相册授权成功");
         }else{
             NSLog(@"相册授权失败");
-            NSURL *settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-            if ([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
-                [[UIApplication sharedApplication] openURL:settingUrl];
-            }
+//            NSURL *settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+//            if ([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
+//                [[UIApplication sharedApplication] openURL:settingUrl];
+//            }
         }
     }];
 }
@@ -68,10 +70,6 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
             NSLog(@"相机权限授权成功");
         }else{
             NSLog(@"相机权限授权失败");
-            NSURL *settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-            if ([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
-                [[UIApplication sharedApplication] openURL:settingUrl];
-            }
         }
     }];
 }
@@ -119,16 +117,16 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
         case 1:
         {
             NSLog(@"字体");
+            [self.keyBoardFontViewController.view setFrame:rect];
+            self.textView.inputView = self.keyBoardFontViewController.view;
         }
             break;
             
         case 2:
         {
             NSLog(@"图片");
-            UIView *inputView = [[UIView alloc] initWithFrame:rect];
-            self.keyBoardViewController.view.frame = rect;
-            [inputView addSubview:self.keyBoardViewController.view];
-            self.textView.inputView = inputView;
+            [self.keyBoardViewController.view setFrame:rect];
+            self.textView.inputView = self.keyBoardViewController.view;
         }
             break;
         default:
@@ -285,6 +283,12 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
     return _keyBoardViewController;
 }
 
+-(EXKeyBoardFontViewController *)keyBoardFontViewController{
+    if (!_keyBoardFontViewController) {
+        _keyBoardFontViewController = [[EXKeyBoardFontViewController alloc]init];
+    }
+    return _keyBoardFontViewController;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

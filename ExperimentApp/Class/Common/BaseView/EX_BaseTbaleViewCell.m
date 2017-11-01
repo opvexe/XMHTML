@@ -16,7 +16,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        
+         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self EX_initConfingViews];
         [self EX_SetupViewModel];
     }
@@ -38,7 +38,6 @@
  */
 -(void)EX_initConfingViews{
     
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
 
