@@ -7,12 +7,15 @@
 //
 
 #import "EXCopyEditorViewController.h"
+#import "EXKeyboardPhotoViewController.h"
+#import "EXPhotoLibraryManager.h"
 #import "EXSegmentedControl.h"
 #import "EXEditorTextView.h"
-@interface EXCopyEditorViewController ()<UITextViewDelegate,UITextFieldDelegate,EXSegmentedControlDelegate>
+@interface EXCopyEditorViewController ()<UITextViewDelegate,UITextFieldDelegate,EXSegmentedControlDelegate,EXKeyboardPhotoControllerDelegate>
 @property(nonatomic,strong)EXEditorTextView *textView;
 @property(nonatomic,assign)CGFloat keyboardSpacingHeight;
 @property(nonatomic,strong)EXSegmentedControl *keyboardInputView;
+@property (nonatomic,strong) EXKeyboardPhotoViewController *keyBoardViewController;
 @end
 
 @implementation EXCopyEditorViewController
@@ -25,6 +28,8 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
     [self initWithRightNavationView];
     [self initWithTextView];
     [self initWithKeyboardInputView];
+    [self requestALAssetsLibraryAuthorization];
+    [self requestALAssetsCameraAuthorization];
     ///注册键盘弹起通知
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -35,6 +40,40 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     [self.keyboardInputView addTarget:self action:@selector(changeTextInputView:) forControlEvents:UIControlEventValueChanged];
+}
+
+/**
+ * 获取相册权限
+ */
+-(void)requestALAssetsLibraryAuthorization{
+    [EXPhotoLibraryManager requestALAssetsLibraryAuthorizationWithCompletion:^(Boolean isAuth) {
+        if (isAuth) {
+            NSLog(@"相册授权成功");
+        }else{
+            NSLog(@"相册授权失败");
+            NSURL *settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            if ([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
+                [[UIApplication sharedApplication] openURL:settingUrl];
+            }
+        }
+    }];
+}
+
+/**
+ * 获取相机权限
+ */
+-(void)requestALAssetsCameraAuthorization{
+    [EXPhotoLibraryManager requestALAssetsCameraAuthorizationWithCompletion:^(Boolean isAuth) {
+        if (isAuth) {
+            NSLog(@"相机权限授权成功");
+        }else{
+            NSLog(@"相机权限授权失败");
+            NSURL *settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            if ([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
+                [[UIApplication sharedApplication] openURL:settingUrl];
+            }
+        }
+    }];
 }
 
 /**
@@ -50,7 +89,7 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
     self.keyboardInputView = [[EXSegmentedControl alloc] initWithItems:items];
     self.keyboardInputView.delegate = self;
     self.keyboardInputView.changeSegmentManually = YES;
-   self.textView.inputAccessoryView = self.keyboardInputView;
+    self.textView.inputAccessoryView = self.keyboardInputView;
     CGRect rect = self.view.bounds;
     rect.size.height = KeyboardInputViewHeight;
     self.keyboardInputView.frame = rect;
@@ -68,10 +107,9 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
     }
 }
 
-
 /**
  * 点击keyboardInputView
-
+ 
  @param control control description
  */
 -(void)changeTextInputView:(EXSegmentedControl *)control{
@@ -84,13 +122,17 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
         }
             break;
             
-            case 2:
+        case 2:
         {
             NSLog(@"图片");
+            UIView *inputView = [[UIView alloc] initWithFrame:rect];
+            self.keyBoardViewController.view.frame = rect;
+            [inputView addSubview:self.keyBoardViewController.view];
+            self.textView.inputView = inputView;
         }
             break;
         default:
-         self.textView.inputView = nil;
+            self.textView.inputView = nil;
             break;
     }
     [self.textView reloadInputViews]; ///重新载入输入视图，一般就是刷新键盘
@@ -155,8 +197,7 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
 }
 
 
-
-#pragma mark  UITextViewDelegate
+#pragma mark  <UITextViewDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.text.length == 0) {
         textField.text = textField.placeholder;
@@ -173,10 +214,14 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
 }
 
 
+#pragma mark <EXKeyboardPhotoControllerDelegate>
 
-
-
-
+-(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController initWithSendImage:(UIImage *)image{
+    
+}
+-(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController popPreviewController:(UIViewController *)previewController{
+    
+}
 
 
 
@@ -225,6 +270,22 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
 -(void)look:(id)sender{
     NSLog(@"预览");
 }
+
+
+/**
+ * 懒加载控件
+ 
+ @return return value description
+ */
+-(EXKeyboardPhotoViewController *)keyBoardViewController{
+    if (!_keyBoardViewController) {
+        _keyBoardViewController = [[EXKeyboardPhotoViewController alloc]init];
+        _keyBoardViewController.delegate = self;
+    }
+    return _keyBoardViewController;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -241,4 +302,5 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
  */
 
 @end
+
 

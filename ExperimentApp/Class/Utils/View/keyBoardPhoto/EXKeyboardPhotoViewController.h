@@ -25,13 +25,6 @@
  @param previewController previewController description
  */
 -(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController popPreviewController:(UIViewController *)previewController;
-/**
- * 选择相册 代理回调
-
- @param viewController viewController description
- @param picker picker description
- */
-- (void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController initWithImagePickerController:(UIViewController *)picker;
 @end
 @interface EXKeyboardPhotoViewController : UIViewController
 

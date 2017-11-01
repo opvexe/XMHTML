@@ -89,7 +89,7 @@
     
     CGFloat y= icon.frame.size.height+Number(20);
     if(title){
-        CGFloat height=[EX_Tools getHeightContain:title font:FontPingFangSC(15) Width:pf.size.width];
+        CGFloat height=[EXCommonTools getHeightContain:title font:FontPingFangSC(15) Width:pf.size.width];
         
         UILabel *lblTitle=[[UILabel alloc] initWithFrame:CGRectMake(0, y, pf.size.width, height)];
         [lblTitle setText:title];
@@ -178,7 +178,7 @@
     [_placeholderView addSubview:icon];
     CGFloat y= icon.frame.size.height+Number(20);
     if(title){
-        CGFloat height=[EX_Tools getHeightContain:title font:FontPingFangSC(15) Width:pf.size.width];
+        CGFloat height=[EXCommonTools getHeightContain:title font:FontPingFangSC(15) Width:pf.size.width];
         
         UILabel *lblTitle=[[UILabel alloc] initWithFrame:CGRectMake(0, y, pf.size.width, height)];
         [lblTitle setText:title];

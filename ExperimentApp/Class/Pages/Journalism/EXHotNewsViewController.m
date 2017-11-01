@@ -27,13 +27,13 @@
     [self.shootButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
     self.shootButton.titleLabel.numberOfLines = 0;
     self.shootButton.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
-    [self.shootButton setTitle:@"移动拍摄 \n  &" forState:UIControlStateNormal];
-    [self.shootButton setTitle:@"移动拍摄 \n  &" forState:UIControlStateHighlighted];
-    [self.shootButton setTitle:@"移动拍摄 \n  &" forState:UIControlStateSelected];
-    [self.shootButton setTitleColor:BaseTitleColor forState:UIControlStateNormal];
-    [self.shootButton setTitleColor:BaseTitleColor forState:UIControlStateSelected];
-    [self.shootButton setTitleColor:BaseTitleColor forState:UIControlStateHighlighted];
-    [self.shootButton setTitleColor:BaseTitleColor forState:UIControlStateDisabled];
+    [self.shootButton setTitle:@"移动拍摄" forState:UIControlStateNormal];
+    [self.shootButton setTitle:@"移动拍摄" forState:UIControlStateHighlighted];
+    [self.shootButton setTitle:@"移动拍摄" forState:UIControlStateSelected];
+    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateNormal];
+    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateSelected];
+    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateHighlighted];
+    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateDisabled];
     [self.shootButton setTag:100];
     [self.shootButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.shootButton];
@@ -44,10 +44,10 @@
     [self.manuscriptButton setTitle:@"文稿创作" forState:UIControlStateNormal];
     [self.manuscriptButton setTitle:@"文稿创作" forState:UIControlStateHighlighted];
     [self.manuscriptButton setTitle:@"文稿创作" forState:UIControlStateSelected];
-    [self.manuscriptButton setTitleColor:BaseTitleColor forState:UIControlStateNormal];
-    [self.manuscriptButton setTitleColor:BaseTitleColor forState:UIControlStateSelected];
-    [self.manuscriptButton setTitleColor:BaseTitleColor forState:UIControlStateHighlighted];
-    [self.manuscriptButton setTitleColor:BaseTitleColor forState:UIControlStateDisabled];
+    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateNormal];
+    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateSelected];
+    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateHighlighted];
+    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateDisabled];
     [self.manuscriptButton setTag:101];
     [self.manuscriptButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.manuscriptButton];
@@ -72,7 +72,7 @@
             break;
             case 1:
         {
-            EXKeyboardPhotoViewController *vc = [[EXKeyboardPhotoViewController alloc]init];
+            EXCopyEditorViewController *vc = [[EXCopyEditorViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

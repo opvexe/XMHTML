@@ -6,9 +6,10 @@
 //  Copyright © 2017年 com.GDBank.Company. All rights reserved.
 //
 
-#import "EX_Tools.h"
+#import "EXCommonTools.h"
 
-@implementation EX_Tools
+@implementation EXCommonTools
+
 +(CGFloat)getHeightContain:(NSString *)string font:(UIFont *)font Width:(CGFloat) width{
     
     if (string ==nil) {

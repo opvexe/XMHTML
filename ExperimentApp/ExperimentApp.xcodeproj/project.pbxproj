@@ -11,7 +11,7 @@
 		9593870948A22A78A88AE0E2 /* libPods-ExperimentAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AE342FBCA927205EF9154C /* libPods-ExperimentAppTests.a */; };
 		A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69C1F998D2D00229AFE /* EX_BaseView.m */; };
 		A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE69F1F99906800229AFE /* EX_BaseViewController.m */; };
-		A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A41F99941E00229AFE /* EX_Tools.m */; };
+		A60AE6A51F99941E00229AFE /* EXCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6A41F99941E00229AFE /* EXCommonTools.m */; };
 		A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6B71F99A00B00229AFE /* EX_ChannelModel.m */; };
 		A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6BB1F99A1FB00229AFE /* EXSeviceRequestManger.m */; };
 		A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */ = {isa = PBXBuildFile; fileRef = A60AE6AC1F99976A00229AFE /* WYNetworkCache.h */; };
@@ -41,6 +41,7 @@
 		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
+		A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */; };
 		A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */; };
 		A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */; };
 		A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5381FA6D3060091533A /* EXEditorTextView.m */; };
@@ -138,8 +139,8 @@
 		A60AE69E1F99906800229AFE /* EX_BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseViewController.h; sourceTree = "<group>"; };
 		A60AE69F1F99906800229AFE /* EX_BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_BaseViewController.m; sourceTree = "<group>"; };
 		A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseViewControllerProtocal.h; sourceTree = "<group>"; };
-		A60AE6A31F99941E00229AFE /* EX_Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_Tools.h; sourceTree = "<group>"; };
-		A60AE6A41F99941E00229AFE /* EX_Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_Tools.m; sourceTree = "<group>"; };
+		A60AE6A31F99941E00229AFE /* EXCommonTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCommonTools.h; sourceTree = "<group>"; };
+		A60AE6A41F99941E00229AFE /* EXCommonTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCommonTools.m; sourceTree = "<group>"; };
 		A60AE6A61F99976A00229AFE /* WYNetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYNetworkHelper.m; sourceTree = "<group>"; };
 		A60AE6A71F99976A00229AFE /* WYNetworkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYNetworkCache.m; sourceTree = "<group>"; };
 		A60AE6A91F99976A00229AFE /* WYSessionManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYSessionManger.h; sourceTree = "<group>"; };
@@ -169,6 +170,8 @@
 		A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftModel.m; sourceTree = "<group>"; };
 		A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSubjectViewController.h; sourceTree = "<group>"; };
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
+		A61739DE1FA9689C00E6C91D /* EXPhotoLibraryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPhotoLibraryManager.h; sourceTree = "<group>"; };
+		A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPhotoLibraryManager.m; sourceTree = "<group>"; };
 		A61DC52F1FA6B7B60091533A /* EXMoveShootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXMoveShootViewController.h; sourceTree = "<group>"; };
 		A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXMoveShootViewController.m; sourceTree = "<group>"; };
 		A61DC5321FA6B7CA0091533A /* EXCopyEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCopyEditorViewController.h; sourceTree = "<group>"; };
@@ -373,8 +376,10 @@
 		A60AE6A21F99940B00229AFE /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				A60AE6A31F99941E00229AFE /* EX_Tools.h */,
-				A60AE6A41F99941E00229AFE /* EX_Tools.m */,
+				A60AE6A31F99941E00229AFE /* EXCommonTools.h */,
+				A60AE6A41F99941E00229AFE /* EXCommonTools.m */,
+				A61739DE1FA9689C00E6C91D /* EXPhotoLibraryManager.h */,
+				A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -914,6 +919,7 @@
 				TargetAttributes = {
 					A6D4F1691F7F2F6B007BC8F0 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3NJC3EGBWR;
 						ProvisioningStyle = Automatic;
 					};
 					A6D4F1821F7F2F6B007BC8F0 = {
@@ -1191,10 +1197,11 @@
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
 				A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */,
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
-				A60AE6A51F99941E00229AFE /* EX_Tools.m in Sources */,
+				A60AE6A51F99941E00229AFE /* EXCommonTools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
 				A67466CE1FA8780D0097E77C /* RewriteButton.m in Sources */,
 				A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */,
+				A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
@@ -1364,11 +1371,12 @@
 			baseConfigurationReference = 376E7E785ED3C3DBD3C75AC0 /* Pods-ExperimentApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3NJC3EGBWR;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Class/Utils/Definition/MyKit.h";
 				INFOPLIST_FILE = ExperimentApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ExperimentApp.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shumin.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1378,11 +1386,12 @@
 			baseConfigurationReference = BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3NJC3EGBWR;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Class/Utils/Definition/MyKit.h";
 				INFOPLIST_FILE = ExperimentApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ExperimentApp.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shumin.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

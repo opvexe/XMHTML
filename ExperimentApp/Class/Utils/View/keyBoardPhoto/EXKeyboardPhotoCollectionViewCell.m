@@ -24,12 +24,13 @@
         [self addSubview:self.photoImageView];
         self.selectImageView = [[UIImageView alloc]init];
         self.selectImageView.contentMode = UIViewContentModeScaleAspectFill;
-        self.selectImageView.image = [UIImage imageNamed:@""];
+        self.selectImageView.image = [UIImage imageNamed:@"photo_send_icon"];
         self.selectImageView.hidden = YES;
         self.selectImageView.clipsToBounds = YES;
         [self addSubview:self.selectImageView];
         [self.selectImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.right.mas_equalTo(self.photoImageView).mas_offset(-Number(3));
+            make.width.and.height.mas_equalTo(Number(20));
         }];
         
     }

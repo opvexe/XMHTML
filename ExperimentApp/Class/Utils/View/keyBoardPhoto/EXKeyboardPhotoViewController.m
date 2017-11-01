@@ -20,20 +20,19 @@
 @property (nonatomic,strong) RewriteButton *photoSend;   //相册/发送
 @property (nonatomic,strong) NSIndexPath *selectedIndexPath;
 @property (nonatomic,strong) UIView  *bottomView;   ///底部视图
+@property (nonatomic, assign) BOOL selecting;
 @end
 @implementation EXKeyboardPhotoViewController
-{
-    BOOL _selecting;
-}
 
 static CGFloat const Height = 60.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initWithBottomView];
-       [self initWithCollectionView];
+    [self initWithCollectionView];
     [self initWithPHPhotoLibrary];
-    _selecting = NO;
+    self.selecting = NO;
 }
 
 /**
@@ -41,6 +40,10 @@ static CGFloat const Height = 60.f;
  */
 -(void)initWithCollectionView{
     [self.view addSubview:self.photoCollectionView];
+    [self.photoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.bottomView.mas_top);
+    }];
     [self.photoCollectionView registerClass:[EXKeyboardPhotoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([EXKeyboardPhotoCollectionViewCell class])];
 }
 
@@ -48,34 +51,27 @@ static CGFloat const Height = 60.f;
  * 初始化相册 获取相册的图片
  */
 -(void)initWithPHPhotoLibrary{
-    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
     PHFetchOptions *nearestPhotosOptions = [[PHFetchOptions alloc] init];
     nearestPhotosOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
-    nearestPhotosOptions.fetchLimit = 20;
+    nearestPhotosOptions.fetchLimit = 30;
     self.photosResult = [PHAsset fetchAssetsWithOptions:nearestPhotosOptions];
     self.photos = [NSMutableDictionary dictionary];
+    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
 }
 
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self.photoCollectionView setNeedsLayout];
+}
 /**
  *  刷新界面
  */
 -(void)reload{
-    _selecting = NO;
+    self.selecting = NO;
     self.selectedIndexPath = nil;
     [self.photoCollectionView reloadData];
 }
 
-/**
- * viewDidLayoutSubviews
- */
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    [self.photoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.bottomView.mas_top).mas_offset(-Height);
-    }];
-    [self.photoCollectionView setNeedsLayout];
-}
 #pragma mark <PHPhotoLibraryChangeObserver>
 - (void)photoLibraryDidChange:(PHChange *)changeInstance {
     [self initWithPHPhotoLibrary];
@@ -98,16 +94,16 @@ static CGFloat const Height = 60.f;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return Number(0);
+    return Number(5);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return Number(3);
+    return Number(5);
 }
 
 - ( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section {
     //top, left, bottom, right
-    return UIEdgeInsetsMake ( Number(3), Number(3) ,Number(3), Number(3));
+    return UIEdgeInsetsMake ( Number(5), Number(5) ,Number(5), Number(5));
     
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -137,12 +133,12 @@ static CGFloat const Height = 60.f;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath isEqual:self.selectedIndexPath]) {
         self.selectedIndexPath = nil;
-        _selecting = NO;
+        self.selecting = NO;
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
     else {
         self.selectedIndexPath = indexPath;
-        _selecting = YES;
+        self.selecting = YES;
     }
 }
 
@@ -150,7 +146,6 @@ static CGFloat const Height = 60.f;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     [picker dismissViewControllerAnimated:YES completion:nil];
-    
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     CGSize targetSize = [UIScreen mainScreen].bounds.size;
     targetSize.width *= 2;
@@ -168,23 +163,19 @@ static CGFloat const Height = 60.f;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 /**
  选中图片Button文字改变
  
  @param selecting selecting description
  */
-- (void)setSelecting:(BOOL)selecting {
+-(void)setSelecting:(BOOL)selecting{
     _selecting = selecting;
-    
     if (selecting){
         [self.takePhotoPreview setImage:[UIImage imageNamed:@"photo_preview_icon"] forState:UIControlStateNormal];
         [self.takePhotoPreview setTitle:@"预览" forState:UIControlStateNormal];
         [self.photoSend setImage:[UIImage imageNamed:@"photo_send_icon"] forState:UIControlStateNormal];
         [self.photoSend setTitle:@"发送" forState:UIControlStateNormal];
-    }
-    else {
+    }else {
         [self.takePhotoPreview setImage:[UIImage imageNamed:@"photo_take_icon"] forState:UIControlStateNormal];
         [self.takePhotoPreview setTitle:@"拍照" forState:UIControlStateNormal];
         [self.photoSend setImage:[UIImage imageNamed:@"photo_gallery_icon"] forState:UIControlStateNormal];
@@ -197,7 +188,7 @@ static CGFloat const Height = 60.f;
  * 初始化Bottom底部视图
  */
 -(void)initWithBottomView{
-    self.bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - HS_TabbarSafeBottomMargin - NavBarHeight - Height*2, SCREEN_WIDTH, Height*2)];
+    self.bottomView = [[UIView alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(self.view.frame) - Height*2, SCREEN_WIDTH, Height*2)];
     [self.view addSubview:self.bottomView];
     self.takePhotoPreview = [RewriteButton buttonWithType:UIButtonTypeCustom];
     [self initWithButton:self.takePhotoPreview withTitle:@"拍照" withImageName:@"photo_take_icon"];
@@ -218,24 +209,6 @@ static CGFloat const Height = 60.f;
         make.top.mas_equalTo(self.takePhotoPreview.mas_bottom);
         make.height.mas_equalTo(Height);
     }];
-    
-    UIView *separatedLineTop = [[UIView alloc]init];
-    separatedLineTop.backgroundColor = [UIColor colorWithWhite:0.9 alpha:.5];
-    [self.view addSubview:separatedLineTop];
-    UIView *separatedLineMid = [[UIView alloc]init];
-    separatedLineMid.backgroundColor = [UIColor colorWithWhite:0.9 alpha:.5];
-    [self.view addSubview:separatedLineMid];
-    [separatedLineTop mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(1.0f);
-        make.top.mas_equalTo(self.takePhotoPreview.mas_top).mas_equalTo(-1.0f);
-    }];
-    [separatedLineMid mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(1.0f);
-        make.top.mas_equalTo(self.takePhotoPreview.mas_bottom).mas_equalTo(-1.0f);
-    }];
-    
 }
 
 -(void)dothings:(UIButton *)sender{
@@ -293,9 +266,7 @@ static CGFloat const Height = 60.f;
                 break;
         }
         picker.delegate = self;
-        if ([self.delegate respondsToSelector:@selector(xm_KeyboardPhotoController:initWithImagePickerController:)]) {
-            [self.delegate xm_KeyboardPhotoController:self initWithImagePickerController:picker];
-        }
+        [self presentViewController:picker animated:YES completion:nil];
     }
 }
 /**
@@ -330,9 +301,6 @@ static CGFloat const Height = 60.f;
 - (UICollectionView *)photoCollectionView{
     if(!_photoCollectionView){
         UICollectionViewFlowLayout *layout =[[UICollectionViewFlowLayout alloc]init];
-        layout.minimumInteritemSpacing = 0.f;
-        layout.minimumLineSpacing = 0.f;
-        layout.headerReferenceSize = CGSizeMake(0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _photoCollectionView =[[UICollectionView alloc] initWithFrame:CGRectZero
                                                  collectionViewLayout:layout];
@@ -345,7 +313,6 @@ static CGFloat const Height = 60.f;
     }
     return _photoCollectionView;
 }
-
 
 /**
  *  释放 Observer

@@ -39,7 +39,7 @@
 
 //工具
 #import "EXSeviceRequestManger.h"
-#import "EX_Tools.h"
+#import "EXCommonTools.h"
 
 //第三方
 #import <Masonry.h>

@@ -9,10 +9,26 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface EX_Tools : NSObject
+@interface EXCommonTools : NSObject
+/**
+ * 计算文本高度
 
-
+ @param string string description
+ @param font font description
+ @param width width description
+ @return return value description
+ */
 +(CGFloat)getHeightContain:(NSString *)string font:(UIFont *)font Width:(CGFloat) width;
 
+
+/**
+ * 计算文本宽度
+
+ @param string string description
+ @param font font description
+ @param height height description
+ @return return value description   
+ */
 +(CGFloat)getWidthContain:(NSString *)string font:(UIFont *)font Height:(CGFloat) height;
+
 @end
