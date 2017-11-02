@@ -41,6 +41,7 @@
 		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
+		A61090EF1FAAF3F50026C6B2 /* EXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */; };
 		A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A61569491FA9793600849F57 /* EXFontStyleModel.m */; };
 		A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */; };
 		A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739E31FA9750100E6C91D /* EXKeyBoardFontViewController.m */; };
@@ -180,6 +181,8 @@
 		A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftModel.m; sourceTree = "<group>"; };
 		A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSubjectViewController.h; sourceTree = "<group>"; };
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
+		A61090ED1FAAF3F50026C6B2 /* EXBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBannerView.h; sourceTree = "<group>"; };
+		A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBannerView.m; sourceTree = "<group>"; };
 		A61569481FA9793600849F57 /* EXFontStyleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontStyleModel.h; sourceTree = "<group>"; };
 		A61569491FA9793600849F57 /* EXFontStyleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontStyleModel.m; sourceTree = "<group>"; };
 		A61739DE1FA9689C00E6C91D /* EXPhotoLibraryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPhotoLibraryManager.h; sourceTree = "<group>"; };
@@ -487,6 +490,15 @@
 			path = SubjectController;
 			sourceTree = "<group>";
 		};
+		A61090EC1FAAF2D40026C6B2 /* BanderView */ = {
+			isa = PBXGroup;
+			children = (
+				A61090ED1FAAF3F50026C6B2 /* EXBannerView.h */,
+				A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */,
+			);
+			path = BanderView;
+			sourceTree = "<group>";
+		};
 		A61569471FA9791700849F57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +612,7 @@
 			children = (
 				A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */,
 				A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */,
+				A61090EC1FAAF2D40026C6B2 /* BanderView */,
 				A67CBA241FA3080A00F40F0F /* GoodsFootView */,
 				A67CBA201FA2F9DB00F40F0F /* NavigationView */,
 			);
@@ -1273,6 +1286,7 @@
 				A60AE6C21F99A4DC00229AFE /* WYSessionManger.m in Sources */,
 				A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */,
 				A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */,
+				A61090EF1FAAF3F50026C6B2 /* EXBannerView.m in Sources */,
 				A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */,
 				A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,

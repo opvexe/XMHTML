@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self EX_AddSubviews];
+    [self EX_initConfingViews];
+    [self EX_GetDataSoucre];
 }
 
 /**

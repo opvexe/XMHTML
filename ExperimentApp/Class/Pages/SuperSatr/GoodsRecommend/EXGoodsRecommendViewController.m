@@ -12,13 +12,19 @@
 #import "EXNavigationView.h"
 #import "EXGoodsFootView.h"
 #import "EXGoodsModel.h"
+#import "EXBannerView.h"
 
-static CGFloat BannerHeight = 300.f;
+static CGFloat BannerHeight = 400.0f;
+static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显示
+
 @interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)EXNavigationView *navigationView;
 @property(nonatomic,strong)EXGoodsFootView *goodsFootView;
 @property(nonatomic,strong)UITableView *goodsTableView;
 @property(nonatomic,strong)NSMutableArray *goods;
+@property(nonatomic,strong)EXBannerView *bannerView;
+@property(nonatomic,strong)EXGoodsModel *model;
+@property(nonatomic,strong)UIWebView *webView;
 @end
 
 @implementation EXGoodsRecommendViewController
@@ -34,11 +40,9 @@ static CGFloat BannerHeight = 300.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initWithUI];
-    [self loadDataSoucre];
 }
 
--(void)initWithUI{
+-(void)EX_AddSubviews{
     [self.view addSubview:self.goodsTableView];
     [self.goodsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -57,46 +61,13 @@ static CGFloat BannerHeight = 300.f;
     }];
 }
 
--(NSMutableDictionary *)pargram{
-    NSMutableDictionary *pargram = [NSMutableDictionary dictionary];
-    [pargram setValue:@{@"id":@(self.relatedId)} forKey:@"goods"];
-    [pargram setValue:@{@"userId":@"88",@"agent":convertToString(self.agentUser)} forKey:@"user"];
-    return pargram;
+-(void)EX_GetDataSoucre{
+    NSArray *temp = @[@{@"intro":@"新款创意迷你usb锂电池充电小风扇便携式旅行情侣风扇",@"price":@"28.80",@"stockAmount":@"287",@"postage":@"8.00",@"goodsCellType":@1,@"ClassName":@"EXGoodsInfoTableViewCell"},
+                      @{@"picUrl":PlaceholderImageName,@"shopName":@"jesper的店",@"goodsCellType":@2,@"ClassName":@"EXGoodsShopperTableViewCell"},
+                      @{@"goodsCellType":@3,@"ClassName":@"EXGoodsShopChoiceTableViewCell"}];
+    self.goods = [EXGoodsModel mj_objectArrayWithKeyValuesArray:temp];
+    [self.goodsTableView reloadData];
 }
-
--(void)loadDataSoucre{
-    
-    dispatch_group_t group = dispatch_group_create();
-    
-    dispatch_group_enter(group);
-    [EXSeviceRequestManger GetWithShopGoodsURL:[NSString stringWithFormat:@"http://superstar.heysound.com/user/getStars?starId=%@",convertToString(self.agentUser)] CompleteSuccessfull:^(id responseObject) {
-        NSArray *temple= [EXGoodsModel mj_objectArrayWithKeyValuesArray:responseObject];
-        [self.goods addObject:temple];
-        dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-         dispatch_group_leave(group);
-    }];
-    
-
-    dispatch_group_enter(group);
-   //数据无法解析 
-    NSDictionary *pargram = [self pargram];
-    [EXSeviceRequestManger POSTWithGoodsURL:@"https://test.heysound.com/goods/get.do" pamDic:pargram CompleteSuccessfull:^(id responseObject) {
-
-        NSLog(@"%@",responseObject);
-         dispatch_group_leave(group);
-    } failure:^(NSError *error, NSDictionary *errorInfor) {
-
-         dispatch_group_leave(group);
-    }];
-
-
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [self.goodsTableView reloadData];
-    });
-    
-}
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -107,16 +78,11 @@ static CGFloat BannerHeight = 300.f;
     return 1;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EXGoodsModel *model = self.goods[indexPath.section];
     EX_BaseTbaleViewCell  *cell ;
     switch (model.goodsCellType) {
-        case   TemplateCellTypeGoodsBanderTableViewCell:{
-         cell = [HSYShopingBanderTableViewCell CellWithTableView:tableView];
-        }
-                       break;
             case TemplateCellTypeGoodsIntroduceTableViewCell:
         {
             cell = [EXGoodsInfoTableViewCell CellWithTableView:tableView];
@@ -135,17 +101,46 @@ static CGFloat BannerHeight = 300.f;
         default:
             break;
     }
-
+    [cell InitDataWithModel:model];
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    EXGoodsModel *model = self.goods[indexPath.section];
+    return [NSClassFromString(model.ClassName) getCellHeight:model];
+}
 
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section == self.goods.count -1) {
+        return Number(44);
+    }
+    return Number(10.0);
+}
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.0f;
+}
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return nil;
+}
 
-
-
-
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *bg = [[UIView alloc]init];
+    bg.backgroundColor =HSYColorf0f0f0;
+    if (section == self.goods.count -1 ) {
+        UILabel *titleLabel = [UILabel new];
+        titleLabel.font= FontPingFangSC(14);
+        titleLabel.textColor = BaseTitleColor;
+        [bg addSubview:titleLabel];
+        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(bg.mas_centerX);
+            make.centerY.mas_equalTo(bg.mas_centerY);
+        }];
+        titleLabel.text = @"详情";
+    }
+    return bg;
+}
 
 
 
@@ -181,13 +176,13 @@ static CGFloat BannerHeight = 300.f;
 -(EXNavigationView *)navigationView{
     if (!_navigationView) {
         _navigationView = [[EXNavigationView alloc]init];
-        _navigationView.backgroundColor = HSYColorffffff;
+        _navigationView.backgroundColor = PriceTextColor;
         WS(weakSelf)
         _navigationView.goodsNavBlock = ^(NSUInteger tag) {
             switch (tag - 100) {
                 case 0:{[weakSelf.navigationController popViewControllerAnimated:YES]; }
                     break;
-                case 1:{NSLog(@"pop");}
+                case 1:{NSLog(@"分享");}
                     break;
                 default:
                     break;
@@ -211,6 +206,7 @@ static CGFloat BannerHeight = 300.f;
     return _goodsFootView;
 }
 
+
 -(NSMutableArray *)goods{
     if (!_goods) {
         _goods = [NSMutableArray arrayWithCapacity:0];
@@ -226,11 +222,64 @@ static CGFloat BannerHeight = 300.f;
         _goodsTableView.dataSource = self;
         _goodsTableView.delegate = self;
         _goodsTableView.tableFooterView  =[UIView new];
+        _goodsTableView.tableHeaderView = self.bannerView;
         _goodsTableView.estimatedRowHeight = 0;
         _goodsTableView.backgroundColor =[UIColor whiteColor];
         _goodsTableView.separatorStyle =UITableViewCellSeparatorStyleNone;
     }
     return _goodsTableView;
 }
+
+-(EXBannerView *)bannerView{
+    if (!_bannerView) {
+        _bannerView = [[EXBannerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,BannerHeight)];
+        [_bannerView InitDataWithModel:self.model];
+    }
+    return _bannerView;
+}
+
+
+/*
+ -(NSMutableDictionary *)pargram{
+ NSMutableDictionary *pargram = [NSMutableDictionary dictionary];
+ [pargram setValue:@{@"id":@(self.relatedId)} forKey:@"goods"];
+ [pargram setValue:@{@"userId":@"88",@"agent":convertToString(self.agentUser)} forKey:@"user"];
+ return pargram;
+ }
+ 
+ -(void)loadDataSoucre{
+ 
+ dispatch_group_t group = dispatch_group_create();
+ 
+ dispatch_group_enter(group);
+ [EXSeviceRequestManger GetWithShopGoodsURL:[NSString stringWithFormat:@"http://superstar.heysound.com/user/getStars?starId=%@",convertToString(self.agentUser)] CompleteSuccessfull:^(id responseObject) {
+ NSArray *temple= [EXGoodsModel mj_objectArrayWithKeyValuesArray:responseObject];
+ [self.goods addObject:temple];
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ dispatch_group_leave(group);
+ }];
+ 
+ 
+ dispatch_group_enter(group);
+ //数据无法解析
+ NSDictionary *pargram = [self pargram];
+ [EXSeviceRequestManger POSTWithGoodsURL:@"https://test.heysound.com/goods/get.do" pamDic:pargram CompleteSuccessfull:^(id responseObject) {
+ 
+ NSLog(@"%@",responseObject);
+ dispatch_group_leave(group);
+ } failure:^(NSError *error, NSDictionary *errorInfor) {
+ 
+ dispatch_group_leave(group);
+ }];
+ 
+ 
+ dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+ [self.goodsTableView reloadData];
+ });
+ 
+ }
+ 
+ */
 
 @end

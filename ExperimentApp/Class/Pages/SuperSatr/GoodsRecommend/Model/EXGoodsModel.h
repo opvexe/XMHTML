@@ -13,15 +13,12 @@
  * 商品
  */
 typedef NS_ENUM(NSUInteger, TemplateGoodsCellType) {
-    
-    //轮播Cell
-    TemplateCellTypeGoodsBanderTableViewCell = 1 << 0,
     //商品介绍
-    TemplateCellTypeGoodsIntroduceTableViewCell = 1<<1,
+    TemplateCellTypeGoodsIntroduceTableViewCell = 1,
     //商品店主
-    TemplateCellTypeGoodsShopkeeperTableViewCell = 1<<2,
+    TemplateCellTypeGoodsShopkeeperTableViewCell = 2,
     //商品选择
-    TemplateCellTypeGoodsChoiceTableViewCell = 1<<3,
+    TemplateCellTypeGoodsChoiceTableViewCell = 3,
 };
 
 @class StarModel;
