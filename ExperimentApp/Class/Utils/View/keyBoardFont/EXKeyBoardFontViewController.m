@@ -103,7 +103,7 @@
         _styleTableView.tableFooterView  =[UIView new];
         _styleTableView.estimatedRowHeight = 0;
         _styleTableView.backgroundColor =[UIColor whiteColor];
-        _styleTableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+        _styleTableView.separatorStyle =UITableViewCellSeparatorStyleSingleLine;
     }
     return _styleTableView;
 }

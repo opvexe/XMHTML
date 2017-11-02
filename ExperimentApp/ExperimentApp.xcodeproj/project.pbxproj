@@ -102,6 +102,8 @@
 		A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */; };
 		A6E01DBD1FA9B61700D3529D /* EXPopupFontSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DBC1FA9B61700D3529D /* EXPopupFontSettingView.m */; };
 		A6E01DC01FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DBF1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m */; };
+		A6E01DC31FA9D08C00D3529D /* NSTextAttachment+EXText.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DC21FA9D08C00D3529D /* NSTextAttachment+EXText.m */; };
+		A6E01DC71FAA9B5E00D3529D /* EXUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DC61FAA9B5E00D3529D /* EXUploadManager.m */; };
 		A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
 /* End PBXBuildFile section */
@@ -292,6 +294,10 @@
 		A6E01DBC1FA9B61700D3529D /* EXPopupFontSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPopupFontSettingView.m; sourceTree = "<group>"; };
 		A6E01DBE1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontSpecialityTableViewCell.h; sourceTree = "<group>"; };
 		A6E01DBF1FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontSpecialityTableViewCell.m; sourceTree = "<group>"; };
+		A6E01DC11FA9D08C00D3529D /* NSTextAttachment+EXText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+EXText.h"; sourceTree = "<group>"; };
+		A6E01DC21FA9D08C00D3529D /* NSTextAttachment+EXText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+EXText.m"; sourceTree = "<group>"; };
+		A6E01DC51FAA9B5E00D3529D /* EXUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXUploadManager.h; sourceTree = "<group>"; };
+		A6E01DC61FAA9B5E00D3529D /* EXUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXUploadManager.m; sourceTree = "<group>"; };
 		A6FE1E871F99EBFB00948D74 /* EXShopInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopInfoModel.h; sourceTree = "<group>"; };
 		A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopInfoModel.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -808,6 +814,8 @@
 				A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */,
 				A67466CC1FA8780D0097E77C /* RewriteButton.h */,
 				A67466CD1FA8780D0097E77C /* RewriteButton.m */,
+				A6E01DC11FA9D08C00D3529D /* NSTextAttachment+EXText.h */,
+				A6E01DC21FA9D08C00D3529D /* NSTextAttachment+EXText.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -815,6 +823,7 @@
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A6E01DC41FAA9B4A00D3529D /* UploaderManager */,
 				A6E01DBA1FA9B60800D3529D /* popupView */,
 				A61739E11FA974CD00E6C91D /* keyBoardFont */,
 				A61DC5431FA72A0F0091533A /* keyBoardPhoto */,
@@ -878,6 +887,15 @@
 				A6E01DBC1FA9B61700D3529D /* EXPopupFontSettingView.m */,
 			);
 			path = popupView;
+			sourceTree = "<group>";
+		};
+		A6E01DC41FAA9B4A00D3529D /* UploaderManager */ = {
+			isa = PBXGroup;
+			children = (
+				A6E01DC51FAA9B5E00D3529D /* EXUploadManager.h */,
+				A6E01DC61FAA9B5E00D3529D /* EXUploadManager.m */,
+			);
+			path = UploaderManager;
 			sourceTree = "<group>";
 		};
 		A6FC69CD1F8E181B005733AC /* View */ = {
@@ -1189,6 +1207,7 @@
 				A67CBA0F1FA2C38600F40F0F /* HSYDailyWillBuyTableViewCell.h in Sources */,
 				A67CBA101FA2C38600F40F0F /* HSYDailyWillBuyTableViewCell.m in Sources */,
 				A67CBA111FA2C38600F40F0F /* HSYRecommendTableViewCell.h in Sources */,
+				A6E01DC71FAA9B5E00D3529D /* EXUploadManager.m in Sources */,
 				A67CBA121FA2C38600F40F0F /* HSYRecommendTableViewCell.m in Sources */,
 				A67CBA131FA2C38600F40F0F /* HSYShopingBanderTableViewCell.h in Sources */,
 				A67CBA141FA2C38600F40F0F /* HSYShopingBanderTableViewCell.m in Sources */,
@@ -1251,6 +1270,7 @@
 				A6D4F1C91F7F3430007BC8F0 /* EX_PracticeController.m in Sources */,
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
 				A6D4F1D91F7F40F3007BC8F0 /* UIBarButtonItem+Category.m in Sources */,
+				A6E01DC31FA9D08C00D3529D /* NSTextAttachment+EXText.m in Sources */,
 				A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */,
 				A6E01DBD1FA9B61700D3529D /* EXPopupFontSettingView.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,

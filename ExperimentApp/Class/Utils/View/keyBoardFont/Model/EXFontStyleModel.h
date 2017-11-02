@@ -23,10 +23,6 @@ typedef NS_ENUM(NSUInteger,FontCellType ) {
  */
 @property (nonatomic,assign) FontCellType  fontType;
 /**
- * contentView 上的个数
- */
-@property (nonatomic,strong) NSArray *contents;
-/**
  * 文本标题
  */
 @property (nonatomic,copy) NSString *title;
@@ -45,17 +41,4 @@ typedef NS_ENUM(NSUInteger,FontCellType ) {
 
 @end
 
-
-@interface EXContentModel : NSObject
-
-/**
- * icon 文字类型图标
- */
-@property (nonatomic,copy) NSString *normalIcon;
-
-/**
- Description
- */
-@property (nonatomic,copy) NSString *selectIcon;
-@end
 

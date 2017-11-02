@@ -48,7 +48,6 @@
     self.rightLabel = [UILabel labelWithTitle:@"普通" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
     self.rightLabel.hidden = YES;
     [self.contentView addSubview:self.rightLabel];
- 
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(Number(10));
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
