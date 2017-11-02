@@ -105,6 +105,8 @@
 		A6E01DC31FA9D08C00D3529D /* NSTextAttachment+EXText.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DC21FA9D08C00D3529D /* NSTextAttachment+EXText.m */; };
 		A6E01DC71FAA9B5E00D3529D /* EXUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DC61FAA9B5E00D3529D /* EXUploadManager.m */; };
 		A6E01DCB1FAAACBB00D3529D /* EXParagraphConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DCA1FAAACBB00D3529D /* EXParagraphConfig.m */; };
+		A6E01DCE1FAAB7F900D3529D /* EXColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DCD1FAAB7F900D3529D /* EXColorPickerView.m */; };
+		A6E01DD31FAAC7A400D3529D /* EXTitlePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DD21FAAC7A400D3529D /* EXTitlePickerView.m */; };
 		A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
 /* End PBXBuildFile section */
@@ -301,6 +303,10 @@
 		A6E01DC61FAA9B5E00D3529D /* EXUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXUploadManager.m; sourceTree = "<group>"; };
 		A6E01DC91FAAACBB00D3529D /* EXParagraphConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXParagraphConfig.h; sourceTree = "<group>"; };
 		A6E01DCA1FAAACBB00D3529D /* EXParagraphConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXParagraphConfig.m; sourceTree = "<group>"; };
+		A6E01DCC1FAAB7F900D3529D /* EXColorPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXColorPickerView.h; sourceTree = "<group>"; };
+		A6E01DCD1FAAB7F900D3529D /* EXColorPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXColorPickerView.m; sourceTree = "<group>"; };
+		A6E01DD11FAAC7A400D3529D /* EXTitlePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTitlePickerView.h; sourceTree = "<group>"; };
+		A6E01DD21FAAC7A400D3529D /* EXTitlePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTitlePickerView.m; sourceTree = "<group>"; };
 		A6FE1E871F99EBFB00948D74 /* EXShopInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopInfoModel.h; sourceTree = "<group>"; };
 		A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopInfoModel.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -887,6 +893,10 @@
 			children = (
 				A6E01DBB1FA9B61700D3529D /* EXFontSizePickerView.h */,
 				A6E01DBC1FA9B61700D3529D /* EXFontSizePickerView.m */,
+				A6E01DCC1FAAB7F900D3529D /* EXColorPickerView.h */,
+				A6E01DCD1FAAB7F900D3529D /* EXColorPickerView.m */,
+				A6E01DD11FAAC7A400D3529D /* EXTitlePickerView.h */,
+				A6E01DD21FAAC7A400D3529D /* EXTitlePickerView.m */,
 			);
 			path = fontPickerView;
 			sourceTree = "<group>";
@@ -1226,6 +1236,7 @@
 				A67CBA141FA2C38600F40F0F /* HSYShopingBanderTableViewCell.m in Sources */,
 				A67CBA151FA2C38600F40F0F /* HSYThePoorTableViewCell.h in Sources */,
 				A67CBA161FA2C38600F40F0F /* HSYThePoorTableViewCell.m in Sources */,
+				A6E01DD31FAAC7A400D3529D /* EXTitlePickerView.m in Sources */,
 				A60EB1191FA1E4F8003A1157 /* CWDrawerTransition.h in Sources */,
 				A60EB11A1FA1E4F8003A1157 /* CWDrawerTransition.m in Sources */,
 				A61DC5401FA7000E0091533A /* EXSegmentedControl.m in Sources */,
@@ -1293,6 +1304,7 @@
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A60AE6A51F99941E00229AFE /* EXCommonTools.m in Sources */,
 				A60AE69D1F998D2D00229AFE /* EX_BaseView.m in Sources */,
+				A6E01DCE1FAAB7F900D3529D /* EXColorPickerView.m in Sources */,
 				A67466CE1FA8780D0097E77C /* RewriteButton.m in Sources */,
 				A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */,
 				A6E01DCB1FAAACBB00D3529D /* EXParagraphConfig.m in Sources */,

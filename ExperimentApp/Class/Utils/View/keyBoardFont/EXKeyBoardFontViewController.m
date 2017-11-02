@@ -12,11 +12,17 @@
 #import "EXFontStyleModel.h"
 
 @interface EXKeyBoardFontViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong)UITableView *styleTableView;
+@property (nonatomic,strong) UITableView *styleTableView;
 @property (nonatomic,strong) NSMutableArray  *styles;
+@property (nonatomic,strong) NSIndexPath *selectedIndexPath;
 @end
 
 @implementation EXKeyBoardFontViewController
+{
+    BOOL _paragraphType;
+    BOOL _shouldScrollToSelectedRow;
+    BOOL _needReload;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +45,13 @@
     [self.styleTableView reloadData];
 }
 
+
+/**
+ Description
+ */
+- (void)reload{
+    
+}
 #pragma mark <UITableViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -82,7 +95,18 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    if ([indexPath isEqual:self.selectedIndexPath]) {
+        self.selectedIndexPath = nil;
+    }else {
+        if (self.selectedIndexPath) {
+            [indexPaths addObject:self.selectedIndexPath];
+        }
+        self.selectedIndexPath = indexPath;
+    }
+    [indexPaths addObject:indexPath];
+    _shouldScrollToSelectedRow = YES;
+    [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
@@ -94,7 +118,9 @@
  @param indexPath indexPath description
  */
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if ([indexPath isEqual:self.selectedIndexPath]) {
+        cell.selected = YES;
+    }
 }
 
 /**
@@ -105,7 +131,10 @@
  @param indexPath indexPath description
  */
 -(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (_shouldScrollToSelectedRow && [indexPath isEqual:self.selectedIndexPath]) {
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        _shouldScrollToSelectedRow = NO;
+    }
 }
 
 

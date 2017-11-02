@@ -12,8 +12,6 @@
 
 
 @protocol EXFontSizePickerViewDataSource <NSObject>
-
-
 /**
  * 所有字体类型个数
 

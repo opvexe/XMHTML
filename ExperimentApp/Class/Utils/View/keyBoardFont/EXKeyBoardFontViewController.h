@@ -10,4 +10,5 @@
 
 @interface EXKeyBoardFontViewController : UIViewController
 
+- (void)reload;
 @end

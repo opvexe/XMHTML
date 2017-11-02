@@ -8,6 +8,9 @@
 
 #import "EXLeftTitleRightImageStyleTableViewCell.h"
 #import "EXFontStyleModel.h"
+#import "EXFontSizePickerView.h"
+#import "EXColorPickerView.h"
+#import "EXTitlePickerView.h"
 
 @interface EXLeftTitleRightImageStyleTableViewCell ()
 @property(nonatomic,strong)UILabel *titleLabel;
@@ -15,7 +18,9 @@
 @property(nonatomic,strong)UIImageView *rightImageView;
 @property(nonatomic,strong)UILabel *rightLabel;
 @property(nonatomic,strong)CAShapeLayer *lineDashLayer;
-@property(nonatomic,strong)UIView *pickView;  //弹出视图
+@property(nonatomic,strong)EXFontSizePickerView *fontSizePickView;  //字体大小PickView
+@property(nonatomic,strong)EXColorPickerView *colorPickerView;    //颜色PickerView
+@property(nonatomic,strong)EXTitlePickerView *titlePickerView;   //普通标题
 @end
 @implementation EXLeftTitleRightImageStyleTableViewCell
 
@@ -30,7 +35,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -68,7 +73,7 @@
 
 /**
  Description
-
+ 
  @param model model description
  */
 -(void)InitDataWithModel:(EXFontStyleModel *)model{
@@ -87,7 +92,7 @@
 
 /**
  Description
-
+ 
  @return return value description
  */
 -(CAShapeLayer *)lineDashLayer{
@@ -106,19 +111,23 @@
 
 /**
  * 重写setSelected方法
-
+ 
  @param selected selected description
  @param animated animated description
  */
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     _lineDashLayer.hidden = !selected;
+    
+    self.colorPickerView.hidden = !selected;
+    self.fontSizePickView.hidden = !selected;
+    self.titlePickerView.hidden = !selected;
 }
 
 
 /**
  Description
-
+ 
  @param rect rect description
  */
 - (void)drawRect:(CGRect)rect {
@@ -137,4 +146,29 @@
     _lineDashLayer.path = path.CGPath;
     _lineDashLayer.frame = layerFrame;
 }
+
+#pragma mark pickView
+
+-(EXFontSizePickerView *)fontSizePickView{
+    if (!_fontSizePickView) {
+        _fontSizePickView = [[EXFontSizePickerView alloc]init];
+    }
+    return _fontSizePickView;
+}
+
+-(EXColorPickerView *)colorPickerView{
+    if (!_colorPickerView) {
+        _colorPickerView = [[EXColorPickerView alloc]init];
+    }
+    return _colorPickerView;
+}
+
+-(EXTitlePickerView *)titlePickerView{
+    if (!_titlePickerView) {
+        _titlePickerView = [[EXTitlePickerView alloc]initWithFrame:CGRectZero withTitleItems:@[@"普通",@"小标题",@"中标题",@"大标题"] spacingBetweenEdge:Number(20)];
+    }
+    return _titlePickerView;
+}
+
 @end
+

@@ -156,11 +156,36 @@
  * 刷新界面
  */
 - (void)reloadData{
-    
-    
-    
+    [_itemViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_itemViews removeAllObjects];
+    if (!self.dataSource) {return;}
+    for (NSInteger index = 0; index < self.numberOfItems; index++) {
+        UILabel *itemView = [[UILabel alloc] init];
+        itemView.text = [self.dataSource pickerView:self titleForItemAtIndex:index];
+        itemView.font = self.normalFont;
+        itemView.textColor = self.normalTextColor;
+        itemView.textAlignment = NSTextAlignmentCenter;
+        [_scrollView addSubview:itemView];
+        [_itemViews addObject:itemView];
+    }
+    [self setNeedsLayout];
 }
 
+/**
+ * 重写set方法
+
+ @param dataSource dataSource description
+ */
+- (void)setDataSource:(id<EXFontSizePickerViewDataSource>)dataSource {
+    if (_dataSource == dataSource) {return;}
+    _dataSource = dataSource;
+    [self reloadData];
+}
+
+
+/**
+ * layoutSubviews
+ */
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -192,7 +217,5 @@
         [self selectIndex:index animated:NO];
     }
 }
-
-
 
 @end
