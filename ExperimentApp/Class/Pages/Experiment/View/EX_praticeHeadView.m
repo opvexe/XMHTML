@@ -25,7 +25,7 @@
         
         
         UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 140.0)];
-        bgView.backgroundColor = [UIColor brownColor];
+        bgView.backgroundColor =PriceTextColor;
         
         _masterLabel = [UILabel labelWithTitle:@"掌握度" color:[UIColor whiteColor] font:[UIFont systemFontOfSize:14.0] alignment:NSTextAlignmentCenter];
         _percentLabel = [UILabel labelWithTitle:@" 0 " color:[UIColor whiteColor] font:[UIFont boldSystemFontOfSize:50.0] alignment:NSTextAlignmentLeft];

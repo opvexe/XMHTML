@@ -1113,7 +1113,7 @@ typedef NS_ENUM(NSUInteger,HTTPMethodType ) {
 }
 
 
-//获取网络状态
+//获取网络状态  iphonex 发生改变 statusBar
 +(CPNetworkStatus )currentNetWorkStatus
 {
     UIApplication *application = [UIApplication sharedApplication];

@@ -17,14 +17,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor brownColor];
+        self.backgroundColor = PriceTextColor;
         
         
         _cutButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cutButton.titleLabel setFont:[UIFont systemFontOfSize:12.0]];
         [_cutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cutButton setTitle:@"切换科目" forState:UIControlStateNormal];
-        [_cutButton setImage:[UIImage imageNamed:@"my_icon_enter_n"] forState:UIControlStateNormal];
+        [_cutButton setImage:[UIImage imageNamed:@"icon_detail"] forState:UIControlStateNormal];
         
         CGFloat imageWidth = 20;
         CGFloat labelWidth = [_cutButton.titleLabel.text sizeWithFont:_cutButton.titleLabel.font].width;

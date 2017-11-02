@@ -25,10 +25,6 @@
     [self EX_GetDataSoucre];
 }
 
-
-/**
- Description
- */
 -(void)initWithTableView{
     [self.view addSubview:self.styleTableView];
     [self.styleTableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -36,9 +32,7 @@
     }];
 }
 
-/**
- Description
- */
+
 -(void)EX_GetDataSoucre{
     NSArray *dateSouceArray =@[@{@"fontType":@2},@{@"fontType":@3},@{@"fontType":@1,@"title":@"字号",@"unfoldImage":@"keyboard_detail_icon",@"rightTitle":@"14px"},@{@"fontType":@1,@"title":@"颜色",@"unfoldImage":@"keyboard_detail_icon",@"rightImage":@"black"},@{@"fontType":@1,@"title":@"字号",@"unfoldImage":@"keyboard_detail_icon",@"rightTitle":@"普通"}];
     self.styles = [EXFontStyleModel mj_objectArrayWithKeyValuesArray:dateSouceArray];
@@ -87,7 +81,35 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
 
+
+/**
+ * Cell 开始动画
+
+ @param tableView tableView description
+ @param cell cell description
+ @param indexPath indexPath description
+ */
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+/**
+ * Cell 结束动画
+
+ @param tableView tableView description
+ @param cell cell description
+ @param indexPath indexPath description
+ */
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+
+#pragma mark  <styleTableView>
 /**
  Description
  

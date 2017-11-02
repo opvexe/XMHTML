@@ -30,10 +30,10 @@
     [self.shootButton setTitle:@"移动拍摄" forState:UIControlStateNormal];
     [self.shootButton setTitle:@"移动拍摄" forState:UIControlStateHighlighted];
     [self.shootButton setTitle:@"移动拍摄" forState:UIControlStateSelected];
-    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateNormal];
-    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateSelected];
-    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateHighlighted];
-    [self.shootButton setTitleColor:PriceTextColor forState:UIControlStateDisabled];
+    [self.shootButton setTitleColor:TitleColor forState:UIControlStateNormal];
+    [self.shootButton setTitleColor:TitleColor forState:UIControlStateSelected];
+    [self.shootButton setTitleColor:TitleColor forState:UIControlStateHighlighted];
+    [self.shootButton setTitleColor:TitleColor forState:UIControlStateDisabled];
     [self.shootButton setTag:100];
     [self.shootButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.shootButton];
@@ -44,10 +44,10 @@
     [self.manuscriptButton setTitle:@"文稿创作" forState:UIControlStateNormal];
     [self.manuscriptButton setTitle:@"文稿创作" forState:UIControlStateHighlighted];
     [self.manuscriptButton setTitle:@"文稿创作" forState:UIControlStateSelected];
-    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateNormal];
-    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateSelected];
-    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateHighlighted];
-    [self.manuscriptButton setTitleColor:PriceTextColor forState:UIControlStateDisabled];
+    [self.manuscriptButton setTitleColor:TitleColor forState:UIControlStateNormal];
+    [self.manuscriptButton setTitleColor:TitleColor forState:UIControlStateSelected];
+    [self.manuscriptButton setTitleColor:TitleColor forState:UIControlStateHighlighted];
+    [self.manuscriptButton setTitleColor:TitleColor forState:UIControlStateDisabled];
     [self.manuscriptButton setTag:101];
     [self.manuscriptButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.manuscriptButton];
@@ -58,7 +58,7 @@
     }];
     [self.manuscriptButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.shootButton.mas_centerX);
-        make.top.mas_equalTo(self.shootButton.mas_bottom);
+        make.top.mas_equalTo(self.shootButton.mas_bottom).mas_offset(Number(5.0));
     }];
 }
 

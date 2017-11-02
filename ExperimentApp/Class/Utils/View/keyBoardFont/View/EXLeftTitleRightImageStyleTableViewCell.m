@@ -36,7 +36,7 @@
 }
 
 -(void)EX_initConfingViews{
-    self.titleLabel = [UILabel labelWithTitle:@"字号" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
+    self.titleLabel = [UILabel labelWithTitle:@"字号" color:HSYColorD8D8D8 font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
     [self.contentView addSubview:self.titleLabel];
     self.unfoldImageView = [UIImageView new];
     self.unfoldImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -45,7 +45,7 @@
     self.rightImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.rightImageView.hidden = YES;
     [self.contentView addSubview:self.rightImageView];
-    self.rightLabel = [UILabel labelWithTitle:@"普通" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
+    self.rightLabel = [UILabel labelWithTitle:@"普通" color:HSYColorD8D8D8 font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
     self.rightLabel.hidden = YES;
     [self.contentView addSubview:self.rightLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

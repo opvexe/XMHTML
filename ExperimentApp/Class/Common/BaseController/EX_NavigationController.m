@@ -15,7 +15,7 @@
 
 +(void)initialize{
     UINavigationBar *navBar=[UINavigationBar appearance];
-    [navBar setBackgroundImage:[UIImage createImageWithColor:[UIColor brownColor]] forBarMetrics:UIBarMetricsDefault];
+    [navBar setBackgroundImage:[UIImage createImageWithColor:PriceTextColor] forBarMetrics:UIBarMetricsDefault];
     
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
@@ -35,7 +35,7 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count > 0)
     {
-         viewController.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithTarget:self action:@selector(goback) image:@"shop_left" highImage:@"shop_left"];
+         viewController.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithTarget:self action:@selector(goback) image:@"back_btn" highImage:@"back_btn"];
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [super pushViewController:viewController animated:animated];
