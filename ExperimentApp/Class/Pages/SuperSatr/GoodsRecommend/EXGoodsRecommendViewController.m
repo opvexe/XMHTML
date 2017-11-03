@@ -10,16 +10,16 @@
 #import "HSYShopingBanderTableViewCell.h"
 #import "EXGoodsInfoTableViewCell.h"
 #import "EXNavigationView.h"
-#import "EXGoodsFootView.h"
+#import "EXGoodsCarView.h"
 #import "EXGoodsModel.h"
 #import "EXBannerView.h"
 
 static CGFloat BannerHeight = 400.0f;
 static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显示
 
-@interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource,EXGoodsCarViewDelegate,EXGoodsCarActionDelegate>
 @property(nonatomic,strong)EXNavigationView *navigationView;
-@property(nonatomic,strong)EXGoodsFootView *goodsFootView;
+@property(nonatomic,strong)EXGoodsCarView *goodsCarView;
 @property(nonatomic,strong)UITableView *goodsTableView;
 @property(nonatomic,strong)NSMutableArray *goods;
 @property(nonatomic,strong)EXBannerView *bannerView;
@@ -53,11 +53,11 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
         make.left.right.mas_equalTo(self.view);
         make.height.mas_equalTo(Number(64.0));
     }];
-    [self.view addSubview:self.goodsFootView];
-    [self.goodsFootView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.goodsCarView];
+    [self.goodsCarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(-HS_TabbarSafeBottomMargin);
-        make.height.mas_equalTo(Number(60));
+        make.height.mas_equalTo(Number(44));
     }];
 }
 
@@ -91,6 +91,8 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
             case TemplateCellTypeGoodsShopkeeperTableViewCell:
         {
             cell = [EXGoodsShopperTableViewCell CellWithTableView:tableView];
+            EXGoodsShopperTableViewCell *x_cell  = (EXGoodsShopperTableViewCell*)cell;
+            x_cell.xg_delegate = self;
         }
             break;
             case TemplateCellTypeGoodsChoiceTableViewCell:
@@ -103,6 +105,10 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
     }
     [cell InitDataWithModel:model];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",indexPath);
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -168,6 +174,28 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
 }
 
 
+#pragma mark - EXGoodsCarViewDelegate
+
+/**
+ EXGoodsCarViewDelegate
+
+ @param carView carView description
+ @param index index description
+ */
+-(void)goodsCarView:(EXGoodsCarView *)carView selectIndex:(NSUInteger)index{
+    NSLog(@"%ld",index);
+}
+
+#pragma mark - EXTableViewCellDelegate
+-(void)goodsCarTableView:(EX_BaseTbaleViewCell *)tableViewCell selectIndex:(NSUInteger)index{
+    NSLog(@"%ld",index);
+}
+
+
+
+
+
+
 #pragma mark UITableView
 /**
  * 导航栏
@@ -198,12 +226,12 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
  *
  @return return value description
  */
--(EXGoodsFootView *)goodsFootView{
-    if (!_goodsFootView) {
-        _goodsFootView = [[EXGoodsFootView alloc]init];
-        _goodsFootView.backgroundColor = [UIColor redColor];
+-(EXGoodsCarView *)goodsCarView{
+    if (!_goodsCarView) {
+        _goodsCarView = [[EXGoodsCarView alloc]init];
+        _goodsCarView.xm_delegate = self;
     }
-    return _goodsFootView;
+    return _goodsCarView;
 }
 
 

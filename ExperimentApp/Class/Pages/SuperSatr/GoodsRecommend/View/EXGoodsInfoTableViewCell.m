@@ -56,10 +56,10 @@
     [self.deliverButton setTitleColor:BaseContenTextColor forState:UIControlStateSelected];
     [self.deliverButton setTitleColor:BaseContenTextColor forState:UIControlStateHighlighted];
     [self.deliverButton setTitleColor:BaseContenTextColor forState:UIControlStateDisabled];
-    [self.deliverButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateNormal];
-    [self.deliverButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateHighlighted];
-    [self.deliverButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateSelected];
-    [self.deliverButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateDisabled];
+    [self.deliverButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateNormal];
+    [self.deliverButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateHighlighted];
+    [self.deliverButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateSelected];
+    [self.deliverButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateDisabled];
     self.deliverButton.contentMode  = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.deliverButton];
     
@@ -117,7 +117,7 @@
 
 +(CGFloat)getCellHeight:(EXGoodsModel *)model{
     CGSize size  = [model.intro sizeWithFont:FontPingFangBoldSC(16.0) maxW:[UIScreen mainScreen].bounds.size.width - Number(20)];
-    return  Number(10) + size.height + Number(10) + Number(14.0) + Number(10) + Number(30) +Number(20);
+    return  Number(10) + size.height + Number(10) + Number(20.0) + Number(10) + Number(30) +Number(10);
 }
 
 @end
@@ -181,6 +181,8 @@
     [self.enterShopButton setTitleColor:PriceTextColor forState:UIControlStateHighlighted];
     [self.enterShopButton setTitleColor:PriceTextColor forState:UIControlStateDisabled];
     [self.contentView addSubview:self.enterShopButton];
+    self.enterShopButton.tag = 100;
+     [self.enterShopButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.shopUserImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView).mas_offset(Number(10));
@@ -198,11 +200,29 @@
     }];
 }
 
+-(void)dothings:(UIButton *)sender{
+    if (self.xg_delegate&&[self.xg_delegate respondsToSelector:@selector(goodsCarTableView:selectIndex:)]) {
+        [self.xg_delegate goodsCarTableView:self selectIndex:sender.tag];
+    }
+}
+
+/**
+ Description
+
+ @param model model description
+ */
 -(void)InitDataWithModel:(EXGoodsModel *)model{
     self.shopUserImageView.image = [UIImage imageNamed:model.picUrl];
     self.shopUserNameLabel.text = model.shopName;
 }
 
+
+/**
+ Description
+
+ @param model model description
+ @return return value description
+ */
 +(CGFloat)getCellHeight:(EXGoodsModel *)model{
     return Number(60.0);
 }
@@ -237,7 +257,7 @@
 
 -(void)EX_initConfingViews{
     
-    self.shopChoiceLabel = [UILabel labelWithTitle:@"" color:BaseContenTextColor font: FontPingFangSC(14) alignment:NSTextAlignmentLeft];
+    self.shopChoiceLabel = [UILabel labelWithTitle:@"选择分类" color:BaseContenTextColor font: FontPingFangSC(14) alignment:NSTextAlignmentLeft];
     [self.contentView addSubview:self.shopChoiceLabel];
     self.enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.enterButton setBackgroundImage:[UIImage imageNamed:@"my_icon_enter_n"] forState:UIControlStateNormal];
@@ -250,7 +270,6 @@
     [self.enterButton setImage:[UIImage imageNamed:@"my_icon_enter_n"] forState:UIControlStateDisabled];
     self.enterButton.contentMode  = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.enterButton];
-    
     [self.shopChoiceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView).mas_offset(Number(10));
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
@@ -262,8 +281,9 @@
     }];
 }
 
+
 -(void)InitDataWithModel:(EXGoodsModel *)model{
-    self.shopChoiceLabel.text = @"选择分类";
+//    self.shopChoiceLabel.text = @"选择分类";
 }
 
 +(CGFloat)getCellHeight:(EXGoodsModel *)model{

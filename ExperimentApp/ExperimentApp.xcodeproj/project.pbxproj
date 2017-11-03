@@ -41,6 +41,7 @@
 		A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1141FA1D47C003A1157 /* UIViewController+CWLateralSlide.m */; };
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
+		A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */; };
 		A61090EF1FAAF3F50026C6B2 /* EXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */; };
 		A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A61569491FA9793600849F57 /* EXFontStyleModel.m */; };
 		A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */; };
@@ -71,7 +72,6 @@
 		A67CBA1B1FA2DE3000F40F0F /* EXGoodsRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA1A1FA2DE3000F40F0F /* EXGoodsRecommendViewController.m */; };
 		A67CBA1E1FA2DE8600F40F0F /* EXHotNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA1D1FA2DE8600F40F0F /* EXHotNewsViewController.m */; };
 		A67CBA231FA2F9EB00F40F0F /* EXNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA221FA2F9EB00F40F0F /* EXNavigationView.m */; };
-		A67CBA271FA3081B00F40F0F /* EXGoodsFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67CBA261FA3081B00F40F0F /* EXGoodsFootView.m */; };
 		A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */; };
 		A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */; };
 		A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE8E1F8B556A00201C47 /* EX_leftHeadView.m */; };
@@ -181,6 +181,9 @@
 		A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftModel.m; sourceTree = "<group>"; };
 		A60EB1291FA2B149003A1157 /* EXSubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSubjectViewController.h; sourceTree = "<group>"; };
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
+		A60FA1961FABF43D00E2B699 /* EXGoodsCarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarView.h; sourceTree = "<group>"; };
+		A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsCarView.m; sourceTree = "<group>"; };
+		A60FA1991FAC02C100E2B699 /* EXGoodsCarActionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarActionDelegate.h; sourceTree = "<group>"; };
 		A61090ED1FAAF3F50026C6B2 /* EXBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBannerView.h; sourceTree = "<group>"; };
 		A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBannerView.m; sourceTree = "<group>"; };
 		A61569481FA9793600849F57 /* EXFontStyleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontStyleModel.h; sourceTree = "<group>"; };
@@ -230,8 +233,6 @@
 		A67CBA1D1FA2DE8600F40F0F /* EXHotNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXHotNewsViewController.m; sourceTree = "<group>"; };
 		A67CBA211FA2F9EB00F40F0F /* EXNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXNavigationView.h; sourceTree = "<group>"; };
 		A67CBA221FA2F9EB00F40F0F /* EXNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXNavigationView.m; sourceTree = "<group>"; };
-		A67CBA251FA3081B00F40F0F /* EXGoodsFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsFootView.h; sourceTree = "<group>"; };
-		A67CBA261FA3081B00F40F0F /* EXGoodsFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsFootView.m; sourceTree = "<group>"; };
 		A692EE871F8B4F6F00201C47 /* EX_LeftTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_LeftTableViewCell.h; sourceTree = "<group>"; };
 		A692EE881F8B4F6F00201C47 /* EX_LeftTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EX_LeftTableViewCell.m; sourceTree = "<group>"; };
 		A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTbaleViewCell.h; sourceTree = "<group>"; };
@@ -612,8 +613,9 @@
 			children = (
 				A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */,
 				A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */,
+				A60FA1991FAC02C100E2B699 /* EXGoodsCarActionDelegate.h */,
 				A61090EC1FAAF2D40026C6B2 /* BanderView */,
-				A67CBA241FA3080A00F40F0F /* GoodsFootView */,
+				A67CBA241FA3080A00F40F0F /* GoodsCarView */,
 				A67CBA201FA2F9DB00F40F0F /* NavigationView */,
 			);
 			path = View;
@@ -628,13 +630,13 @@
 			path = NavigationView;
 			sourceTree = "<group>";
 		};
-		A67CBA241FA3080A00F40F0F /* GoodsFootView */ = {
+		A67CBA241FA3080A00F40F0F /* GoodsCarView */ = {
 			isa = PBXGroup;
 			children = (
-				A67CBA251FA3081B00F40F0F /* EXGoodsFootView.h */,
-				A67CBA261FA3081B00F40F0F /* EXGoodsFootView.m */,
+				A60FA1961FABF43D00E2B699 /* EXGoodsCarView.h */,
+				A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */,
 			);
-			path = GoodsFootView;
+			path = GoodsCarView;
 			sourceTree = "<group>";
 		};
 		A69BB3CA1F9F1820000C6C03 /* ShopMalls */ = {
@@ -1311,6 +1313,7 @@
 				A6E01DC31FA9D08C00D3529D /* NSTextAttachment+EXText.m in Sources */,
 				A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */,
 				A6E01DBD1FA9B61700D3529D /* EXFontSizePickerView.m in Sources */,
+				A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
@@ -1328,7 +1331,6 @@
 				A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
 				A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */,
-				A67CBA271FA3081B00F40F0F /* EXGoodsFootView.m in Sources */,
 				A6D4F1EF1F7F5DED007BC8F0 /* EX_LeftController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
