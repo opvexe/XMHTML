@@ -14,19 +14,22 @@
     
     switch (_directionType) {
         case ButtonDisplayTypeImageLeftTileRight:{
-            CGFloat midX = self.frame.size.width / 2;
-            self.imageView.x = midX - CGRectGetWidth(self.imageView.frame);
-            self.titleLabel.x = CGRectGetMaxX(self.imageView.frame)+Number(10);
-            
+            self.imageView.x = 0;
+            self.titleLabel.x = CGRectGetMaxX(self.imageView.frame)+5;
             break;
         }
-        case ButtonDisplayTypeImageUpTileDown   :{
+        case ButtonDisplayTypeImageUpTileDown:{
             CGFloat midX = self.frame.size.width / 2;
             CGFloat midY = self.frame.size.height/ 2 ;
             self.titleLabel.center = CGPointMake(midX, midY + Number(10));
             self.imageView.center = CGPointMake(midX, midY - Number(10));
             break;
         }
+            case ButtonDisplayTypeImageRightTileLeft:{
+            self.titleLabel.x = 0;
+            self.imageView.x = CGRectGetMaxX(self.titleLabel.frame)+5;
+        }
+            break;
         default:
         {
             _directionType = ButtonDisplayTypeImageLeftTileRight;

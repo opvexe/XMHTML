@@ -16,10 +16,11 @@ PODS:
     - AFNetworking/NSURLSession
   - FLAnimatedImage (1.0.12)
   - Masonry (1.1.0)
+  - MCDownloader (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.14.1)
-  - SDCycleScrollView (1.73):
-    - SDWebImage (~> 4.0.0)
+  - SDCycleScrollView (1.74):
+    - SDWebImage (>= 4.0.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - Masonry (~> 1.1.0)
+  - MCDownloader (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.14.1)
   - SDCycleScrollView (~> 1.73)
@@ -40,11 +42,12 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MCDownloader: 38b1540d38cc54398e8051f8eebe614661e387a4
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
-  SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
+  SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: de76c87a0961e11be18d59d4edec13a40c22f1bc
+PODFILE CHECKSUM: 7ee8556deb38884b28e5f94d88a4cee14f449613
 
 COCOAPODS: 1.2.1

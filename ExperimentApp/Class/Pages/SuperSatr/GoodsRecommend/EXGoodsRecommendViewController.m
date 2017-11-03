@@ -13,9 +13,8 @@
 #import "EXGoodsCarView.h"
 #import "EXGoodsModel.h"
 #import "EXBannerView.h"
-
+#import "EXPopView.h"
 static CGFloat BannerHeight = 400.0f;
-static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显示
 
 @interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource,EXGoodsCarViewDelegate,EXGoodsCarActionDelegate>
 @property(nonatomic,strong)EXNavigationView *navigationView;
@@ -25,10 +24,13 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
 @property(nonatomic,strong)EXBannerView *bannerView;
 @property(nonatomic,strong)EXGoodsModel *model;
 @property(nonatomic,strong)UIWebView *webView;
+@property(nonatomic,strong)EXPopView *popView;
 @end
 
 @implementation EXGoodsRecommendViewController
-
+{
+       BOOL isTop;
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
@@ -187,6 +189,13 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
 }
 
 #pragma mark - EXTableViewCellDelegate
+
+/**
+ Description
+
+ @param tableViewCell tableViewCell description
+ @param index index description 
+ */
 -(void)goodsCarTableView:(EX_BaseTbaleViewCell *)tableViewCell selectIndex:(NSUInteger)index{
     NSLog(@"%ld",index);
 }
@@ -265,6 +274,8 @@ static CGFloat END_DRAG_SHOW_HEIGHT = 80.0f;  // 结束拖拽最大值时的显�
     }
     return _bannerView;
 }
+
+
 
 
 /*

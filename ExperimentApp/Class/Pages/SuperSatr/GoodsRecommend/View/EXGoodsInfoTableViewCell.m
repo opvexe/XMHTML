@@ -14,8 +14,8 @@
 @property(nonatomic,strong)UILabel *priceLabel;
 @property(nonatomic,strong)UILabel *stockLabel;    //库存
 @property(nonatomic,strong)UILabel *freightLabel;  //运费
-@property(nonatomic,strong)UIButton *deliverButton;
-@property(nonatomic,strong)UIButton *afterSaleButton;
+@property(nonatomic,strong)RewriteButton *deliverButton;
+@property(nonatomic,strong)RewriteButton *afterSaleButton;
 @end
 @implementation EXGoodsInfoTableViewCell
 
@@ -45,10 +45,11 @@
     self.freightLabel = [UILabel labelWithTitle:@"运费" color:BaseContenTextColor font:FontPingFangSC(14.0) alignment:NSTextAlignmentRight];
     [self.contentView addSubview:self.freightLabel];
     
-    self.deliverButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.deliverButton = [RewriteButton buttonWithType:UIButtonTypeCustom];
+    self.deliverButton.directionType = ButtonDisplayTypeImageLeftTileRight;
     self.deliverButton.titleLabel.font = FontPingFangSC(12);
-    [self.deliverButton setImageEdgeInsets:UIEdgeInsetsMake(0, Number(-3), 0, 0)];
-    [self.deliverButton setTitleEdgeInsets:UIEdgeInsetsMake(0, Number(3), 0, 0)];
+//    [self.deliverButton setImageEdgeInsets:UIEdgeInsetsMake(0, Number(-3), 0, 0)];
+//    [self.deliverButton setTitleEdgeInsets:UIEdgeInsetsMake(0, Number(3), 0, 0)];
     [self.deliverButton setTitle:@"72小时发货" forState:UIControlStateNormal];
     [self.deliverButton setTitle:@"72小时发货" forState:UIControlStateHighlighted];
     [self.deliverButton setTitle:@"72小时发货" forState:UIControlStateSelected];
@@ -63,10 +64,11 @@
     self.deliverButton.contentMode  = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.deliverButton];
     
-    self.afterSaleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.afterSaleButton = [RewriteButton buttonWithType:UIButtonTypeCustom];
     self.afterSaleButton.titleLabel.font = FontPingFangSC(12);
-    [self.afterSaleButton setImageEdgeInsets:UIEdgeInsetsMake(0, Number(-3), 0, 0)];
-    [self.afterSaleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, Number(3), 0, 0)];
+//    [self.afterSaleButton setImageEdgeInsets:UIEdgeInsetsMake(0, Number(-3), 0, 0)];
+//    [self.afterSaleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, Number(3), 0, 0)];
+    self.afterSaleButton.directionType = ButtonDisplayTypeImageLeftTileRight;
     [self.afterSaleButton setTitle:@"支持售后退款" forState:UIControlStateNormal];
     [self.afterSaleButton setTitle:@"支持售后退款" forState:UIControlStateHighlighted];
     [self.afterSaleButton setTitle:@"支持售后退款" forState:UIControlStateSelected];
@@ -74,13 +76,12 @@
     [self.afterSaleButton setTitleColor:BaseContenTextColor forState:UIControlStateSelected];
     [self.afterSaleButton setTitleColor:BaseContenTextColor forState:UIControlStateHighlighted];
     [self.afterSaleButton setTitleColor:BaseContenTextColor forState:UIControlStateDisabled];
-    [self.afterSaleButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateNormal];
-    [self.afterSaleButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateHighlighted];
-    [self.afterSaleButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateSelected];
-    [self.afterSaleButton setImage:[UIImage imageNamed:@"bbxuanze_hl"] forState:UIControlStateDisabled];
+    [self.afterSaleButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateNormal];
+    [self.afterSaleButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateHighlighted];
+    [self.afterSaleButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateSelected];
+    [self.afterSaleButton setImage:[UIImage imageNamed:@"oval_hl"] forState:UIControlStateDisabled];
     self.afterSaleButton.contentMode  = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.afterSaleButton];
-    
     [self.goodsInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView).mas_offset(Number(10.0));
         make.right.mas_equalTo(self.contentView).mas_offset(-Number(10.0));

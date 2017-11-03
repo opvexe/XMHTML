@@ -17,6 +17,7 @@
 typedef NS_ENUM(NSUInteger,EXDirectionType) {
     ButtonDisplayTypeImageLeftTileRight  = 1,          
     ButtonDisplayTypeImageUpTileDown   = 2,
+    ButtonDisplayTypeImageRightTileLeft = 3,
 };
 @interface RewriteButton : UIButton
 

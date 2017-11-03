@@ -42,6 +42,7 @@
 		A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB1261FA2AF1C003A1157 /* EXLeftModel.m */; };
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
 		A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */; };
+		A60FA19D1FAC0D9000E2B699 /* EXPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FA19C1FAC0D9000E2B699 /* EXPopView.m */; };
 		A61090EF1FAAF3F50026C6B2 /* EXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */; };
 		A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A61569491FA9793600849F57 /* EXFontStyleModel.m */; };
 		A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */; };
@@ -184,6 +185,8 @@
 		A60FA1961FABF43D00E2B699 /* EXGoodsCarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarView.h; sourceTree = "<group>"; };
 		A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsCarView.m; sourceTree = "<group>"; };
 		A60FA1991FAC02C100E2B699 /* EXGoodsCarActionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarActionDelegate.h; sourceTree = "<group>"; };
+		A60FA19B1FAC0D9000E2B699 /* EXPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPopView.h; sourceTree = "<group>"; };
+		A60FA19C1FAC0D9000E2B699 /* EXPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPopView.m; sourceTree = "<group>"; };
 		A61090ED1FAAF3F50026C6B2 /* EXBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBannerView.h; sourceTree = "<group>"; };
 		A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBannerView.m; sourceTree = "<group>"; };
 		A61569481FA9793600849F57 /* EXFontStyleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontStyleModel.h; sourceTree = "<group>"; };
@@ -489,6 +492,15 @@
 				A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */,
 			);
 			path = SubjectController;
+			sourceTree = "<group>";
+		};
+		A60FA19A1FAC0D8000E2B699 /* popView */ = {
+			isa = PBXGroup;
+			children = (
+				A60FA19B1FAC0D9000E2B699 /* EXPopView.h */,
+				A60FA19C1FAC0D9000E2B699 /* EXPopView.m */,
+			);
+			path = popView;
 			sourceTree = "<group>";
 		};
 		A61090EC1FAAF2D40026C6B2 /* BanderView */ = {
@@ -845,6 +857,7 @@
 		A6D4F1B31F7F3178007BC8F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A60FA19A1FAC0D8000E2B699 /* popView */,
 				A6E01DC81FAAAC7E00D3529D /* NSTextAttachment */,
 				A6E01DC41FAA9B4A00D3529D /* uploaderManager */,
 				A6E01DBA1FA9B60800D3529D /* fontPickerView */,
@@ -1314,6 +1327,7 @@
 				A6DE56E11F9DBF1C0082F256 /* EX_ContentModel.m in Sources */,
 				A6E01DBD1FA9B61700D3529D /* EXFontSizePickerView.m in Sources */,
 				A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */,
+				A60FA19D1FAC0D9000E2B699 /* EXPopView.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
