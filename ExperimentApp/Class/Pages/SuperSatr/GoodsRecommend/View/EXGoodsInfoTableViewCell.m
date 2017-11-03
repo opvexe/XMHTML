@@ -65,6 +65,7 @@
     [self.contentView addSubview:self.deliverButton];
     
     self.afterSaleButton = [RewriteButton buttonWithType:UIButtonTypeCustom];
+    self.afterSaleButton.directionType = ButtonDisplayTypeImageLeftTileRight;
     self.afterSaleButton.titleLabel.font = FontPingFangSC(12);
 //    [self.afterSaleButton setImageEdgeInsets:UIEdgeInsetsMake(0, Number(-3), 0, 0)];
 //    [self.afterSaleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, Number(3), 0, 0)];
@@ -202,8 +203,8 @@
 }
 
 -(void)dothings:(UIButton *)sender{
-    if (self.xg_delegate&&[self.xg_delegate respondsToSelector:@selector(goodsCarTableView:selectIndex:)]) {
-        [self.xg_delegate goodsCarTableView:self selectIndex:sender.tag];
+    if (self.xg_delegate&&[self.xg_delegate respondsToSelector:@selector(ex_ClickButtonTableViewCellex_ClickButtonTableViewCell:selectIndexselectIndex:)]) {
+        [self.xg_delegate ex_ClickButtonTableViewCell:self selectIndex:sender.tag];
     }
 }
 

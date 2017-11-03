@@ -7,7 +7,6 @@
 //
 
 #import "EX_BaseTbaleViewCell.h"
-#import "EXGoodsCarActionDelegate.h"
 
 /**
  * 商品短简介 如 新品韩版时尚流行
@@ -22,7 +21,6 @@
  */
 @interface EXGoodsShopperTableViewCell: EX_BaseTbaleViewCell
 
-@property (nonatomic,weak) id <EXGoodsCarActionDelegate>xg_delegate;
 @end
 
 

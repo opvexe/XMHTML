@@ -10,4 +10,5 @@
 
 @interface EX_PracticeCell : EX_BaseTbaleViewCell
 
+@property(nonatomic,copy)NSString *url;
 @end

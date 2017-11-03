@@ -47,5 +47,6 @@
 #import <MJExtension/MJExtension.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <FLAnimatedImage/FLAnimatedImageView.h>
+#import <MCDownloader.h>
 
 #endif /* MyKit_h */

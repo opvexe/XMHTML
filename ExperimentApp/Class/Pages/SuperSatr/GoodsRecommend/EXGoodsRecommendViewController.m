@@ -14,9 +14,8 @@
 #import "EXGoodsModel.h"
 #import "EXBannerView.h"
 #import "EXPopView.h"
-static CGFloat BannerHeight = 400.0f;
 
-@interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource,EXGoodsCarViewDelegate,EXGoodsCarActionDelegate>
+@interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource,EXGoodsCarViewDelegate,EXTableViewCellButtonActionProtocol,UIWebViewDelegate,UIScrollViewDelegate>
 @property(nonatomic,strong)EXNavigationView *navigationView;
 @property(nonatomic,strong)EXGoodsCarView *goodsCarView;
 @property(nonatomic,strong)UITableView *goodsTableView;
@@ -26,6 +25,8 @@ static CGFloat BannerHeight = 400.0f;
 @property(nonatomic,strong)UIWebView *webView;
 @property(nonatomic,strong)EXPopView *popView;
 @end
+
+static CGFloat BannerHeight = 400.0f;
 
 @implementation EXGoodsRecommendViewController
 {
@@ -53,7 +54,7 @@ static CGFloat BannerHeight = 400.0f;
     [self.navigationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(StatusBarHeight);
         make.left.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(Number(64.0));
+        make.height.mas_equalTo(44.0);
     }];
     [self.view addSubview:self.goodsCarView];
     [self.goodsCarView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -150,7 +151,15 @@ static CGFloat BannerHeight = 400.0f;
     return bg;
 }
 
+#pragma mark <UIWebViewDelegate>
 
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    NSLog(@"webViewDidFinishLoad");
+}
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    return YES;
+}
 
 
 #pragma mark - UIScrollViewDelegate
@@ -170,8 +179,33 @@ static CGFloat BannerHeight = 400.0f;
         }else{      ///大于0
             self.navigationView.alpha = 1.0f;
         }
-    }else{          //不是goodsTableView
-        
+    }
+}
+
+/**
+ * 停止减速
+
+ @param scrollView scrollView description
+ */
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    if (self.goodsTableView.contentOffset.y == 0) {
+        self.webView.scrollView.scrollEnabled = YES;
+    }else{
+         self.webView.scrollView.scrollEnabled = NO;
+    }
+}
+
+
+/**
+ * 开始拖拽
+
+ @param scrollView scrollView description
+ */
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    if (self.goodsTableView.contentOffset.y == 0) {
+        self.webView.scrollView.scrollEnabled = YES;
+    }else{
+        self.webView.scrollView.scrollEnabled = NO;
     }
 }
 
@@ -196,7 +230,7 @@ static CGFloat BannerHeight = 400.0f;
  @param tableViewCell tableViewCell description
  @param index index description 
  */
--(void)goodsCarTableView:(EX_BaseTbaleViewCell *)tableViewCell selectIndex:(NSUInteger)index{
+-(void)ex_ClickButtonTableViewCell:(EX_BaseTbaleViewCell *)tableViewCell selectIndex:(NSUInteger)index{
     NSLog(@"%ld",index);
 }
 
@@ -213,7 +247,7 @@ static CGFloat BannerHeight = 400.0f;
 -(EXNavigationView *)navigationView{
     if (!_navigationView) {
         _navigationView = [[EXNavigationView alloc]init];
-        _navigationView.backgroundColor = PriceTextColor;
+        _navigationView.backgroundColor = [UIColor whiteColor];
         WS(weakSelf)
         _navigationView.goodsNavBlock = ^(NSUInteger tag) {
             switch (tag - 100) {
@@ -243,6 +277,19 @@ static CGFloat BannerHeight = 400.0f;
     return _goodsCarView;
 }
 
+-(UIWebView *)webView{
+    if (!_webView) {
+        _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _webView.backgroundColor = [UIColor whiteColor];
+        _webView.scrollView.delegate = self;
+        _webView.scrollView.bounces = NO;
+        _webView.delegate = self;
+        _webView.scalesPageToFit = YES;
+        [_webView loadRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:@"http://app.digitaling.com/articles/39581.html"]]];
+    }
+    return _webView;
+}
+
 
 -(NSMutableArray *)goods{
     if (!_goods) {
@@ -263,6 +310,7 @@ static CGFloat BannerHeight = 400.0f;
         _goodsTableView.estimatedRowHeight = 0;
         _goodsTableView.backgroundColor =[UIColor whiteColor];
         _goodsTableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+        _goodsTableView.tableFooterView = self.webView;
     }
     return _goodsTableView;
 }
@@ -274,51 +322,5 @@ static CGFloat BannerHeight = 400.0f;
     }
     return _bannerView;
 }
-
-
-
-
-/*
- -(NSMutableDictionary *)pargram{
- NSMutableDictionary *pargram = [NSMutableDictionary dictionary];
- [pargram setValue:@{@"id":@(self.relatedId)} forKey:@"goods"];
- [pargram setValue:@{@"userId":@"88",@"agent":convertToString(self.agentUser)} forKey:@"user"];
- return pargram;
- }
- 
- -(void)loadDataSoucre{
- 
- dispatch_group_t group = dispatch_group_create();
- 
- dispatch_group_enter(group);
- [EXSeviceRequestManger GetWithShopGoodsURL:[NSString stringWithFormat:@"http://superstar.heysound.com/user/getStars?starId=%@",convertToString(self.agentUser)] CompleteSuccessfull:^(id responseObject) {
- NSArray *temple= [EXGoodsModel mj_objectArrayWithKeyValuesArray:responseObject];
- [self.goods addObject:temple];
- dispatch_group_leave(group);
- } failure:^(NSError *error, NSDictionary *errorInfor) {
- dispatch_group_leave(group);
- }];
- 
- 
- dispatch_group_enter(group);
- //数据无法解析
- NSDictionary *pargram = [self pargram];
- [EXSeviceRequestManger POSTWithGoodsURL:@"https://test.heysound.com/goods/get.do" pamDic:pargram CompleteSuccessfull:^(id responseObject) {
- 
- NSLog(@"%@",responseObject);
- dispatch_group_leave(group);
- } failure:^(NSError *error, NSDictionary *errorInfor) {
- 
- dispatch_group_leave(group);
- }];
- 
- 
- dispatch_group_notify(group, dispatch_get_main_queue(), ^{
- [self.goodsTableView reloadData];
- });
- 
- }
- 
- */
 
 @end

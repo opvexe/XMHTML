@@ -8,7 +8,7 @@
 
 #import "AppDelegate+Category.h"
 #import "EX_TabBarController.h"
-
+#import "MCWiFiManager.h"
 @implementation AppDelegate (Category)
 
 /**
@@ -20,4 +20,13 @@
     window.rootViewController                   = tabbarController;
     [window makeKeyAndVisible];
 }
+
+-(void)getWifiBSSID{
+    MCWiFiManager *wifiManager = [[MCWiFiManager alloc] init];
+    [wifiManager scanNetworksWithCompletionHandler:^(NSArray<MCWiFi *> * _Nullable networks, MCWiFi * _Nullable currentWiFi, NSError * _Nullable error) {
+        NSLog(@"name:%@\\mac:%@",currentWiFi.wifiName,currentWiFi.wifiBSSID);
+    }];
+    NSLog(@"网关：%@",[wifiManager getGatewayIpForCurrentWiFi]);
+}
+
 @end

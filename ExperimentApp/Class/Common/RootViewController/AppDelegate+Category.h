@@ -16,4 +16,9 @@
 
 -(void)initRootViewController;
 
+
+/**
+ * 获取wifi信息
+ */
+-(void)getWifiBSSID;
 @end

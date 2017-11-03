@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol EXGoodsCarActionDelegate <NSObject>
+@class EX_BaseTbaleViewCell;
+@protocol EXTableViewCellButtonActionProtocol <NSObject>
 @optional
 
 /**
@@ -17,6 +18,6 @@
  @param tableViewCell tableViewCell description
  @param index index description
  */
--(void)goodsCarTableView:(EX_BaseTbaleViewCell *)tableViewCell selectIndex:(NSUInteger)index;
+-(void)ex_ClickButtonTableViewCell:(EX_BaseTbaleViewCell *)tableViewCell selectIndex:(NSUInteger)index;
 
 @end

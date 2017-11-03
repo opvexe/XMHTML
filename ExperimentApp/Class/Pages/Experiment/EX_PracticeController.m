@@ -11,51 +11,39 @@
 #import "EX_PracticeCell.h"
 #import "UIViewController+CWLateralSlide.h"
 #import "EX_LeftController.h"
-
 @interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UITableView *practiceTableView;
 @property(nonatomic, strong)EX_praticeHeadView *headView;
+@property(nonatomic,strong)NSMutableArray *urls;
 @end
 
 @implementation EX_PracticeController
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(leftOpen:) image:@"room_btn_more" highImage:@"room_btn_more"];
     self.navigationItem.title = @"公共基础";
+    for (int i = 0; i<3; i++) {
+        [self.urls addObject:[NSString stringWithFormat:@"http://120.25.226.186:32812/resources/videos/minion_%02d.mp4", i]];
+    }
     [self.view addSubview:self.practiceTableView];
-
+    [self.practiceTableView reloadData];
 }
 
+
+/**
+ * 左侧抽屉
+
+ @param sender sender description
+ */
 -(void)leftOpen:(id)sender{
     EX_LeftController *vc = [[EX_LeftController alloc]init];
     [self cw_showDrawerViewController:vc animationType:CWDrawerAnimationTypeMask configuration:nil];
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#pragma mark  <UITableViewDelegate>
 /**
  Description
 
@@ -64,13 +52,13 @@
  @return return value description
  */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.urls.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EX_PracticeCell    *cell = [EX_PracticeCell CellWithTableView:tableView];
-
+     cell.url = self.urls[indexPath.row];
     return cell;
 }
 
@@ -80,8 +68,22 @@
 }
 
 
-
-
+#pragma mark  ios  8.0 删除
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {            ///删除
+        MCDownloadReceipt *receipt = [[MCDownloader sharedDownloader] downloadReceiptForURLString:self.urls[indexPath.row]];
+        [[MCDownloader sharedDownloader] remove:receipt completed:^{
+          [self.urls removeObjectAtIndex:indexPath.row];
+           [self.practiceTableView reloadData];
+        }];
+    }
+}
 
 
 
@@ -132,5 +134,12 @@
         };
     }
     return _headView;
+}
+
+-(NSMutableArray *)urls{
+    if (!_urls) {
+        _urls = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _urls;
 }
 @end

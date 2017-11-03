@@ -43,6 +43,8 @@
 		A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */; };
 		A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */; };
 		A60FA19D1FAC0D9000E2B699 /* EXPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FA19C1FAC0D9000E2B699 /* EXPopView.m */; };
+		A60FA1A31FAC184C00E2B699 /* MCWiFiManager.h in Sources */ = {isa = PBXBuildFile; fileRef = A60FA1A11FAC182F00E2B699 /* MCWiFiManager.h */; };
+		A60FA1A41FAC184C00E2B699 /* MCWiFiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A60FA1A21FAC182F00E2B699 /* MCWiFiManager.m */; };
 		A61090EF1FAAF3F50026C6B2 /* EXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */; };
 		A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A61569491FA9793600849F57 /* EXFontStyleModel.m */; };
 		A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739DF1FA9689D00E6C91D /* EXPhotoLibraryManager.m */; };
@@ -184,9 +186,11 @@
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
 		A60FA1961FABF43D00E2B699 /* EXGoodsCarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarView.h; sourceTree = "<group>"; };
 		A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsCarView.m; sourceTree = "<group>"; };
-		A60FA1991FAC02C100E2B699 /* EXGoodsCarActionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarActionDelegate.h; sourceTree = "<group>"; };
+		A60FA1991FAC02C100E2B699 /* EXTableViewCellButtonActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewCellButtonActionProtocol.h; sourceTree = "<group>"; };
 		A60FA19B1FAC0D9000E2B699 /* EXPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPopView.h; sourceTree = "<group>"; };
 		A60FA19C1FAC0D9000E2B699 /* EXPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPopView.m; sourceTree = "<group>"; };
+		A60FA1A11FAC182F00E2B699 /* MCWiFiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCWiFiManager.h; sourceTree = "<group>"; };
+		A60FA1A21FAC182F00E2B699 /* MCWiFiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCWiFiManager.m; sourceTree = "<group>"; };
 		A61090ED1FAAF3F50026C6B2 /* EXBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBannerView.h; sourceTree = "<group>"; };
 		A61090EE1FAAF3F50026C6B2 /* EXBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBannerView.m; sourceTree = "<group>"; };
 		A61569481FA9793600849F57 /* EXFontStyleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontStyleModel.h; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		A60AE6901F998B6000229AFE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				A60FA19E1FAC174400E2B699 /* WiFiManager */,
 				A60AE6911F998B7B00229AFE /* YYCache */,
 			);
 			path = Vendor;
@@ -501,6 +506,15 @@
 				A60FA19C1FAC0D9000E2B699 /* EXPopView.m */,
 			);
 			path = popView;
+			sourceTree = "<group>";
+		};
+		A60FA19E1FAC174400E2B699 /* WiFiManager */ = {
+			isa = PBXGroup;
+			children = (
+				A60FA1A11FAC182F00E2B699 /* MCWiFiManager.h */,
+				A60FA1A21FAC182F00E2B699 /* MCWiFiManager.m */,
+			);
+			path = WiFiManager;
 			sourceTree = "<group>";
 		};
 		A61090EC1FAAF2D40026C6B2 /* BanderView */ = {
@@ -625,7 +639,6 @@
 			children = (
 				A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */,
 				A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */,
-				A60FA1991FAC02C100E2B699 /* EXGoodsCarActionDelegate.h */,
 				A61090EC1FAAF2D40026C6B2 /* BanderView */,
 				A67CBA241FA3080A00F40F0F /* GoodsCarView */,
 				A67CBA201FA2F9DB00F40F0F /* NavigationView */,
@@ -813,6 +826,7 @@
 				A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */,
 				A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */,
 				A6D4F1D41F7F3F1D007BC8F0 /* EX_BaseTableViewCellProtocol.h */,
+				A60FA1991FAC02C100E2B699 /* EXTableViewCellButtonActionProtocol.h */,
 				A60AE69E1F99906800229AFE /* EX_BaseViewController.h */,
 				A60AE69F1F99906800229AFE /* EX_BaseViewController.m */,
 				A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */,
@@ -1250,6 +1264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60FA1A31FAC184C00E2B699 /* MCWiFiManager.h in Sources */,
+				A60FA1A41FAC184C00E2B699 /* MCWiFiManager.m in Sources */,
 				A67CBA1E1FA2DE8600F40F0F /* EXHotNewsViewController.m in Sources */,
 				A67CBA0B1FA2C38600F40F0F /* HSYClassifiedTableViewCell.h in Sources */,
 				A67CBA0C1FA2C38600F40F0F /* HSYClassifiedTableViewCell.m in Sources */,

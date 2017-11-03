@@ -19,6 +19,8 @@ typedef NS_ENUM(NSUInteger, TemplateGoodsCellType) {
     TemplateCellTypeGoodsShopkeeperTableViewCell = 2,
     //商品选择
     TemplateCellTypeGoodsChoiceTableViewCell = 3,
+    //商品评论
+    TemplateCellTypeGoodsCommentTableViewCell = 4,
 };
 
 @class StarModel;
