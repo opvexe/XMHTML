@@ -43,7 +43,7 @@
         self.foldButton.tag = 100;
         [self.foldButton addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
         self.downloadButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.downloadButton.titleLabel setFont:FontPingFangSC(10.0)];
+        [self.downloadButton.titleLabel setFont:FontPingFangSC(8.0)];
         self.downloadButton.layer.masksToBounds = YES;
         self.downloadButton.layer.borderWidth = 1.0f;
         self.downloadButton.layer.borderColor = [UIColor brownColor].CGColor;

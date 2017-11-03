@@ -11,7 +11,7 @@
 #import "EX_PracticeCell.h"
 #import "UIViewController+CWLateralSlide.h"
 #import "EX_LeftController.h"
-@interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource>
+@interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource,EXTableViewCellButtonActionProtocol>
 @property(nonatomic, strong)UITableView *practiceTableView;
 @property(nonatomic, strong)EX_praticeHeadView *headView;
 @property(nonatomic,strong)NSMutableArray *urls;
@@ -85,16 +85,11 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
+#pragma mark <EXTableViewCellButtonActionProtocol>
+-(void)ex_ClickButtonTableViewCell:(EX_PracticeCell *)tableViewCell selectIndex:(NSUInteger)index{
+    MCDownloadReceipt *receipt = [[MCDownloader sharedDownloader] downloadReceiptForURLString:tableViewCell.url];
+    NSLog(@"文件地址:%@",receipt.filePath);
+}
 
 
 /**

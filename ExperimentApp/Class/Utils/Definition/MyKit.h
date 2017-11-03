@@ -32,6 +32,7 @@
 #import "UILabel+ZDKExtent.h"
 #import "UIColor+Category.h"
 #import "RewriteButton.h"
+#import "UIFont+EXText.h"
 
 ///MARK: 宏定义
 #import "CommonTools.h"

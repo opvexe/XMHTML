@@ -16,8 +16,9 @@
 @property(nonatomic,strong)EXEditorTextView *textView;
 @property(nonatomic,assign)CGFloat keyboardSpacingHeight;
 @property(nonatomic,strong)EXSegmentedControl *keyboardInputView;
-@property (nonatomic,strong) EXKeyboardPhotoViewController *keyBoardViewController;
-@property (nonatomic,strong) EXKeyBoardFontViewController *keyBoardFontViewController;
+@property(nonatomic,strong)EXKeyboardPhotoViewController *keyBoardViewController;
+@property(nonatomic,strong)EXKeyBoardFontViewController *keyBoardFontViewController;
+@property(nonatomic,strong)UITableView *pictureTableView;
 @end
 
 @implementation EXCopyEditorViewController

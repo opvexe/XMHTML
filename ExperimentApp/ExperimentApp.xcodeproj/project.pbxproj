@@ -57,6 +57,9 @@
 		A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */; };
 		A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */; };
 		A659BD301FA31BFF008F60F8 /* EXGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */; };
+		A66396811FAC5C8200E6008F /* EXTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A66396801FAC5C8200E6008F /* EXTextStyle.m */; };
+		A66396841FAC606E00E6008F /* UIFont+EXText.m in Sources */ = {isa = PBXBuildFile; fileRef = A66396831FAC606E00E6008F /* UIFont+EXText.m */; };
+		A66396871FAC622C00E6008F /* EXTextHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A66396861FAC622C00E6008F /* EXTextHTMLParser.m */; };
 		A66F984D1FA0646000D33340 /* EXGoodsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */; };
 		A67466C31FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67466C21FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m */; };
 		A67466CE1FA8780D0097E77C /* RewriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A67466CD1FA8780D0097E77C /* RewriteButton.m */; };
@@ -215,6 +218,12 @@
 		A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPhotoPreviewViewController.m; sourceTree = "<group>"; };
 		A659BD2E1FA31BFF008F60F8 /* EXGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsModel.h; sourceTree = "<group>"; };
 		A659BD2F1FA31BFF008F60F8 /* EXGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsModel.m; sourceTree = "<group>"; };
+		A663967F1FAC5C8200E6008F /* EXTextStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTextStyle.h; sourceTree = "<group>"; };
+		A66396801FAC5C8200E6008F /* EXTextStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTextStyle.m; sourceTree = "<group>"; };
+		A66396821FAC606E00E6008F /* UIFont+EXText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+EXText.h"; sourceTree = "<group>"; };
+		A66396831FAC606E00E6008F /* UIFont+EXText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+EXText.m"; sourceTree = "<group>"; };
+		A66396851FAC622C00E6008F /* EXTextHTMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTextHTMLParser.h; sourceTree = "<group>"; };
+		A66396861FAC622C00E6008F /* EXTextHTMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTextHTMLParser.m; sourceTree = "<group>"; };
 		A66F984B1FA0646000D33340 /* EXGoodsInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsInfoTableViewCell.h; sourceTree = "<group>"; };
 		A66F984C1FA0646000D33340 /* EXGoodsInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsInfoTableViewCell.m; sourceTree = "<group>"; };
 		A67466C11FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXKeyboardPhotoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -872,7 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				A60FA19A1FAC0D8000E2B699 /* popView */,
-				A6E01DC81FAAAC7E00D3529D /* NSTextAttachment */,
+				A6E01DC81FAAAC7E00D3529D /* HTMLParser */,
 				A6E01DC41FAA9B4A00D3529D /* uploaderManager */,
 				A6E01DBA1FA9B60800D3529D /* fontPickerView */,
 				A61739E11FA974CD00E6C91D /* keyBoardFont */,
@@ -952,15 +961,21 @@
 			path = uploaderManager;
 			sourceTree = "<group>";
 		};
-		A6E01DC81FAAAC7E00D3529D /* NSTextAttachment */ = {
+		A6E01DC81FAAAC7E00D3529D /* HTMLParser */ = {
 			isa = PBXGroup;
 			children = (
 				A6E01DC11FA9D08C00D3529D /* NSTextAttachment+EXText.h */,
 				A6E01DC21FA9D08C00D3529D /* NSTextAttachment+EXText.m */,
 				A6E01DC91FAAACBB00D3529D /* EXParagraphConfig.h */,
 				A6E01DCA1FAAACBB00D3529D /* EXParagraphConfig.m */,
+				A663967F1FAC5C8200E6008F /* EXTextStyle.h */,
+				A66396801FAC5C8200E6008F /* EXTextStyle.m */,
+				A66396851FAC622C00E6008F /* EXTextHTMLParser.h */,
+				A66396861FAC622C00E6008F /* EXTextHTMLParser.m */,
+				A66396821FAC606E00E6008F /* UIFont+EXText.h */,
+				A66396831FAC606E00E6008F /* UIFont+EXText.m */,
 			);
-			path = NSTextAttachment;
+			path = HTMLParser;
 			sourceTree = "<group>";
 		};
 		A6FC69CD1F8E181B005733AC /* View */ = {
@@ -1297,6 +1312,7 @@
 				A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */,
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
 				A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */,
+				A66396871FAC622C00E6008F /* EXTextHTMLParser.m in Sources */,
 				A61739EE1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m in Sources */,
 				A60AE6C41F99AEA300229AFE /* YYCache.m in Sources */,
 				A60AE6C51F99AEA300229AFE /* YYDiskCache.h in Sources */,
@@ -1309,6 +1325,7 @@
 				A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */,
 				A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */,
 				A67CBA1B1FA2DE3000F40F0F /* EXGoodsRecommendViewController.m in Sources */,
+				A66396811FAC5C8200E6008F /* EXTextStyle.m in Sources */,
 				A60AE6BE1F99A4DC00229AFE /* WYNetworkCache.m in Sources */,
 				A60AE6BF1F99A4DC00229AFE /* WYNetworkHelper.h in Sources */,
 				A60AE6C01F99A4DC00229AFE /* WYNetworkHelper.m in Sources */,
@@ -1323,6 +1340,7 @@
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */,
 				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
+				A66396841FAC606E00E6008F /* UIFont+EXText.m in Sources */,
 				A6D4F1D21F7F3DC5007BC8F0 /* EX_BaseModel.m in Sources */,
 				A67CBA231FA2F9EB00F40F0F /* EXNavigationView.m in Sources */,
 				A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */,

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, LMTextAttachmentType) {
-    LMTextAttachmentTypeImage,
-    LMTextAttachmentTypeCheckBox,
+    LMTextAttachmentTypeImage,              //图片
+    LMTextAttachmentTypeCheckBox,           //
+//    LMTextAttachmentTypeVideo,              //视频
 };
 @interface NSTextAttachment (EXText)
 
