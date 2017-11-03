@@ -32,7 +32,6 @@
             break;
         default:
         {
-            _directionType = ButtonDisplayTypeImageLeftTileRight;
             CGFloat midX = self.frame.size.width / 2;
             self.imageView.x = midX - CGRectGetWidth(self.imageView.frame);
             self.titleLabel.x = CGRectGetMaxX(self.imageView.frame)+Number(10);

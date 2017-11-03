@@ -12,6 +12,7 @@
 #import "EXPhotoLibraryManager.h"
 #import "EXSegmentedControl.h"
 #import "EXEditorTextView.h"
+
 @interface EXCopyEditorViewController ()<UITextViewDelegate,UITextFieldDelegate,EXSegmentedControlDelegate,EXKeyboardPhotoControllerDelegate>
 @property(nonatomic,strong)EXEditorTextView *textView;
 @property(nonatomic,assign)CGFloat keyboardSpacingHeight;
@@ -167,7 +168,7 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
         rect.origin.y = [self.topLayoutGuide length];
         rect.size.height -= rect.origin.y;
         self.textView.frame = rect;
-        
+
         UIEdgeInsets insets = self.textView.contentInset;
         insets.bottom = self.keyboardSpacingHeight;
         self.textView.contentInset = insets;
@@ -188,7 +189,7 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
         rect.origin.y = [self.topLayoutGuide length];
         rect.size.height -= rect.origin.y;
         self.textView.frame = rect;
-        
+
         UIEdgeInsets insets = self.textView.contentInset;
         insets.bottom = self.keyboardSpacingHeight;
         self.textView.contentInset = insets;
@@ -216,8 +217,14 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
 #pragma mark <EXKeyboardPhotoControllerDelegate>
 
 -(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController initWithSendImage:(UIImage *)image{
-    
+      [self.textView resignFirstResponder];
 }
+
+- (void)xm_imageSettingsController:(EXKeyboardPhotoViewController *)viewController presentImagePickerView:(UIViewController *)picker{
+    [self.textView resignFirstResponder];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)xm_KeyboardPhotoController:(EXKeyboardPhotoViewController *)viewController popPreviewController:(UIViewController *)previewController{
     
 }

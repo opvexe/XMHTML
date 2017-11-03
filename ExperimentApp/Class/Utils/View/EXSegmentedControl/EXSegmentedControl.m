@@ -53,8 +53,7 @@
         [UIView animateWithDuration:0.2 animations:^{
             [self layoutSubviews];
         }];
-    }
-    else {
+    }else {
         [self layoutSubviews];
     }
     [self sendActionsForControlEvents:UIControlEventValueChanged];

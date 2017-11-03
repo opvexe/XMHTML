@@ -11,6 +11,7 @@
 #import "EXKeyboardPhotoCollectionViewCell.h"
 #import "EXPhotoPreviewViewController.h"
 @import Photos;
+
 @interface EXKeyboardPhotoViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, PHPhotoLibraryChangeObserver, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property(nonatomic,strong)UICollectionView *photoCollectionView;
 @property(nonatomic,strong)EXPhotoPreviewViewController *previewController; //预览
@@ -40,10 +41,6 @@ static CGFloat const Height = 60.f;
  */
 -(void)initWithCollectionView{
     [self.view addSubview:self.photoCollectionView];
-    [self.photoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.view).mas_offset(-Height*2);
-    }];
     [self.photoCollectionView registerClass:[EXKeyboardPhotoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([EXKeyboardPhotoCollectionViewCell class])];
 }
 
@@ -61,6 +58,10 @@ static CGFloat const Height = 60.f;
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    [self.photoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).mas_offset(-Height*2);
+    }];
     [self.photoCollectionView setNeedsLayout];
 }
 /**
@@ -159,8 +160,13 @@ static CGFloat const Height = 60.f;
     [self.delegate xm_KeyboardPhotoController:self initWithSendImage:scaledImage];
 }
 
+/**
+ * 点击取消相册回调
+
+ @param picker picker description
+ */
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate xm_imageSettingsController:self presentImagePickerView:picker];
 }
 
 /**
