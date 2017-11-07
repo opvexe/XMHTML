@@ -7,11 +7,13 @@
 //
 
 #import "EXKeyBoardFontViewController.h"
-#import "EXLeftTitleRightImageStyleTableViewCell.h"
 #import "EXFontSpecialityTableViewCell.h"
 #import "EXFontStyleModel.h"
 #import "EXTextStyle.h"
 #import "EXParagraphConfig.h"
+#import "EXStyleFontSizeCell.h"
+#import "EXStyleColorsCell.h"
+#import "EXStyleHeadlineCell.h"
 
 @interface EXKeyBoardFontViewController ()<UITableViewDelegate,UITableViewDataSource,EXStyleSettings,EXStyleParagraphCellDelegate>
 @property (nonatomic,strong) UITableView *styleTableView;
@@ -42,12 +44,10 @@
 
 
 -(void)EX_GetDataSoucre{
-    NSArray *dateSouceArray =@[@{@"fontType":@2},@{@"fontType":@3},@{@"fontType":@1,@"title":@"字号",@"unfoldImage":@"keyboard_detail_icon",@"rightTitle":@"14px"},@{@"fontType":@1,@"title":@"颜色",@"unfoldImage":@"keyboard_detail_icon",@"rightImage":@"black"},@{@"fontType":@1,@"title":@"字号",@"unfoldImage":@"keyboard_detail_icon",@"rightTitle":@"普通"}];
+    NSArray *dateSouceArray =@[@{@"fontType":@1},@{@"fontType":@2},@{@"fontType":@3,@"title":@"字号",@"unfoldImage":@"keyboard_detail_icon",@"rightTitle":@"14px"},@{@"fontType":@4,@"title":@"颜色",@"unfoldImage":@"keyboard_detail_icon",@"rightImage":[UIColor blackColor]},@{@"fontType":@5,@"title":@"字号",@"unfoldImage":@"keyboard_detail_icon",@"rightTitle":@"普通"}];
     self.styles = [EXFontStyleModel mj_objectArrayWithKeyValuesArray:dateSouceArray];
     [self.styleTableView reloadData];
 }
-
-
 
 /**
  Description
@@ -59,9 +59,7 @@
     _needReload = YES;
 }
 
-/**
- Description
- */
+
 - (void)reload{
     
 }
@@ -76,7 +74,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  Number(60.0);
+    EXFontStyleModel *model = self.styles[indexPath.row];
+    if (model.fontType >2) {
+        return Number(120.0);
+    }
+    return Number(60.0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -84,30 +86,30 @@
     EXFontStyleModel *model = self.styles[indexPath.row];
     EX_BaseTbaleViewCell  *cell ;
     switch (model.fontType) {
-        case FontCellTypeBaseTableViewCell:
-        {
-            cell = [EXLeftTitleRightImageStyleTableViewCell CellWithTableView:tableView];
-        }
-            break;
-        case FontCellTypeSpecialityTableViewCell:
-        {
+        case EXStyleCellTypeSpecialityTableViewCell:{
             cell = [EXFontSpecialityTableViewCell CellWithTableView:tableView];
-            EXFontSpecialityTableViewCell *xm_cell = (EXFontSpecialityTableViewCell *)cell;
-            xm_cell.xm_delegate = self ;
         }
             break;
-            
-        case FontCellTypeSpaceTableViewCell:
-        {
+        case EXStyleCellTypeSpaceTableViewCell:{
             cell = [EXFontSpaceTableViewCell CellWithTableView:tableView];
-            EXFontSpaceTableViewCell *xm_cell = (EXFontSpaceTableViewCell*)cell;
-            xm_cell.type = _paragraphType;
-            xm_cell.xm_delegate = self;
+        }
+            break;
+        case EXStyleCellTypeFontSizeTableViewCell:{
+            cell = [EXStyleFontSizeCell CellWithTableView:tableView];
+        }
+            break;
+        case EXStyleCellTypeColorsTableViewCell:{
+            cell = [EXStyleColorsCell CellWithTableView:tableView];
+        }
+            break;
+            case EXStyleCellTypeHeadlineTableViewCell:{
+                cell = [EXStyleHeadlineCell CellWithTableView:tableView];
         }
             break;
         default:
             break;
     }
+
     [cell InitDataWithModel:model];
     return cell;
 }
@@ -154,7 +156,6 @@
         _shouldScrollToSelectedRow = NO;
     }
 }
-
 
 #pragma mark <EXStyleSettings>
 - (void)xm_didChangeStyleSettings:(NSDictionary *)settings{

@@ -9,12 +9,16 @@
 #import "EX_BaseModel.h"
 
 typedef NS_ENUM(NSUInteger,FontCellType ) {
-    /// 基本类型Cell
-    FontCellTypeBaseTableViewCell = 1,
     /// 字体粗细Cell
-    FontCellTypeSpecialityTableViewCell = 2,
+    EXStyleCellTypeSpecialityTableViewCell = 1,
     /// 字体间隔Cell
-    FontCellTypeSpaceTableViewCell = 3,
+    EXStyleCellTypeSpaceTableViewCell = 2,
+    //EXStyleFontSizeCell.h
+    EXStyleCellTypeFontSizeTableViewCell = 3,
+    //EXStyleColorsCell.h
+    EXStyleCellTypeColorsTableViewCell = 4,
+    //EXStyleHeadlineCell.h
+    EXStyleCellTypeHeadlineTableViewCell = 5,
 };
 @interface EXFontStyleModel : EX_BaseModel
 
@@ -27,7 +31,7 @@ typedef NS_ENUM(NSUInteger,FontCellType ) {
  */
 @property (nonatomic,copy) NSString *title;
 /**
- * 文本图片
+ * 右侧颜色黑点
  */
 @property (nonatomic,copy) NSString *rightImage;
 /**

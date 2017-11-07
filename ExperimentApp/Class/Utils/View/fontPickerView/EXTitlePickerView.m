@@ -37,7 +37,7 @@
         [btn.titleLabel setFont:FontPingFangLG(14.0)];
         [btn setTitle:_items[i] forState:UIControlStateNormal];
         [btn setTitle:_items[i] forState:UIControlStateSelected];
-        [btn setTitleColor:UIColorFromRGB(0xffffff) forState:UIControlStateNormal];
+        [btn setTitleColor:TitleColor forState:UIControlStateNormal];
         [btn setTitleColor:BaseContenTextColor forState:UIControlStateSelected];
         [btn addTarget:self action:@selector(dothings:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];

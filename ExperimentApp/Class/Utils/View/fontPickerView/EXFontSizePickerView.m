@@ -9,11 +9,10 @@
 #import "EXFontSizePickerView.h"
 
 @interface EXFontSizePickerView () <UIScrollViewDelegate>
-
+@property(nonatomic,strong)UIScrollView *scrollView;
 @end
 @implementation EXFontSizePickerView
 {
-    UIScrollView *_scrollView;
     NSMutableArray *_itemViews;
     CAGradientLayer *_maskLayer;
 }
@@ -47,7 +46,7 @@
     _scrollView = [[UIScrollView alloc] init];
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.delegate = self;
-    [self addSubview:_scrollView];
+    [self addSubview:self.scrollView];
     ///设置字体渐变颜色
     _maskLayer = [CAGradientLayer layer];
     _maskLayer.colors = @[
@@ -119,7 +118,7 @@
 
  @param scrollView scrollView description
  */
--(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGPoint centerLocation = CGPointZero;
     centerLocation.x = _scrollView.contentOffset.x + CGRectGetWidth(self.bounds) / 2;
     

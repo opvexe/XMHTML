@@ -24,7 +24,7 @@
 -(void)getWifiBSSID{
     MCWiFiManager *wifiManager = [[MCWiFiManager alloc] init];
     [wifiManager scanNetworksWithCompletionHandler:^(NSArray<MCWiFi *> * _Nullable networks, MCWiFi * _Nullable currentWiFi, NSError * _Nullable error) {
-        NSLog(@"name:%@\\mac:%@",currentWiFi.wifiName,currentWiFi.wifiBSSID);
+        NSLog(@"name:%@ || mac:%@",currentWiFi.wifiName,currentWiFi.wifiBSSID);
     }];
     NSLog(@"网关：%@",[wifiManager getGatewayIpForCurrentWiFi]);
 }

@@ -54,7 +54,7 @@ static CGFloat const kLMWCommonSpacing = 16.f;
     
     self.autocorrectionType = UITextAutocorrectionTypeNo;  //是否纠错
     self.spellCheckingType = UITextSpellCheckingTypeNo; //首字母是否大写
-//    textContainerInset；通过设置边距可以间接的改变光标的位置，边距依次为：上，左，下， 右。
+//    textContainerInset；通过设置边距可以间接的改变光标的位置，边距依次为：上，左，下， 右。  //添加滚动区域
     self.textContainerInset = UIEdgeInsetsMake(kLMWMargin + kLMWTitleHeight + kLMWCommonSpacing,
                                                kLMWCommonSpacing,
                                                kLMWCommonSpacing,
