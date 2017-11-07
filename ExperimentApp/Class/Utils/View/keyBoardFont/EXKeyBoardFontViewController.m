@@ -75,8 +75,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     EXFontStyleModel *model = self.styles[indexPath.row];
-    if (model.fontType >2) {
+    if ([indexPath isEqual:self.selectedIndexPath]) {
+    if (model.fontType > 2) {
         return Number(120.0);
+        }
     }
     return Number(60.0);
 }

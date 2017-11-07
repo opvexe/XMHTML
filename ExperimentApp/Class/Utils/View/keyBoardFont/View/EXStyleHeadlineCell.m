@@ -11,9 +11,9 @@
 #import "EXTitlePickerView.h"
 
 @interface EXStyleHeadlineCell ()
+@property(nonatomic,strong)UIView  *bgView;
 @property(nonatomic,strong)UILabel *titleLabel;
 @property(nonatomic,strong)UIImageView *unfoldImageView;
-@property(nonatomic,strong)UIImageView *rightImageView;
 @property(nonatomic,strong)UILabel *rightLabel;
 @property(nonatomic,strong)CAShapeLayer *lineDashLayer;
 @property(nonatomic,strong)EXTitlePickerView *titlePickerView;   //普通标题
@@ -35,7 +35,7 @@
         [self.contentView.layer addSublayer:self.lineDashLayer];
         [self.contentView addSubview:self.titlePickerView];
         [self.titlePickerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.contentView).mas_offset(Number(60.0));
+            make.top.mas_equalTo(self.bgView.mas_bottom);
             make.left.right.bottom.mas_equalTo(self.contentView);
         }];
     }
@@ -43,31 +43,32 @@
 }
 
 -(void)EX_initConfingViews{
+     self.bgView = [[UIView alloc]init];
+    self.bgView.backgroundColor = [UIColor whiteColor];
+    [self.contentView addSubview:self.bgView];
     self.titleLabel = [UILabel labelWithTitle:@"字号" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
-    [self.contentView addSubview:self.titleLabel];
+    [self.bgView addSubview:self.titleLabel];
     self.unfoldImageView = [UIImageView new];
     self.unfoldImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.rightImageView = [UIImageView new];
-    self.rightImageView.hidden = YES;
-    [self.contentView addSubview:self.rightImageView];
+    [self.bgView addSubview:self.unfoldImageView];
     self.rightLabel = [UILabel labelWithTitle:@"普通" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
     self.rightLabel.hidden = YES;
-    [self.contentView addSubview:self.rightLabel];
+    [self.bgView addSubview:self.rightLabel];
+    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(self.contentView);
+        make.height.mas_equalTo(Number(60.0));
+    }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(Number(10));
-        make.top.mas_equalTo(self.contentView).mas_offset(Number(10.0));
+        make.centerY.mas_equalTo(self.bgView.mas_centerY);
     }];
     [self.unfoldImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-Number(10));
-        make.top.mas_equalTo(self.titleLabel.mas_top);
-    }];
-    [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.unfoldImageView.mas_left).mas_offset(-Number(10.0));
-        make.top.mas_equalTo(self.titleLabel.mas_top);
+        make.centerY.mas_equalTo(self.bgView.mas_centerY);
     }];
     [self.rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.unfoldImageView.mas_left).mas_offset(-Number(10.0));
-        make.top.mas_equalTo(self.titleLabel.mas_top);
+        make.centerY.mas_equalTo(self.bgView.mas_centerY);
     }];
 }
 
@@ -77,10 +78,6 @@
     if (model.rightTitle) {
         self.rightLabel.hidden = NO;
         self.rightLabel.text = model.rightTitle;
-    }
-    if (model.rightImage) {
-        self.rightImageView.hidden = NO;
-        self.rightImageView.backgroundColor = model.rightImage;
     }
 }
 

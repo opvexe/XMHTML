@@ -158,9 +158,4 @@
     _scrollView.frame = self.bounds;
 }
 
-
-
-
-
-
 @end
