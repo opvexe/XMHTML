@@ -37,6 +37,7 @@
 ///MARK: 宏定义
 #import "CommonTools.h"
 #import "ColorDefines.h"
+#import "EXStyleSettings.h"     ///文字格式
 
 //工具
 #import "EXSeviceRequestManger.h"

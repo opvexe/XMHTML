@@ -8,6 +8,6 @@
 
 #import "EX_BaseViewController.h"
 
-@interface EXCopyEditorViewController : EX_BaseViewController
+@interface EXReporterCopyEditorViewController : EX_BaseViewController
 
 @end

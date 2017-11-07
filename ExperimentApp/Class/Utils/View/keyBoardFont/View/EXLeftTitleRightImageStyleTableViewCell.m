@@ -12,7 +12,7 @@
 #import "EXColorPickerView.h"
 #import "EXTitlePickerView.h"
 
-@interface EXLeftTitleRightImageStyleTableViewCell ()
+@interface EXLeftTitleRightImageStyleTableViewCell ()<EXFontSizePickerViewDataSource,EXFontSizePickerViewDelegate,EXColorPickerViewDelegate,EXColorPickerViewDataSource>
 @property(nonatomic,strong)UILabel *titleLabel;
 @property(nonatomic,strong)UIImageView *unfoldImageView;
 @property(nonatomic,strong)UIImageView *rightImageView;
@@ -152,6 +152,8 @@
 -(EXFontSizePickerView *)fontSizePickView{
     if (!_fontSizePickView) {
         _fontSizePickView = [[EXFontSizePickerView alloc]init];
+        _fontSizePickView.dataSource = self;
+        _fontSizePickView.delegate = self;
     }
     return _fontSizePickView;
 }
@@ -159,6 +161,8 @@
 -(EXColorPickerView *)colorPickerView{
     if (!_colorPickerView) {
         _colorPickerView = [[EXColorPickerView alloc]init];
+        _colorPickerView.dataSource = self;
+        _colorPickerView.delegate = self;
     }
     return _colorPickerView;
 }
@@ -169,6 +173,10 @@
     }
     return _titlePickerView;
 }
+
+#pragma mark <EXFontSizePickerViewDataSource,EXFontSizePickerViewDelegate>
+
+
 
 @end
 

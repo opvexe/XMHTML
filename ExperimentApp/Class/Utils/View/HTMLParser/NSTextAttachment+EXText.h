@@ -16,6 +16,15 @@ typedef NS_ENUM(NSUInteger, LMTextAttachmentType) {
 @interface NSTextAttachment (EXText)
 
 + (instancetype)checkBoxAttachment;
+
+
+/**
+ * 设置HTML 文本图片的位置
+
+ @param image image description
+ @param width width description
+ @return return value description
+ */
 + (instancetype)attachmentWithImage:(UIImage *)image width:(CGFloat)width;
 
 @property (nonatomic, assign) LMTextAttachmentType attachmentType;

@@ -166,7 +166,7 @@ static CGFloat const Height = 60.f;
  @param picker picker description
  */
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self.delegate xm_imageSettingsController:self presentImagePickerView:picker];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 /**
@@ -277,7 +277,7 @@ static CGFloat const Height = 60.f;
                 break;
         }
         picker.delegate = self;
-        [self presentViewController:picker animated:YES completion:nil];
+         [self.delegate xm_imageSettingsController:self presentImagePickerView:picker];
     }
 }
 /**

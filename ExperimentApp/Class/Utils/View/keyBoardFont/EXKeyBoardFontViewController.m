@@ -10,8 +10,10 @@
 #import "EXLeftTitleRightImageStyleTableViewCell.h"
 #import "EXFontSpecialityTableViewCell.h"
 #import "EXFontStyleModel.h"
+#import "EXTextStyle.h"
+#import "EXParagraphConfig.h"
 
-@interface EXKeyBoardFontViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface EXKeyBoardFontViewController ()<UITableViewDelegate,UITableViewDataSource,EXStyleSettings,EXStyleParagraphCellDelegate>
 @property (nonatomic,strong) UITableView *styleTableView;
 @property (nonatomic,strong) NSMutableArray  *styles;
 @property (nonatomic,strong) NSIndexPath *selectedIndexPath;
@@ -46,6 +48,17 @@
 }
 
 
+
+/**
+ Description
+
+ @param paragraphConfig paragraphConfig description
+ */
+- (void)setParagraphConfig:(EXParagraphConfig *)paragraphConfig{
+    _paragraphType = paragraphConfig.type;
+    _needReload = YES;
+}
+
 /**
  Description
  */
@@ -79,12 +92,17 @@
         case FontCellTypeSpecialityTableViewCell:
         {
             cell = [EXFontSpecialityTableViewCell CellWithTableView:tableView];
+            EXFontSpecialityTableViewCell *xm_cell = (EXFontSpecialityTableViewCell *)cell;
+            xm_cell.xm_delegate = self ;
         }
             break;
             
         case FontCellTypeSpaceTableViewCell:
         {
             cell = [EXFontSpaceTableViewCell CellWithTableView:tableView];
+            EXFontSpaceTableViewCell *xm_cell = (EXFontSpaceTableViewCell*)cell;
+            xm_cell.type = _paragraphType;
+            xm_cell.xm_delegate = self;
         }
             break;
         default:
@@ -136,6 +154,61 @@
         _shouldScrollToSelectedRow = NO;
     }
 }
+
+
+#pragma mark <EXStyleSettings>
+- (void)xm_didChangeStyleSettings:(NSDictionary *)settings{
+    NSLog(@"settings:%@",settings);
+    __block BOOL needReload = NO;
+    [settings enumerateKeysAndObjectsUsingBlock:^(NSString *key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([key isEqualToString:EXStyleSettingsBoldName]) {
+            self.textStyle.bold = [(NSNumber *)obj boolValue];
+        }
+        else if ([key isEqualToString:EXStyleSettingsItalicName]) {
+            self.textStyle.italic = [(NSNumber *)obj boolValue];
+        }
+        else if ([key isEqualToString:EXStyleSettingsUnderlineName]) {
+            self.textStyle.underline = [(NSNumber *)obj boolValue];
+        }
+        else if ([key isEqualToString:EXStyleSettingsFontSizeName]) {
+            self.textStyle.fontSize = [(NSNumber *)obj integerValue];
+        }
+        else if ([key isEqualToString:EXStyleSettingsTextColorName]) {
+            self.textStyle.textColor = obj;
+        }
+        else if ([key isEqualToString:EXStyleSettingsFormatName]) {
+            UIColor *textColor = self.textStyle.textColor;
+            self.textStyle = [EXTextStyle textStyleWithType:[obj integerValue]];
+            self.textStyle.textColor = textColor;
+            needReload = YES;
+        }
+    }];
+    if (needReload) {
+        [self.styleTableView reloadData];
+    }
+    [self.delegate lm_didChangedTextStyle:self.textStyle];
+}
+
+#pragma mark <EXStyleParagraphCellDelegate>
+- (void)lm_paragraphChangeIndentWithDirection:(LMStyleIndentDirection)direction {
+    [self.delegate lm_didChangedParagraphIndentLevel:direction];
+}
+
+- (void)lm_paragraphChangeType:(NSInteger)type {
+    [self.delegate lm_didChangedParagraphType:type];
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #pragma mark  <styleTableView>

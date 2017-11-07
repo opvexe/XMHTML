@@ -452,7 +452,6 @@ static  NSInteger  currentPage ;
 -(UITableView *)shoppingMallListView{
     
     if (!_shoppingMallListView) {
-        
         _shoppingMallListView= [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _shoppingMallListView.showsVerticalScrollIndicator =NO;
         _shoppingMallListView.showsHorizontalScrollIndicator =NO;

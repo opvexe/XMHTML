@@ -27,6 +27,7 @@ PODS:
   - SDWebImage/GIF (4.0.0):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SSKeychain (1.4.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.73)
   - SDWebImage (~> 4.0.0)
   - SDWebImage/GIF
+  - SSKeychain (~> 1.4.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -47,7 +49,8 @@ SPEC CHECKSUMS:
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
   SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
 
-PODFILE CHECKSUM: 7ee8556deb38884b28e5f94d88a4cee14f449613
+PODFILE CHECKSUM: f28587db2ebe265e717a6434e05a8b0c4fbc5c70
 
 COCOAPODS: 1.2.1

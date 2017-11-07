@@ -51,7 +51,7 @@
 		A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739E31FA9750100E6C91D /* EXKeyBoardFontViewController.m */; };
 		A61739EE1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739ED1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m */; };
 		A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */; };
-		A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */; };
+		A61DC5341FA6B7CA0091533A /* EXReporterCopyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5331FA6B7CA0091533A /* EXReporterCopyEditorViewController.m */; };
 		A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5381FA6D3060091533A /* EXEditorTextView.m */; };
 		A61DC5401FA7000E0091533A /* EXSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */; };
 		A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */; };
@@ -86,6 +86,10 @@
 		A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE981F8B697300201C47 /* EX_praticeHeadView.m */; };
 		A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */; };
 		A69BB3CD1F9F183A000C6C03 /* EXShopMallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */; };
+		A6CF067F1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF067E1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m */; };
+		A6CF06831FAFF00B0082DCBF /* EXReporterAddFootageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF06821FAFF00B0082DCBF /* EXReporterAddFootageController.m */; };
+		A6CF06871FAFF7560082DCBF /* EXReporterPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF06861FAFF7560082DCBF /* EXReporterPreviewController.m */; };
+		A6CF068B1FB01C420082DCBF /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF068A1FB01C420082DCBF /* UIDevice+Hardware.m */; };
 		A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F16E1F7F2F6B007BC8F0 /* main.m */; };
 		A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1711F7F2F6B007BC8F0 /* AppDelegate.m */; };
 		A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D4F1741F7F2F6B007BC8F0 /* ViewController.m */; };
@@ -206,8 +210,8 @@
 		A61739ED1FA976E400E6C91D /* EXLeftTitleRightImageStyleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLeftTitleRightImageStyleTableViewCell.m; sourceTree = "<group>"; };
 		A61DC52F1FA6B7B60091533A /* EXMoveShootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXMoveShootViewController.h; sourceTree = "<group>"; };
 		A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXMoveShootViewController.m; sourceTree = "<group>"; };
-		A61DC5321FA6B7CA0091533A /* EXCopyEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCopyEditorViewController.h; sourceTree = "<group>"; };
-		A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCopyEditorViewController.m; sourceTree = "<group>"; };
+		A61DC5321FA6B7CA0091533A /* EXReporterCopyEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXReporterCopyEditorViewController.h; sourceTree = "<group>"; };
+		A61DC5331FA6B7CA0091533A /* EXReporterCopyEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXReporterCopyEditorViewController.m; sourceTree = "<group>"; };
 		A61DC5371FA6D3060091533A /* EXEditorTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXEditorTextView.h; sourceTree = "<group>"; };
 		A61DC5381FA6D3060091533A /* EXEditorTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXEditorTextView.m; sourceTree = "<group>"; };
 		A61DC53E1FA7000E0091533A /* EXSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSegmentedControl.h; sourceTree = "<group>"; };
@@ -266,6 +270,15 @@
 		A69BB3CB1F9F183A000C6C03 /* EXShopMallsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopMallsViewController.h; sourceTree = "<group>"; };
 		A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopMallsViewController.m; sourceTree = "<group>"; };
 		A6A921201F9D798E000FF6B3 /* EX_BaseTableViewCellActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTableViewCellActionProtocol.h; sourceTree = "<group>"; };
+		A6CF067D1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXUpPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		A6CF067E1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXUpPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		A6CF06811FAFF00B0082DCBF /* EXReporterAddFootageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXReporterAddFootageController.h; sourceTree = "<group>"; };
+		A6CF06821FAFF00B0082DCBF /* EXReporterAddFootageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXReporterAddFootageController.m; sourceTree = "<group>"; };
+		A6CF06851FAFF7560082DCBF /* EXReporterPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXReporterPreviewController.h; sourceTree = "<group>"; };
+		A6CF06861FAFF7560082DCBF /* EXReporterPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXReporterPreviewController.m; sourceTree = "<group>"; };
+		A6CF06891FB01C420082DCBF /* UIDevice+Hardware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		A6CF068A1FB01C420082DCBF /* UIDevice+Hardware.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		A6CF068D1FB046E80082DCBF /* EXStyleSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXStyleSettings.h; sourceTree = "<group>"; };
 		A6D4F16A1F7F2F6B007BC8F0 /* ExperimentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExperimentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D4F16E1F7F2F6B007BC8F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6D4F1701F7F2F6B007BC8F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -578,9 +591,11 @@
 		A61DC52E1FA6B79E0091533A /* CopyEditor */ = {
 			isa = PBXGroup;
 			children = (
+				A6CF06841FAFF7250082DCBF /* Preview */,
+				A6CF06801FAFEFC00082DCBF /*  AddFootage  */,
 				A61DC5361FA6D2F10091533A /* View */,
-				A61DC5321FA6B7CA0091533A /* EXCopyEditorViewController.h */,
-				A61DC5331FA6B7CA0091533A /* EXCopyEditorViewController.m */,
+				A61DC5321FA6B7CA0091533A /* EXReporterCopyEditorViewController.h */,
+				A61DC5331FA6B7CA0091533A /* EXReporterCopyEditorViewController.m */,
 			);
 			path = CopyEditor;
 			sourceTree = "<group>";
@@ -590,6 +605,8 @@
 			children = (
 				A61DC5371FA6D3060091533A /* EXEditorTextView.h */,
 				A61DC5381FA6D3060091533A /* EXEditorTextView.m */,
+				A6CF067D1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.h */,
+				A6CF067E1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -682,6 +699,24 @@
 			);
 			name = ShopMalls;
 			path = Shop;
+			sourceTree = "<group>";
+		};
+		A6CF06801FAFEFC00082DCBF /*  AddFootage  */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF06811FAFF00B0082DCBF /* EXReporterAddFootageController.h */,
+				A6CF06821FAFF00B0082DCBF /* EXReporterAddFootageController.m */,
+			);
+			path = " AddFootage ";
+			sourceTree = "<group>";
+		};
+		A6CF06841FAFF7250082DCBF /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF06851FAFF7560082DCBF /* EXReporterPreviewController.h */,
+				A6CF06861FAFF7560082DCBF /* EXReporterPreviewController.m */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 		A6D4F1611F7F2F6B007BC8F0 = {
@@ -873,6 +908,8 @@
 				A6DE56F01F9DCAF20082F256 /* UIColor+Category.m */,
 				A67466CC1FA8780D0097E77C /* RewriteButton.h */,
 				A67466CD1FA8780D0097E77C /* RewriteButton.m */,
+				A6CF06891FB01C420082DCBF /* UIDevice+Hardware.h */,
+				A6CF068A1FB01C420082DCBF /* UIDevice+Hardware.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -942,6 +979,7 @@
 		A6E01DBA1FA9B60800D3529D /* fontPickerView */ = {
 			isa = PBXGroup;
 			children = (
+				A6CF068D1FB046E80082DCBF /* EXStyleSettings.h */,
 				A6E01DBB1FA9B61700D3529D /* EXFontSizePickerView.h */,
 				A6E01DBC1FA9B61700D3529D /* EXFontSizePickerView.m */,
 				A6E01DCC1FAAB7F900D3529D /* EXColorPickerView.h */,
@@ -1279,6 +1317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CF068B1FB01C420082DCBF /* UIDevice+Hardware.m in Sources */,
 				A60FA1A31FAC184C00E2B699 /* MCWiFiManager.h in Sources */,
 				A60FA1A41FAC184C00E2B699 /* MCWiFiManager.m in Sources */,
 				A67CBA1E1FA2DE8600F40F0F /* EXHotNewsViewController.m in Sources */,
@@ -1309,6 +1348,7 @@
 				A60EB1201FA1E4F8003A1157 /* CWLateralSlideConfiguration.m in Sources */,
 				A6E01DC01FA9B7B700D3529D /* EXFontSpecialityTableViewCell.m in Sources */,
 				A60EB1211FA1E4F8003A1157 /* UIViewController+CWLateralSlide.h in Sources */,
+				A6CF06871FAFF7560082DCBF /* EXReporterPreviewController.m in Sources */,
 				A60EB1221FA1E4F8003A1157 /* UIViewController+CWLateralSlide.m in Sources */,
 				A60AE6C31F99AEA300229AFE /* YYCache.h in Sources */,
 				A60EB1271FA2AF1C003A1157 /* EXLeftModel.m in Sources */,
@@ -1336,7 +1376,7 @@
 				A6DE56DE1F9DBEEF0082F256 /* EX_SubChannelModel.m in Sources */,
 				A61090EF1FAAF3F50026C6B2 /* EXBannerView.m in Sources */,
 				A60EB12B1FA2B149003A1157 /* EXSubjectViewController.m in Sources */,
-				A61DC5341FA6B7CA0091533A /* EXCopyEditorViewController.m in Sources */,
+				A61DC5341FA6B7CA0091533A /* EXReporterCopyEditorViewController.m in Sources */,
 				A692EE8F1F8B556A00201C47 /* EX_leftHeadView.m in Sources */,
 				A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */,
 				A6DE56F11F9DCAF20082F256 /* UIColor+Category.m in Sources */,
@@ -1353,6 +1393,7 @@
 				A6D4F1C01F7F3376007BC8F0 /* EX_TabBarController.m in Sources */,
 				A6D4F1C61F7F3422007BC8F0 /* EX_VideoViewController.m in Sources */,
 				A6D4F1721F7F2F6B007BC8F0 /* AppDelegate.m in Sources */,
+				A6CF06831FAFF00B0082DCBF /* EXReporterAddFootageController.m in Sources */,
 				A6D4F1BA1F7F3248007BC8F0 /* AppDelegate+Category.m in Sources */,
 				A6D4F1C91F7F3430007BC8F0 /* EX_PracticeController.m in Sources */,
 				A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */,
@@ -1362,6 +1403,7 @@
 				A6E01DBD1FA9B61700D3529D /* EXFontSizePickerView.m in Sources */,
 				A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */,
 				A60FA19D1FAC0D9000E2B699 /* EXPopView.m in Sources */,
+				A6CF067F1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,

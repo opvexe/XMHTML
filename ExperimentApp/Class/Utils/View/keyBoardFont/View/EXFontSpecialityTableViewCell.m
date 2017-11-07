@@ -12,6 +12,7 @@
 @property (nonatomic,strong) UIButton *bold;
 @property (nonatomic,strong) UIButton *italic;
 @property (nonatomic,strong) UIButton *underline;
+@property(nonatomic,strong)NSDictionary *settings;
 @end
 
 @implementation EXFontSpecialityTableViewCell
@@ -27,11 +28,10 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
+        self.settings = [NSDictionary dictionary];
     }
     return self;
 }
-
-
 /**
  Description
  */
@@ -66,8 +66,6 @@
         }];
     }];
 }
-
-
 /**
  Description
 
@@ -75,8 +73,39 @@
  */
 -(void)dothings:(UIButton *)sender{
     sender.selected = !sender.selected;
+    if (sender == self.bold){
+        self.settings = @{ EXStyleSettingsBoldName: @(self.isBold) };
+    } else if (sender == self.italic) {
+        self.settings = @{ EXStyleSettingsItalicName: @(self.isItalic) };
+    } else if (sender == self.underline) {
+        self.settings = @{ EXStyleSettingsUnderlineName: @(self.isUnderline) };
+    }
+    [self.xm_delegate xm_didChangeStyleSettings:self.settings];
 }
 
+-(void)setIsBold:(BOOL)isBold{
+    self.bold.selected = isBold;
+}
+
+-(BOOL)isBold{
+    return self.bold.selected;
+}
+
+-(void)setIsItalic:(BOOL)isItalic{
+    self.italic.selected = isItalic;
+}
+
+-(BOOL)isItalic{
+    return self.italic.selected;
+}
+
+-(void)setIsUnderline:(BOOL)isUnderline{
+    self.underline.selected = isUnderline;
+}
+
+-(BOOL)isUnderline{
+    return self.underline.selected;
+}
 @end
 
 
@@ -145,7 +174,6 @@
     NSArray *temple = @[self.list,self.ows,self.check,self.left,self.right];
     CGFloat width = SCREEN_WIDTH/temple.count;
     [temple enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj setTag:100 +idx];
         [obj mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(self.contentView.mas_centerY);
             make.left.mas_equalTo(width/2 + width*idx);
@@ -162,6 +190,61 @@
  */
 -(void)dothings:(UIButton *)sender{
     sender.selected = !sender.selected;
+    
+    if (sender == self.left) {
+        [self.xm_delegate lm_paragraphChangeIndentWithDirection:LMStyleIndentDirectionLeft];
+    }else if (sender == self.right) {
+        [self.xm_delegate lm_paragraphChangeIndentWithDirection:LMStyleIndentDirectionRight];
+    }else {
+        __block NSInteger type = 0;
+        NSArray *buttons = @[self.list, self.ows, self.check];
+        [buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (sender == button) {
+                button.selected = !button.selected;
+                if (button.selected) {
+                    type = [@[self.list, self.ows, self.check] indexOfObject:button] + 1;
+                }
+                else {
+                    type = 0;
+                }
+            }
+            else {
+                button.selected = NO;
+            }
+        }];
+        [self.xm_delegate lm_paragraphChangeType:type];
+    }
+}
+
+- (void)setType:(NSInteger)type {
+    self.list.selected = type == 1;
+    self.ows.selected = type == 2;
+    self.check.selected = type == 3;
+}
+
+- (NSInteger)type {
+    if (self.list.selected) {
+        return 1;
+    }
+    else if (self.ows.selected) {
+        return 2;
+    }
+    else if (self.check.selected) {
+        return 3;
+    }
+    return 0;
+}
+
+- (BOOL)isList {
+    return self.list.selected;
+}
+
+- (BOOL)isNumberList {
+    return self.ows.selected;
+}
+
+- (BOOL)isCheckBox {
+    return self.check.selected;
 }
 
 @end
