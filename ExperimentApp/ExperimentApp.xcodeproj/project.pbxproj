@@ -51,7 +51,6 @@
 		A61739E41FA9750100E6C91D /* EXKeyBoardFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61739E31FA9750100E6C91D /* EXKeyBoardFontViewController.m */; };
 		A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */; };
 		A61DC5341FA6B7CA0091533A /* EXReporterCopyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5331FA6B7CA0091533A /* EXReporterCopyEditorViewController.m */; };
-		A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5381FA6D3060091533A /* EXEditorTextView.m */; };
 		A61DC5401FA7000E0091533A /* EXSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */; };
 		A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5451FA72AC70091533A /* EXKeyboardPhotoViewController.m */; };
 		A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DC5481FA72BEF0091533A /* EXPhotoPreviewViewController.m */; };
@@ -85,7 +84,6 @@
 		A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE981F8B697300201C47 /* EX_praticeHeadView.m */; };
 		A692EE9C1F8B698A00201C47 /* EX_PracticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A692EE9B1F8B698A00201C47 /* EX_PracticeCell.m */; };
 		A69BB3CD1F9F183A000C6C03 /* EXShopMallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */; };
-		A6CF067F1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF067E1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m */; };
 		A6CF06831FAFF00B0082DCBF /* EXReporterAddFootageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF06821FAFF00B0082DCBF /* EXReporterAddFootageController.m */; };
 		A6CF06871FAFF7560082DCBF /* EXReporterPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF06861FAFF7560082DCBF /* EXReporterPreviewController.m */; };
 		A6CF068B1FB01C420082DCBF /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CF068A1FB01C420082DCBF /* UIDevice+Hardware.m */; };
@@ -119,6 +117,11 @@
 		A6E01DD31FAAC7A400D3529D /* EXTitlePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E01DD21FAAC7A400D3529D /* EXTitlePickerView.m */; };
 		A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */; };
 		CE2EA2EC1BADEEC2E5F16A31 /* libPods-ExperimentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */; };
+		D0179F311FB2E74E0060A5EB /* EXUpPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179F301FB2E74E0060A5EB /* EXUpPhotoModel.m */; };
+		D0179F451FB303420060A5EB /* EXEditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179F3D1FB303420060A5EB /* EXEditorTextView.m */; };
+		D0179F461FB303420060A5EB /* EXUpPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179F3F1FB303420060A5EB /* EXUpPhotoCollectionViewCell.m */; };
+		D0179F471FB303420060A5EB /* EXUpPhotoImageVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179F411FB303420060A5EB /* EXUpPhotoImageVideoCell.m */; };
+		D0179F481FB303420060A5EB /* EXUpPhotoNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0179F431FB303420060A5EB /* EXUpPhotoNormalTableViewCell.m */; };
 		D019F31D1FB18C3D009A1BE3 /* EXStyleFontSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D019F31C1FB18C3D009A1BE3 /* EXStyleFontSizeCell.m */; };
 		D019F3201FB18DA6009A1BE3 /* EXStyleColorsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D019F31F1FB18DA6009A1BE3 /* EXStyleColorsCell.m */; };
 		D019F3231FB18EC1009A1BE3 /* EXStyleHeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D019F3221FB18EC1009A1BE3 /* EXStyleHeadlineCell.m */; };
@@ -195,7 +198,6 @@
 		A60EB12A1FA2B149003A1157 /* EXSubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSubjectViewController.m; sourceTree = "<group>"; };
 		A60FA1961FABF43D00E2B699 /* EXGoodsCarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXGoodsCarView.h; sourceTree = "<group>"; };
 		A60FA1971FABF43D00E2B699 /* EXGoodsCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXGoodsCarView.m; sourceTree = "<group>"; };
-		A60FA1991FAC02C100E2B699 /* EXTableViewCellButtonActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewCellButtonActionProtocol.h; sourceTree = "<group>"; };
 		A60FA19B1FAC0D9000E2B699 /* EXPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPopView.h; sourceTree = "<group>"; };
 		A60FA19C1FAC0D9000E2B699 /* EXPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPopView.m; sourceTree = "<group>"; };
 		A60FA1A11FAC182F00E2B699 /* MCWiFiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCWiFiManager.h; sourceTree = "<group>"; };
@@ -212,8 +214,6 @@
 		A61DC5301FA6B7B60091533A /* EXMoveShootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXMoveShootViewController.m; sourceTree = "<group>"; };
 		A61DC5321FA6B7CA0091533A /* EXReporterCopyEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXReporterCopyEditorViewController.h; sourceTree = "<group>"; };
 		A61DC5331FA6B7CA0091533A /* EXReporterCopyEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXReporterCopyEditorViewController.m; sourceTree = "<group>"; };
-		A61DC5371FA6D3060091533A /* EXEditorTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXEditorTextView.h; sourceTree = "<group>"; };
-		A61DC5381FA6D3060091533A /* EXEditorTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXEditorTextView.m; sourceTree = "<group>"; };
 		A61DC53E1FA7000E0091533A /* EXSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSegmentedControl.h; sourceTree = "<group>"; };
 		A61DC53F1FA7000E0091533A /* EXSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSegmentedControl.m; sourceTree = "<group>"; };
 		A61DC5441FA72AC70091533A /* EXKeyboardPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXKeyboardPhotoViewController.h; sourceTree = "<group>"; };
@@ -270,8 +270,6 @@
 		A69BB3CB1F9F183A000C6C03 /* EXShopMallsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXShopMallsViewController.h; sourceTree = "<group>"; };
 		A69BB3CC1F9F183A000C6C03 /* EXShopMallsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopMallsViewController.m; sourceTree = "<group>"; };
 		A6A921201F9D798E000FF6B3 /* EX_BaseTableViewCellActionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EX_BaseTableViewCellActionProtocol.h; sourceTree = "<group>"; };
-		A6CF067D1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXUpPhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		A6CF067E1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXUpPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		A6CF06811FAFF00B0082DCBF /* EXReporterAddFootageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXReporterAddFootageController.h; sourceTree = "<group>"; };
 		A6CF06821FAFF00B0082DCBF /* EXReporterAddFootageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXReporterAddFootageController.m; sourceTree = "<group>"; };
 		A6CF06851FAFF7560082DCBF /* EXReporterPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXReporterPreviewController.h; sourceTree = "<group>"; };
@@ -344,6 +342,16 @@
 		A6FE1E881F99EBFB00948D74 /* EXShopInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXShopInfoModel.m; sourceTree = "<group>"; };
 		BA595DD93A5A2639DBE816FC /* Pods-ExperimentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExperimentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExperimentApp/Pods-ExperimentApp.release.xcconfig"; sourceTree = "<group>"; };
 		C50046B991DDA0FF1B22D180 /* libPods-ExperimentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExperimentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0179F2F1FB2E74E0060A5EB /* EXUpPhotoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXUpPhotoModel.h; sourceTree = "<group>"; };
+		D0179F301FB2E74E0060A5EB /* EXUpPhotoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXUpPhotoModel.m; sourceTree = "<group>"; };
+		D0179F3C1FB303420060A5EB /* EXEditorTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXEditorTextView.h; sourceTree = "<group>"; };
+		D0179F3D1FB303420060A5EB /* EXEditorTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXEditorTextView.m; sourceTree = "<group>"; };
+		D0179F3E1FB303420060A5EB /* EXUpPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXUpPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		D0179F3F1FB303420060A5EB /* EXUpPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXUpPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		D0179F401FB303420060A5EB /* EXUpPhotoImageVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXUpPhotoImageVideoCell.h; sourceTree = "<group>"; };
+		D0179F411FB303420060A5EB /* EXUpPhotoImageVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXUpPhotoImageVideoCell.m; sourceTree = "<group>"; };
+		D0179F421FB303420060A5EB /* EXUpPhotoNormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXUpPhotoNormalTableViewCell.h; sourceTree = "<group>"; };
+		D0179F431FB303420060A5EB /* EXUpPhotoNormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXUpPhotoNormalTableViewCell.m; sourceTree = "<group>"; };
 		D019F31B1FB18C3D009A1BE3 /* EXStyleFontSizeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXStyleFontSizeCell.h; sourceTree = "<group>"; };
 		D019F31C1FB18C3D009A1BE3 /* EXStyleFontSizeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXStyleFontSizeCell.m; sourceTree = "<group>"; };
 		D019F31E1FB18DA6009A1BE3 /* EXStyleColorsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXStyleColorsCell.h; sourceTree = "<group>"; };
@@ -601,24 +609,14 @@
 		A61DC52E1FA6B79E0091533A /* CopyEditor */ = {
 			isa = PBXGroup;
 			children = (
-				A6CF06841FAFF7250082DCBF /* Preview */,
+				D0179F3B1FB303420060A5EB /* View */,
 				A6CF06801FAFEFC00082DCBF /*  AddFootage  */,
-				A61DC5361FA6D2F10091533A /* View */,
+				A6CF06841FAFF7250082DCBF /* Preview */,
+				D0179F2E1FB2E6DB0060A5EB /* Model */,
 				A61DC5321FA6B7CA0091533A /* EXReporterCopyEditorViewController.h */,
 				A61DC5331FA6B7CA0091533A /* EXReporterCopyEditorViewController.m */,
 			);
 			path = CopyEditor;
-			sourceTree = "<group>";
-		};
-		A61DC5361FA6D2F10091533A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A61DC5371FA6D3060091533A /* EXEditorTextView.h */,
-				A61DC5381FA6D3060091533A /* EXEditorTextView.m */,
-				A6CF067D1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.h */,
-				A6CF067E1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A61DC53D1FA6FFF80091533A /* EXSegmentedControl */ = {
@@ -865,7 +863,6 @@
 				A6D4F1D01F7F3DC5007BC8F0 /* EX_BaseModel.h */,
 				A6D4F1D11F7F3DC5007BC8F0 /* EX_BaseModel.m */,
 				A60AE69A1F998CE700229AFE /* EX_BaseModelProtocol.h */,
-				A6A921201F9D798E000FF6B3 /* EX_BaseTableViewCellActionProtocol.h */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -880,7 +877,7 @@
 				A692EE8A1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.h */,
 				A692EE8B1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m */,
 				A6D4F1D41F7F3F1D007BC8F0 /* EX_BaseTableViewCellProtocol.h */,
-				A60FA1991FAC02C100E2B699 /* EXTableViewCellButtonActionProtocol.h */,
+				A6A921201F9D798E000FF6B3 /* EX_BaseTableViewCellActionProtocol.h */,
 				A60AE69E1F99906800229AFE /* EX_BaseViewController.h */,
 				A60AE69F1F99906800229AFE /* EX_BaseViewController.m */,
 				A60AE6A11F9990DC00229AFE /* EX_BaseViewControllerProtocal.h */,
@@ -1043,6 +1040,38 @@
 				A67CBA051FA2BC7E00F40F0F /* HSYThePoorTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D0179F2E1FB2E6DB0060A5EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0179F2F1FB2E74E0060A5EB /* EXUpPhotoModel.h */,
+				D0179F301FB2E74E0060A5EB /* EXUpPhotoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0179F3B1FB303420060A5EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0179F491FB304200060A5EB /* Photo */,
+				D0179F3C1FB303420060A5EB /* EXEditorTextView.h */,
+				D0179F3D1FB303420060A5EB /* EXEditorTextView.m */,
+				D0179F421FB303420060A5EB /* EXUpPhotoNormalTableViewCell.h */,
+				D0179F431FB303420060A5EB /* EXUpPhotoNormalTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0179F491FB304200060A5EB /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				D0179F401FB303420060A5EB /* EXUpPhotoImageVideoCell.h */,
+				D0179F411FB303420060A5EB /* EXUpPhotoImageVideoCell.m */,
+				D0179F3E1FB303420060A5EB /* EXUpPhotoCollectionViewCell.h */,
+				D0179F3F1FB303420060A5EB /* EXUpPhotoCollectionViewCell.m */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1354,6 +1383,7 @@
 				A61DC5461FA72AC80091533A /* EXKeyboardPhotoViewController.m in Sources */,
 				A60EB11C1FA1E4F8003A1157 /* CWInteractiveTransition.m in Sources */,
 				A60EB11D1FA1E4F8003A1157 /* CWLateralSlideAnimator.h in Sources */,
+				D0179F451FB303420060A5EB /* EXEditorTextView.m in Sources */,
 				A60EB11E1FA1E4F8003A1157 /* CWLateralSlideAnimator.m in Sources */,
 				A67466C31FA7FD0B0097E77C /* EXKeyboardPhotoCollectionViewCell.m in Sources */,
 				A60EB11F1FA1E4F8003A1157 /* CWLateralSlideConfiguration.h in Sources */,
@@ -1374,6 +1404,7 @@
 				A60C72B31F9DF0690070C586 /* EX_BaseCollectionViewCell.m in Sources */,
 				A69BB3CD1F9F183A000C6C03 /* EXShopMallsViewController.m in Sources */,
 				A60AE6CA1F99AEA300229AFE /* YYMemoryCache.m in Sources */,
+				D0179F481FB303420060A5EB /* EXUpPhotoNormalTableViewCell.m in Sources */,
 				A60AE6BD1F99A4DC00229AFE /* WYNetworkCache.h in Sources */,
 				A67CBA1B1FA2DE3000F40F0F /* EXGoodsRecommendViewController.m in Sources */,
 				A66396811FAC5C8200E6008F /* EXTextStyle.m in Sources */,
@@ -1397,7 +1428,6 @@
 				A60AE6B81F99A00B00229AFE /* EX_ChannelModel.m in Sources */,
 				A60AE6A01F99906800229AFE /* EX_BaseViewController.m in Sources */,
 				A692EE931F8B5AD400201C47 /* UILabel+ZDKExtent.m in Sources */,
-				A61DC5391FA6D3060091533A /* EXEditorTextView.m in Sources */,
 				A6D4F1751F7F2F6B007BC8F0 /* ViewController.m in Sources */,
 				A6D4F1BD1F7F334E007BC8F0 /* EX_NavigationController.m in Sources */,
 				A61DC5311FA6B7B60091533A /* EXMoveShootViewController.m in Sources */,
@@ -1414,10 +1444,10 @@
 				A6E01DBD1FA9B61700D3529D /* EXFontSizePickerView.m in Sources */,
 				A60FA1981FABF43D00E2B699 /* EXGoodsCarView.m in Sources */,
 				A60FA19D1FAC0D9000E2B699 /* EXPopView.m in Sources */,
-				A6CF067F1FAFEE740082DCBF /* EXUpPhotoCollectionViewCell.m in Sources */,
 				A692EE961F8B616F00201C47 /* UIView+WY_Extenison.m in Sources */,
 				A6D4F1DC1F7F426A007BC8F0 /* NSString+FriendExtenison.m in Sources */,
 				A60AE6BC1F99A1FB00229AFE /* EXSeviceRequestManger.m in Sources */,
+				D0179F311FB2E74E0060A5EB /* EXUpPhotoModel.m in Sources */,
 				A692EE891F8B4F6F00201C47 /* EX_LeftTableViewCell.m in Sources */,
 				A6D4F16F1F7F2F6B007BC8F0 /* main.m in Sources */,
 				A60AE6A51F99941E00229AFE /* EXCommonTools.m in Sources */,
@@ -1426,10 +1456,12 @@
 				A67466CE1FA8780D0097E77C /* RewriteButton.m in Sources */,
 				A61DC5491FA72BEF0091533A /* EXPhotoPreviewViewController.m in Sources */,
 				A6E01DCB1FAAACBB00D3529D /* EXParagraphConfig.m in Sources */,
+				D0179F471FB303420060A5EB /* EXUpPhotoImageVideoCell.m in Sources */,
 				A61739E01FA9689D00E6C91D /* EXPhotoLibraryManager.m in Sources */,
 				D019F3201FB18DA6009A1BE3 /* EXStyleColorsCell.m in Sources */,
 				A692EE991F8B697300201C47 /* EX_praticeHeadView.m in Sources */,
 				A692EE8C1F8B4FFA00201C47 /* EX_BaseTbaleViewCell.m in Sources */,
+				D0179F461FB303420060A5EB /* EXUpPhotoCollectionViewCell.m in Sources */,
 				A615694A1FA9793600849F57 /* EXFontStyleModel.m in Sources */,
 				A6D4F1CF1F7F399D007BC8F0 /* UIImage+Category.m in Sources */,
 				A6FE1E891F99EBFB00948D74 /* EXShopInfoModel.m in Sources */,

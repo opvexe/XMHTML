@@ -15,7 +15,7 @@
 #import "EXBannerView.h"
 #import "EXPopView.h"
 
-@interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource,EXGoodsCarViewDelegate,EXTableViewCellButtonActionProtocol,UIWebViewDelegate,UIScrollViewDelegate>
+@interface EXGoodsRecommendViewController ()<UITableViewDelegate,UITableViewDataSource,EXGoodsCarViewDelegate,EXBaseViewActionProtocol,UIWebViewDelegate,UIScrollViewDelegate>
 @property(nonatomic,strong)EXNavigationView *navigationView;
 @property(nonatomic,strong)EXGoodsCarView *goodsCarView;
 @property(nonatomic,strong)UITableView *goodsTableView;
@@ -95,7 +95,7 @@ static CGFloat BannerHeight = 400.0f;
         {
             cell = [EXGoodsShopperTableViewCell CellWithTableView:tableView];
             EXGoodsShopperTableViewCell *x_cell  = (EXGoodsShopperTableViewCell*)cell;
-            x_cell.xg_delegate = self;
+            x_cell.xm_delegate = self;
         }
             break;
             case TemplateCellTypeGoodsChoiceTableViewCell:

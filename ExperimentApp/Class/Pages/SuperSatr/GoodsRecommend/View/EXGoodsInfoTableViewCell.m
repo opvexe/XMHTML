@@ -203,8 +203,8 @@
 }
 
 -(void)dothings:(UIButton *)sender{
-    if (self.xg_delegate&&[self.xg_delegate respondsToSelector:@selector(ex_ClickButtonTableViewCellex_ClickButtonTableViewCell:selectIndexselectIndex:)]) {
-        [self.xg_delegate ex_ClickButtonTableViewCell:self selectIndex:sender.tag];
+    if (self.xm_delegate&&[self.xm_delegate respondsToSelector:@selector(XM_ClickButtonTableViewCell:selectIndexselectIndex:)]) {
+        [self.xm_delegate XM_ClickButtonTableViewCell:self selectIndex:sender.tag];
     }
 }
 

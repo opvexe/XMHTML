@@ -10,6 +10,7 @@
 @interface EXUpPhotoCollectionViewCell ()
 @property(nonatomic,strong)UIImageView *selectImageView;
 @property(nonatomic,strong)UIButton *videoButton;
+@property(nonatomic,strong)UIImageView *photoImageView;
 @end
 @implementation EXUpPhotoCollectionViewCell
 

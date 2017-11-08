@@ -10,6 +10,14 @@
 
 @implementation UILabel (ZDKExtent)
 
++ (instancetype)labelWithColor:(UIColor *)color  font:(UIFont *)font{
+    return [self labelWithTitle:nil color:color font:font];
+}
+
++ (instancetype)labelWithColor:(UIColor *)color font:(UIFont *)font  alignment:(NSTextAlignment)alignment{
+    return [self labelWithTitle:nil color:color font:font alignment:alignment];
+}
+
 + (instancetype)labelWithTitle:(NSString *)title color:(UIColor *)color fontSize:(CGFloat)fontSize {
     return [self labelWithTitle:title color:color fontSize:fontSize alignment:NSTextAlignmentCenter];
 }

@@ -89,14 +89,6 @@ BOOL is_null(id object);
  */
 BOOL isEmpty(NSString* str);
 /**
- *  MD5
- *
- *  @param input input description
- *
- *  @return return value description
- */
-NSString* md5(NSString* input);
-/**
  *
  *
  *  @param url url description
@@ -287,4 +279,38 @@ NSString *base64DecodeWith(NSString * content);
  @return return value description
  */
 +(NSMutableAttributedString *)getOtherColorString:(NSString *)string  font:(UIFont *)font Color:(UIColor *)myColor withString:(NSString *)originalString;
+
+
+#pragma mark md5 加密
+
+/**
+ * 32位 MD5大写加密
+
+ @param input input description
+ @return return value description
+ */
+NSString* Md532BitUpper(NSString* input);
+
+
+/**
+ * 32位 MD5小写加密
+
+ @param input input description
+ @return return value description
+ */
+NSString* Md532BitLower(NSString* input);
+
+
+/**
+ * 16位md5 加密
+
+ @param input input description
+ @return return value description
+ */
+NSString* Md516Bit(NSString* input);
+
+
+#pragma mark AES 加密
+
+
 @end

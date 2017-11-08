@@ -21,8 +21,6 @@
     [self getWifiBSSID];
     [self initRootViewController];
     
-    NSLog(@"%lf==%lf",[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height);
-    
     return YES;
 }
 

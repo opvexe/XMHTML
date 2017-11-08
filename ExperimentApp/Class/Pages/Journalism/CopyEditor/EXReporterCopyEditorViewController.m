@@ -17,15 +17,20 @@
 #import "EXReporterAddFootageController.h"
 #import "NSTextAttachment+EXText.h"
 #import "EXReporterPreviewController.h"
+#import "EXUpPhotoModel.h"
+#import "EXUpPhotoImageVideoCell.h"
+#import "EXUpPhotoNormalTableViewCell.h"
 
-@interface EXReporterCopyEditorViewController ()<UITextViewDelegate,UITextFieldDelegate,EXSegmentedControlDelegate,EXKeyboardPhotoControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface EXReporterCopyEditorViewController ()<UITextViewDelegate,UITextFieldDelegate,EXSegmentedControlDelegate,EXKeyboardPhotoControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)EXEditorTextView *textView;
 @property(nonatomic,assign)CGFloat keyboardSpacingHeight;
 @property(nonatomic,strong)EXSegmentedControl *keyboardInputView;
 @property(nonatomic,strong)EXKeyboardPhotoViewController *keyBoardViewController;
 @property(nonatomic,strong)EXKeyBoardFontViewController *keyBoardFontViewController;
-@property(nonatomic,strong)UITableView *pictureTableView;
-@property(nonatomic,strong)UICollectionView *upPhotoCollectionView;
+@property(nonatomic,strong)UITableView *upPhotoTableView;
+@property(nonatomic,strong)NSMutableArray<EXUpPhotoModel *> *photo;
+@property(nonatomic,strong)UILabel *videoLabel;
+@property(nonatomic,strong)UILabel *photoLabel;
 @end
 
 static CGFloat const KeyboardInputViewHeight = 40.f;
@@ -43,6 +48,7 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
     [self initWithKeyboardInputView];
     [self requestALAssetsLibraryAuthorization];
     [self requestALAssetsCameraAuthorization];
+    [self initWithPhotoTableView];
     ///注册键盘弹起通知
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -53,10 +59,22 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     [self.keyboardInputView addTarget:self action:@selector(changeTextInputView:) forControlEvents:UIControlEventValueChanged];
-        [self.upPhotoCollectionView registerClass:[EXUpPhotoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([EXUpPhotoCollectionViewCell class])];
+    
 }
 
-
+-(void)initWithPhotoTableView{
+    [self.view addSubview:self.upPhotoTableView];
+    [self.upPhotoTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.textView.mas_bottom);
+    }];
+    ///设置数据
+    NSArray *temple = @[(@{@"type":@2}),
+                       @{@"icon":@"oval_hl",@"title":@"所在位置",@"explain":@"自动",@"image":@"my_icon_enter_n"},
+                       @{@"icon":@"oval_hl",@"title":@"分类:生活",@"image":@"my_icon_enter_n"}];
+    _photo = [EXUpPhotoModel mj_objectArrayWithKeyValuesArray:temple];
+    [self.upPhotoTableView reloadData];
+}
 
 - (void)layoutTextView {
     CGRect rect = self.view.bounds;
@@ -270,68 +288,103 @@ static CGFloat const KeyboardInputViewHeight = 40.f;
     
 }
 
-#pragma mark 选择图片上传<upPhotoCollectionView>
-- (UICollectionView *)upPhotoCollectionView{
-    if(!_upPhotoCollectionView){
-        UICollectionViewFlowLayout *layout =[[UICollectionViewFlowLayout alloc]init];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _upPhotoCollectionView =[[UICollectionView alloc] initWithFrame:CGRectZero
-                                                 collectionViewLayout:layout];
-        _upPhotoCollectionView.backgroundColor = [UIColor clearColor];
-        _upPhotoCollectionView.showsHorizontalScrollIndicator = NO;
-        _upPhotoCollectionView.showsVerticalScrollIndicator =NO;
-        _upPhotoCollectionView.dataSource = self;
-        _upPhotoCollectionView.delegate = self;
+
+#pragma mark 选择图片上传 <upPhotoTableView>
+
+-(NSMutableArray *)photo{
+    if (!_photo) {
+        _photo = [NSMutableArray arrayWithCapacity:0];
     }
-    return _upPhotoCollectionView;
+    return _photo;
+}
+-(UITableView *)upPhotoTableView{
+    if (!_upPhotoTableView) {
+        _upPhotoTableView= [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _upPhotoTableView.showsVerticalScrollIndicator =NO;
+        _upPhotoTableView.showsHorizontalScrollIndicator =NO;
+        _upPhotoTableView.scrollEnabled = NO;
+        _upPhotoTableView.dataSource = self;
+        _upPhotoTableView.delegate = self;
+        _upPhotoTableView.tableFooterView  =[UIView new];
+        _upPhotoTableView.backgroundColor =[UIColor whiteColor];
+        _upPhotoTableView.estimatedRowHeight = 0;
+        _upPhotoTableView.estimatedSectionFooterHeight = 0;
+        _upPhotoTableView.estimatedSectionHeaderHeight = 0;
+        _upPhotoTableView.separatorStyle =UITableViewCellSeparatorStyleSingleLine;
+        if (@available(iOS 11.0, *)) {
+            _upPhotoTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+    }
+    return _upPhotoTableView;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return self.photo.count;
+}
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 1;
-    
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return Number(60);
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    CGFloat width = SCREEN_WIDTH/5 - Number(30);
-    return  CGSizeMake(width, width);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return Number(5);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return Number(5);
-}
-
-- ( UIEdgeInsets )collectionView:( UICollectionView *)collectionView layout:( UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:( NSInteger )section {
-    //top, left, bottom, right
-    return UIEdgeInsetsMake ( Number(10), Number(5) ,Number(10), Number(5));
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    EXUpPhotoCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EXUpPhotoCollectionViewCell class]) forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    EXUpPhotoModel *model = self.photo[indexPath.row];
+    EX_BaseTbaleViewCell  *cell ;
+    switch (model.type) {
+        case EXUpPhotoCollectionPhotoTableViewCell:
+        {
+            cell = [EXUpPhotoImageVideoCell CellWithTableView:tableView];
+        }
+            break;
+        default:
+            cell = [EXUpPhotoNormalTableViewCell CellWithTableView:tableView];
+            break;
+    }
+    [cell InitDataWithModel:model];
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    EXReporterAddFootageController *addFootage = [[EXReporterAddFootageController alloc]init];          ///记者编辑模式
-    [self.navigationController pushViewController:addFootage animated:YES];
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return Number(44);
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headBackView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, Number(44))];
+    headBackView.backgroundColor =HSYColorfafafa;
+    self.videoLabel = [UILabel labelWithTitle:@"视频 0" color:BaseContenTextColor font: FontPingFangSC(14) alignment:NSTextAlignmentLeft];
+    self.photoLabel = [UILabel labelWithTitle:@"照片 0/100" color:BaseContenTextColor font:FontPingFangSC(14)alignment:NSTextAlignmentLeft];
+    [headBackView addSubview:self.videoLabel];
+    [headBackView addSubview:self.photoLabel];
+    [self.videoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(headBackView).mas_offset(Number(10));
+        make.centerY.mas_equalTo(headBackView.mas_centerY);
+    }];
+    [self.photoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.videoLabel.mas_right).mas_offset(Number(10));
+        make.centerY.mas_equalTo(headBackView.mas_centerY);
+    }];
+    return headBackView;
 }
 
 
+/**
+ * 重写其sett方法
 
+ @param videoLabel videoLabel description
+ */
+-(void)setVideoLabel:(UILabel *)videoLabel{
+    _videoLabel = videoLabel;
+}
 
-
-
-
+-(void)setPhotoLabel:(UILabel *)photoLabel{
+    _photoLabel = photoLabel;
+}
 
 
 

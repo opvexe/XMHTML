@@ -147,8 +147,8 @@
                     [self.downloadButton setTitle:@"Start" forState:UIControlStateNormal];
                 }];
             }else if (receipt.state == MCDownloadStateCompleted) {
-                if (self.xg_delegate&&[self.xg_delegate respondsToSelector:@selector(ex_ClickButtonTableViewCell:selectIndex:)]) {
-                    [self.xg_delegate ex_ClickButtonTableViewCell:self selectIndex:sender.tag];
+                if (self.xm_delegate&&[self.xm_delegate respondsToSelector:@selector(XM_ClickButtonTableViewCell:selectIndex:)]) {
+                    [self.xm_delegate XM_ClickButtonTableViewCell:self selectIndex:sender.tag];
                 }
                 NSLog(@"下载完成");
             }else {

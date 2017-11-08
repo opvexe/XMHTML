@@ -161,7 +161,7 @@
 
 #pragma mark <EXStyleSettings>
 - (void)xm_didChangeStyleSettings:(NSDictionary *)settings{
-    NSLog(@"settings:%@",settings);
+
     __block BOOL needReload = NO;
     [settings enumerateKeysAndObjectsUsingBlock:^(NSString *key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([key isEqualToString:EXStyleSettingsBoldName]) {

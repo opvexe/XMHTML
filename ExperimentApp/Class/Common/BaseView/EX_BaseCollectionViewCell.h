@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "EX_BaseCollectionViewCellProtocol.h"
+#import "EXBaseViewActionProtocol.h"
 
-@interface EX_BaseCollectionViewCell : UICollectionViewCell<EX_BaseCollectionViewCellProtocol>
-
+@interface EX_BaseCollectionViewCell : UICollectionViewCell<EX_BaseCollectionViewCellProtocol,EXBaseViewActionProtocol>
+@property(nonatomic,weak)id<EX_BaseTableViewCellActionProtocol>delegate;
+@property (nonatomic,weak) id <EXBaseViewActionProtocol> xm_delegate;
 @end

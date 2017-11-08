@@ -9,5 +9,5 @@
 #import "EX_BaseCollectionViewCell.h"
 
 @interface EXUpPhotoCollectionViewCell : EX_BaseCollectionViewCell
-@property(nonatomic,strong)UIImageView *photoImageView;
+
 @end

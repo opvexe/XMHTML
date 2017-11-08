@@ -49,12 +49,12 @@
     self.bgView = [[UIView alloc]init];
     self.bgView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.bgView];
-    self.titleLabel = [UILabel labelWithTitle:@"字号" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
+    self.titleLabel = [UILabel labelWithColor:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
     [self.bgView addSubview:self.titleLabel];
     self.unfoldImageView = [UIImageView new];
     self.unfoldImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.bgView addSubview:self.unfoldImageView];
-    self.rightLabel = [UILabel labelWithTitle:@"普通" color:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
+    self.rightLabel = [UILabel labelWithColor:BaseContenTextColor font:FontPingFangSC(15.0) alignment:NSTextAlignmentLeft];
     self.rightLabel.hidden = YES;
     [self.bgView addSubview:self.rightLabel];
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {

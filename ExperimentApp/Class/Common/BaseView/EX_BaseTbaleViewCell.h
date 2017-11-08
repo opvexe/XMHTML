@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "EX_BaseTableViewCellProtocol.h"
 #import "EX_BaseTableViewCellActionProtocol.h"
-#import "EXTableViewCellButtonActionProtocol.h"
+#import "EXBaseViewActionProtocol.h"
 
-@interface EX_BaseTbaleViewCell : UITableViewCell<EX_BaseTableViewCellProtocol,EXTableViewCellButtonActionProtocol>
+@interface EX_BaseTbaleViewCell : UITableViewCell<EX_BaseTableViewCellProtocol,EXBaseViewActionProtocol>
 @property(nonatomic,weak)id<EX_BaseTableViewCellActionProtocol>delegate;
-@property (nonatomic,weak) id <EXTableViewCellButtonActionProtocol>xg_delegate;
+@property (nonatomic,weak) id <EXBaseViewActionProtocol>xm_delegate;
 @end

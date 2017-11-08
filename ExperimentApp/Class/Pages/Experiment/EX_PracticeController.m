@@ -11,7 +11,7 @@
 #import "EX_PracticeCell.h"
 #import "UIViewController+CWLateralSlide.h"
 #import "EX_LeftController.h"
-@interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource,EXTableViewCellButtonActionProtocol>
+@interface EX_PracticeController ()<UITableViewDelegate,UITableViewDataSource,EXBaseViewActionProtocol>
 @property(nonatomic, strong)UITableView *practiceTableView;
 @property(nonatomic, strong)EX_praticeHeadView *headView;
 @property(nonatomic,strong)NSMutableArray *urls;

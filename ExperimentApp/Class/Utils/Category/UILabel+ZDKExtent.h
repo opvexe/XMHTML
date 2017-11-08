@@ -10,6 +10,26 @@
 
 @interface UILabel (ZDKExtent)
 
+
+/**
+ * 创建 UILabel
+
+ @param color color description
+ @param font fontSize description
+ @return return value description
+ */
++ (instancetype)labelWithColor:(UIColor *)color font:(UIFont *)font;
+
+
+/**
+ * 创建 UILabel
+
+ @param color color description
+ @param font font description
+ @param alignment alignment description
+ @return return value description
+ */
++ (instancetype)labelWithColor:(UIColor *)color font:(UIFont *)font  alignment:(NSTextAlignment)alignment;
 /**
  * 创建 UILabel
  *
